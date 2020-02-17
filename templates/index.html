@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +17,7 @@
 <body>
   <header>
     <span class="top-logo">
-      <img src="./assets/images/binmile_logo.png" class="header__logo">
+      <img src="{% static 'assets/images/binmile_logo.png' %}" class="header__logo">
     </span>
     <div class="nav navbar navbar-expand-lg">
       <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
@@ -23,10 +25,10 @@
         aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="service.html" class="nav-link">Services</a></li>
+          <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
+          <li><a href="{% url 'posts:services' %}" class="nav-link">Services</a></li>
           <li><a href="#" class="nav-link">About Us</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="{% url 'posts:blog' %}" class="nav-link">Blog</a></li>
           <li><a href="#" class="nav-link">Contact Us</a></li>
 
         </ul>
@@ -43,8 +45,8 @@
         <div class="row justify-content-center justify-content-md-start">
           <div class="col-10 col-md-6 static">
             <div class="hero-slider-image">
-              <img class="image-float" src="assets/images/hero_images/1.2@2x.png">
-              <img id="hero-slide-image-1" src="assets/images/hero_images/1.1@2x.png">
+              <img class="image-float" src="{% static 'assets/images/hero_images/1.2@2x.png' %}">
+              <img id="hero-slide-image-1" src="{% static 'assets/images/hero_images/1.1@2x.png' %}">
             </div>
             <div class="owl-slide-text">
               <h2 class="owl-slide-animated owl-slide-title">
@@ -68,7 +70,7 @@
         <div class="row justify-content-center justify-content-md-start">
           <div class="col-10 col-md-6 static">
             <div class="hero-slider-image">
-              <img id="hero-slide-image-2" src="assets/images/hero_images/2@2x.png">
+              <img id="hero-slide-image-2" src="{% static 'assets/images/hero_images/2@2x.png' %}">
             </div>
             <div class="owl-slide-text">
               <h2 class="owl-slide-animated owl-slide-title">
@@ -92,8 +94,8 @@
         <div class="row justify-content-center justify-content-md-start">
           <div class="col-10 col-md-6 static">
             <div class="hero-slider-image">
-              <img src="assets/images/hero_images/3.2@2x.png" id="floating-image-2">
-              <img id="hero-slide-image-3" src="assets/images/hero_images/3.1@2x.png">
+              <img src="{% static 'assets/images/hero_images/3.2@2x.png' %}" id="floating-image-2' %}">
+              <img id="hero-slide-image-3" src="{% static 'assets/images/hero_images/3.1@2x.png' %}">
             </div>
             <div class="owl-slide-text">
               <h2 class="owl-slide-animated owl-slide-title">
@@ -117,7 +119,7 @@
         <div class="row justify-content-center justify-content-md-start">
           <div class="col-10 col-md-6 static">
             <div class="hero-slider-image">
-              <img id="hero-slide-image-4" src="assets/images/hero_images/4@2x.png">
+              <img id="hero-slide-image-4" src="{% static 'assets/images/hero_images/4@2x.png' %}">
             </div>
             <div class="owl-slide-text">
               <h2 class="owl-slide-animated owl-slide-title">
@@ -155,7 +157,7 @@
             responsive while dealing with any kind of service issues.</p>
 
           <div class="test-details">
-            <img src="assets/images/microsoft-logo.png" class="test-image" style="width: 14em">
+            <img src="{% static 'assets/images/microsoft-logo.png' %}" class="test-image" style="width: 14em">
             <p class="test-author">Satya Nadela<br>Chief Operating Officer</p>
           </div>
         </div>
@@ -170,11 +172,11 @@
   <div class="container">
     <div class="row card-container">
       <div class="col-md-4 col-lg-4 services-card col-xs-12 col-sm-12">
-        <img src="assets/images/target.svg">
+        <img src="{% static 'assets/images/target.svg' %}">
         <h4>Advisory</h4>
       </div>
       <div class="col-md-4 col-lg-4 services-card col-xs-12 col-sm-12">
-        <img src="assets/images/Cloud service.svg">
+        <img src="{% static 'assets/images/Cloud service.svg' %}">
         <h4>Implementations</h4>
         <p>
           We make it easier for you to focus on building great products while we work on simplifying your technology.
@@ -182,14 +184,14 @@
         </p>
       </div>
       <div class="col-md-4 col-lg-4 services-card col-xs-12 col-sm-12">
-        <img src="assets/images/light-bulb.svg">
+        <img src="{% static 'assets/images/light-bulb.svg' %}">
         <h4>Ideation</h4>
       </div>
     </div>
   </div>
 
   <section class="arrow-section">
-    <img src="./assets/images/arrow-image.png" class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+    <img src="{% static 'assets/images/arrow-image.png' %}" class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
     <aside class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
       <h4 style="font-weight: bold; margin: 1.5em auto">Join the 1000+ businesses using Binmile</h4>
       <p>
@@ -222,8 +224,8 @@
         </div>
       </div>
       <div class="owl-nav">
-        <div class="owl-prev" id="nav-prev"><img src="assets/images/prev.svg"></div>
-        <div class="owl-next" id="nav-next"><img src="assets/images/prev.svg" style="transform: rotate(180deg);">
+        <div class="owl-prev" id="nav-prev"><img src="{% static 'assets/images/prev.svg' %}"></div>
+        <div class="owl-next" id="nav-next"><img src="{% static 'assets/images/prev.svg' %}" style="transform: rotate(180deg);">
         </div>
       </div>
     </div>
@@ -256,7 +258,7 @@
       <div class="container">
         <div class="row footer__info">
           <div class="col-md-4 footer__info-content">
-            <img style="height: 6em" src="assets/images/binmile logo.png" class="footer__img">
+            <img style="height: 6em" src="{% static 'assets/images/binmile logo.png' %}" class="footer__img">
             <p style="letter-spacing: 0.16px; font-size: 0.8em;">
               Do you need an elite team of technologist and idea-makers? Is quality important to you? Is scalability
               and endless custom ization paramount? Do you need a brand that is built specifically for your company
@@ -343,7 +345,7 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="./assets/js/owl.carousel.min.js"></script>
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script>
   $('.owl-one').owlCarousel({

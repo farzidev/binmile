@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
@@ -5,10 +7,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/assets/css/owl.carousel.css">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
 
-  <link rel="stylesheet" href="assets/css/home.css">
-  <link rel="stylesheet" href="assets/css/service.css">
+  <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/service.css' %}">
 
   <style>
     .parent-box {
@@ -53,7 +55,7 @@
 <body>
   <header>
     <span class="top-logo">
-      <img src="./assets/images/binmile_logo.png" class="img-fluid">
+      <img src="{% static 'assets/images/binmile_logo.png' %}" class="img-fluid">
     </span>
     <div class="nav navbar navbar-expand-md">
       <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
@@ -61,10 +63,10 @@
         aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="service.html" class="nav-link">Services</a></li>
+          <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
+          <li><a href="{% url 'posts:services' %}" class="nav-link">Services</a></li>
           <li><a href="#" class="nav-link">About Us</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="{% url 'posts:blog' %}" class="nav-link">Blog</a></li>
           <li><a href="#" class="nav-link">Contact Us</a></li>
         </ul>
       </div>
@@ -78,7 +80,7 @@
       <button class="get-started">Let's Get Started</button>
     </div>
     <div class="hero-right">
-      <img src="./assets/images/pillar.png" alt="Pillar Image" class="pillar-img">
+      <img src="{% static 'assets/images/pillar.png' %}" alt="Pillar Image" class="pillar-img">
     </div>
   </div>
   <div class="container">
@@ -165,54 +167,54 @@
             <ul class="icon-list">
               <li class="service">
                 <div class="service__img">
-                 <img src="./assets/images/1.png" alt="" class="service__img service__img-1">
+                 <img src="{% static 'assets/images/1.png' %}" alt="" class="service__img service__img-1">
                 </div>
                 <div>
                   <h5>Empathise</h5>
                   <p>Putting ourselves in your shoes, helps us see it from your point of view</p>
                 </div>
-                
-              </li>
-              <li class="service">
-                <div>
-                  <h5>Define</h5>
-                  <p>Create an aim, that encompasses your needs , and our deep insights</p>
-                </div>
-                
-                <div class="service__img">
-                  <img src="./assets/images/2.png" alt="" class="service__img service__img-2">
-                 </div>
-              </li>
-              <li class="service">
-                <div class="service__img">
-                  <img src="./assets/images/3.png" alt="" class="service__img service__img-3">
-                 </div>
-                 <div>
-                  <h5>Empathise</h5>
-                  <p>Putting ourselves in your shoes, helps us see it from your point of view</p>
-                 </div>
-                
+
               </li>
               <li class="service">
                 <div>
                   <h5>Define</h5>
                   <p>Create an aim, that encompasses your needs , and our deep insights</p>
                 </div>
+
                 <div class="service__img">
-                  <img src="./assets/images/4.png" alt="" class="service__img service__img-4">
+                  <img src="{% static 'assets/images/2.png' %}" alt="" class="service__img service__img-2">
                  </div>
-              
               </li>
-              
               <li class="service">
                 <div class="service__img">
-                  <img src="./assets/images/5.png" alt="" class="service__img service__img-5">
+                  <img src="{% static 'assets/images/3.png' %}" alt="" class="service__img service__img-3">
                  </div>
                  <div>
                   <h5>Empathise</h5>
                   <p>Putting ourselves in your shoes, helps us see it from your point of view</p>
                  </div>
-               
+
+              </li>
+              <li class="service">
+                <div>
+                  <h5>Define</h5>
+                  <p>Create an aim, that encompasses your needs , and our deep insights</p>
+                </div>
+                <div class="service__img">
+                  <img src="{% static 'assets/images/4.png' %}" alt="" class="service__img service__img-4">
+                 </div>
+
+              </li>
+
+              <li class="service">
+                <div class="service__img">
+                  <img src="{% static 'assets/images/5.png' %}" alt="" class="service__img service__img-5">
+                 </div>
+                 <div>
+                  <h5>Empathise</h5>
+                  <p>Putting ourselves in your shoes, helps us see it from your point of view</p>
+                 </div>
+
               </li>
             </ul>
           </p>
@@ -222,7 +224,7 @@
   </div>
   <div class="container">
     <section class="arrow-section">
-      <img src="./assets/images/arrow-image.png" class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+      <img src="{% static 'assets/images/arrow-image.png' %}" class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
       <aside class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
         <h4 style="font-weight: bold; margin: 1.5em auto">Join the 1000+ businesses using Binmile</h4>
         <p>
@@ -284,7 +286,7 @@
         <p class="client-name">Employee Dashboard Portal</p>
         <p class="client-company">PTTEP . WEB</p>
       </div>
-     
+
     </div>
     <!-- Work slider ends -->
     </main>
@@ -315,7 +317,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <img style="height: 6em" src="assets/images/binmile logo.png">
+            <img style="height: 6em" src="{% static 'assets/images/binmile logo.png' %}">
             <p style="letter-spacing: 0.16px; font-size: 0.8em;">
               Do you need an elite team of technologist and idea-makers? Is quality important to you? Is scalability
               and endless custom ization paramount? Do you need a brand that is built specifically for your company
@@ -402,8 +404,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="/assets/js/jquery.js"></script>
-<script src="/assets/js/owl.carousel.js"></script>
+<script src="{% static 'assets/js/jquery.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.js' %}"></script>
 
 
 <script>

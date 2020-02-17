@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,7 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css"
     />
-    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
   </head>
 
   <body>
@@ -43,18 +45,18 @@
                 <li>Engineering</li> &nbsp; &nbsp;
                 <li>Technology</li> &nbsp; &nbsp;
               </div>
-              
+
               <li>
                 <input type="text" class="top-search" placeholder="Search" />
               </li>
             </ul>
           </nav>
         </div>
-        
+
 
         <div class="row article-row" style="margin-top: 3em">
           <div class="card col-md mr-4">
-            <img src="./assets/images/Image 2.png" class="card-img-top" />
+            <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
             <div class="card-body">
               <div class="pre-article">
                 <a href="#" class="category-button">Product</a>
@@ -86,7 +88,7 @@
           </div>
           <div class="card col-md">
             <img
-              src="./assets/images/ARPU-blog-header.png"
+              src="{% static 'assets/images/ARPU-blog-header.png' %}"
               class="card-img-top"
             />
             <div class="card-body">
@@ -120,7 +122,7 @@
           </div>
           <div class="card col-md ml-4 card-resp">
             <img
-              src="./assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png"
+              src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}"
               class="card-img-top"
             />
             <div class="card-body">
@@ -155,7 +157,7 @@
         </div>
         <div class="row article-row" style="margin-top: 3em">
           <div class="card col-md mr-4">
-            <img src="./assets/images/Image 2.png" class="card-img-top" />
+            <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
             <div class="card-body">
               <div class="pre-article">
                 <a href="#" class="category-button">Product</a>
@@ -187,7 +189,7 @@
           </div>
           <div class="card col-md">
             <img
-              src="./assets/images/ARPU-blog-header.png"
+              src="{% static 'assets/images/ARPU-blog-header.png' %}"
               class="card-img-top"
             />
             <div class="card-body">
@@ -221,7 +223,7 @@
           </div>
           <div class="card col-md ml-4 card-resp">
             <img
-              src="./assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png"
+              src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}"
               class="card-img-top"
             />
             <div class="card-body">
@@ -261,7 +263,7 @@
         <section style="display:flex;justify-content: space-between;">
           <div class="row">
             <img
-              src="./assets/images/arrow-image.png"
+              src="{% static 'assets/images/arrow-image.png' %}"
               class="col-md-6 col-xs-12 col-sm-12"
             />
             <aside class="col-md-6 col-sm-12 col-xs-12">
@@ -315,7 +317,7 @@
               <img
                 style="height: 6em"
                 class="footer__logo"
-                src="assets/images/binmile logo.png"
+                src="{% static 'assets/images/binmile logo.png' %}"
               />
               <p style="letter-spacing: 0.16px; font-size: 0.8em;">
                 Do you need an elite team of technologist and idea-makers? Is
