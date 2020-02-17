@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # packages
+    'ckeditor',
+
+    # apps
+    'posts',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +124,36 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# django-ckeditor
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        # 'stylesSet': [
+        #     {'name': 'PullQuote', 'element': 'blockquote', 'styles': {'color': 'blue'}}
+        # ],
+        'toolbar_Full': [
+            ['Styles', 'Font', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo', 'FontSize'],  # 'Format'
+            ['Link', 'Unlink', 'Anchor'],
+            ['Image', 'Flash', 'Table', 'HorizontalRule'],
+            ['TextColor', 'BGColor'],
+            ['Smiley', 'SpecialChar'], ['Source'],
+            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['NumberedList', 'BulletedList', 'Blockquote'],
+            ['Indent', 'Outdent'],
+            ['Maximize'],
+        ],
+        'extraPlugins': 'justify,liststyle,indent',
+    },
+}
