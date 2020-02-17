@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 
@@ -6,7 +8,7 @@
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <title>BINMILE | Article</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css' />
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
   <script src="https://kit.fontawesome.com/16370dbf02.js" crossorigin="anonymous"></script>
 </head>
 
@@ -49,7 +51,7 @@
           <span>26 sep,2019</span>
           <span>5.4k Views</span>
         </div>
-        <img src="./assets/images/Image 2@2x.png" class="article-image">
+        <img src="{% static 'assets/images/Image 2@2x.png' %}" class="article-image">
         <div class="pre-article">
           <span class="read-time">11 mins read</span>
           <a href="#" class="category-button">Product</a>
@@ -88,7 +90,7 @@
       <h2 class="bold">Related Articles</h2>
       <div class="row" style="margin-top: 3em">
         <div class="card col-md mr-4">
-          <img src="./assets/images/Image 2.png" class="card-img-top">
+          <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top">
           <div class="card-body">
             <div class="pre-article">
               <a href="#" class="category-button">Product</a>
@@ -112,7 +114,7 @@
           </div>
         </div>
         <div class="card col-md">
-          <img src="./assets/images/ARPU-blog-header.png" class="card-img-top">
+          <img src="{% static 'assets/images/ARPU-blog-header.png' %}" class="card-img-top">
           <div class="card-body">
             <div class="pre-article">
               <a href="#" class="category-button">Product</a>
@@ -136,7 +138,7 @@
           </div>
         </div>
         <div class="card col-md ml-4">
-          <img src="./assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png" class="card-img-top">
+          <img src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}" class="card-img-top">
           <div class="card-body">
             <div class="pre-article">
               <a href="#" class="category-button">Product</a>
@@ -162,7 +164,7 @@
       </div>
 
       <section style="display:flex;justify-content: space-between; margin:4em">
-        <img src="./assets/images/arrow-image.png" class="col-md-6">
+        <img src="{% static 'assets/images/arrow-image.png' %}" class="col-md-6">
         <aside class="col-md-6">
           <h4 style="font-weight: bold; margin: 1.5em auto">Join the 1000+ businesses using Binmile</h4>
           <p>
@@ -205,7 +207,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <img style="height: 6em" src="assets/images/binmile logo.png">
+            <img style="height: 6em" src="{% static 'assets/images/binmile logo.png' %}">
             <p style="letter-spacing: 0.16px; font-size: 0.8em;">
               Do you need an elite team of technologist and idea-makers? Is quality important to you? Is scalability and
               endless custom ization paramount? Do you need a brand that is built specifically for your company and can
