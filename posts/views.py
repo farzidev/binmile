@@ -25,3 +25,15 @@ class PostDetailView(DetailView):
     model = Post
     queryset = Post.objects.all()
     template_name = "binmile_article.html"
+
+
+class AboutUsView(TemplateView):
+    template_name = "aboutUs.html"
+
+
+class ContactUsView(TemplateView):
+    template_name = "contact.html"
+
+
+class MicrosoftCrmView(TemplateView):
+    template_name = "microsoftCRM.html"

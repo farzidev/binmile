@@ -7,8 +7,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Binmile Home</title>
+  <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon" >
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css' />
   <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}" />
   <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
   <script src="https://kit.fontawesome.com/16370dbf02.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
@@ -25,12 +27,22 @@
         aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-          <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
-          <li><a href="{% url 'posts:services' %}" class="nav-link">Services</a></li>
-          <li><a href="#" class="nav-link">About Us</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Services
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="{% url 'posts:services' %}">Service Now</a>
+                <a href="{% url 'posts:microsoft-crm' %}">Microsoft 365</a>
+                <a href="{% url 'posts:services' %}">Power BI</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="{% url 'posts:about-us' %}" class="nav-link">About Us</a></li>
           <li><a href="{% url 'posts:blog' %}" class="nav-link">Blog</a></li>
-          <li><a href="#" class="nav-link">Contact Us</a></li>
-
+          <li><a href="{% url 'posts:contact-us' %}" class="nav-link">Contact Us</a></li>
         </ul>
       </div>
     </div>
@@ -94,7 +106,7 @@
         <div class="row justify-content-center justify-content-md-start">
           <div class="col-10 col-md-6 static">
             <div class="hero-slider-image">
-              <img src="{% static 'assets/images/hero_images/3.2@2x.png' %}" id="floating-image-2' %}">
+              <img src="{% static 'assets/images/hero_images/3.2@2x.png' %}" id="floating-image-2">
               <img id="hero-slide-image-3" src="{% static 'assets/images/hero_images/3.1@2x.png' %}">
             </div>
             <div class="owl-slide-text">
@@ -141,13 +153,38 @@
 
   <!-- hero slider ends -->
 
-  <h2 style="font-weight: bold;text-align:center;" class="testimonial__heading">A service experience <br>people love to talk about</h2>
+  <h2 style="font-weight: bold;text-align:center; margin-top: 2rem;" class="testimonial__heading">A service experience <br>people love to talk about</h2>
   <div class="big-line"></div>
   <!-- Testimonial Slider -->
 
-  <div class="owl-carousel owl-two owl-theme owl-loaded">
+  <div class="owl-two owl-carousel owl-theme owl-loaded">
     <div class="owl-stage-outer">
-      <div class="owl-stage">
+      <div class="owl-stage test">
+        <div class="owl-item test-card col-xs-12">
+          <i class="fas fa-quote-left fa-2x" style="color: #072A98;"></i>
+          <h5>Highly responsive for any service issues</h5>
+          <p>Binmile helped us focus on our core business without worrying about service issues. Being a small team,
+            this has been extremely beneficial for us to run efficiently. Binmile integration was a breeze and team
+            has always been very
+            responsive while dealing with any kind of service issues.</p>
+
+          <div class="test-details">
+            <img src="{% static 'assets/images/microsoft-logo.png' %}" class="test-image" style="width: 14em">
+            <p class="test-author">Satya Nadela<br>Chief Operating Officer</p>
+          </div>
+        </div><div class="owl-item test-card col-xs-12">
+          <i class="fas fa-quote-left fa-2x" style="color: #072A98;"></i>
+          <h5>Highly responsive for any service issues</h5>
+          <p>Binmile helped us focus on our core business without worrying about service issues. Being a small team,
+            this has been extremely beneficial for us to run efficiently. Binmile integration was a breeze and team
+            has always been very
+            responsive while dealing with any kind of service issues.</p>
+
+          <div class="test-details">
+            <img src="{% static 'assets/images/microsoft-logo.png' %}" class="test-image" style="width: 14em">
+            <p class="test-author">Satya Nadela<br>Chief Operating Officer</p>
+          </div>
+        </div>
         <div class="owl-item test-card col-xs-12">
           <i class="fas fa-quote-left fa-2x" style="color: #072A98;"></i>
           <h5>Highly responsive for any service issues</h5>
@@ -161,12 +198,14 @@
             <p class="test-author">Satya Nadela<br>Chief Operating Officer</p>
           </div>
         </div>
+
       </div>
     </div>
+
   </div>
   <!-- Testimonial Slider ends -->
 
-  <h2 style="font-weight: bold;text-align:center;" class="testimonial__heading">Fast and Reliable Software<br>Solutions for your Business</h2>
+  <h2 style="font-weight: bold;text-align:center; margin-top: 3rem;" class="testimonial__heading">Fast and Reliable Software<br>Solutions for your Business</h2>
   <div class="big-line"></div>
 
   <div class="container">
@@ -191,7 +230,7 @@
   </div>
 
   <section class="arrow-section">
-    <img src="{% static 'assets/images/arrow-image.png' %}" class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+    <img src="{% static 'assets/images/arrow-image.png' %}" class="col-md-6 col-lg-6 col-sm-12 col-xs-12 arrow-image">
     <aside class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
       <h4 style="font-weight: bold; margin: 1.5em auto">Join the 1000+ businesses using Binmile</h4>
       <p>
@@ -214,6 +253,20 @@
     <div class="owl-three owl-theme owl-carousel owl-loaded owl-theme">
       <div class="owl-stage-outer">
         <div class="owl-stage">
+          <div class="owl-item">
+            <div class="work-card">
+              PTTEP
+            </div>
+            <p class="client-name">Employee Dashboard Portal</p>
+            <p class="client-company">PTTEP . WEB</p>
+          </div>
+          <div class="owl-item">
+            <div class="work-card">
+              PTTEP
+            </div>
+            <p class="client-name">Employee Dashboard Portal</p>
+            <p class="client-company">PTTEP . WEB</p>
+          </div>
           <div class="owl-item">
             <div class="work-card">
               PTTEP
@@ -345,14 +398,22 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'assets/js/owl.carousel.js' %}"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script> -->
 <script>
   $('.owl-one').owlCarousel({
     center: true,
     items: 1,
     margin: 10,
-    nav: true,
+    loop: true,
+    autoplay: true,
+    autoPlaySpeed: 5000,
+    autoPlayTimeout: 5000,
     responsive: {
       0: {
         items: 1
@@ -364,14 +425,19 @@
         items: 1
       }
     }
-  })
+  });
+
   $('.owl-two').owlCarousel({
     center: true,
-    items: 2,
-    nav: true,
-    navText: ["<div class='nav-btn prev-slide'>Prev</div>", "<div class='nav-btn next-slide'>Next</div>"],
+    items: 1,
+    margin: 10,
     loop: true,
-    margin: 20,
+    slideSpeed: 800,
+    autoplay: true,
+    autoPlaySpeed: 5000,
+    autoPlayTimeout: 5000,
+
+
     responsive: {
       0: {
         items: 1
@@ -383,12 +449,16 @@
         items: 2
       }
     }
+
   });
   $('.owl-three').owlCarousel({
     center: true,
     items: 3,
     nav: true,
     loop: true,
+    autoplay: true,
+    autoPlaySpeed: 8000,
+    autoPlayTimeout: 5000,
     margin: 10,
     responsive: {
       0: {
@@ -403,9 +473,9 @@
       }
     }
   });
-  $('#nav-prev').click(function () {
-    $(".owl-three").trigger('next.owl.carousel');
-  })
+  // $('#nav-prev').onClick(function () {
+  //   $(".owl-three").trigger('next.owl.carousel');
+  // })
 </script>
 
 </html>

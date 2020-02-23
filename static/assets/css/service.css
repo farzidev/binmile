@@ -30,25 +30,7 @@
 .nav li {
   padding: 0.5em;
 }
-.top-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 6px #4763bc;
-  border-radius: 0px 0px 25px 25px;
-  opacity: 1;
-  font-family: "Open Sans";
-  letter-spacing: 0.4px;
-  padding: 1em 1.4em;
-  height: 6em;
-  left: 6em;
-  width: fit-content;
-}
-.top-logo img {
-  width: 15em;
-}
+
 .top-logo h3 {
   font-weight: 600;
 }

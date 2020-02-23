@@ -6,6 +6,7 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon" >
   <title>BINMILE | Article</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css' />
   <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
@@ -16,10 +17,14 @@
 
   <header>
     <span class="top-logo">
-      <h3>BIN<span style="color: #EE7A37;border-right: 3px solid lightgray; padding-right: 5px">MILE</span> Blog</h3>
+      <h3> <a href="{% url 'posts:index' %}" class="logo">BIN<span
+        style="color: #EE7A37;border-right: 3px solid lightgray; padding-right: 5px"
+        >MILE</span
+      >
+      Blog</a></h3>
     </span>
     <div class="nav">
-      Contact Us
+      <a href="contact.html" style="text-decoration: none; color: white;"> Contact Us</a>
     </div>
   </header>
 

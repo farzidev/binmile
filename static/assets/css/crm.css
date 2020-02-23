@@ -1,0 +1,386 @@
+.hero-text {
+  font-size: 5rem;
+  font-weight: 500;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+}
+
+.crm__info {
+  width: 80%;
+  padding: 2rem;
+  margin: 0 auto;
+  text-align: center;
+  color: #130f40;
+}
+
+.crm__info-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.dynamic-crm {
+  padding: 5rem 2rem 2rem 5rem;
+}
+
+.crm-heading {
+  font-size: 3rem;
+  font-weight: 600;
+  width: 45%;
+  color: #130f40;
+}
+
+.dynamic-crm-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #130f40;
+  margin-top: 1.5rem;
+}
+
+.crm-user {
+  padding: 5rem 2rem 2rem 5rem;
+}
+
+.crm-user-heading {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #130f40;
+}
+
+.crm-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-rows: repeat(3, 18rem);
+  grid-auto-rows: 18rem;
+  gap: 1rem;
+  padding: 4rem 0;
+}
+
+.crm-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all .8s;
+}
+
+.crm-card-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #130f40;
+  text-align: center;
+  width: 60%;
+}
+
+.crm-card-para {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #130f40;
+  text-align: center;
+  width: 60%;
+  padding-top: 1rem;
+
+}
+
+.crm-card:hover {
+  box-shadow: 5px 5px .5rem #487ab033,
+    -5px -5px .5rem #487ab033;
+  border-radius: 10px;
+}
+
+.testimonial-heading {
+  color: #130f40;
+  font-size: 3rem;
+  font-weight: 600;
+  padding: 2rem;
+}
+
+.crm__support {
+  background: transparent url("../images/Rectangle.svg") 0% 0% no-repeat;
+  padding: 4rem;
+  display: flex;
+  margin-top: 8rem;
+}
+
+.crm__support-content {
+  color: white;
+  width: 60%;
+}
+
+.crm__support-image {
+  width: 40%;
+  background-image: url(../images/pillar.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.support-para {
+  font-size: 0.9rem;
+  color: #777;
+  padding-top: 2rem;
+}
+
+.crm__consultant {
+  padding: 2rem;
+  width: 80%;
+  margin: 8rem auto;
+  border: 1px solid #130f40;
+  border-radius: 5px;
+}
+
+.consultant-heading {
+  font-weight: 600;
+  color: #130f40;
+}
+
+.consultant-para {
+  color: #777;
+  padding-top: 2rem;
+}
+
+.form-heading {
+  font-size: 1.5rem;
+  color: #130f40;
+  font-weight: 600;
+}
+
+.form-btn {
+  border: none;
+  outline: none;
+  background: none;
+  padding: 1rem 3rem;
+  background-color: #130f40;
+  color: white;
+  font-family: inherit;
+  border-radius: 2px;
+}
+
+.consultant-form {
+  margin-top: 2rem;
+}
+
+.form-input {
+  border: none;
+  outline: none;
+  border: 2px solid #130f40;
+  padding: 1rem 2rem;
+  margin-right: 3rem;
+  border-radius: 3px;
+}
+
+.form-input::placeholder{
+    color: black;
+    opacity: 1;
+    font-weight: 600;
+}
+
+@media (min-width: 1281px) {
+}
+/*   ##Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .pillar-img {
+    width: 80%;
+    height: 80%;
+  }
+
+  .form-input {
+    padding: 1rem;
+    margin-right: 1rem;
+  }
+}
+/*   ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  #navbarSupportedContent {
+    background: none;
+    height: 5vh;
+    left: unset;
+  }
+
+  .nav-link:link,
+  .nav-link:visited {
+    color: white;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-right {
+    right: 17%;
+    width: 50%;
+  }
+  .hero-left {
+    top: 60%;
+    left: 25%;
+    text-align: center;
+  }
+  .pillar-img {
+    width: 60%;
+    height: 60%;
+  }
+
+  .crm-heading {
+    width: 70%;
+  }
+  .form-input {
+    padding: 1rem;
+    margin-right: 1rem;
+  }
+  .form-btn {
+    margin: 1rem auto;
+  }
+}
+/*   ##Device = Tablets, Ipads (landscape)  ##Screen = B/w 768px to 1024px*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+/*   ##Device = Low Resolution Tablets, Mobiles (Landscape)  ##Screen = B/w 481px to 767px*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-right {
+    right: 19%;
+    width: 50%;
+  }
+  .hero-left {
+    top: 60%;
+    left: 25%;
+    text-align: center;
+  }
+  .pillar-img {
+    width: 80%;
+    height: 60%;
+  }
+
+  .hero-text {
+    font-size: 3rem;
+  }
+
+  .crm-heading {
+    width: 100%;
+    font-size: 2rem;
+  }
+  .dynamic-crm-text {
+    font-size: 0.7rem;
+  }
+  .form-input {
+    padding: 1rem;
+    margin-right: 1rem;
+  }
+  .form-btn {
+    margin: 1rem auto;
+  }
+
+  .crm-user-heading {
+    font-size: 2rem;
+  }
+  .consultant-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-input {
+    margin-bottom: 1rem;
+  }
+}
+/*   ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-right {
+    top: 20%;
+    right: 30%;
+    height: unset;
+  }
+  .hero-left {
+    top: 60%;
+    left: 25%;
+    text-align: center;
+  }
+  .pillar-img {
+    width: 100%;
+    height: 50%;
+  }
+  .hero-text {
+    font-size: 2rem;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .get-started {
+    width: 10rem;
+  }
+  .crm__info {
+    width: 100%;
+  }
+  .dynamic-crm,
+  .crm-user {
+    padding: 1.5rem;
+  }
+  .crm-heading {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+  .crm-user-heading {
+    font-size: 1.5rem;
+  }
+  .crm-card {
+    border: 0.2px solid #130f40;
+    box-shadow: 5px 5px .5rem #487ab033,
+    -5px -5px .5rem #487ab033;
+    border-radius: 5px;
+  }
+
+  .crm-card-para,
+  .crm-card-heading {
+    width: 90%;
+  }
+  .crm-cards {
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-template-rows: repeat(3, 12rem);
+    grid-auto-rows: 12rem;
+  }
+  .crm-card-heading {
+    font-size: 1.3rem;
+  }
+  .crm-card-para {
+    font-size: 0.8rem;
+  }
+  .testimonial-heading {
+    font-size: 1.8rem;
+  }
+  .crm__consultant {
+    margin: 1rem auto;
+    width: 90%;
+  }
+  .consultant-heading {
+    font-size: 1.5rem;
+  }
+  .form-heading {
+    font-size: 1.2rem;
+  }
+  .form-input {
+    margin-bottom: 1rem;
+    margin-right: 0;
+    width: 100%;
+  }
+  .crm__support {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 1.5rem;
+    margin: 3rem 0;
+  }
+  .crm__support-content {
+    width: 100%;
+  }
+  .support-heading {
+    font-size: 1.5rem;
+    width: 100%;
+  }
+}

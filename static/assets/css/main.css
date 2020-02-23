@@ -47,14 +47,17 @@ body {
   width: 18em;
 }
 
+.logo:link,
+.logo:visited{
+  text-decoration: none;
+  color: #072a94;
+}
+
 .top-logo h3 {
   font-weight: 600;
 }
 
-.active {
-  color: #ee7a37;
-  border-bottom: 3px solid #ee7a37;
-}
+
 
 .container {
   margin-top: 4em;
@@ -70,7 +73,6 @@ main .navbar-nav, .scrollmenu {
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 1em;
   border-bottom: 2px solid #ddd;
   font-weight: 600;
 }
@@ -105,6 +107,56 @@ main .navbar-nav, .scrollmenu {
 .card-title {
   font-weight: 700;
 }
+
+.tab {
+  overflow: hidden;
+}
+
+.tab button:not(:last-child){
+  margin-right: .5rem;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  border-bottom: 4px solid #EE7A37;;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  border-bottom: 4px solid #EE7A37;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
 
 .pre-article,
 .post-article,
@@ -185,7 +237,7 @@ main .navbar-nav, .scrollmenu {
 
 footer {
   background-color: #6dbffc;
-  background-image: url("file:///C:/xampp/htdocs/binmile/assets/images/World-Map-Free-PNG-Image.png");
+  background-image: url(//assets/images/World-Map-Free-PNG-Image.png);
 }
 
 .card:nth-child(2) {
@@ -442,6 +494,9 @@ footer {
     align-self: center;
   }
 
+  .tab button{
+    font-size: .7rem;
+  }
   
   
   .footer__nav{
@@ -481,6 +536,12 @@ footer {
     width: 100%;
     right: 0rem;
     margin: 0;
+  }
+
+  .tab button{
+    font-size: .9rem;
+    margin-right: 0 !important;
+   
   }
   .card {
     margin-left: 0 !important;
@@ -528,13 +589,16 @@ footer {
     margin: 0 !important;
     
   }
-  .scrollmenu {
+  .tab {
     display: flex;
     width: 100%;
     overflow: auto;
-    white-space: nowrap;
+    white-space: wrap;
   }
 
+.tablinks{
+  min-width: 8rem;
+}
   .top-logo{
     width: 10rem;
     height: 3.5rem;

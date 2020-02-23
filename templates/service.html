@@ -6,11 +6,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon" >
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
 
   <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/service.css' %}">
+
+  <script src="https://kit.fontawesome.com/16370dbf02.js" crossorigin="anonymous"></script>
+
 
   <style>
     .parent-box {
@@ -63,11 +67,23 @@
         aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
-          <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
-          <li><a href="{% url 'posts:services' %}" class="nav-link">Services</a></li>
-          <li><a href="#" class="nav-link">About Us</a></li>
-          <li><a href="{% url 'posts:blog' %}" class="nav-link">Blog</a></li>
-          <li><a href="#" class="nav-link">Contact Us</a></li>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Services
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="service.html">Service Now</a>
+                <a href="microsoftCRM.html">Microsoft 365</a>
+                <a href="service.html">Power BI</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="aboutUs.html" class="nav-link">About Us</a></li>
+          <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+
         </ul>
       </div>
     </div>
@@ -95,7 +111,7 @@
         </ul>
       </div>
       <div class="col-md-9 tab-content">
-        <div id="menu1" class="container tab-pane active">
+        <div id="menu1" class="container tab-pane fade">
           <h1 class="article-heading">ITOM</h1>
           <p>
             A birds eye view of your IT Operations is indispensable. With various components that make up this
@@ -152,7 +168,7 @@
             edge of having a reduced time to market.
           </p>
         </div>
-        <div id="menu5" class="container tab-pane fade">
+        <div id="menu5" class="container tab-pane active">
           <h1 class="article-heading">Service Now Portal Development</h1>
           <p>
             Almost all companies face the challenge of getting rid of work complexity to make their employees
