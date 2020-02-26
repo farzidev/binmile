@@ -10,7 +10,7 @@ def post_img_dir(instance, filename):
 class Post(models.Model):
     title = models.CharField(max_length=255)
     content = RichTextField()
-    thumbail_img = models.ImageField(upload_to=post_img_dir)
+    thumbnail_img = models.ImageField(upload_to=post_img_dir)
     highlight = models.TextField()
     tags = models.TextField()
 
