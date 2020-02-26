@@ -2,7 +2,7 @@
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
 
-from .models import Post
+from .models import Post, Category
 
 
 class IndexView(TemplateView):
@@ -11,6 +11,12 @@ class IndexView(TemplateView):
 
 class BlogView(TemplateView):
     template_name = "blog.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["categories"] = Category.objects.all()
+        context["posts"] = Post.objects.all()
+        return context
 
 
 class ServicesView(TemplateView):
