@@ -1,12 +1,13 @@
+{% extends "base.html" %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html>
+{% block title %}
+    Services
+{% endblock title %}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon" >
+{% block styles %}
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
 
@@ -14,7 +15,6 @@
   <link rel="stylesheet" href="{% static 'assets/css/service.css' %}">
 
   <script src="https://kit.fontawesome.com/16370dbf02.js" crossorigin="anonymous"></script>
-
 
   <style>
     .parent-box {
@@ -54,40 +54,13 @@
       background-color: aquamarine;
     }
   </style>
-</head>
 
-<body>
-  <header>
-    <span class="top-logo">
-      <img src="{% static 'assets/images/binmile_logo.png' %}" class="img-fluid">
-    </span>
-    <div class="nav navbar navbar-expand-md">
-      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
-        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent1" aria-expanded="false"
-        aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li>
-            <div class="dropdown">
-              <button class="dropbtn">Services
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="service.html">Service Now</a>
-                <a href="microsoftCRM.html">Microsoft 365</a>
-                <a href="service.html">Power BI</a>
-              </div>
-            </div>
-          </li>
-          <li><a href="aboutUs.html" class="nav-link">About Us</a></li>
-          <li><a href="blog.html" class="nav-link">Blog</a></li>
-          <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+{% endblock styles %}
 
-        </ul>
-      </div>
-    </div>
-  </header>
+{% block content %}
+
+  {% include "header.html" %}
+
   <div class="hero">
     <div class="hero-left">
       <div class="hero-text">
@@ -308,121 +281,17 @@
     </main>
   </div>
   <!-- footer starts -->
-  <footer>
-    <section class="top-footer text-center">
-      <div class="container">
-
-        <h3 style="font-weight: bold;letter-spacing: 0.4px;color: #062772;">
-          Learn how Binmile can help you transform your business
-        </h3>
-        <div
-          style="text-align:center;margin:2em auto;border-radius: 5em;width: 10em;height:0.5em;background-color:#062772;">
-        </div>
-        <p style="letter-spacing: 0.24px; color: #062772;">
-          Do you need an elite team of technologist and idea-makers? Is quality important to you? Is scalability and
-          endless customization paramount? Do you need a brand that is built specifically for your company and can be
-          as innovative as you are?
-        </p>
-        <p style="letter-spacing: 0.24px; color: #062772;">
-          Tell us a little about your needs and a Binmile business analyst will get in touch.
-        </p>
-        <button class="estimate-btn" style="margin: 2em auto">Get an estimate</button>
-      </div>
-    </section>
-    <section class="main-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <img style="height: 6em" src="{% static 'assets/images/binmile logo.png' %}">
-            <p style="letter-spacing: 0.16px; font-size: 0.8em;">
-              Do you need an elite team of technologist and idea-makers? Is quality important to you? Is scalability
-              and endless custom ization paramount? Do you need a brand that is built specifically for your company
-              and can be as innovative as you are?
-            </p>
-            <p style="letter-spacing: 0.16px; font-size: 0.8em;">
-              Tell us a little about your needs and a Binmile business analyst will get in touch.
-            </p>
-            <p>
-              <span style="display: block;" class="bold">Binmile Technologies</span> D-42, Sector-59 Noida, UP –
-              201301, India
-            </p>
-            <p>
-              Office : <span class="bold">+1(415)-915-7177,+91.9811643424</span>
-              <br>Mail us: <span class="bold">business@binmile.com</span>
-            </p>
-          </div>
-          <div class="col-md footer-col">
-            <ul>
-              <li>
-                <h4 class="bold">Company Info</h4>
-              </li>
-              <li>
-                <div class="line"></div>
-              </li>
-              <li>About Us</li>
-              <li>Blog</li>
-              <li>Contact Us</li>
-              <li>Join the Team</li>
-              <li>Resources</li>
-            </ul>
-          </div>
-
-          <div class="col-md footer-col">
-            <ul>
-              <li>
-                <h4 class="bold">Specialities</h4>
-              </li>
-              <li>
-                <div class="line"></div>
-              </li>
-              <li>About Us</li>
-              <li>Blog</li>
-              <li>Contact Us</li>
-              <li>Join the Team</li>
-              <li>Resources</li>
-            </ul>
-          </div>
-          <div class="col-md footer-col">
-            <ul>
-              <li>
-                <h4 class="bold">Technologies</h4>
-              </li>
-              <li>
-                <div class="line"></div>
-              </li>
-              <li>About Us</li>
-              <li>Blog</li>
-              <li>Contact Us</li>
-              <li>Join the Team</li>
-              <li>Resources</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <section class="bottom-footer">
-      <div class="container">
-        <nav class="navbar navbar-expand-lg">
-          <ul class="navbar-nav bottom-nav">
-            <li>Feedback</li>
-            <li>Privacy</li>
-            <li>Terms</li>
-            <li style="margin-left:auto !important;">&copy; Binmile 2019 All Rights Reserved</li>
-          </ul>
-        </nav>
-      </div>
-    </section>
-  </footer>
+  {% include "footer.html" with extra=True %}
   <!-- footer ends -->
 
-</body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% endblock content %}
+
+{% block scripts %}
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 <script src="{% static 'assets/js/jquery.js' %}"></script>
 <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
-
 
 <script>
   $('.owl-carousel').owlCarousel({
@@ -444,4 +313,4 @@
   });
 </script>
 
-</html>
+{% endblock scripts %}

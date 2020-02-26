@@ -1,298 +1,163 @@
+{% extends "base.html" %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Binmile Home</title>
-    <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon" >
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
-    <script
-      src="https://kit.fontawesome.com/16370dbf02.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/contact.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/about.css' %}" />
-  </head>
+{% block title %}
+  {{ block.super }}
+{% endblock title %}
 
-  <body>
-    <header>
-      <span class="top-logo">
-        <img src="{% static 'assets/images/binmile_logo.png' %}" class="header__logo" />
-      </span>
-      <div class="nav navbar navbar-expand-lg">
-        <button
-          class="navbar-toggler toggler-example"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent1"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav">
-            <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
-            <li>
-              <div class="dropdown">
-                <button class="dropbtn">
-                  Services
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="{% url 'posts:services' %}">Service Now</a>
-                  <a href="{% url 'posts:microsoft-crm' %}">Microsoft 365</a>
-                  <a href="{% url 'posts:services' %}">Power BI</a>
-                </div>
-              </div>
-            </li>
-            <li><a href="{% url 'posts:about-us' %}" class="nav-link">About Us</a></li>
-            <li><a href="{% url 'posts:blog' %}" class="nav-link">Blog</a></li>
-            <li><a href="{% url 'posts:contact-us' %}" class="nav-link">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-    </header>
+{% block styles %}
 
-    <section class="about__section">
-      <img src="{% static 'assets/images/pttep.png' %}" alt="" class=" logo-float-1">
-      <img src="{% static 'assets/images/servicenow-removebg-preview.png' %}" alt="" class="logo-float-2">
-      <img src="{% static 'assets/images/specsaver.png' %}" alt="" class="logo-float-3">
-      <img src="{% static 'assets/images/dynamiccrm.svg' %}" alt="" class="logo-float-4">
-      <div class="about">
-        <h2 class="about__heading">Changing the way</h2>
-        <p class="about__para">
-          Binmile founded in January 2017, We completed our 2 years and 6 months
-          successfully. We are a group of highly aligned technical professionals
-          and we are working on Dynamics 365 CRM & ServiceNow platform. Binmile
-          forges each relationship with the intention of delivering exceptional
-          client service!! Our Mantra is “Keep Smiling and be focused“. The best
-          part of the team is that we all are aligned with work and have a
-          focused approach to get client success. We would like to grow swiftly,
-          would like to grow together as a team and would like to keep focused
-          on our Mantra. We are a team of 12 in the count and each team member
-          understands the definition of Customer Success. We are working with
-          clients in UK, USA, and India. Our vision is to become a #1
-          Organization to provide Technical Consultancy, Implementation
-          Services, Best in use Solutions, and Post live Support for Dynamics
-          365 CRM and ServiceNow Platform. We love what we do!
-        </p>
+<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
+<script
+  src="https://kit.fontawesome.com/16370dbf02.js"
+  crossorigin="anonymous"
+></script>
+<link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/contact.css' %}" />
+<link rel="stylesheet" href="{% static 'assets/css/about.css' %}" />
 
-        <button class="know-more-btn">Know More</button>
-      </div>
+{% endblock styles %}
 
-      <div class="about__info">
-        <h2 class="about__info-head">
-          Develop and Deploy Telecommunication products that change the world
-        </h2>
-        <p class="about__info-para">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
-          doloribus non ut nam! Earum nobis nulla cupiditate repellat dolore
-          perferendis doloremque placeat ex accusantium ea, modi, nesciunt
-          molestias tempora explicabo?Lorem ipsum dolor sit amet consectetur,
-          adipisicing elit. Debitis doloribus non ut nam! Earum nobis nulla
-          cupiditate repellat dolore perferendis doloremque placeat ex
-          accusantium ea, modi, nesciunt molestias tempora explicabo?
-        </p>
-      </div>
+{% block content %}
 
-      <div class="about__show">
-        <div class="about__show-content">
-          <div class="about__description">
-            <h4 class="heading-4">Lorem epsum dolar</h4>
-            <p class="paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut et
-              consectetur, recusandae molestias explicabo eaque.
-            </p>
-          </div>
-          <div class="about__description">
-            <h4 class="heading-4">Lorem epsum dolar</h4>
-            <p class="paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut et
-              consectetur, recusandae molestias explicabo eaque.
-            </p>
-          </div>
-          <div class="about__description">
-            <h4 class="heading-4">Lorem epsum dolar</h4>
-            <p class="paragraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut et
-              consectetur, recusandae molestias explicabo eaque.
-            </p>
-          </div>
-        </div>
-        <div class="about__show-gallery">
-          <figure class="gallery__item gallery__item--1">
-            <img
-              src="{% static 'assets/images/pic1.png' %}"
-              alt="Gallery image 1"
-              class="gallery__img"
-            />
-          </figure>
-          <figure class="gallery__item gallery__item--2">
-            <img
-              src="{% static 'assets/images/pic2.png' %}"
-              alt="Gallery image 2"
-              class="gallery__img"
-            />
-          </figure>
-          <figure class="gallery__item gallery__item--3">
-            <img
-              src="{% static 'assets/images/pic3.png' %}"
-              alt="Gallery image 3"
-              class="gallery__img"
-            />
-          </figure>
+  {% include "header.html" %}
 
-          <div class="quotation">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptas, laudantium!
-            </p>
-            <a href="#" class="quotation-text">Get your quotation now</a>
-          </div>
-        </div>
-      </div>
-      <div class="team">
-        <div class="team-info">
-          <h3 class="team-heading">Meet Leaders behind Binmile Technology</h3>
-          <p class="team-info-para">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
-            consequatur Lorem ipsum dolor, sit amet consectetur adipisicing
-            elit. Expedita, consequatur.
+  <section class="about__section">
+    <img src="{% static 'assets/images/pttep.png' %}" alt="" class=" logo-float-1">
+    <img src="{% static 'assets/images/servicenow-removebg-preview.png' %}" alt="" class="logo-float-2">
+    <img src="{% static 'assets/images/specsaver.png' %}" alt="" class="logo-float-3">
+    <img src="{% static 'assets/images/dynamiccrm.svg' %}" alt="" class="logo-float-4">
+    <div class="about">
+      <h2 class="about__heading">Changing the way</h2>
+      <p class="about__para">
+        Binmile founded in January 2017, We completed our 2 years and 6 months
+        successfully. We are a group of highly aligned technical professionals
+        and we are working on Dynamics 365 CRM & ServiceNow platform. Binmile
+        forges each relationship with the intention of delivering exceptional
+        client service!! Our Mantra is “Keep Smiling and be focused“. The best
+        part of the team is that we all are aligned with work and have a
+        focused approach to get client success. We would like to grow swiftly,
+        would like to grow together as a team and would like to keep focused
+        on our Mantra. We are a team of 12 in the count and each team member
+        understands the definition of Customer Success. We are working with
+        clients in UK, USA, and India. Our vision is to become a #1
+        Organization to provide Technical Consultancy, Implementation
+        Services, Best in use Solutions, and Post live Support for Dynamics
+        365 CRM and ServiceNow Platform. We love what we do!
+      </p>
+
+      <button class="know-more-btn">Know More</button>
+    </div>
+
+    <div class="about__info">
+      <h2 class="about__info-head">
+        Develop and Deploy Telecommunication products that change the world
+      </h2>
+      <p class="about__info-para">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
+        doloribus non ut nam! Earum nobis nulla cupiditate repellat dolore
+        perferendis doloremque placeat ex accusantium ea, modi, nesciunt
+        molestias tempora explicabo?Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. Debitis doloribus non ut nam! Earum nobis nulla
+        cupiditate repellat dolore perferendis doloremque placeat ex
+        accusantium ea, modi, nesciunt molestias tempora explicabo?
+      </p>
+    </div>
+
+    <div class="about__show">
+      <div class="about__show-content">
+        <div class="about__description">
+          <h4 class="heading-4">Lorem epsum dolar</h4>
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut et
+            consectetur, recusandae molestias explicabo eaque.
           </p>
         </div>
-        <div class="team-images">
-          <div class="team-image-1">
-            <div class="team__img-1"></div>
-
-            <p class="team-description">Vikram Anand</p>
-            <p class="team-position">Technical Head</p>
-          </div>
-          <div class="team-image-2">
-            <div class="team__img-2"></div>
-            <p class="team-description">Mary Smith</p>
-            <p class="team-position">Technical Head</p>
-          </div>
-          <div class="team-image-3">
-            <div class="team__img-3"></div>
-            <p class="team-description">Vikram Anand</p>
-            <p class="team-position">Technical Head</p>
-          </div>
+        <div class="about__description">
+          <h4 class="heading-4">Lorem epsum dolar</h4>
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut et
+            consectetur, recusandae molestias explicabo eaque.
+          </p>
+        </div>
+        <div class="about__description">
+          <h4 class="heading-4">Lorem epsum dolar</h4>
+          <p class="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut et
+            consectetur, recusandae molestias explicabo eaque.
+          </p>
         </div>
       </div>
-    </section>
+      <div class="about__show-gallery">
+        <figure class="gallery__item gallery__item--1">
+          <img
+            src="{% static 'assets/images/pic1.png' %}"
+            alt="Gallery image 1"
+            class="gallery__img"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--2">
+          <img
+            src="{% static 'assets/images/pic2.png' %}"
+            alt="Gallery image 2"
+            class="gallery__img"
+          />
+        </figure>
+        <figure class="gallery__item gallery__item--3">
+          <img
+            src="{% static 'assets/images/pic3.png' %}"
+            alt="Gallery image 3"
+            class="gallery__img"
+          />
+        </figure>
 
-    <!-- footer starts -->
-    <footer>
-      <section class="main-footer">
-        <div class="container">
-          <div class="row footer__info">
-            <div class="col-md-4 footer__info-content">
-              <img
-                style="height: 6em"
-                src="{% static 'assets/images/binmile logo.png' %}"
-                class="footer__img"
-              />
-              <p style="letter-spacing: 0.16px; font-size: 0.8em;">
-                Do you need an elite team of technologist and idea-makers? Is
-                quality important to you? Is scalability and endless custom
-                ization paramount? Do you need a brand that is built
-                specifically for your company and can be as innovative as you
-                are?
-              </p>
-              <p style="letter-spacing: 0.16px; font-size: 0.8em;">
-                Tell us a little about your needs and a Binmile business analyst
-                will get in touch.
-              </p>
-              <p>
-                <span style="display: block;" class="bold"
-                  >Binmile Technologies</span
-                >
-                D-42, Sector-59 Noida, UP – 201301, India
-              </p>
-              <p>
-                Office :
-                <span class="bold">+1(415)-915-7177,+91.9811643424</span>
-                <br />Mail us: <span class="bold">business@binmile.com</span>
-              </p>
-            </div>
-            <div class="footer__nav">
-              <div class="col-md footer-col footer__link">
-                <ul>
-                  <li>
-                    <h4 class="bold">Company Info</h4>
-                  </li>
-                  <li>
-                    <div class="line"></div>
-                  </li>
-                  <li>About Us</li>
-                  <li>Blog</li>
-                  <li>Contact Us</li>
-                  <li>Join the Team</li>
-                  <li>Resources</li>
-                </ul>
-              </div>
-
-              <div class="col-md footer-col footer__link">
-                <ul>
-                  <li>
-                    <h4 class="bold">Specialities</h4>
-                  </li>
-                  <li>
-                    <div class="line"></div>
-                  </li>
-                  <li>About Us</li>
-                  <li>Blog</li>
-                  <li>Contact Us</li>
-                  <li>Join the Team</li>
-                  <li>Resources</li>
-                </ul>
-              </div>
-              <div class="col-md footer-col footer__link">
-                <ul>
-                  <li>
-                    <h4 class="bold">Technologies</h4>
-                  </li>
-                  <li>
-                    <div class="line"></div>
-                  </li>
-                  <li>About Us</li>
-                  <li>Blog</li>
-                  <li>Contact Us</li>
-                  <li>Join the Team</li>
-                  <li>Resources</li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        <div class="quotation">
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptas, laudantium!
+          </p>
+          <a href="#" class="quotation-text">Get your quotation now</a>
         </div>
-      </section>
-      <section class="bottom-footer">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg">
-            <ul class="navbar-nav bottom-nav">
-              <li>Feedback</li>
-              <li>Privacy</li>
-              <li>Terms</li>
-              <li class="copyright">&copy; Binmile 2019 All Rights Reserved</li>
-            </ul>
-          </nav>
+      </div>
+    </div>
+    <div class="team">
+      <div class="team-info">
+        <h3 class="team-heading">Meet Leaders behind Binmile Technology</h3>
+        <p class="team-info-para">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita,
+          consequatur Lorem ipsum dolor, sit amet consectetur adipisicing
+          elit. Expedita, consequatur.
+        </p>
+      </div>
+      <div class="team-images">
+        <div class="team-image-1">
+          <div class="team__img-1"></div>
+
+          <p class="team-description">Vikram Anand</p>
+          <p class="team-position">Technical Head</p>
         </div>
-      </section>
-    </footer>
-    <!-- footer ends -->
-  </body>
+        <div class="team-image-2">
+          <div class="team__img-2"></div>
+          <p class="team-description">Mary Smith</p>
+          <p class="team-position">Technical Head</p>
+        </div>
+        <div class="team-image-3">
+          <div class="team__img-3"></div>
+          <p class="team-description">Vikram Anand</p>
+          <p class="team-position">Technical Head</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- footer starts -->
+  {% include "footer.html" %}
+  <!-- footer ends -->
 
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-</html>
+{% endblock content %}
+
+{% block scripts %}
+  {{ block.super }}
+{% endblock scripts %}
