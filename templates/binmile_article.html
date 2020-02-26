@@ -24,7 +24,7 @@
       Blog</a></h3>
     </span>
     <div class="nav">
-      <a href="contact.html" style="text-decoration: none; color: white;"> Contact Us</a>
+      <a href="{% url 'posts:contact-us' %}" style="text-decoration: none; color: white;"> Contact Us</a>
     </div>
   </header>
 
@@ -42,10 +42,10 @@
       </nav>
       <div class="article-header">
         <h1 id="article-title" class="bold">
-          A service experience people love to talk about
+          {{ object.title }}
         </h1>
         <div class="article-author">
-          <span>Piyush Tyagi</span>
+          <span>{{ object.author.name }} Piyush Tyagi</span>
           <span class="author-social">
             <span><i class="fab fa-facebook-f"></i></span>
             <span><i class="fab fa-linkedin"></i></span>
@@ -53,42 +53,16 @@
           </span>
         </div>
         <div class="article-info">
-          <span>26 sep,2019</span>
+          <span>{{ object.timestamp|date:'j M Y' }}</span>
           <span>5.4k Views</span>
         </div>
-        <img src="{% static 'assets/images/Image 2@2x.png' %}" class="article-image">
+        <img src="{% if object.thumbail_img %}{{ object.thumbail_img.url }}{% endif %}" class="article-image">
         <div class="pre-article">
           <span class="read-time">11 mins read</span>
-          <a href="#" class="category-button">Product</a>
+          <a href="#" class="category-button">{{ object.category }}</a>
         </div>
         <div class="article-body">
-          <p>
-            Binmile helped us focus on our core business without worrying about to service issues. Being a small team,
-            this has been extremely beneficial for us to run efficiently. Binmile have integration was a breeze and team
-            has always been very responsive while dealing with any kind of service issues. <b>Binmile helped us focus on
-              our core business</b> without worrying about to service issues. Being a small team, this has been
-            extremely
-            beneficial for us to run efficiently. Binmile have integration was a breeze and team has always been very
-            responsive while dealing with any kind of service issues.
-            <h4 class="bold" style="margin: 1em 0">Binmile helped us focus on our core business without worrying?</h4>
-            about to service issues. Being a small team, this has been extremely beneficial for us to
-            run efficiently. Binmile have integration was a breeze and team has always been very responsive while
-            dealing with any kind of service issues.
-          </p>
-          <p>
-            <h4 class="bold" style="margin: 1em 0">Business </h4>
-
-            about to service issues. Being a small team, this has been
-            extremely beneficial for us to run efficiently. Binmile have integration was a breeze and team has always
-            been very responsive while dealing with any kind of service issues. about to service issues. Being a small
-            team, this has been extremely beneficial for us to run efficiently. Binmile have integration was a breeze
-            and team has always been very responsive while dealing with any kind of service issues.about to service
-            issues. Being a small team, this has been extremely beneficial for us to run efficiently. Binmile have
-            integration was a breeze and team has always been very responsive while dealing with any kind of service
-            issues.about to service issues. Being a small team, this has been extremely beneficial for us to run
-            efficiently. Binmile have integration was a breeze and team has always been very responsive while dealing
-            with any kind of service issues.
-          </p>
+          {{ object.content|safe }}
         </div>
         <div style="width: 40%;height: 2px;background-color: lightgray;margin: 2em auto;;"></div>
       </div>
@@ -184,7 +158,6 @@
         </aside>
       </section>
     </div>
-
   </main>
 
   {% include "footer.html" %}
