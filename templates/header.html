@@ -1,0 +1,32 @@
+{% load static %}
+
+<header>
+  <span class="top-logo">
+    <img src="{% static 'assets/images/binmile_logo.png' %}" class="header__logo">
+  </span>
+  <div class="nav navbar navbar-expand-lg">
+    <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent1" aria-expanded="false"
+      aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li>
+          <div class="dropdown">
+            <button class="dropbtn">Services
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{% url 'posts:services' %}">Service Now</a>
+              <a href="{% url 'posts:microsoft-crm' %}">Microsoft 365</a>
+              <a href="{% url 'posts:services' %}">Power BI</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="{% url 'posts:about-us' %}" class="nav-link">About Us</a></li>
+        <li><a href="{% url 'posts:blog' %}" class="nav-link">Blog</a></li>
+        <li><a href="{% url 'posts:contact-us' %}" class="nav-link">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</header>
