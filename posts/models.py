@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse_lazy
 
 from ckeditor.fields import RichTextField
 
@@ -22,6 +23,9 @@ class Post(models.Model):
 
     def __str__(self):
         return str(self.title)
+
+    def get_absolute_url(self):
+        return reverse_lazy('posts:detail', kwargs={'pk': self.id})
 
 
 class Category(models.Model):
