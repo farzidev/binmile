@@ -72,7 +72,7 @@
       <!-- ALL ARTICLES -->
       <div id="Articles" class="tabcontent active">
         <div class="row article-row" style="margin-top: 3em">
-        {% for post in posts %}
+        {% for post in posts|slice:'6' %}
           <div class="col-md-4" style="margin-bottom: 3em">
             <div class="card">
               <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
@@ -112,39 +112,42 @@
       {% for category in categories %}
         <div id="{{ category.name }}" class="tabcontent">
           <div class="row article-row" style="margin-top: 3em">
-            {% for post in posts %}
-              {% if post.category == category %}
-                <div class="col-md-4" style="margin-bottom: 3em">
-                  <div class="card">
-                    <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
-                    <div class="card-body">
-                      <div class="pre-article">
-                        <a href="#" class="category-button">{{ post.category.name }}</a>
-                        <span class="read-time">11 mins read</span>
-                      </div>
-                      <h5 class="card-title">
-                        {{ post.title }}
-                      </h5>
-                      <p style="letter-spacing: 0.24px;color: #212121;">
-                        {{ post.content|safe|truncatechars_html:300 }}
-                      </p>
-                      <div class="post-article">
-                        <button class="read-more">
-                          <a href="{% url 'posts:detail' post.id %}" class="article-link"
-                            >Read More</a
-                          >
-                        </button>
-                        <span class="views">5.4k Views</span>
-                      </div>
-                      <div class="blog-info">
-                        <span class="author">Piyush Tyagi {{ post.author.name }}</span>
-                        <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+            {% with count=0 %}
+              {% for post in posts %}
+                {% if post.category == category and count < 6 %}
+                  <div class="d-none">{{ count|add:"1" }}</div>
+                  <div class="col-md-4" style="margin-bottom: 3em">
+                    <div class="card">
+                      <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+                      <div class="card-body">
+                        <div class="pre-article">
+                          <a href="#" class="category-button">{{ post.category.name }}</a>
+                          <span class="read-time">11 mins read</span>
+                        </div>
+                        <h5 class="card-title">
+                          {{ post.title }}
+                        </h5>
+                        <p style="letter-spacing: 0.24px;color: #212121;">
+                          {{ post.content|safe|truncatechars_html:300 }}
+                        </p>
+                        <div class="post-article">
+                          <button class="read-more">
+                            <a href="{% url 'posts:detail' post.id %}" class="article-link"
+                              >Read More</a
+                            >
+                          </button>
+                          <span class="views">5.4k Views</span>
+                        </div>
+                        <div class="blog-info">
+                          <span class="author">Piyush Tyagi {{ post.author.name }}</span>
+                          <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              {% endif %}
-            {% endfor %}
+                {% endif %}
+              {% endfor %}
+            {% endwith %}
           </div>
           <div style="width: 100%;text-align:center;margin:2em 0">
             <button class="load-more-btn">Load More</button>
