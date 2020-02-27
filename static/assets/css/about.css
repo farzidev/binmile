@@ -182,8 +182,9 @@
 
 .team-images {
   display: flex;
-  justify-content: space-between;
-  width: 50%;
+  justify-content: space-around;
+  width: 100%;
+  text-align: center;
   margin: 0 auto;
   padding: 2rem;
   padding-bottom: 10rem;
@@ -195,7 +196,6 @@
   width: 5rem;
   height: 5rem;
   border-radius: 100px;
-
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
