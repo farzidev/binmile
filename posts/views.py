@@ -28,6 +28,13 @@ class PostDetailView(DetailView):
     queryset = Post.objects.all()
     template_name = "binmile_article.html"
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        category = self.get_object().category
+        context["related_posts"] = Post.objects.filter(
+            category=category).order_by("-id")[:3]
+        return context
+
 
 class AboutUsView(TemplateView):
     template_name = "aboutUs.html"
