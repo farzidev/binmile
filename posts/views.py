@@ -23,10 +23,6 @@ class ServicesView(TemplateView):
     template_name = "service.html"
 
 
-class PostSampleView(TemplateView):
-    template_name = "binmile_article.html"
-
-
 class PostDetailView(DetailView):
     model = Post
     queryset = Post.objects.all()
