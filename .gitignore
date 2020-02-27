@@ -116,3 +116,5 @@ staticfiles/
 
 # development settings
 binmile/settings/dev.py
+
+README.md
