@@ -89,7 +89,7 @@
                 </p>
                 <div class="post-article">
                   <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
+                    <a href="{% url 'posts:detail' post.id %}" class="article-link"
                       >Read More</a
                     >
                   </button>
@@ -130,7 +130,7 @@
                       </p>
                       <div class="post-article">
                         <button class="read-more">
-                          <a href="binmile_article.html" class="article-link"
+                          <a href="{% url 'posts:detail' post.id %}" class="article-link"
                             >Read More</a
                           >
                         </button>
