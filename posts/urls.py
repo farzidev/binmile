@@ -1,7 +1,7 @@
 from django.urls import path
 
 from .views import (
-    IndexView, BlogView, ServicesView, PostDetailView,
+    IndexView, InsightsView, ServicesView, PostDetailView,
     AboutUsView, ContactUsView, MicrosoftCrmView
 )
 
@@ -9,7 +9,7 @@ app_name = 'posts'
 
 urlpatterns = [
     path('', IndexView.as_view(), name='index'),
-    path('blog/', BlogView.as_view(), name='blog'),
+    path('insights/', InsightsView.as_view(), name='insights'),
     path('services', ServicesView.as_view(), name='services'),
     path('post/<slug:slug>/', PostDetailView.as_view(), name='detail'),
     path('about-us/', AboutUsView.as_view(), name='about-us'),

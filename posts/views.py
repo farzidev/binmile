@@ -11,8 +11,8 @@ class IndexView(TemplateView):
     template_name = "index.html"
 
 
-class BlogView(TemplateView):
-    template_name = "blog.html"
+class InsightsView(TemplateView):
+    template_name = "insights.html"
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
