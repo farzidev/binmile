@@ -245,7 +245,7 @@
     <div class="crm__support-image"></div>
   </div>
 
-  <div class="crm__consultant">
+  <div class="crm__consultant" id="consultForm">
     <h2 class="consultant-heading">Speak to our Dynamics CRM Consultants</h2>
     <p class="consultant-para">
       We are a team of experienced Dynamics CRM developers and Consultants.
@@ -255,13 +255,41 @@
       you? Contact us, and we’ll help you to define the optimal CRM system for
       you!
     </p>
-    <h3 class="form-heading">Drop your details here</h3>
-    <form action="#" class="consultant-form">
-        <input type="text" placeholder="Name" class="form-input">
-        <input type="text" placeholder="Company" class="form-input">
-        <input type="text" placeholder="Email Id" class="form-input">
+    {% if messages %}
+      {% for message in messages %}
+        <h3 class="text-{{ message.tags }}">{{ message }}</h3>
+      {% endfor %}
+    {% else %}
+      <h3 class="form-heading">Drop your details here</h3>
+      <form action="" class="consultant-form" method="post">
+        {% csrf_token %}
+        <input type="text" value="{{ form.name.value|default_if_none:'' }}" placeholder="Name" name="name" required="" class="form-input">
+        {% if form.name.errors %}
+          <div class="text-danger">
+            {% for error in form.name.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <input type="text" value="{{ form.company.value|default_if_none:'' }}" placeholder="Company" name="company" required="" class="form-input">
+        {% if form.company.errors %}
+          <div class="text-danger">
+            {% for error in form.company.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+        <input type="text" value="{{ form.email.value|default_if_none:'' }}" placeholder="Email Id" name="email" required-x="" class="form-input">
+        {% if form.email.errors %}
+          <div class="text-danger">
+            {% for error in form.email.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
         <button class="form-btn">Submit</button>
-    </form>
+      </form>
+    {% endif %}
   </div>
 
    <!-- footer starts -->
