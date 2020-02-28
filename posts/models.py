@@ -32,7 +32,7 @@ class Post(models.Model):
         return str(self.title)
 
     def get_absolute_url(self):
-        return reverse_lazy('posts:detail', kwargs={'pk': self.id})
+        return reverse_lazy('posts:detail', kwargs={'slug': self.slug})
 
 
 @receiver(pre_save, sender=Post)

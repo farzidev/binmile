@@ -89,7 +89,7 @@
                 </p>
                 <div class="post-article">
                   <button class="read-more">
-                    <a href="{% url 'posts:detail' post.id %}" class="article-link"
+                    <a href="{{ post.get_absolute_url }}" class="article-link"
                       >Read More</a
                     >
                   </button>
@@ -130,7 +130,7 @@
                       </p>
                       <div class="post-article">
                         <button class="read-more">
-                          <a href="{% url 'posts:detail' post.id %}" class="article-link"
+                          <a href="{{ post.get_absolute_url }}" class="article-link"
                             >Read More</a
                           >
                         </button>
