@@ -50,8 +50,11 @@ class Category(models.Model):
 
 class Form(models.Model):
     name = models.CharField(max_length=255)
+    company = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField()
-    query = models.TextField()
+    message = models.TextField()
+
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return str(self.name)

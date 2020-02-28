@@ -11,4 +11,10 @@ class PostModelAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Category)
-admin.site.register(Form)
+
+
+@admin.register(Form)
+class FormModelAdmin(admin.ModelAdmin):
+    list_display = ("name", "email", "company")
+    list_filter = ("timestamp",)
+    search_fields = ("name", "email", "message", "company")
