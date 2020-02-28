@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # packages
     'ckeditor',
+    'ckeditor_uploader',
 
     # apps
     'posts',
@@ -142,7 +143,15 @@ CKEDITOR_CONFIGS = {
             ['NumberedList', 'BulletedList', 'Blockquote'],
             ['Indent', 'Outdent'],
             ['Maximize'],
+            ['lineheight'],
         ],
-        'extraPlugins': 'justify,liststyle,indent',
+        'extraPlugins': 'justify,liststyle,indent,lineheight',
     },
 }
+
+
+# django-ckeditor
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_BROWSE_SHOW_DIRS = True
