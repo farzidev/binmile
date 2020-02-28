@@ -1,8 +1,12 @@
 from django.db import models
 from django.urls import reverse_lazy
+from django.dispatch import receiver
+from django.db.models.signals import pre_save
 
 # from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+
+from .utils import create_post_slug
 
 
 def post_img_dir(instance, filename):
@@ -10,6 +14,8 @@ def post_img_dir(instance, filename):
 
 
 class Post(models.Model):
+    slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
+
     title = models.CharField(max_length=255)
     content = RichTextUploadingField()
     thumbnail_img = models.ImageField(upload_to=post_img_dir)
@@ -27,6 +33,12 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy('posts:detail', kwargs={'pk': self.id})
+
+
+@receiver(pre_save, sender=Post)
+def pre_save_post_signal(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = create_post_slug(instance)
 
 
 class Category(models.Model):
