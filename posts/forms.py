@@ -2,8 +2,12 @@ from django import forms
 
 from .models import Form
 
+from captcha.fields import ReCaptchaField
+
 
 class ContactForm(forms.ModelForm):
+    captcha = ReCaptchaField()
+
     class Meta:
         model = Form
         fields = "__all__"

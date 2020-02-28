@@ -119,6 +119,16 @@
               {% endfor %}
             </div>
           {% endif %}
+          <div class="mt-2">
+            {{ form.captcha }}
+            {% if form.captcha.errors %}
+              <div class="text-danger">
+                {% for error in form.captcha.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
           <button type="submit" class="send-btn">Send</button>
         </form>
       {% endif %}

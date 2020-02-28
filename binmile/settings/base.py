@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     # packages
     'ckeditor',
     'ckeditor_uploader',
+    'captcha',
 
     # apps
     'posts',
@@ -152,3 +153,10 @@ CKEDITOR_CONFIGS = {
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CKEDITOR_BROWSE_SHOW_DIRS = True
+
+
+# django-recaptcha
+
+RECAPTCHA_PUBLIC_KEY = '6LfLSt0UAAAAAPcynBrnYyxLnoqR74pj1MHC0rnm'
+
+RECAPTCHA_PRIVATE_KEY = '6LfLSt0UAAAAAC-fJQFJ8BT3n7rHqlzhvnj2PCC-'

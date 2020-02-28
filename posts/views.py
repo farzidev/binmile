@@ -54,6 +54,7 @@ class ContactUsView(FormView):
         return kwargs
 
     def form_valid(self, form):
+        form.cleaned_data.pop('captcha')
         Form.objects.get_or_create(**form.cleaned_data)
         messages.success(self.request, "Thanks for submitting the form.")
         form.send_mail()
@@ -72,7 +73,7 @@ class MicrosoftCrmView(FormView):
         return kwargs
 
     def form_valid(self, form):
-        form.save()
+        Form.objects.get_or_create(**form.cleaned_data)
         messages.success(self.request, "Thanks for submitting the form.")
         form.send_mail()
         return super().form_valid(form)
