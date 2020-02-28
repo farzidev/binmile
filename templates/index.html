@@ -10,6 +10,29 @@
 <script src="https://kit.fontawesome.com/16370dbf02.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
 
+<style>
+  .owl-prev {
+      width: 20px;
+      height: 90px;
+      position: absolute;
+      top: 40%;
+      margin-left: -20px;
+      display: block !important;
+      /*border: 0px solid black;*/
+  }
+
+  .owl-next {
+      width: 20px;
+      height: 90px;
+      position: absolute;
+      top: 40%;
+      right: -1px;
+      display: block !important;
+      /*border: 0px solid black;*/
+  }
+  .owl-prev i, .owl-next i { color: #fff;} /*transform : scale(1,6);*/
+</style>
+
 {% endblock styles %}
 
 {% block content %}
@@ -277,6 +300,9 @@
   $('.owl-one').owlCarousel({
     center: true,
     items: 1,
+    autoWidth:false,
+    nav: true,
+    navText : ['<i class="fa fa-2x fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>'],
     margin: 10,
     loop: true,
     autoplay: true,
