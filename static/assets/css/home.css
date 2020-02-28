@@ -496,6 +496,14 @@ footer {
   border-radius: 2em;
 }
 
+.custom-line {
+  margin: 0 auto;
+  width: 50%;
+  height: 0.3em;
+  background-color: #052458;
+  border-radius: 2em;
+}
+
 footer {
   padding-top: 1em;
 }
@@ -510,7 +518,7 @@ footer {
 }
 
 .footer-col li {
-  margin-bottom: 1.5em;
+  margin-bottom: 1.2em;
 }
 
 .footer-xs-col ul {
