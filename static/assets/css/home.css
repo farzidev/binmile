@@ -513,6 +513,15 @@ footer {
   margin-bottom: 1.5em;
 }
 
+.footer-xs-col ul {
+  list-style-type: none;
+  margin-top: 0.2em;
+}
+
+.footer-xs-col li {
+  margin-bottom: 0.8em;
+}
+
 .bottom-footer {
   background: #062772 0% 0% no-repeat padding-box;
   border-radius: 20px 20px 0px 0px;
