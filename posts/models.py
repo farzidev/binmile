@@ -1,7 +1,8 @@
 from django.db import models
 from django.urls import reverse_lazy
 
-from ckeditor.fields import RichTextField
+# from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 
 def post_img_dir(instance, filename):
@@ -10,7 +11,7 @@ def post_img_dir(instance, filename):
 
 class Post(models.Model):
     title = models.CharField(max_length=255)
-    content = RichTextField()
+    content = RichTextUploadingField()
     thumbnail_img = models.ImageField(upload_to=post_img_dir)
     highlight = models.TextField()
     tags = models.TextField()
