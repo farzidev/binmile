@@ -225,7 +225,7 @@ header {
 
 .services-card img {
   margin: 2em;
-  height: 50%;
+  height: 8rem;
 }
 
 .services-card h4 {
@@ -431,7 +431,7 @@ header {
   .nav-link:visited {
     color: white;
   }
-  
+
   .navbar-toggler {
     z-index: 999;
   }
@@ -794,7 +794,7 @@ footer {
   }
 
   #floating-image-2 {
-    
+
     margin-top: 4rem;
     margin-right: .5rem;
   }
