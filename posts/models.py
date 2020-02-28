@@ -25,6 +25,12 @@ class Post(models.Model):
     category = models.ForeignKey('Category', on_delete=models.SET_NULL,
         blank=True, null=True)
 
+    PURPOSES = (
+        ('BG', 'Blog'),
+        ('CS', 'Case Study'),
+    )
+    purpose = models.CharField(max_length=2, choices=PURPOSES)
+
     timestamp = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
