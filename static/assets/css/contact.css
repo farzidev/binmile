@@ -15,19 +15,20 @@ header {
 .contact__info {
   flex: 40%;
   transform: translateX(10rem);
+  padding-top: 1rem;
 }
 
 .contact {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  padding: 4rem 0 3rem 1rem;
-  align-items: center;
+  padding: 3rem 0 3rem 1rem;
+  align-items: start;
 }
 
 .contact__form {
   flex: 50%;
-
+  padding-top: 1rem;
   background-image: url(../images/contactUsBack.png);
   background-repeat: no-repeat;
   background-size: cover;
