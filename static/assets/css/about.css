@@ -46,6 +46,14 @@
   right: 19rem;
 }
 
+img.t789:hover {
+  -moz-transform: translate(0, -10px);
+  -ms-transform: translate(0, -10px);
+  -o-transform: translate(0, -10px);
+  -webkit-transform: translate(0, -10px);
+  transform: translate(0, -10px);
+}
+
 .know-more-btn {
   height: 3em;
   width: 14em;
