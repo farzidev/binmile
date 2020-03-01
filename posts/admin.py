@@ -6,7 +6,7 @@ from .models import Post, Category, Form
 @admin.register(Post)
 class PostModelAdmin(admin.ModelAdmin):
     list_display = ("title", "category", "get_purpose")
-    list_filter = ("category", "timestamp")
+    list_filter = ("category", "timestamp", "purpose")
     search_fields = ("title", "content")
 
     def get_purpose(self, obj):
