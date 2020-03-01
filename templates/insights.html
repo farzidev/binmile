@@ -35,24 +35,6 @@
 
   <main>
     <div class="container">
-      <!-- <div >
-        <nav class="navbar navbar-expand-lg">
-          <ul class="navbar-nav ">
-            <div class="scrollmenu">
-              <li><a href=""></a> All&nbsp;Articles</li> &nbsp; &nbsp;
-              <li class="active">Product</li> &nbsp; &nbsp;
-              <li>Data&nbsp;Science</li> &nbsp; &nbsp;
-              <li>Engineering</li> &nbsp; &nbsp;
-              <li>Technology</li> &nbsp; &nbsp;
-            </div>
-
-            <li>
-              <input type="text" class="top-search" placeholder="Search" />
-            </li>
-          </ul>
-        </nav>
-      </div> -->
-
       <div>
         <nav class="navbar navbar-expand-lg">
           <ul class="navbar-nav tab">
@@ -67,8 +49,8 @@
                   {{ category.name }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="cat_{{ category.id }}">
-                  <a class="dropdown-item" href="#!" onclick="openArticles(event, 'category_{{ category.id }}')">Blogs</a>
-                  <a class="dropdown-item" href="#!" onclick="openArticles(event, 'category_{{ category.id }}')">Case Studies</a>
+                  <a class="dropdown-item" href="#!" onclick="openArticles(event, 'category_bg_{{ category.id }}')">Blogs</a>
+                  <a class="dropdown-item" href="#!" onclick="openArticles(event, 'category_cs_{{ category.id }}')">Case Studies</a>
                 </div>
               </li>
             {% endfor %}
@@ -136,10 +118,50 @@
       </div>
 
       {% for category in categories %}
-        <div id="category_{{ category.id }}" class="tabcontent">
+        <div id="category_bg_{{ category.id }}" class="tabcontent">
           <div class="row article-row" style="margin-top: 3em">
             {% for post in posts %}
-              {% if post.category == category %}
+              {% if post.category == category and post.purpose == 'BG' %}
+                <div class="col-md-4" style="margin-bottom: 3em">
+                  <div class="card">
+                    <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+                    <div class="card-body">
+                      <div class="pre-article">
+                        <span href="#" class="category-button">{{ post.category.name }}</span>
+                        <span class="read-time">11 mins read</span>
+                      </div>
+                      <h5 class="card-title">
+                        {{ post.title }}
+                      </h5>
+                      <p style="letter-spacing: 0.24px;color: #212121;">
+                        {{ post.highlight }}
+                      </p>
+                      <div class="post-article">
+                        <button class="read-more">
+                          <a href="{{ post.get_absolute_url }}" class="article-link"
+                            >Read More</a
+                          >
+                        </button>
+                        <span class="views">5.4k Views</span>
+                      </div>
+                      <div class="blog-info">
+                        <span class="author">Piyush Tyagi</span>
+                        <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div style="width: 100%;text-align:center;margin:2em 0">
+            <button class="load-more-btn">Load More</button>
+          </div>
+        </div>
+        <div id="category_cs_{{ category.id }}" class="tabcontent">
+          <div class="row article-row" style="margin-top: 3em">
+            {% for post in posts %}
+              {% if post.category == category and post.purpose == 'CS' %}
                 <div class="col-md-4" style="margin-bottom: 3em">
                   <div class="card">
                     <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
