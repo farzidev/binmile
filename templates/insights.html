@@ -55,13 +55,37 @@
 
       <div>
         <nav class="navbar navbar-expand-lg">
-          <ul class="navbar-nav ">
-              <div class="tab">
+          <ul class="navbar-nav tab">
+            <li class="nav-item">
+              <a id="defaultOpen" onclick="openArticles(event, 'Articles')" href="#" class="nav-link tablinks">
+                All&nbsp; Articles
+              </a>
+            </li>
+            {% for category in categories %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle tablinks" href="#!" id="cat_{{ category.id }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ category.name }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="cat_{{ category.id }}">
+                  <a class="dropdown-item" href="#!" onclick="openArticles(event, 'category_{{ category.id }}')">Blogs</a>
+                  <a class="dropdown-item" href="#!" onclick="openArticles(event, 'category_{{ category.id }}')">Case Studies</a>
+                </div>
+              </li>
+            {% endfor %}
+              <!-- <div class="tab">
                 <button class="tablinks" onclick="openArticles(event, 'Articles')" id="defaultOpen">All&nbsp; Articles</button>
                 {% for category in categories %}
-                  <button class="tablinks" onclick="openArticles(event, '{{ category.name }}')">{{ category.name }}</button>
+                  <div class="dropdown show">
+                    <button class="tablinks dropdown-toggle" type="button" id="category_{{ category.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{ category.name }}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="category_{{ category.id }}">
+                      <a class="dropdown-item" onclick="openArticles(event, '{{ category.name }}')">Blogs</a>
+                      <a class="dropdown-item" onclick="openArticles(event, '{{ category.name }}')">Case Studies</a>
+                    </div>
+                  </div>
                 {% endfor %}
-              </div>
+              </div> -->
             <li>
               <input type="text" class="top-search" placeholder="Search" />
             </li>
@@ -78,7 +102,9 @@
               <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
               <div class="card-body">
                 <div class="pre-article">
-                  <a href="#" class="category-button">{{ post.category.name }}</a>
+                  <span href="#" class="category-button">
+                    {{ post.category.name }}
+                  </span>
                   <span class="read-time">11 mins read</span>
                 </div>
                 <h5 class="card-title">
@@ -110,7 +136,7 @@
       </div>
 
       {% for category in categories %}
-        <div id="{{ category.name }}" class="tabcontent">
+        <div id="category_{{ category.id }}" class="tabcontent">
           <div class="row article-row" style="margin-top: 3em">
             {% for post in posts %}
               {% if post.category == category %}
@@ -119,14 +145,14 @@
                     <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
                     <div class="card-body">
                       <div class="pre-article">
-                        <a href="#" class="category-button">{{ post.category.name }}</a>
+                        <span href="#" class="category-button">{{ post.category.name }}</span>
                         <span class="read-time">11 mins read</span>
                       </div>
                       <h5 class="card-title">
                         {{ post.title }}
                       </h5>
                       <p style="letter-spacing: 0.24px;color: #212121;">
-                        {{ post.content|safe|truncatechars_html:300 }}
+                        {{ post.highlight }}
                       </p>
                       <div class="post-article">
                         <button class="read-more">
@@ -185,8 +211,11 @@
 
 {% block scripts %}
 
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+{{ block.super }}
+
 <script>
-  function openArticles(evt, cityName) {
+  function openArticles(evt, category) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -196,12 +225,20 @@
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+    const dropdownLink = $(`#${category}`)
+    const parentTablink = $(evt.target)
+    dropdownLink.css("display", "block");
+    if (parentTablink.hasClass("tablinks")) {
+      parentTablink.addClass("active");
+    }
+    else {
+      parentTablink.parents(".nav-item").find(".tablinks").addClass("active")
+      console.log(parentTablink.closest(".tablinks"))
+    }
   }
 
   // Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
+  document.getElementById("defaultOpen").click();
   </script>
 
 {% endblock scripts %}
