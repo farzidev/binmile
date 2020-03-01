@@ -23,6 +23,7 @@ class InsightsView(ListView):
             queryset = Post.objects.filter(
                 Q(title__icontains=query) |
                 Q(content__icontains=query) |
+                Q(author__name__icontains=query) |
                 Q(category__name__icontains=query) |
                 Q(purpose__icontains=query) |
                 Q(timestamp__icontains=query)
