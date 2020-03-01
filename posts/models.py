@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse_lazy
 from django.dispatch import receiver
 from django.db.models.signals import pre_save
+from django.core.validators import MinValueValidator
 
 # from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -66,6 +67,9 @@ class Form(models.Model):
     name = models.CharField(max_length=255)
     company = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField()
+    phone_number = models.IntegerField(validators=[MinValueValidator(0)],
+        null=True, blank=True)
+    subject = models.CharField(max_length=255, null=True, blank=True)
     message = models.TextField()
 
     timestamp = models.DateTimeField(auto_now_add=True)

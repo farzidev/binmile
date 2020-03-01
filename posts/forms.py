@@ -17,9 +17,15 @@ class ContactForm(forms.ModelForm):
         page = kwargs.pop("page")
         super().__init__(*args, **kwargs)
         if page == "contact":
+            self.fields["phone_number"].required = True
+            self.fields["subject"].required = True
             self.fields["company"].required = False
             del self.fields["company"]
         elif page == "microsoft":
+            self.fields["phone_number"].required = False
+            del self.fields["phone_number"]
+            self.fields["subject"].required = False
+            del self.fields["subject"]
             self.fields["message"].required = False
             del self.fields["message"]
 
