@@ -7,222 +7,33 @@ header {
   position: unset;
 }
 
-.contact__content {
-  color: #000080;
-  padding: 7rem 0;
-}
-
-.contact__info {
-  flex: 40%;
-  transform: translateX(10rem);
-  padding-top: 1rem;
-}
-
-.contact {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 3rem 0 3rem 1rem;
-  align-items: start;
-}
-
-.contact__form {
-  flex: 50%;
-  padding-top: 1rem;
-  background-image: url(../images/contactUsBack.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.heading-2{
-  color: #000080;
-  font-weight: 600;
-}
-
-.heading{
-  color: #000080;
-}
-
-.heading::before,
-.heading::after{
-  content: "";
-  display: inline-block;
-  border: .5px solid #000080;
-  width: 5rem;
-  transform: translateY(-.5rem);
-}
-
 .input{
   border: none;
   outline: none;
-  width: 50%;
-  margin-bottom: 1rem;
-  background-color: #fff;
-  border: 1px solid #062772;
-  font-family: sans-serif;
-  padding: 1rem;
-}
-
-.form{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
+  /*margin-bottom: 1rem;*/
+  background-color: #ecf0f1;
+  /*border: 1px solid #062772;*/
+  font-family: sans-serif;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
-.input-msg{
-  width: 50%;
-  border: 1px solid #062772;
-  padding: 1rem;
+.contact-info {
+  vertical-align: bottom;
+  background: linear-gradient(to right, #44577F 0%, #2C929E 100%);
+  border-radius: 15px;
+  padding: 2rem 0;
+  color: #fff;
 }
 
-
-.send-btn{
-  height: 3em;
-  width: 14em;
-  background-color: white;
-  color: #f18e43;
-  border: 4px double #f18e43;
-  border-radius: 40px;
-  transition-duration: 0.5s;
-  margin: 1em auto;
-  background: transparent
-    linear-gradient(285deg, #fddb71 0%, #f0883f 66%, #ee7a37 100%) 0% 0%
-    no-repeat padding-box;
-  color: white;
-  outline: none;
+.contact-info a {
+  color: #fff;
 }
 
-
-
-
-
-
-
-@media (min-width: 1281px) {
-}
-/*   ##Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px*/
-@media (min-width: 1025px) and (max-width: 1280px) {
-  .nav{
-    height: 8vh;
-  }
-  .top-logo{
-    max-width: 15rem;
-  }
-}
-/*   ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px*/
-@media (min-width: 768px) and (max-width: 1024px) {
-  #navbarSupportedContent {
-    background: none;
-    position: unset;
-  }
-
-
-
-  #navbarSupportedContent li {
-    border: none;
-  }
-
-  .nav-link:link,
-  .nav-link:visited {
-    color: #fff;
-  }
-
-  .nav {
-    height: 7vh;
-  }
-
-  .contact {
-    flex-direction: column;
-  }
-  .contact__info {
-    flex: 100%;
-    min-width: 100%;
-    transform: unset;
-    padding-top: 5rem;
-  }
-
-  .contact__form {
-    flex: 100%;
-    min-width: 100%;
-    justify-content: flex-start;
-  }
-}
-/*   ##Device = Tablets, Ipads (landscape)  ##Screen = B/w 768px to 1024px*/
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-}
-/*   ##Device = Low Resolution Tablets, Mobiles (Landscape)  ##Screen = B/w 481px to 767px*/
-@media (min-width: 481px) and (max-width: 767px) {
-  .contact {
-    flex-direction: column;
-  }
-  .contact__info {
-    flex: 100%;
-    min-width: 100%;
-    transform: unset;
-    padding-top: 5rem;
-  }
-
-  .contact__form {
-    flex: 100%;
-    min-width: 100%;
-  }
-  .nav {
-    height: 7vh;
-  }
-
-  .form{
-    width: 100%;
-  }
-}
 /*   ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px*/
 @media (min-width: 320px) and (max-width: 480px) {
-  .contact {
-    flex-direction: column;
+  .contact-info {
+    height: 100%;
   }
-  .contact__info {
-    flex: 100%;
-    min-width: 100%;
-    transform: unset;
-    padding-top: 5rem;
-  }
-
-  .contact__form {
-    flex: 100%;
-    min-width: 100%;
-  }
-  .nav {
-    height: 7vh;
-  }
-  .heading-5{
-    font-size: .8rem;
-  }
-
-  .heading-3{
-    font-size: 1.5rem;
-  }
-
-  .heading-2{
-    font-size: 1.5rem;
-  }
-
-  .para{
-    font-size: .8rem;
-  }
-
-  .input, .input-msg{
-    width: 80%;
-  }
-
-  .heading{
-    font-size: 1.5rem;
-  }
-
-
 }
