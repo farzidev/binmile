@@ -82,7 +82,7 @@ class ContactUsView(FormView):
         return super().form_valid(form)
 
 
-class MicrosoftCrmView(FormView):
+class MicrosoftDynamicsView(FormView):
     template_name = "microsoftCRM.html"
     form_class = ContactForm
     success_url = "#consultForm"
