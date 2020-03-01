@@ -27,7 +27,7 @@
 .crm-heading {
   font-size: 3rem;
   font-weight: 600;
-  width: 45%;
+  /*width: 60%;*/
   color: #130f40;
 }
 
@@ -36,6 +36,7 @@
   font-weight: 600;
   color: #130f40;
   margin-top: 1.5rem;
+  width: 70%;
 }
 
 .crm-user {
@@ -46,6 +47,7 @@
   font-size: 3rem;
   font-weight: 600;
   color: #130f40;
+  text-align: center;
 }
 
 .crm-cards {
@@ -83,10 +85,12 @@
 
 }
 
-.crm-card:hover {
+.crm-card {
+  border: 0.2px solid #130f40;
   box-shadow: 5px 5px .5rem #487ab033,
     -5px -5px .5rem #487ab033;
-  border-radius: 10px;
+  /*border-radius: 10px;*/
+  border-radius: 5px;
 }
 
 .testimonial-heading {
@@ -266,6 +270,7 @@
   }
   .dynamic-crm-text {
     font-size: 0.7rem;
+    width: 100%;
   }
   .form-input {
     padding: 1rem;
@@ -322,6 +327,10 @@
   .dynamic-crm,
   .crm-user {
     padding: 1.5rem;
+  }
+  .dynamic-crm-text {
+    font-size: 0.7rem;
+    width: 100%;
   }
   .crm-heading {
     font-size: 1.5rem;
