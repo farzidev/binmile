@@ -28,6 +28,8 @@ class ContactForm(forms.ModelForm):
             del self.fields["subject"]
             self.fields["message"].required = False
             del self.fields["message"]
+            self.fields["captcha"].required = False
+            del self.fields["captcha"]
 
     def send_mail(self):
         print("SEND MAIL")
