@@ -16,32 +16,70 @@
 
 {% block content %}
 
-  {% include "header.html" %}
+{% include "header.html" %}
 
-  <div class="hero">
-    <div class="hero-left">
-      <div class="hero-text">
-        Power Platform
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-text">
+      Power Platform
+    </div>
+    <div class="hero-content">
+      <p>
+        Make informed and data driven <br>decisions in real time.
+      </p>
+    </div>
+    <button class="get-started">Let's Get Started</button>
+  </div>
+  <div class="hero-right">
+    <img
+      src="{% static 'assets/images/hero_images/power-platform-hero.jpg' %}"
+      alt="Pillar Image"
+      class="pillar-img"
+    />
+  </div>
+</div>
+<section id="power-content" class="my-5">
+  <div class="container">
+    <div class="row mt-5 pt-5">
+      <div class="col-md-4">
+        <img class="img-fluid power-img" src="{% static 'assets/images/power-bi.jpg' %}" alt="Power BI">
       </div>
-      <div class="hero-content">
+      <div class="col-md-8">
+        <h3>Power BI</h3>
         <p>
-          Make informed and data driven <br>decisions in real time.
+          Empower stakeholders by providing real time reports and data visualizations about business performance and insights for prompt and accurate decision making.
         </p>
       </div>
-      <button class="get-started">Let's Get Started</button>
     </div>
-    <div class="hero-right">
-      <img
-        src="{% static 'assets/images/hero_images/power-platform-hero.jpg' %}"
-        alt="Pillar Image"
-        class="pillar-img"
-      />
+    <div class="row mt-5 pt-5">
+      <div class="col-md-8 col-sm-4">
+        <h3>Power Automate</h3>
+        <p>
+          Minimize complexity and ease business process flow. Empower employees to create and automate workflows and tasks across multiple applications and services.
+        </p>
+      </div>
+      <div class="col-md-4 col-sm-8">
+        <img class="img-fluid power-img" src="{% static 'assets/images/power-automate.jpg' %}" alt="Power Automate">
+      </div>
+    </div>
+    <div class="row mt-5 pt-5">
+      <div class="col-md-4">
+        <img class="img-fluid power-img" src="{% static 'assets/images/power-apps.jpg' %}" alt="Power Apps">
+      </div>
+      <div class="col-md-8">
+        <h3>Power Apps</h3>
+        <p>
+          Transform, automate and digitalize manual business processes by creating customized applications instantly with require business logic and workflow capabilities.
+        </p>
+      </div>
+    </div>
     </div>
   </div>
+</section>
 
 
-   <!-- footer starts -->
-  {% include "footer.html" %}
-  <!-- footer ends -->
+ <!-- footer starts -->
+{% include "footer.html" %}
+<!-- footer ends -->
 
 {% endblock content %}

@@ -25,7 +25,7 @@
 
 .hero-right{
   width: 50%;
-  height: 70vh;
+  /*height: 70vh;*/
   position: absolute;
   top: 30%;
   right: 1rem;
@@ -33,6 +33,17 @@
 .pillar-img{
   width: 100%;
 }
+@media(max-width: 1022px) {
+  .pillar-img {
+    height: 20rem !important;
+    width: 20rem !important;
+  }
+  .hero-right{
+    /*right: 0;*/
+    width: 60%;
+  }
+}
+
 .hero-text {
   font-weight: bold;
   font-size: 2.5em;
@@ -53,4 +64,31 @@
   color: white;
   flex-basis: auto;
   font-family: "Helvetica";
+}
+
+.icon-list {
+  list-style-type: none;
+  margin: 1em;
+}
+
+.icon-list h5 {
+  font-weight: 600;
+}
+.icon-list li {
+  margin: 1em;
+}
+
+.icon-list li:nth-child(even) {
+  text-align: right;
+}
+
+.service{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.power-img{
+  height: 10rem;
+  width: 20rem;
 }
