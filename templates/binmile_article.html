@@ -70,7 +70,7 @@
         <img src="{% if object.thumbnail_img %}{{ object.thumbnail_img.url }}{% endif %}" class="article-image">
         <div class="pre-article">
           <span class="read-time">11 mins read</span>
-          <a href="#" class="category-button">{{ object.category }}</a>
+          {# <span class="category-button">{{ object.category }}</span> #}
         </div>
         <div class="article-body">
           {{ object.content|safe }}
@@ -85,7 +85,7 @@
               <img src="{% if obj.thumbnail_img %}{{ obj.thumbnail_img.url }}{% endif %}" class="card-img-top">
               <div class="card-body">
                 <div class="pre-article">
-                  <a href="#" class="category-button">{{ obj.category }}</a>
+                  <span class="category-button">{{ obj.category }}</span>
                   <span class="read-time">11 mins read</span>
                 </div>
                 <h5 class="card-title">

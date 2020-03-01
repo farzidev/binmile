@@ -107,8 +107,7 @@
                 <div class="post-article">
                   <button class="read-more">
                     <a href="{{ post.get_absolute_url }}" class="article-link"
-                      >Read More</a
-                    >
+                      >Read More</a>
                   </button>
                   <span class="views">5.4k Views</span>
                 </div>
@@ -136,7 +135,7 @@
                     <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
                     <div class="card-body">
                       <div class="pre-article">
-                        <span href="#" class="category-button">{{ post.category.name }}</span>
+                        <span class="category-button">{{ post.category.name }}</span>
                         <span class="read-time">11 mins read</span>
                       </div>
                       <h5 class="card-title">
