@@ -57,6 +57,11 @@ class AboutUsView(TemplateView):
     template_name = "aboutUs.html"
 
 
+# Power Platform View
+class PowerPFView(TemplateView):
+    template_name = "power_platform.html"
+
+
 class ContactUsView(FormView):
     template_name = "contact.html"
     form_class = ContactForm
