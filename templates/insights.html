@@ -49,8 +49,8 @@
                   {{ category.name }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="cat_{{ category.id }}">
-                  <a class="dropdown-item" href="#!" onclick="openArticles(event, 'category_bg_{{ category.id }}')">Blogs</a>
-                  <a class="dropdown-item" href="#!" onclick="openArticles(event, 'category_cs_{{ category.id }}')">Case Studies</a>
+                  <button class="dropdown-item" onclick="openArticles(event, 'category_bg_{{ category.id }}')">Blogs</button>
+                  <button class="dropdown-item" onclick="openArticles(event, 'category_cs_{{ category.id }}')">Case Studies</button>
                 </div>
               </li>
             {% endfor %}
@@ -69,7 +69,9 @@
                 {% endfor %}
               </div> -->
             <li>
-              <input type="text" class="top-search" placeholder="Search" />
+              <form action=".">
+                <input name="q" type="text" class="top-search" placeholder="Search" />
+              </form>
             </li>
           </ul>
         </nav>
@@ -77,8 +79,15 @@
 
       <!-- ALL ARTICLES -->
       <div id="Articles" class="tabcontent active">
-        <div class="row article-row" style="margin-top: 3em">
-        {% for post in posts|slice:'6' %}
+        <div class="row article-row" {% if not request.GET.q %}style="margin-top: 3em"{% endif %}>
+          {% if request.GET.q %}
+            <div class="col-md-12 my-3">
+              <h4>
+                Over {{ object_list|length }} result{{ object_list|length|pluralize }} found for <span class="text-info">"{{ request.GET.q }}"</span>
+              </h4>
+            </div>
+          {% endif %}
+        {% for post in object_list %}
           <div class="col-md-4" style="margin-bottom: 3em">
             <div class="card">
               <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
@@ -120,7 +129,7 @@
       {% for category in categories %}
         <div id="category_bg_{{ category.id }}" class="tabcontent">
           <div class="row article-row" style="margin-top: 3em">
-            {% for post in posts %}
+            {% for post in object_list %}
               {% if post.category == category and post.purpose == 'BG' %}
                 <div class="col-md-4" style="margin-bottom: 3em">
                   <div class="card">
@@ -160,7 +169,7 @@
         </div>
         <div id="category_cs_{{ category.id }}" class="tabcontent">
           <div class="row article-row" style="margin-top: 3em">
-            {% for post in posts %}
+            {% for post in object_list %}
               {% if post.category == category and post.purpose == 'CS' %}
                 <div class="col-md-4" style="margin-bottom: 3em">
                   <div class="card">
