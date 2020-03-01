@@ -15,6 +15,7 @@ def post_img_dir(instance, filename):
 
 class Post(models.Model):
     slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
+    author = models.ForeignKey('Author', on_delete=models.CASCADE, null=True)
 
     title = models.CharField(max_length=255)
     content = RichTextUploadingField()
@@ -52,6 +53,13 @@ class Category(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+
+class Author(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
 
 
 class Form(models.Model):

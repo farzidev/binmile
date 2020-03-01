@@ -34,7 +34,7 @@
           {{ object.title }}
         </h1>
         <div class="article-author">
-          <span>Piyush Tyagi</span>
+          <span>{{ object.author }}</span>
           <span class="author-social">
             <span>
               <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}&amp;title={{ object.title }}">
@@ -89,7 +89,7 @@
                   <span class="views">5.4k Views</span>
                 </div>
                 <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
+                  <span class="author">{{ obj.author }}</span>
                   <span class="blog-date">{{ obj.timestamp|date:'j M Y' }}</span>
                 </div>
               </div>
