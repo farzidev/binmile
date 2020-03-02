@@ -31,10 +31,10 @@ header {
 }
 
 .top-logo img {
-  min-height: 10vh;
+  min-height: 7vh; /* 10vh LOGO HEIGHT */
   width: 80%;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
 }
 .owl-prev,
 .owl-next {
@@ -398,6 +398,10 @@ header {
   justify-content: flex-end;
 }
 
+.bottom-nav {
+  font-size: 0.9rem;
+}
+
 .bottom-nav li:nth-child(4) {
   margin-left: auto;
   padding: 0;
@@ -510,7 +514,7 @@ footer {
 }
 
 .footer-col li {
-  margin-bottom: 1.2em;
+  margin-bottom: 0.8em;
 }
 
 .bottom-footer {
@@ -859,4 +863,8 @@ footer {
     padding: 0.5em;
     margin-left: 1rem;
   }
+}
+
+.arrow-image {
+  height: 85%;
 }

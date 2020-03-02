@@ -55,11 +55,11 @@
         </div>
         <div class="article-info">
           <span>{{ object.timestamp|date:'j M Y' }}</span>
-          <span>5.4k Views</span>
+          <!-- <span>5.4k Views</span> -->
         </div>
         <img src="{% if object.thumbnail_img %}{{ object.thumbnail_img.url }}{% endif %}" class="article-image">
         <div class="pre-article">
-          <span class="read-time">11 mins read</span>
+          <span class="read-time">{{ object.read_minutes }}</span>
           {# <span class="category-button">{{ object.category }}</span> #}
         </div>
         <div class="article-body">
@@ -76,7 +76,7 @@
               <div class="card-body">
                 <div class="pre-article">
                   <span class="category-button">{{ obj.category }}</span>
-                  <span class="read-time">11 mins read</span>
+                  <span class="read-time">{{ obj.read_minutes }}</span>
                 </div>
                 <h5 class="card-title">
                   {{ obj.title }}
@@ -86,7 +86,7 @@
                 </p>
                 <div class="post-article">
                   <a href="{{ obj.get_absolute_url }}" class="read-more">Read More</a>
-                  <span class="views">5.4k Views</span>
+                  <!-- <span class="views">5.4k Views</span> -->
                 </div>
                 <div class="blog-info">
                   <span class="author">{{ obj.author }}</span>

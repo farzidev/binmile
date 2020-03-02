@@ -3,39 +3,22 @@
 {% load static %}
 
 {% block title %}
-  BINMILE | Blog
+  BINMILE | Insights
 {% endblock title %}
 
 {% block styles %}
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css"
-/>
 <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
 
 {% endblock styles %}
 
 {% block content %}
 
-  <header>
-    <span class="top-logo">
-      <h3 class="top__logo-heading">
-        <a href="{% url 'posts:index' %}" class="logo">BIN<span
-          style="color: #EE7A37;border-right: 3px solid lightgray; padding-right: 5px"
-          >MILE</span
-        >Blog</a>
-      </h3>
-    </span>
-    <div class="nav">
-      <a href="{% url 'posts:contact-us' %}" style="text-decoration: none; color: white;"> Contact Us</a>
-
-    </div>
-  </header>
+  {% include "header.html" %}
 
   <main>
     <div class="container">
-      <div>
+      <div id="insights">
         <nav class="navbar navbar-expand-lg">
           <ul class="navbar-nav tab">
             <li class="nav-item">
@@ -54,20 +37,6 @@
                 </div>
               </li>
             {% endfor %}
-              <!-- <div class="tab">
-                <button class="tablinks" onclick="openArticles(event, 'Articles')" id="defaultOpen">All&nbsp; Articles</button>
-                {% for category in categories %}
-                  <div class="dropdown show">
-                    <button class="tablinks dropdown-toggle" type="button" id="category_{{ category.id }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      {{ category.name }}
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="category_{{ category.id }}">
-                      <a class="dropdown-item" onclick="openArticles(event, '{{ category.name }}')">Blogs</a>
-                      <a class="dropdown-item" onclick="openArticles(event, '{{ category.name }}')">Case Studies</a>
-                    </div>
-                  </div>
-                {% endfor %}
-              </div> -->
             <li>
               <form action=".">
                 <input name="q" type="text" class="top-search" placeholder="Search" />
@@ -96,7 +65,7 @@
                   <span href="#" class="category-button">
                     {{ post.category.name }}
                   </span>
-                  <span class="read-time">11 mins read</span>
+                  <span class="read-time">{{ post.read_minutes }} mins read</span>
                 </div>
                 <h5 class="card-title">
                   {{ post.title }}
@@ -109,7 +78,7 @@
                     <a href="{{ post.get_absolute_url }}" class="article-link"
                       >Read More</a>
                   </button>
-                  <span class="views">5.4k Views</span>
+                  <!-- <span class="views">5.4k Views</span> -->
                 </div>
                 <div class="blog-info">
                   <span class="author">{{ post.author }}</span>
@@ -136,7 +105,7 @@
                     <div class="card-body">
                       <div class="pre-article">
                         <span class="category-button">{{ post.category.name }}</span>
-                        <span class="read-time">11 mins read</span>
+                        <span class="read-time">{{ post.read_minutes }} mins read</span>
                       </div>
                       <h5 class="card-title">
                         {{ post.title }}
@@ -150,7 +119,7 @@
                             >Read More</a
                           >
                         </button>
-                        <span class="views">5.4k Views</span>
+                        <!-- <span class="views">5.4k Views</span> -->
                       </div>
                       <div class="blog-info">
                         <span class="author">{{ post.author }}</span>
@@ -176,7 +145,7 @@
                     <div class="card-body">
                       <div class="pre-article">
                         <span href="#" class="category-button">{{ post.category.name }}</span>
-                        <span class="read-time">11 mins read</span>
+                        <span class="read-time">{{ post.read_minutes }} mins read</span>
                       </div>
                       <h5 class="card-title">
                         {{ post.title }}
@@ -190,7 +159,7 @@
                             >Read More</a
                           >
                         </button>
-                        <span class="views">5.4k Views</span>
+                        <!-- <span class="views">5.4k Views</span> -->
                       </div>
                       <div class="blog-info">
                         <span class="author">{{ post.author }}</span>
@@ -210,13 +179,12 @@
 
       <section style="display:flex;justify-content: space-between;">
         <div class="row">
-          <img
-            src="{% static 'assets/images/arrow-image.png' %}"
-            class="col-md-6 col-xs-12 col-sm-12"
-          />
+          <aside class="col-md-6 col-lg-6 col-sm-12 col-xs-12 ">
+            <img src="{% static 'assets/images/arrow-image.png' %}" class="arrow-image">
+          </aside>
           <aside class="col-md-6 col-sm-12 col-xs-12">
             <h4 style="font-weight: bold; margin: 1.5em auto">
-              Join the 1000+ businesses using Binmile
+              Join the list of businesses whom we helped transform
             </h4>
             <p>
               We make it easier for you to focus on building great products

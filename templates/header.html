@@ -2,7 +2,9 @@
 
 <header>
   <span class="top-logo">
-    <img src="{% static 'assets/images/binmile_logo.png' %}" class="header__logo">
+    <a href="{% url 'posts:index' %}">
+      <img src="{% static 'assets/images/binmile_logo.png' %}" class="header__logo">
+    </a>
   </span>
   <div class="nav navbar navbar-expand-lg">
     <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"

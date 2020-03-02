@@ -10,6 +10,7 @@
   /* background: transparent url("../images/Rectangle.svg") 0% 0% no-repeat
     padding-box; */
   background-color: #000018;
+  /*background-color: #00C9D0;*/
   height: 100vh;
   z-index: -1;
   overflow-y: hidden;
@@ -89,6 +90,6 @@
 }
 
 .power-img{
-  height: 10rem;
-  width: 20rem;
+  height: 6rem;
+  width: 16rem;
 }
