@@ -95,3 +95,10 @@
 <!-- footer ends -->
 
 {% endblock content %}
+
+{% block scripts %}
+
+{{ block.super }}
+{% include "footer_script.html" with top_color='#000018' top_height='15vh' %}
+
+{% endblock scripts %}

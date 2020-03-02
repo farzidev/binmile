@@ -1,0 +1,13 @@
+<!-- Custom JS for background color on scrolling -->
+<script>
+    $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    if(scroll < 300){
+        $('.fixed-top').css('background', '{{ top_color }}');
+        $('.nav').css('height', '{{ top_height }}');
+    } else{
+        $('.fixed-top').css('background', '#27496d');
+        $('.nav').css('height', '8.2vh');
+    }
+});
+</script>
