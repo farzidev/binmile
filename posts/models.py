@@ -23,6 +23,8 @@ class Post(models.Model):
     thumbnail_img = models.ImageField(upload_to=post_img_dir)
     highlight = models.TextField()
     tags = models.TextField()
+    read_minutes = models.PositiveIntegerField(
+        help_text="Time needed in minutes to read this Insight")
 
     category = models.ForeignKey('Category', on_delete=models.SET_NULL,
         blank=True, null=True)
