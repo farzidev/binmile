@@ -30,9 +30,11 @@
   <main>
     <div class="container">
       <div class="article-header">
-        <h1 id="article-title" class="bold">
-          {{ object.title }}
-        </h1>
+        <!-- <h1 id="article-title" class="bold">
+        </h1> -->
+        <div>
+          {{ object.title|safe }}
+        </div>
         <div class="article-author">
           <span>{{ object.author }}</span>
           <span class="author-social">

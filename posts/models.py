@@ -4,7 +4,7 @@ from django.dispatch import receiver
 from django.db.models.signals import pre_save
 from django.core.validators import MinValueValidator
 
-# from ckeditor.fields import RichTextField
+from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 
 from .utils import create_post_slug
@@ -18,7 +18,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
     author = models.ForeignKey('Author', on_delete=models.CASCADE, null=True)
 
-    title = models.CharField(max_length=255)
+    title = RichTextField()
     content = RichTextUploadingField()
     thumbnail_img = models.ImageField(upload_to=post_img_dir)
     highlight = models.TextField()
