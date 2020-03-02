@@ -31,6 +31,16 @@
       /*border: 0px solid black;*/
   }
   .owl-prev i, .owl-next i { color: #fff;} /*transform : scale(1,6);*/
+
+  .c-item-rg-org {
+    background: transparent radial-gradient(closest-side at 74% 44%, #0A30C8 0%, #092EB9 18%, #072A94 51%, #052458 96%, #052454 100%) 0% 0% no-repeat padding-box;
+  }
+  .c-item-rg-1 {
+    background: transparent radial-gradient(closest-side at 74% 44%, rgba(5,36,84,1) 0%, rgba(5,36,88,1) 18%, rgba(7,42,148,1) 51%, rgba(9,46,185,1) 96%, rgba(10,48,200,1) 100%);
+  }
+  .c-item-rg {
+    background: transparent linear-gradient(to right, rgba(10,48,200,1), rgba(5,36,84,1));
+  }
 </style>
 
 {% endblock styles %}
@@ -42,8 +52,7 @@
   <!-- hero slider starts -->
 
   <div class="owl-one owl-carousel owl-theme">
-    <div class="owl-slide d-flex align-items-center cover"
-      style="background: transparent radial-gradient(closest-side at 74% 44%, #0A30C8 0%, #092EB9 18%, #072A94 51%, #052458 96%, #052454 100%) 0% 0% no-repeat padding-box;">
+    <div class="owl-slide d-flex align-items-center cover c-item-rg">
       <div class="container">
         <div class="row justify-content-center justify-content-md-start">
           <div class="col-10 col-md-6 static">
@@ -67,8 +76,7 @@
         </div>
       </div>
     </div>
-    <div class="owl-slide d-flex align-items-center cover"
-      style="background: transparent radial-gradient(closest-side at 74% 44%, #0A30C8 0%, #092EB9 18%, #072A94 51%, #052458 96%, #052454 100%) 0% 0% no-repeat padding-box;">
+    <div class="owl-slide d-flex align-items-center cover c-item-rg">
       <div class="container">
         <div class="row justify-content-center justify-content-md-start">
           <div class="col-10 col-md-6 static">
@@ -91,8 +99,7 @@
         </div>
       </div>
     </div>
-    <div class="owl-slide d-flex align-items-center cover"
-      style="background: transparent radial-gradient(closest-side at 74% 44%, #0A30C8 0%, #092EB9 18%, #072A94 51%, #052458 96%, #052454 100%) 0% 0% no-repeat padding-box;">
+    <div class="owl-slide d-flex align-items-center cover c-item-rg">
       <div class="container">
         <div class="row justify-content-center justify-content-md-start">
           <div class="col-10 col-md-6 static">
@@ -116,8 +123,7 @@
         </div>
       </div>
     </div>
-    <div class="owl-slide d-flex align-items-center cover"
-      style="background: transparent radial-gradient(closest-side at 74% 44%, #0A30C8 0%, #092EB9 18%, #072A94 51%, #052458 96%, #052454 100%) 0% 0% no-repeat padding-box;">
+    <div class="owl-slide d-flex align-items-center cover c-item-rg">
       <div class="container">
         <div class="row justify-content-center justify-content-md-start">
           <div class="col-10 col-md-6 static">
@@ -225,9 +231,8 @@
     <div class="row card-container text-center">
       <div class="col-md-8 offset-md-2">
         <div class="row">
-
           <div class="col-md-6 services-card col-xs-12"> <!-- -md-4 col-lg-4 -->
-            <img class="img-fluid" src="{% static 'assets/images/Cloud service.svg' %}">
+            <img class="img-fluid" src="{% static 'assets/images/integration-card.jpg' %}">
             <h4>Integration</h4>
             <p>
               Agility is what we believe in. Our team of experts will help you with seamless integration of applications and tools, so that you as a business can get maximum ROI and experience an optimum digital transformation journey.

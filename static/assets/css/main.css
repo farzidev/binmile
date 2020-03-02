@@ -331,13 +331,13 @@ main .container {
 .line {
   width: 50%;
   height: 0.3em;
-  background-color: #052458;
+  background-color: #fff; /*#052458;*/
   border-radius: 2em;
 }
 
 /* FOOTER STYLES */
 .main-footer {
-  background-color: #6dbffc;
+  background-color: #27496d; /*#6dbffc;*/
   background-image: url(../images/World-Map-Free-PNG-Image.png);
   background-size: 70%;
   background-size: contain;
@@ -451,7 +451,7 @@ main .container {
 }
 
 footer {
-  background-color: #6dbffc;
+  background-color: #27496d; /*#6dbffc;*/
   background-image: url(//assets/images/World-Map-Free-PNG-Image.png);
   /* -webkit-clip-path: polygon(6% 0, 94% 0, 100% 100%, 0% 100%);
   clip-path: polygon(6% 0, 94% 0, 100% 100%, 0% 100%);
@@ -461,7 +461,7 @@ footer {
   border-bottom: 1px solid #062772;
 }
 .main-footer {
-  color: #062772;
+  color: #fff; /*#062772;*/
 }
 
 footer {
