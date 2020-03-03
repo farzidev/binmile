@@ -6,7 +6,7 @@
   font-family: "Open Sans";
 }
 
-.nav-pillar {
+#services-menu .nav-pillar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -21,13 +21,13 @@
 }
 
 
-.nav-pillar li{
+#services-menu .nav-pillar li{
   margin: 0 !important;
 }
 
 
 
-.nav li {
+#services-menu .nav li {
   padding: 0.5em;
 }
 

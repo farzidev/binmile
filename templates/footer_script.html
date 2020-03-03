@@ -3,11 +3,11 @@
     $(window).scroll(function(){
     var scroll = $(window).scrollTop();
     if(scroll < 300){
-        $('.fixed-top').css('background', '{{ top_color }}');
-        $('.nav').css('height', '{{ top_height }}');
+        $('header .fixed-top').css('background', '{{ top_color }}');
+        $('header .nav').css('height', '{{ top_height }}');
     } else{
-        $('.fixed-top').css('background', '#27496d');
-        $('.nav').css('height', '8.2vh');
+        $('header .fixed-top').css('background', '#27496d');
+        $('header .nav').css('height', '8.2vh');
     }
 });
 </script>

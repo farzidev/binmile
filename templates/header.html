@@ -1,6 +1,6 @@
 {% load static %}
 
-<header>
+<header style="z-index: 9999999;">
   <div class="nav navbar {% if fixed|default_if_none:1 %}fixed-top{% endif %} navbar-expand-lg">
     <span class="top-logo">
       <a href="{% url 'posts:index' %}">
@@ -15,7 +15,7 @@
         <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
         <li>
           <div class="dropdown">
-            <button class="dropbtn">Services
+            <button class="dropbtn">Solutions
               <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">

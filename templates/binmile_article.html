@@ -59,7 +59,7 @@
         </div>
         <img src="{% if object.thumbnail_img %}{{ object.thumbnail_img.url }}{% endif %}" class="article-image">
         <div class="pre-article">
-          <span class="read-time">{{ object.read_minutes }}</span>
+          <span class="read-time">{{ object.read_minutes }} mins read</span>
           {# <span class="category-button">{{ object.category }}</span> #}
         </div>
         <div class="article-body">
@@ -76,7 +76,7 @@
               <div class="card-body">
                 <div class="pre-article">
                   <span class="category-button">{{ obj.category }}</span>
-                  <span class="read-time">{{ obj.read_minutes }}</span>
+                  <span class="read-time">{{ obj.read_minutes }} mins read</span>
                 </div>
                 <h5 class="card-title">
                   {{ obj.title }}
@@ -101,7 +101,9 @@
       <section style="display:flex;justify-content: space-between; margin:4em">
         <img src="{% static 'assets/images/arrow-image.png' %}" class="col-md-6">
         <aside class="col-md-6">
-          <h4 style="font-weight: bold; margin: 1.5em auto">Join the 1000+ businesses using Binmile</h4>
+          <h4 style="font-weight: bold; margin: 1.5em auto">
+            Join the list of businesses whom we helped transform
+          </h4>
           <p>
             We make it easier for you to focus on building great products while we work on simplifying your technology.
             Become one of us by joining thousands of our happy users and simplify the online experience for your
