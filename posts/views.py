@@ -66,7 +66,7 @@ class PowerPFView(TemplateView):
 class ContactUsView(FormView):
     template_name = "contact.html"
     form_class = ContactForm
-    success_url = "#contactForm"
+    success_url = "#"
     page = "contact"
 
     def get_form_kwargs(self, **kwargs):
