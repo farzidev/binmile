@@ -1,6 +1,6 @@
 .nav {
   background-color: #052454;
-  height: 13vh;
+  height: 15vh;
 }
 
 header {
@@ -115,10 +115,10 @@ header {
 /*   ##Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px*/
 @media (min-width: 1025px) and (max-width: 1280px) {
   .nav{
-    height: 8vh;
+    height: 15vh;
   }
   .top-logo{
-    max-width: 15rem;
+    max-width: 15vw;
   }
 }
 /*   ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px*/

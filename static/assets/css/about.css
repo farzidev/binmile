@@ -79,7 +79,7 @@ img.t789:hover {
   background-image: url(../images/Aboutbackground.png);
   background-repeat: no-repeat;
   background-size: contain;
-
+  margin-top: 5rem;
   width: 100%;
   position: relative;
 }
