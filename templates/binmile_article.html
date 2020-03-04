@@ -76,7 +76,9 @@
         {% for obj in related_posts %}
           <div class="col-md-4">
             <div class="card">
-              <img src="{% if obj.thumbnail_img %}{{ obj.thumbnail_img.url }}{% endif %}" class="card-img-top">
+              <a href="{{ obj.get_absolute_url }}">
+                <img src="{% if obj.thumbnail_img %}{{ obj.thumbnail_img.url }}{% endif %}" class="card-img-top">
+              </a>
               <div class="card-body">
                 <div class="pre-article">
                   <span class="category-button">{{ obj.category }}</span>

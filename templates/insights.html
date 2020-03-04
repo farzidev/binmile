@@ -59,7 +59,9 @@
         {% for post in object_list %}
           <div class="col-md-4" style="margin-bottom: 3em">
             <div class="card">
-              <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+              <a href="{{ post.get_absolute_url }}">
+                <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+              </a>
               <div class="card-body">
                 <div class="pre-article">
                   <span href="#" class="category-button">
@@ -109,7 +111,9 @@
               {% if post.category == category and post.purpose == 'BG' %}
                 <div class="col-md-4" style="margin-bottom: 3em">
                   <div class="card">
-                    <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+                    <a href="{{ post.get_absolute_url }}">
+                      <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+                    </a>
                     <div class="card-body">
                       <div class="pre-article">
                         <span class="category-button">{{ post.category.name }}</span>
@@ -157,7 +161,9 @@
               {% if post.category == category and post.purpose == 'CS' %}
                 <div class="col-md-4" style="margin-bottom: 3em">
                   <div class="card">
-                    <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+                    <a href="{{ post.get_absolute_url }}">
+                      <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+                    </a>
                     <div class="card-body">
                       <div class="pre-article">
                         <span href="#" class="category-button">{{ post.category.name }}</span>
