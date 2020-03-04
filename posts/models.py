@@ -16,7 +16,8 @@ def post_img_dir(instance, filename):
 
 class Post(models.Model):
     slug = models.SlugField(max_length=255, unique=True, null=True, blank=True)
-    author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True,
+        blank=True)
 
     title = models.CharField(max_length=255)
     content = RichTextUploadingField()
