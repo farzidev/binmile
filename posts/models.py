@@ -24,7 +24,7 @@ class Post(models.Model):
     highlight = models.TextField()
     tags = models.TextField()
     read_minutes = models.PositiveIntegerField(
-        help_text="Time needed in minutes to read this Insight")
+        help_text="Time needed in minutes to read this Insight", blank=True)
 
     category = models.ForeignKey('Category', on_delete=models.SET_NULL,
         blank=True, null=True)
