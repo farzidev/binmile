@@ -409,6 +409,7 @@ header {
 .footer__nav {
   display: flex;
   flex: 50%;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 1000px) {
@@ -752,11 +753,11 @@ footer {
     flex-direction: row;
   }
 
-  .copyright {
+  /*.copyright {
     position: absolute;
     top: 70%;
     left: 25%;
-  }
+  }*/
 
   .bottom-nav li {
     flex: 40%;
@@ -821,7 +822,7 @@ footer {
   }
   .top-logo {
     max-width: 40rem;
-    height: 5rem;
+    height: 3rem;
   }
   .header__logo {
     max-width: 10rem !important;
@@ -861,6 +862,9 @@ footer {
   .nav li{
     padding: 0.5em;
     margin-left: 1rem;
+  }
+  .arrow-image{
+    max-width: 100%;
   }
 }
 

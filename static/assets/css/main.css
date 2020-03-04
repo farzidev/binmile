@@ -356,6 +356,7 @@ main .container {
 .footer__nav {
   display: flex;
   flex: 50%;
+  flex-wrap: wrap;
 }
 
 .bottom-nav {
@@ -734,13 +735,15 @@ footer {
     overflow: auto;
     white-space: wrap;
   }
-
-.tablinks{
-  min-width: 8rem;
-}
-  .top-logo{
+  .arrow-image{
+    max-width: 100%;
+  }
+  .tablinks{
+    min-width: 8rem;
+  }
+  header .top-logo{
     width: 10rem;
-    height: 3.5rem;
+    height: 3rem;
   }
   .top__logo-heading{
     font-size: 1rem;
