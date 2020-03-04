@@ -65,7 +65,11 @@
                   <span href="#" class="category-button">
                     {{ post.category.name }}
                   </span>
-                  <span class="read-time">{{ post.read_minutes }} mins read</span>
+                  <span class="read-time">
+                    {% if post.read_minutes %}
+                      {{ post.read_minutes }} mins read
+                    {% endif %}
+                  </span>
                 </div>
                 <h5 class="card-title">
                   {{ post.title }}
@@ -81,7 +85,11 @@
                   <!-- <span class="views">5.4k Views</span> -->
                 </div>
                 <div class="blog-info">
-                  <span class="author">{{ post.author }}</span>
+                  <span class="author">
+                    {% if post.author %}
+                      {{ post.author }}
+                    {% endif %}
+                  </span>
                   <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
                 </div>
               </div>
@@ -105,7 +113,11 @@
                     <div class="card-body">
                       <div class="pre-article">
                         <span class="category-button">{{ post.category.name }}</span>
-                        <span class="read-time">{{ post.read_minutes }} mins read</span>
+                        <span class="read-time">
+                          {% if post.read_minutes %}
+                            {{ post.read_minutes }} mins read
+                          {% endif %}
+                        </span>
                       </div>
                       <h5 class="card-title">
                         {{ post.title }}
@@ -122,7 +134,11 @@
                         <!-- <span class="views">5.4k Views</span> -->
                       </div>
                       <div class="blog-info">
-                        <span class="author">{{ post.author }}</span>
+                        <span class="author">
+                          {% if post.author %}
+                            {{ post.author }}
+                          {% endif %}
+                        </span>
                         <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
                       </div>
                     </div>
@@ -145,7 +161,11 @@
                     <div class="card-body">
                       <div class="pre-article">
                         <span href="#" class="category-button">{{ post.category.name }}</span>
-                        <span class="read-time">{{ post.read_minutes }} mins read</span>
+                        <span class="read-time">
+                          {% if post.read_minutes %}
+                            {{ post.read_minutes }} mins read
+                          {% endif %}
+                        </span>
                       </div>
                       <h5 class="card-title">
                         {{ post.title }}
@@ -162,7 +182,11 @@
                         <!-- <span class="views">5.4k Views</span> -->
                       </div>
                       <div class="blog-info">
-                        <span class="author">{{ post.author }}</span>
+                        <span class="author">
+                          {% if post.author %}
+                            {{ post.author }}
+                          {% endif %}
+                        </span>
                         <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
                       </div>
                     </div>
