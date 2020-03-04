@@ -330,7 +330,7 @@ main .container {
 
 .line {
   width: 50%;
-  height: 0.3em;
+  height: 0.1em;
   background-color: #fff; /*#052458;*/
   border-radius: 2em;
 }
@@ -343,6 +343,10 @@ main .container {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center bottom;
+}
+
+.main-footer .row > div:nth-child(2) {
+  margin-left: 4em;
 }
 
 .bottom-footer > .container {
