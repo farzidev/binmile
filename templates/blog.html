@@ -1,0 +1,935 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="{% static 'assets/images/faviconlogo.png' %}"
+      type="image/x-icon"
+    />
+
+    <title>BINMILE | Blog</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css' />
+
+
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
+
+    <script
+      src="https://kit.fontawesome.com/16370dbf02.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <header class="header fixed-top" id="navbar">
+      <span class="top-logo top__logo blog-top-logo">
+        <h3 class="top__logo-heading">
+          <a href="{% url 'posts:index' %}" class="logo"
+            >BIN<span
+              style="color: #EE7A37;border-right: 3px solid lightgray; padding-right: 5px"
+              >MILE</span
+            >
+            Blog</a
+          >
+        </h3>
+      </span>
+      <div class="nav navbar navbar-expand-lg nav-1 ">
+        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
+          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent1" aria-expanded="false"
+          aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
+        <div class="collapse navbar-collapse blog_navigation" id="navbarSupportedContent">
+          <ul class="navbar-nav blog-nav " id="navbar-1">
+            <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
+            <li>
+              <div class="dropdown">
+                <button class="dropbtn">Solutions
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="{% url 'posts:services' %}">ServiceNow</a>
+                  <a href="{% url 'posts:microsoft-dynamics-365' %}">Microsoft Dynamics 365</a>
+                  <a href="{% url 'posts:power-platform' %}">Power Platform</a>
+                </div>
+              </div>
+            </li>
+            <li><a href="{% url 'posts:about-us' %}" class="nav-link">About Us</a></li>
+            <li><a href="{% url 'posts:insights' %}" class="nav-link">Insights</a></li>
+            <li><a href="{% url 'posts:contact-us' %}" class="nav-link">Contact Us</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- <div >
+          <nav class="navbar navbar-expand-lg">
+            <ul class="navbar-nav ">
+              <div class="scrollmenu">
+                <li><a href=""></a> All&nbsp;Articles</li> &nbsp; &nbsp;
+                <li class="active">Product</li> &nbsp; &nbsp;
+                <li>Data&nbsp;Science</li> &nbsp; &nbsp;
+                <li>Engineering</li> &nbsp; &nbsp;
+                <li>Technology</li> &nbsp; &nbsp;
+              </div>
+
+              <li>
+                <input type="text" class="top-search" placeholder="Search" />
+              </li>
+            </ul>
+          </nav>
+        </div> -->
+
+        <div>
+          <nav class="navbar navbar-expand-lg blog-top-nav">
+            <ul class="navbar-nav ">
+              <div class="tab">
+                <button
+                  class="tablinks"
+                  onclick="openArticles(event, 'Articles')"
+                  id="defaultOpen"
+                >
+                  All&nbsp; Articles
+                </button>
+                {% for category in categories %}
+                  <button
+                    class="tablinks"
+                    onclick="openArticles(event, 'cat_{{ category.id }}')"
+                  >
+                    {{ category.name }}
+                  </button>
+                {% endfor %}
+              </div>
+              <li>
+                <input type="text" class="top-search" placeholder="Search" />
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div id="Articles" class="tabcontent active">
+          <div class="row article-row" style="margin-top: 3em">
+            <div class="card col-md mr-4">
+              <a href="binmile_article.html">
+                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
+              </a>
+
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+            <div class="card col-md">
+              <a href="binmile_article.html">
+                <img
+                src="{% static 'assets/images/ARPU-blog-header.png' %}"
+                class="card-img-top"
+              />
+              </a>
+
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+            <div class="card col-md ml-4 card-resp">
+              <a href="binmile_article.html">
+                <img
+                src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}"
+                class="card-img-top"
+              />
+              </a>
+
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row article-row" style="margin-top: 3em">
+            <div class="card col-md mr-4">
+              <a href="binmile_article.html">
+                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
+
+              </a>
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+            <div class="card col-md">
+              <a href="binmile_article.html">
+                <img
+                src="{% static 'assets/images/ARPU-blog-header.png' %}"
+                class="card-img-top"
+              />
+              </a>
+
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+            <div class="card col-md ml-4 card-resp">
+
+              <a href="binmile_article.html">
+                <img
+                src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}"
+                class="card-img-top"
+              />
+              </a>
+
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="width: 100%;text-align:center;margin:2em 0">
+            <button class="load-more-btn">Load More</button>
+          </div>
+        </div>
+        <div id="Product" class="tabcontent">
+          <div class="row article-row" style="margin-top: 3em">
+            <div class="card col-md mr-4">
+
+              <a href="binmile_article.html">
+                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
+
+              </a>
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+            <div class="card col-md">
+              <a href="binmile_article.html">
+                <img
+                src="{% static 'assets/images/ARPU-blog-header.png' %}"
+                class="card-img-top"
+              />
+              </a>
+
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+            <div class="card col-md ml-4 card-resp">
+
+              <a href="binmile_article.html">
+                <img
+                src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}"
+                class="card-img-top"
+              />
+              </a>
+
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="width: 100%;text-align:center;margin:2em 0">
+            <button class="load-more-btn">Load More</button>
+          </div>
+        </div>
+
+        <div id="Science" class="tabcontent">
+          <div class="row article-row" style="margin-top: 3em">
+            <div class="card col-md mr-4">
+
+              <a href="binmile_article.html">
+                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
+
+              </a>
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+            <div class="card col-md">
+              <a href="binmile_article.html">
+                <img
+                src="{% static 'assets/images/ARPU-blog-header.png' %}"
+                class="card-img-top"
+              />
+              </a>
+
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="width: 100%;text-align:center;margin:2em 0">
+            <button class="load-more-btn">Load More</button>
+          </div>
+        </div>
+
+        <div id="Engineering" class="tabcontent">
+          <div class="row article-row" style="margin-top: 3em">
+            <div class="card col-md mr-4">
+              <a href="binmile_article.html">
+                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
+
+              </a>
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+            <div class="card col-md">
+              <a href="binmile_article.html">
+                <img
+                src="{% static 'assets/images/ARPU-blog-header.png' %}"
+                class="card-img-top"
+              />
+              </a>
+
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+            <div class="card col-md ml-4 card-resp">
+              <a href="binmile_article.html">
+                <img
+                src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}"
+                class="card-img-top"
+              />
+              </a>
+
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="width: 100%;text-align:center;margin:2em 0">
+            <button class="load-more-btn">Load More</button>
+          </div>
+        </div>
+
+        <div id="Technology" class="tabcontent">
+          <div class="row article-row" style="margin-top: 3em">
+            <div class="card col-md mr-4">
+              <a href="binmile_article.html">
+                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
+              </a>
+              <div class="card-body">
+                <div class="pre-article">
+                  <a href="#" class="category-button">Product</a>
+                  <span class="read-time">11 mins read</span>
+                </div>
+                <h5 class="card-title">
+                  A service experience people love to talk about
+                </h5>
+                <p style="letter-spacing: 0.24px;color: #212121;">
+                  Binmile helped us focus on our core business without worrying
+                  about to service issues. Being a small team, this has been
+                  extremely beneficial for us to run efficiently. Binmile have
+                  integration was a breeze and team has always been very
+                  responsive while dealing with any kind of service issues.
+                </p>
+                <div class="post-article">
+                  <button class="read-more">
+                    <a href="binmile_article.html" class="article-link"
+                      >Read More</a
+                    >
+                  </button>
+                  <span class="views">5.4k Views</span>
+                </div>
+                <div class="blog-info">
+                  <span class="author">Piyush Tyagi</span>
+                  <span class="blog-date">26 Sept, 2019</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="width: 100%;text-align:center;margin:2em 0">
+            <button class="load-more-btn">Load More</button>
+          </div>
+        </div>
+
+        <section style="display:flex;justify-content: space-between;">
+          <div class="row article-section">
+            <a href="binmile_article.html">
+              <img
+              src="{% static 'assets/images/arrow-image.png' %}"
+              class="col-md-6 col-xs-12 col-sm-12 arrow-image"
+            />
+            </a>
+
+            <aside class="col-md-6 col-sm-12 col-xs-12 article-content">
+              <h4 style="font-weight: bold; margin: 1.5em auto">
+                Join the list of businesses whom we helped transform
+              </h4>
+              <p>
+                We make it easier for you to focus on building great products
+                while we work on simplifying your technology. Become one of us
+                by joining thousands of our happy users and simplify the online
+                experience for your customers.
+              </p>
+              <p>
+                Focus on your business while we handle the complexities of
+                technology for you.
+              </p>
+              <button class="get-in-touch"> <a href="{% url 'posts:contact-us' %}" class="contact-link">Get in touch</a></button>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- footer starts -->
+    <footer class="footer">
+      <section class="top-footer text-center">
+        <div class="container">
+          <h3
+            style="font-weight: bold;letter-spacing: 0.4px;color: #062772;"
+            class="footer-heading"
+          >
+            Explore how Binmile can help your business in its digital
+            transformation journey
+          </h3>
+          <div
+            style="text-align:center;margin:2em auto;border-radius: 5em;width: 10em;height:0.5em;background-color:#062772;"
+          ></div>
+          <p style="letter-spacing: 0.24px; color: #062772;">
+            Do you need an elite team of technologist and idea-makers? Is
+            quality important to you? Is scalability and endless customization
+            paramount? Do you need a brand that is built specifically for your
+            company and can be as innovative as you are?
+          </p>
+          <p style="letter-spacing: 0.24px; color: #062772;">
+            Contact our Business Analyst and get the journey started.
+          </p>
+          <button class="estimate-btn" style="margin: 2em auto">
+            <a href="{% url 'posts:contact-us' %}" class="contact-link">Get an estimate</a>
+          </button>
+        </div>
+      </section>
+      <section class="main-footer">
+        <div class="container">
+          <div class="row footer__info">
+            <div class="col-md-4 footer__info-content">
+              <img
+                style="height: 5em"
+                src="{% static 'assets/images/fotter-logo.png' %}"
+                class="footer__img"
+              />
+              <div class="contact-info">
+                <!-- <h5 class="contact-call">Call</h5>
+            <p class="contact-num">+1(415)-915-7177</p>
+
+              <p class="contact-num">+91.9811643424</p> -->
+                <a href="mailto:business@binmile.com" class="join-us"
+                  >Join Us</a
+                >
+              </div>
+
+              <div class="social-icon">
+                <a
+                  href="https://www.facebook.com/binmiletechnologies/"
+                  class="social-links"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com/BMT55914497" class="social-links">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="https://www.instagram.com/binmile/?hl=en"
+                  class="social-links"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a
+                  href="http://linkedin.com/company/binmile-technologies"
+                  class="social-links"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+            <div class="footer__nav">
+              <div class="col-md footer-col footer__link">
+                <ul>
+                  <li>
+                    <h4 class="bold">Solutions</h4>
+                  </li>
+                  <li>
+                    <div class="line"></div>
+                  </li>
+                  <li>
+                    <a href="{% url 'posts:services' %}" class="footer-links"> ServiceNow</a>
+                  </li>
+                  <li>
+                    <a href="{% url 'posts:microsoft-dynamics-365' %}" class="footer-links">
+                      Dynamics 365</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{% url 'posts:power-platform' %}" class="footer-links"
+                      >Power Platform</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md footer-col footer__link">
+                <ul>
+                  <li>
+                    <h4 class="bold">Services</h4>
+                  </li>
+                  <li>
+                    <div class="line"></div>
+                  </li>
+                  <li><a href="#advisory"class="footer-links">Advisory</a></li>
+                  <li><a href="#implementation"class="footer-links">Implementations</a></li>
+                  <li><a href="#customization"class="footer-links">Customization</a></li>
+                  <li><a href="#integration"class="footer-links">Integration</a></li>
+                  <li><a href="#automation"class="footer-links">Automation Testing</a></li>
+                </ul>
+              </div>
+              <div class="col-md footer-col footer__link">
+                <ul>
+                  <li>
+                    <h4 class="bold">Insight</h4>
+                  </li>
+                  <li>
+                    <div class="line"></div>
+                  </li>
+                  <li><a href="{% url 'posts:insights' %}" class="footer-links">Blogs</a></li>
+                  <li>
+                    <a href="{% url 'posts:insights' %}" class="footer-links">Case Studies</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="bottom-footer">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg">
+            <ul class="navbar-nav bottom-nav">
+              <li class="copyright">&copy; Binmile 2019 All Rights Reserved</li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </footer>
+    <!-- footer ends -->
+
+    <!-- <div class="float-contact">
+      <a href="{% url 'posts:contact-us' %}">
+        <img
+          src="{% static 'assets/images/hero_images/support.png' %}"
+          alt=""
+          class="support-image"
+        />
+      </a>
+    </div> -->
+  </body>
+
+<script src="//code.tidio.co/ntbvrxc2bygx9vrnptufdvakjunxcnsw.js" async></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+  <script>
+    function openArticles(evt, cityName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+  </script>
+
+  <script>
+    $(document).ready(function(){
+  $(window).scroll(function(){
+  	var scroll = $(window).scrollTop();
+	  if (scroll > 700) {
+	    $("#navbar").css("background" , "#062772"),
+      $("#navbar").css("height" , "8vh" ),
+      $(".dropdown").css("transform", "translateY(-2px)");
+	  }
+
+	  else{
+		  $("#navbar").css("background" , "transparent");
+	  }
+  })
+});
+
+/** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
+$(document).ready(function () {
+     $(document).click(function (event) {
+         var clickover = $(event.target);
+         var _opened = $(".navbar-collapse").hasClass("show");
+         if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+             $(".navbar-toggler").click();
+         }
+     });
+ });
+
+ $('.dropdown').on('click', function(event){
+    // The event won't be propagated up to the document NODE and
+    // therefore delegated events won't be fired
+    event.stopPropagation();
+});
+  </script>
+</html>
