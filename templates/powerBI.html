@@ -1,0 +1,180 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power BI</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'assets/images/faviconlogo.png"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/service.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/crm.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/powerbi.css' %}" />
+
+    <script
+      src="https://kit.fontawesome.com/16370dbf02.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    {% include "header.html" %}
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-text">
+          <h1>POWER PLATFORM</h1>
+          <h2 class="header-text">Make informed and data driven
+            decisions in real time.</h2>
+        </div>
+        <button class="get-started"><a href="{% url 'posts:contact-us' %}" class="contact-link">Let's Get Started</a></button>
+      </div>
+      <div class="hero-right">
+        <img
+          src="{% static 'assets/images/team/powerbi1.png' %}"
+          alt="Pillar Image"
+          class="pillar-img"
+        />
+      </div>
+    </div>
+
+
+    <div class="bi__info">
+        <p class="bi__info-text">
+            Team Binmile understands data. We know how valuable your data is and how it can be used to drive your company forward. We were built on the concept of making data highly available and spontaneously actionable.
+        </p>
+      </div>
+
+
+      <div class="bi__secondary-heading">
+          <h1 class="bi-heading">Connect to data instantly</h1>
+      </div>
+
+      <div class="bi__content">
+          <div class="bi__content-img">
+            <img src="{% static 'assets/images/powerbi2.png' %}" alt="" class="content-img">
+          </div>
+          <div class="bi__content-info">
+              <ul class="list-content">
+                  <li class="mb-small">Employ streaming technology to see real-time data. (IoT Metrics)</li>
+                  <li class="mb-small"> Connect to many of your favorite assets (Dynamics 365, Mail Chimp, Quickbooks, Facebook, and More!)</li>
+                  <li class="mb-small">Build reactive dashboards to uncover trends. </li>
+                  <li class="mb-small">Build content packs to deliver dashboard sets to yourstaff quickly.</li>
+                  <li> Secure data by user roles.</li>
+              </ul>
+          </div>
+      </div>
+
+
+
+
+
+    <div class="crm__consultant" id="consultForm">
+        <h2 class="consultant-heading">It Starts with a Conversation</h2>
+        <p class="consultant-para">
+            Fill out the information below and let’s explore how we can help.
+        </p>
+        {% if messages %}
+            {% for message in messages %}
+                <h3 class="text-{{ message.tags }}">{{ message }}</h3>
+            {% endfor %}
+        {% else %}
+            <h3 class="form-heading">Drop your details here</h3>
+            <form action="." class="consultant-form" method="post">
+              {% csrf_token %}
+              <input type="text" placeholder="Name" name="name" required="" value="{{ form.name.value|default_if_none:'' }}" class="form-input">
+              {% if form.name.errors %}
+                <div class="text-danger">
+                  {% for error in form.name.errors %}
+                  <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <input type="text" value="{{ form.company.value|default_if_none:'' }}" placeholder="Company" name="company" required="" class="form-input">
+              {% if form.company.errors %}
+                <div class="text-danger">
+                  {% for error in form.company.errors %}
+                  <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <input type="text" value="{{ form.email.value|default_if_none:'' }}" name="email" required="" placeholder="Email Id" class="form-input">
+              {% if form.email.errors %}
+                <div class="text-danger">
+                  {% for error in form.email.errors %}
+                  <p>{{ error }}</p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <button class="form-btn">Submit</button>
+            </form>
+        {% endif %}
+      </div>
+
+  <!-- footer starts -->
+  {% include "footer.html" %}
+  <!-- footer ends -->
+
+  <!-- <div class="float-contact">
+    <a href="contact.html">
+      <img src="{% static 'assets/images/hero_images/support.png' %}" alt="" class="support-image">
+    </a>
+  </div> -->
+  </body>
+
+<script src="//code.tidio.co/ntbvrxc2bygx9vrnptufdvakjunxcnsw.js" async></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  </body>
+
+  <script>
+     $(document).ready(function(){
+     $(window).scroll(function(){
+  	var scroll = $(window).scrollTop();
+	  if (scroll > 700) {
+	    $("#navbar").css("background" , "#062772"),
+      $("#navbar").css("height" , "8vh" ),
+      $(".dropdown").css("transform", "translateY(-2px)"),
+      $(".navbar-toggler").css("top", "-1rem");
+	  }
+
+	  else{
+      $("#navbar").css("background" , "transparent");
+	  }
+  })
+});
+
+/** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
+$(document).ready(function () {
+     $(document).click(function (event) {
+         var clickover = $(event.target);
+         var _opened = $(".navbar-collapse").hasClass("show");
+         if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+             $(".navbar-toggler").click();
+         }
+     });
+ });
+
+ $('.dropdown').on('click', function(event){
+    // The event won't be propagated up to the document NODE and
+    // therefore delegated events won't be fired
+    event.stopPropagation();
+});
+  </script>
+</html>

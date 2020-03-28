@@ -13,7 +13,7 @@ class IndexView(TemplateView):
 
 
 class InsightsView(ListView):
-    template_name = "insights.html"
+    template_name = "blog.html"
     model = Post
 
     def get_queryset(self):
@@ -59,8 +59,22 @@ class AboutUsView(TemplateView):
 
 
 # Power Platform View
-class PowerPFView(TemplateView):
-    template_name = "power_platform.html"
+class PowerPFView(FormView):
+    template_name = "powerBI.html"
+    form_class = ContactForm
+    success_url = "#consultForm"
+    page = "microsoft"
+
+    def get_form_kwargs(self, **kwargs):
+        kwargs = super().get_form_kwargs(**kwargs)
+        kwargs.update({'page': self.page})
+        return kwargs
+
+    def form_valid(self, form):
+        Form.objects.get_or_create(**form.cleaned_data)
+        messages.success(self.request, "Thanks for submitting the form.")
+        form.send_mail()
+        return super().form_valid(form)
 
 
 class ContactUsView(FormView):

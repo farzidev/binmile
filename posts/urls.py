@@ -14,6 +14,6 @@ urlpatterns = [
     path('post/<slug:slug>/', PostDetailView.as_view(), name='detail'),
     path('about-us/', AboutUsView.as_view(), name='about-us'),
     path('contact-us/', ContactUsView.as_view(), name='contact-us'),
-    path('microsoft-dynamics-365/', MicrosoftDynamicsView.as_view(), name='microsoft-crm'),
+    path('microsoft-dynamics-365/', MicrosoftDynamicsView.as_view(), name='microsoft-dynamics-365'),
     path('power-platform/', PowerPFView.as_view(), name='power-platform'),
 ]

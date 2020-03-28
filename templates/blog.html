@@ -106,592 +106,126 @@
                 {% endfor %}
               </div>
               <li>
-                <input type="text" class="top-search" placeholder="Search" />
+                <form action=".">
+                  <input name="q" value="{{ request.GET.q|default_if_none:'' }}" type="text" class="top-search" placeholder="Search" />
+                </form>
               </li>
             </ul>
           </nav>
         </div>
 
         <div id="Articles" class="tabcontent active">
-          <div class="row article-row" style="margin-top: 3em">
-            <div class="card col-md mr-4">
-              <a href="binmile_article.html">
-                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
-              </a>
+          <div class="row article-row" {% if not request.GET.q %}style="margin-top: 3em"{% endif %}>
+            <!-- SEARCH RESULTS -->
+            {% if request.GET.q %}
+              <div class="col-md-12 my-3">
+                <h4>
+                  Over {{ object_list|length }} result{{ object_list|length|pluralize }} found for <span class="text-info">"{{ request.GET.q }}"</span>
+                </h4>
+              </div>
+            {% endif %}
+            <!-- SEARCH RESULTS ENDS -->
+            {% for post in object_list %}
+              <div class="col-md-4" style="margin-bottom: 3em">
+                <div class="card">
+                  <a href="{{ post.get_absolute_url }}">
+                    <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+                  </a>
 
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
+                  <div class="card-body">
+                    <div class="pre-article">
+                      <a href="#" class="category-button">{{ post.category.name }}</a>
+                      <span class="read-time">
+                        {% if post.read_minutes %}
+                          {{ post.read_minutes }} mins read
+                        {% endif %}
+                      </span>
+                    </div>
+                    <h5 class="card-title">
+                      {{ post.title }}
+                    </h5>
+                    <p style="letter-spacing: 0.24px;color: #212121;">
+                      {{ post.highlight }}
+                    </p>
+                    <div class="post-article">
+                      <button class="read-more">
+                        <a href="{{ post.get_absolute_url }}" class="article-link"
+                          >Read More</a
+                        >
+                      </button>
+                      <span class="views">5.4k Views</span>
+                    </div>
+                    <div class="blog-info">
+                      <span class="author">
+                        {% if post.author %}
+                          {{ post.author }}
+                        {% endif %}
+                      </span>
+                      <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="card col-md">
-              <a href="binmile_article.html">
-                <img
-                src="{% static 'assets/images/ARPU-blog-header.png' %}"
-                class="card-img-top"
-              />
-              </a>
-
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-            <div class="card col-md ml-4 card-resp">
-              <a href="binmile_article.html">
-                <img
-                src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}"
-                class="card-img-top"
-              />
-              </a>
-
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row article-row" style="margin-top: 3em">
-            <div class="card col-md mr-4">
-              <a href="binmile_article.html">
-                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
-
-              </a>
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-            <div class="card col-md">
-              <a href="binmile_article.html">
-                <img
-                src="{% static 'assets/images/ARPU-blog-header.png' %}"
-                class="card-img-top"
-              />
-              </a>
-
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-            <div class="card col-md ml-4 card-resp">
-
-              <a href="binmile_article.html">
-                <img
-                src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}"
-                class="card-img-top"
-              />
-              </a>
-
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="width: 100%;text-align:center;margin:2em 0">
-            <button class="load-more-btn">Load More</button>
-          </div>
-        </div>
-        <div id="Product" class="tabcontent">
-          <div class="row article-row" style="margin-top: 3em">
-            <div class="card col-md mr-4">
-
-              <a href="binmile_article.html">
-                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
-
-              </a>
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-            <div class="card col-md">
-              <a href="binmile_article.html">
-                <img
-                src="{% static 'assets/images/ARPU-blog-header.png' %}"
-                class="card-img-top"
-              />
-              </a>
-
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-            <div class="card col-md ml-4 card-resp">
-
-              <a href="binmile_article.html">
-                <img
-                src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}"
-                class="card-img-top"
-              />
-              </a>
-
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
           <div style="width: 100%;text-align:center;margin:2em 0">
             <button class="load-more-btn">Load More</button>
           </div>
         </div>
 
-        <div id="Science" class="tabcontent">
-          <div class="row article-row" style="margin-top: 3em">
-            <div class="card col-md mr-4">
+        {% for category in categories %}
+          <div id="cat_{{ category.id }}" class="tabcontent">
+            <div class="row article-row" style="margin-top: 3em">
+              {% for post in object_list %}
+                {% if post.category == category %}
+                  <div class="col-md-4" style="margin-bottom: 3em">
+                    <div class="card">
+                      <a href="{{ post.get_absolute_url }}">
+                        <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+                      </a>
 
-              <a href="binmile_article.html">
-                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
-
-              </a>
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
+                      <div class="card-body">
+                        <div class="pre-article">
+                          <a href="#" class="category-button">{{ post.category.name }}</a>
+                          <span class="read-time">
+                            {% if post.read_minutes %}
+                              {{ post.read_minutes }} mins read
+                            {% endif %}
+                          </span>
+                        </div>
+                        <h5 class="card-title">
+                          {{ post.title }}
+                        </h5>
+                        <p style="letter-spacing: 0.24px;color: #212121;">
+                          {{ post.highlight }}
+                        </p>
+                        <div class="post-article">
+                          <button class="read-more">
+                            <a href="{{ post.get_absolute_url }}" class="article-link"
+                              >Read More</a
+                            >
+                          </button>
+                          <span class="views">5.4k Views</span>
+                        </div>
+                        <div class="blog-info">
+                          <span class="author">
+                            {% if post.author %}
+                              {{ post.author }}
+                            {% endif %}
+                          </span>
+                          <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% endif %}
+              {% endfor %}
             </div>
-            <div class="card col-md">
-              <a href="binmile_article.html">
-                <img
-                src="{% static 'assets/images/ARPU-blog-header.png' %}"
-                class="card-img-top"
-              />
-              </a>
-
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
+            <div style="width: 100%;text-align:center;margin:2em 0">
+              <button class="load-more-btn">Load More</button>
             </div>
           </div>
-          <div style="width: 100%;text-align:center;margin:2em 0">
-            <button class="load-more-btn">Load More</button>
-          </div>
-        </div>
-
-        <div id="Engineering" class="tabcontent">
-          <div class="row article-row" style="margin-top: 3em">
-            <div class="card col-md mr-4">
-              <a href="binmile_article.html">
-                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
-
-              </a>
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-            <div class="card col-md">
-              <a href="binmile_article.html">
-                <img
-                src="{% static 'assets/images/ARPU-blog-header.png' %}"
-                class="card-img-top"
-              />
-              </a>
-
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-            <div class="card col-md ml-4 card-resp">
-              <a href="binmile_article.html">
-                <img
-                src="{% static 'assets/images/Travel-App-Insights-Blog-Header-e1551872801163.png' %}"
-                class="card-img-top"
-              />
-              </a>
-
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="width: 100%;text-align:center;margin:2em 0">
-            <button class="load-more-btn">Load More</button>
-          </div>
-        </div>
-
-        <div id="Technology" class="tabcontent">
-          <div class="row article-row" style="margin-top: 3em">
-            <div class="card col-md mr-4">
-              <a href="binmile_article.html">
-                <img src="{% static 'assets/images/Image 2.png' %}" class="card-img-top" />
-              </a>
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">Product</a>
-                  <span class="read-time">11 mins read</span>
-                </div>
-                <h5 class="card-title">
-                  A service experience people love to talk about
-                </h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  Binmile helped us focus on our core business without worrying
-                  about to service issues. Being a small team, this has been
-                  extremely beneficial for us to run efficiently. Binmile have
-                  integration was a breeze and team has always been very
-                  responsive while dealing with any kind of service issues.
-                </p>
-                <div class="post-article">
-                  <button class="read-more">
-                    <a href="binmile_article.html" class="article-link"
-                      >Read More</a
-                    >
-                  </button>
-                  <span class="views">5.4k Views</span>
-                </div>
-                <div class="blog-info">
-                  <span class="author">Piyush Tyagi</span>
-                  <span class="blog-date">26 Sept, 2019</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div style="width: 100%;text-align:center;margin:2em 0">
-            <button class="load-more-btn">Load More</button>
-          </div>
-        </div>
+        {% endfor %}
 
         <section style="display:flex;justify-content: space-between;">
           <div class="row article-section">

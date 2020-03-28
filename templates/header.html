@@ -1,12 +1,12 @@
 {% load static %}
 
-<header style="z-index: 9999999;">
-  <div class="nav navbar {% if fixed|default_if_none:1 %}fixed-top{% endif %} navbar-expand-lg">
-    <span class="top-logo">
-      <a href="{% url 'posts:index' %}">
-        <img src="{% static 'assets/images/binmile_logo.png' %}" class="header__logo">
-      </a>
-    </span>
+<header class="header fixed-top" id="navbar">
+  <span class="top-logo">
+    <a href="{% url 'posts:index' %}" >
+      <img src="{% static 'assets/images/final-logo-binmille.png' %}" class="header__logo">
+    </a>
+  </span>
+  <div class="nav navbar navbar-expand-lg ">
     <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
       data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent1" aria-expanded="false"
       aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
@@ -20,7 +20,7 @@
             </button>
             <div class="dropdown-content">
               <a href="{% url 'posts:services' %}">ServiceNow</a>
-              <a href="{% url 'posts:microsoft-crm' %}">Microsoft Dynamics 365</a>
+              <a href="{% url 'posts:microsoft-dynamics-365' %}">Microsoft Dynamics 365</a>
               <a href="{% url 'posts:power-platform' %}">Power Platform</a>
             </div>
           </div>

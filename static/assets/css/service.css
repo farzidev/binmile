@@ -6,7 +6,7 @@
   font-family: "Open Sans";
 }
 
-#services-menu .nav-pillar {
+.nav-pillar {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -17,17 +17,13 @@
   padding-right: 3em;
   color: white;
   position: absolute;
-  /*top: 2%;*/
 }
 
-
-#services-menu .nav-pillar li{
+.nav-pillar li {
   margin: 0 !important;
 }
 
-
-
-#services-menu .nav li {
+.nav li {
   padding: 0.5em;
 }
 
@@ -51,16 +47,20 @@
   left: 5%;
 }
 
-.hero-right{
+  #service-pillar-img{
+    width: 60%;
+    padding-right: unset;
+  }
+
+.hero-right {
   width: 40%;
   height: 70vh;
   position: absolute;
   top: 15%;
   right: 1rem;
 }
-.pillar-img{
+.pillar-img {
   height: 100%;
-
 }
 .hero-text {
   font-weight: bold;
@@ -75,15 +75,6 @@
   color: #f5aa54;
   font-weight: bold;
 }
-
-.hero-content {
-  font-weight: bold;
-  font-size: 1.5em;
-  color: white;
-  flex-basis: auto;
-  font-family: "Helvetica";
-}
-
 .get-started {
   height: 3em;
   width: 14em;
@@ -103,7 +94,8 @@
 .article-heading {
   font-size: 3em;
   color: #24054e;
-  margin-bottom: 0.2em;
+  margin-bottom: 1em;
+  padding-top: .5rem;
 }
 
 .nav-tabs {
@@ -111,7 +103,7 @@
   border: 1px solid #eaeaea;
   border-radius: 8px;
   padding: 1em;
-  /*margin: 1em 0;*/
+  margin: 1em 0;
   border-left: 8px solid #24054e;
 }
 .nav-tabs li {
@@ -162,25 +154,214 @@
   color: white;
 }
 
-.service{
+.service {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-
-
-.service__img{
+.service__img {
   width: 10rem;
 }
 
-
-.service__img-2{
-
+.service__img-2 {
   margin-left: 1rem;
 }
 
-.service__img-4{
+.service__img-4 {
   margin-left: 1rem;
+}
+
+.phn-view {
+  display: none;
+  visibility: hidden;
+}
+
+.panel-link:link,
+.panel-link:active {
+  color: #24054e;
+  font-weight: 600;
+  text-decoration: none;
+}
+.card {
+  border: none;
+  box-shadow: 3px 6px 20px #00000029;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+.card-header {
+  background: none;
+  border: none;
+}
+
+.icon-down{
+  float: right;
+}
+
+.for-height{
+  min-height: 25rem !important;
+}
+
+.for-center{
+  display: flex;
+
+  align-items: center;
+  position: relative;
+}
+
+.for-left{
+  margin-right: 12rem;
+}
+
+.small-margin{
+  position: absolute;
+  right: 0rem;
+}
+
+@media (min-width: 1281px) {
+}
+/*   ##Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .pillar-height{
+    min-height: 25rem !important;
+  }
+
+  .top-logo{
+    min-width: 18vw;
+  }
+}
+/*   ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .arrow-section {
+    display: none;
+    visibility: hidden;
+  }
+  .owl-carousel,
+  .owl-dots,
+  .recent {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .hero-text {
+    font-size: 2rem !important;
+  }
+  .service-right{
+    right: 10% !important;
+    width: 60% !important;
+  }
+
+  .desktop-view {
+    display: none;
+    visibility: hidden;
+  }
+  .phn-view {
+    display: block;
+    visibility: visible;
+  }
+}
+/*   ##Device = Tablets, Ipads (landscape)  ##Screen = B/w 768px to 1024px*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+/*   ##Device = Low Resolution Tablets, Mobiles (Landscape)  ##Screen = B/w 481px to 767px*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .arrow-section {
+    display: none;
+    visibility: hidden;
+  }
+  .owl-carousel,
+  .owl-dots,
+  .recent {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  .hero-text {
+    font-size: 1.5rem !important;
+  }
+  .hero-text h1 {
+    font-size: 2rem !important;
+  }
+
+  .desktop-view {
+    display: none;
+    visibility: hidden;
+  }
+  .phn-view {
+    display: block;
+    visibility: visible;
+  }
+  .service-right{
+    width: 40% !important;
+  }
+}
+/*   ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .arrow-section {
+    display: none;
+    visibility: hidden;
+  }
+  .owl-carousel,
+  .owl-dots,
+  .recent {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  #service-pillar-img{
+    width: 60%;
+  }
+  .hero-left {
+    width: 70%;
+    left: 15% !important;
+  }
+
+  .service-right{
+    left: 7rem !important;
+  }
+  .hero-text {
+    font-size: 1.5rem !important;
+  }
+  .hero-text h1 {
+    font-size: 2rem !important;
+    width: 100%;
+  }
+
+  .desktop-view {
+    display: none;
+    visibility: hidden;
+  }
+  .phn-view {
+    display: block;
+    visibility: visible;
+    width: 90% !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .article-heading {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    font-weight: 700;
+  }
+  .icon-list li {
+    margin: 4rem 0;
+  }
+
+  .hero-h3{
+    font-size: .9rem;
+  }
+
+  .icon-list{
+    margin: 0;
+    width: 110%;
+  }
+
+  .service__img{
+    width: 7rem;
+    margin-bottom: 1rem;
+  }
 }

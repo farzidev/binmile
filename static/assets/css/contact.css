@@ -1,6 +1,6 @@
 .nav {
   background-color: #052454;
-  height: 15vh;
+  height: 8vh;
 }
 
 header {
@@ -13,35 +13,31 @@ header {
 }
 
 .contact__info {
-  flex: 50%;
-  /*transform: translateX(10rem);*/
-  padding-top: 4rem;
+  flex: 40%;
+  transform: translateX(10rem);
 }
 
 .contact {
   width: 100%;
   display: flex;
-  display: -ms-flexbox;
-  justify-content: space-around;
-  -webkit-justify-content: space-around;
-  /*justify-content: space-evenly;*/
-  padding: 3rem 0;
-  /*align-items: start;*/
-  align-content: start;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 4rem 0 3rem 1rem;
+  align-items: center;
 }
 
 .contact__form {
   flex: 50%;
-  padding-top: 4rem;
+  
   background-image: url(../images/contactUsBack.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: 120%;
+  background-position: left;
   display: flex;
   flex-direction: column;
-  /*align-items: start;*/
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+
 }
 
 .heading-2{
@@ -65,10 +61,10 @@ header {
 .input{
   border: none;
   outline: none;
-  width: 65%;
+  width: 50%;
   margin-bottom: 1rem;
   background-color: #fff;
-  border: 1px solid #062772;
+  border: 1.5px solid #052454;
   font-family: sans-serif;
   padding: 1rem;
 }
@@ -82,9 +78,14 @@ header {
 }
 
 .input-msg{
-  width: 65%;
-  border: 1px solid #062772;
+  width: 50%;
+  border: 1.5px solid #052454;
   padding: 1rem;
+}
+
+.input::placeholder,
+.input-msg::placeholder{
+  color: #052454;
 }
 
 
@@ -106,6 +107,56 @@ header {
 
 
 
+.location-link:link,
+.location-link:active{
+  text-decoration: none;
+}
+
+.location-link{
+  color: #052458;
+  margin: 4rem;
+  font-size: .8rem;
+  padding-top: 0rem;
+ 
+}
+
+.location-img{
+  width: 3rem;
+  height: 3rem;
+}
+
+
+
+.animation{
+  animation: floating 3s infinite ease;
+}
+
+.location-link:hover{
+  color: #052454;
+}
+
+
+
+
+@keyframes floating{
+  50% {
+    transform: translateY(-5px);
+  }
+
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.google-map{
+  display: flex;
+  padding-bottom: 3rem;
+  display: none;
+}
+
+.google-map:target{
+  display: flex;
+}
 
 
 
@@ -115,20 +166,29 @@ header {
 /*   ##Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px*/
 @media (min-width: 1025px) and (max-width: 1280px) {
   .nav{
-    height: 15vh;
+    height: 8vh;
   }
   .top-logo{
-    max-width: 15vw;
+    max-width: 15rem;
+  }
+
+  .contact__form{
+    background-size: 150%;
+  }
+
+  .contact__info{
+    transform: translateX(5rem);
+  }
+
+  .input, .input-msg{
+    width: 60%;
   }
 }
 /*   ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px*/
 @media (min-width: 768px) and (max-width: 1024px) {
-  #navbarSupportedContent {
-    background: none;
-    position: unset;
-  }
+  
 
-
+ 
 
   #navbarSupportedContent li {
     border: none;
@@ -189,7 +249,8 @@ header {
 /*   ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px*/
 @media (min-width: 320px) and (max-width: 480px) {
   .contact {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    padding: 4rem 0 2rem 0;
   }
   .contact__info {
     flex: 100%;
@@ -201,9 +262,11 @@ header {
   .contact__form {
     flex: 100%;
     min-width: 100%;
+    background-size: 200%;
+    background-position: bottom;
   }
   .nav {
-    height: 7vh;
+    height: 8vh;
   }
   .heading-5{
     font-size: .8rem;
@@ -224,10 +287,35 @@ header {
   .input, .input-msg{
     width: 80%;
   }
-
+  
   .heading{
     font-size: 1.5rem;
   }
 
+  .location-link{
+    font-size: .6rem;
+  }
+ .contact__info{
+   text-align: center;
+ }
+ .contact-information p{
+   text-align: center !important;
+ }
+ .google-map{
+   flex-direction: column;
+  
+ }
 
+ .binmile-india-map,
+ .binmile-usa-map{
+   max-width: 100vw;
+ }
+  
+ .contact-information{
+   width: 80%;
+   margin: 0 auto;
+ }
+ .contact-sub-head{
+   font-size: 1rem;
+ }
 }

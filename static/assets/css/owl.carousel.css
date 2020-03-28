@@ -68,7 +68,8 @@
     color: inherit;
     border: none;
     padding: 0 !important;
-    font: inherit; }
+    font: inherit;
+    outline: none; }
   .owl-carousel.owl-loaded {
     display: block; }
   .owl-carousel.owl-loading {

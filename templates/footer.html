@@ -1,70 +1,55 @@
 {% load static %}
 
-<style>
-  .custom-line {
-    margin: 0 auto;
-    width: 50%;
-    height: 0.3em;
-    background-color: #052458;
-    border-radius: 2em;
-  }
-  .footer-xs-col ul {
-    list-style-type: none;
-    margin-top: 0.2em;
-  }
-
-  .footer-xs-col li {
-    margin-bottom: 0.8em;
-  }
-</style>
-<footer>
+<footer class="footer">
   <section class="top-footer text-center">
     <div class="container">
 
-      <h3 style="font-weight: bold;letter-spacing: 0.4px;color: #fff;">
+      <h3 style="font-weight: bold;letter-spacing: 0.4px;color: #062772;" class="footer-heading">
         Explore how Binmile can help your business in its digital transformation journey
       </h3>
       <div
-        style="text-align:center;margin:2em auto;border-radius: 5em;width: 10em;height:0.1em;background-color:#fff;">
+        style="text-align:center;margin:2em auto;border-radius: 5em;width: 10em;height:0.5em;background-color:#062772;">
       </div>
-      <p style="letter-spacing: 0.24px; color: #fff;">
+      <p style="letter-spacing: 0.24px; color: #062772;">
         Do you need an elite team of technologist and idea-makers? Is quality important to you? Is scalability and
         endless customization paramount? Do you need a brand that is built specifically for your company and can be
         as innovative as you are?
       </p>
-      <p style="letter-spacing: 0.24px; color: #fff;">
+      <p style="letter-spacing: 0.24px; color: #062772;">
         Contact our Business Analyst and get the journey started.
       </p>
-      <button class="estimate-btn" style="margin: 2em auto">Get in touch</button>
+      <button class="estimate-btn" style="margin: 2em auto">Get an estimate</button>
     </div>
   </section>
   <section class="main-footer">
     <div class="container">
       <div class="row footer__info">
-        <div class="col-md-3 footer__info-content text-center">
-          <img style="height: 6em" src="{% static 'assets/images/binmile logo.png' %}" class="footer__img">
-          <p class="mt-3 ml-lg-3">
-            <a style="color: inherit" class="mr-1" href="#!"><i class="fab fa-facebook-square fa-2x"></i></a>
-            <a style="color: inherit" class="mr-1" href="#!"><i class="fab fa-instagram-square fa-2x"></i></a>
-            <a style="color: inherit" class="mr-1" href="#!"><i class="fab fa-linkedin fa-2x"></i></a>
-            <a style="color: inherit" class="mr-1" href="#!"><i class="fab fa-twitter-square fa-2x"></i></a>
-          </p>
-          <!-- <div class="row">
-            <div class="col-md-4 offset-md-4 text-left footer-col">
-              <ul>
-                <li>
-                  <h4 class="bold">Insights</h4>
-                </li>
-                <li>
-                  <div class="line"></div>
-                </li>
-                <li>Blogs</li>
-                <li>Case Studies</li>
-              </ul>
-            </div>
-          </div> -->
+        <div class="col-md-4 footer__info-content">
+          <img style="height: 5em" src="{% static 'assets/images/fotter-logo.png' %}" class="footer__img">
+          <div class="contact-info">
+            <!-- <h5 class="contact-call">Call</h5>
+          <p class="contact-num">+1(415)-915-7177</p>
+
+            <p class="contact-num">+91.9811643424</p> -->
+            <a href="mailto:business@binmile.com" class="join-us">Join Us</a>
+          </div>
+
+          <div class="social-icon">
+            <a href="https://www.facebook.com/binmiletechnologies/" class="social-links">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/BMT55914497" class="social-links">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/binmile/?hl=en" class="social-links">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="http://linkedin.com/company/binmile-technologies" class="social-links">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
         </div>
-        <div class="footer__nav col-md-9">
+        <div class="footer__nav">
           <div class="col-md footer-col footer__link">
             <ul>
               <li>
@@ -73,12 +58,13 @@
               <li>
                 <div class="line"></div>
               </li>
-              <li>ServiceNow</li>
-              <li>Dynamics 365</li>
-              <li>Power Platform</li>
+              <li><a href="{% url 'posts:services' %}" class="footer-links"> ServiceNow</a></li>
+              <li><a href="{% url 'posts:microsoft-dynamics-365' %}"class="footer-links"> Dynamics 365</a></li>
+              <li><a href="{% url 'posts:power-platform' %}"class="footer-links">Power Platform</a> </li>
+
             </ul>
           </div>
-          <div class="col-md footer-col footer__link" style="margin-left: 0 !important">
+          <div class="col-md footer-col footer__link">
             <ul>
               <li>
                 <h4 class="bold">Services</h4>
@@ -86,67 +72,39 @@
               <li>
                 <div class="line"></div>
               </li>
-              <li>Advisory</li>
-              <li>Implementations</li>
-              <li>Automation Testing</li>
-              <li>Integration</li>
-              <li>Customization</li>
+              <li><a href="{% url 'posts:index' %}"class="footer-links">Advisory</a></li>
+              <li><a href="{% url 'posts:index' %}"class="footer-links">Implementations</a></li>
+              <li><a href="{% url 'posts:index' %}"class="footer-links">Automation Testing</a></li>
+              <li><a href="{% url 'posts:index' %}"class="footer-links">Integration</a></li>
+              <li><a href="{% url 'posts:index' %}"class="footer-links">Customization</a></li>
             </ul>
           </div>
           <div class="col-md footer-col footer__link">
             <ul>
               <li>
-                <h4 class="bold">Insights</h4>
+                <h4 class="bold">Insight</h4>
               </li>
               <li>
                 <div class="line"></div>
               </li>
-              <li>Blogs</li>
-              <li>Case Studies</li>
+              <li><a href="{% url 'posts:insights' %}"class="footer-links">Blogs</a></li>
+              <li><a href="{% url 'posts:insights' %}"class="footer-links">Case Studies</a></li>
             </ul>
           </div>
-          <div class="col-md footer-col footer__link">
-            <ul>
-              <li>
-                <h4 class="bold">Contact</h4>
-              </li>
-              <li>
-                <div class="line"></div>
-              </li>
-              <li>
-                <span><strong>Call</strong></span><br>
-                +1(415)-915-7177,<br>+91.9811643424
-              </li>
-              <li>
-                <span><strong>Mail</strong></span><br>
-                business@binmile.com
-              </li>
-            </ul>
-          </div>
-          <div class="col-md footer-col footer__link">
-            <ul>
-              <li>
-                <h4 class="bold">Join us</h4>
-              </li>
-              <li>
-                <div class="line"></div>
-              </li>
-              <li>Careers</li>
-            </ul>
-          </div>
+
         </div>
+
+
       </div>
     </div>
   </section>
-  <section class="bottom-footer mt-2">
-    <div class="container-fluid py-3">
-      <div class="row">
-        <div class="col-md-12 text-left">
-          <h6 class="copyright">
-            &copy; Binmile Technologies Private Limited All Rights Reserved
-          </h6>
-        </div>
-      </div>
+  <section class="bottom-footer">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <ul class="navbar-nav bottom-nav">
+          <li class="copyright">&copy; Binmile 2019 All Rights Reserved</li>
+        </ul>
+      </nav>
     </div>
   </section>
 </footer>

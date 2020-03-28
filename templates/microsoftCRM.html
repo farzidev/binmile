@@ -1,257 +1,381 @@
-{% extends "base.html" %}
-
 {% load static %}
 
-{% block title %}
-  Microsoft Dynamics 365
-{% endblock title %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Microsoft CRM 365</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'assets/images/faviconlogo.png"
+      type="image/x-icon"
+    />
 
-{% block styles %}
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
 
-<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
-<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}" />
-<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/service.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/crm.css' %}" />
 
-<link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
-<link rel="stylesheet" href="{% static 'assets/css/service.css' %}" />
-<link rel="stylesheet" href="{% static 'assets/css/crm.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/16370dbf02.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-{% endblock styles %}
+  <body>
+    {% include "header.html" %}
 
-{% block content %}
-
-  {% include "header.html" %}
-
-  <div class="hero">
-    <div class="hero-left">
-      <div class="hero-text">
-        Microsoft
-        <h1>Dynamics 365</h1>
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-text">
+          Microsoft
+          <h1>Dynamics 365</h1>
+          <h3 class="hero-h3">Digitally Transform and future proof your business.</h3>
+        </div>
+        <button class="get-started"><a href="{% url 'posts:contact-us' %}" class="contact-link">Let's Get Started</a></button>
       </div>
-      <div class="hero-content">
-        <p>
-          Digitally Transform and future proof your business.
-        </p>
-      </div>
-      <button class="get-started">Let's Get Started</button>
-    </div>
-    <div class="hero-right">
-      <img
-        src="{% static 'assets/images/pillar.png' %}"
-        alt="Pillar Image"
-        class="pillar-img"
-      />
-    </div>
-  </div>
-
-  <div class="crm__info">
-    <p class="crm__info-text">
-      In a globalised business environment, achieving great customer experience is of utmost importance. Organizations need to distinguish there business from competitors and promote trust and loyalty between partners.<br><br>
-      Whatever your Business need maybe, Microsoft Dynamics 365 will enable you to achieve it.<br>
-      Be it related to sales, Finance, Project Service Automation or Field Services.
-    </p>
-  </div>
-
-  <div class="dynamic-crm">
-    <h2 class="crm-heading">
-      Binmile!<br>
-      Your Microsoft Dynamics 365 consultant
-    </h2>
-    <p class="dynamic-crm-text">
-      Binmile Technologies is a Microsoft Registered Company. We provide complete CRM services for companies that chose Microsoft Dynamics 365 as their CRM platform.
-      Whenever you need to implement Dynamics from scratch, customize Dynamics around
-      your own unique needs, integrate with other systems, migrate data, or create custom apps, we are here to assist you.<br><br>
-      With our years of experience and expertise in managing varied projects we are sure to add value to your business.
-    </p>
-  </div>
-
-  <div class="crm-user">
-    <h1 class="crm-user-heading">Solutions</h1>
-    <div class="crm-cards">
-      <div class="crm-card crm-card-1">
-        <h3 class="crm-card-heading">Implementation Service</h3>
-        <p class="crm-card-para">
-          We’ll build a detailed Dynamics CRM implementation plan and will
-          help you to migrate to Dynamics 365 smoothly.
-        </p>
-      </div>
-      <div class="crm-card crm-card-2">
-        <h3 class="crm-card-heading">
-          Dynamic CRM Configuration & customization
-        </h3>
-        <p class="crm-card-para">
-          We’ll help you to configure your CRM to streamline your business
-          processes and to take into account your business domain.
-        </p>
-      </div>
-      <div class="crm-card crm-card-3">
-        <h3 class="crm-card-heading">
-          Microsoft Dynamics CRM Custom Development
-        </h3>
-        <p class="crm-card-para">
-          Get your own modules and apps, custom objects to take the most out
-          of Microsoft products.
-        </p>
-      </div>
-      <div class="crm-card crm-card-4">
-        <h3 class="crm-card-heading">Dynamics 365 Integration</h3>
-        <p class="crm-card-para">
-          Integrate your CRM with other software and platforms, thanks to our
-          Microsoft Dynamics CRM integration services.
-        </p>
-      </div>
-      <div class="crm-card crm-card-5">
-        <h3 class="crm-card-heading">Dynamics 365 Data Migration</h3>
-        <p class="crm-card-para">
-          Migrate your data from any system to Dynamics CRM. We’ll help you
-          consolidate, clean, deduplicate your data and import it to your CRM.
-        </p>
-      </div>
-      <div class="crm-card crm-card-6">
-        <h3 class="crm-card-heading">CRM Upgrade</h3>
-        <p class="crm-card-para">
-          Upgrade your Dynamics 365 to the latest version smoothly with our
-          help.
-        </p>
-      </div>
-      <div class="crm-card crm-card-7">
-        <h3 class="crm-card-heading">Migration to Dynamics 365</h3>
-        <p class="crm-card-para">
-          Binmile has worked with no less than 10 CRM platforms and will make
-          your migration to Dynamics 365 run smoothly. Migrate from Salesforce
-          to Dynamics CRM with our help.
-        </p>
-      </div>
-      <div class="crm-card crm-card-8">
-        <h3 class="crm-card-heading">
-          Dynamics 365 Administration and Support
-        </h3>
-        <p class="crm-card-para">
-          Hire our Microsoft Dynamics CRM Consultants to administrate,
-          optimize, and support your system on an ongoing basis. We’ll take
-          care of everything!
-        </p>
-      </div>
-      <div class="crm-card crm-card-9">
-        <h3 class="crm-card-heading">
-          Civil Construction Solutions for Dynamics 365
-        </h3>
-        <p class="crm-card-para">
-          No other CRM consultant has more completed then Binmile. For over
-          the years, we’ve been helping USA and UK highly renowned companies
-          Dynamics 365 to their needs.
-        </p>
+      <div class="hero-right">
+        <img
+          src="{% static 'assets/images/crm1.png' %}"
+          alt="Pillar Image"
+          class="pillar-img"
+        />
       </div>
     </div>
-  </div>
 
-  <!-- Our Methodology Starts -->
-
-  <!-- Our Methodology Ends -->
-
-  <div class="crm__support">
-    <div class="crm__support-content">
-      <h2 class="support-heading">
-        Dynamics CRM Customization and Support for ImproveGroup
-      </h2>
-      <p class="support-para">
-        “Binmile integrated our Microsoft CRM into one of their products
-        initially, but we also now use several of their products for many of
-        our locations around the world. They provide services from three
-        different teams: support, concierge, and operations. The quality of
-        work they provide is second to none. They’ve provided CRM solutions
-        that no one else has been able to. Their work had driven our adoption,
-        which had increased by about six times what it was before we started
-        working with them.
+    <div class="crm__info">
+      <p class="crm__info-text">
+        In a globalised business environment, achieving great customer
+        experience is of utmost importance. Organizations need to distinguish
+        there business from competitors and promote trust and loyalty between
+        partners. Whatever your Business need maybe, Microsoft Dynamics 365 will
+        enable you to achieve it. Be it related to sales, Finance, Project
+        Service Automation or Field Services.
       </p>
     </div>
-    <div class="crm__support-image"></div>
-  </div>
 
-  <div class="crm__consultant" id="consultForm">
-    <h2 class="consultant-heading">Consult with us</h2>
-    <p class="consultant-para">
-      We are a team of experienced Dynamics CRM developers and Consultants.
-      Leverage the dynamism of Dynamics 365 CRM with our cooperation. We
-      handle projects of any size from small customization requests to
-      enterprise deployments. Not sure if Dynamics 365 is the best choice for
-      you? Contact us, and we’ll help you to define the optimal CRM system for
-      you!
-    </p>
-    {% if messages %}
-      {% for message in messages %}
-        <h3 class="text-{{ message.tags }}">{{ message }}</h3>
-      {% endfor %}
-    {% else %}
-      <h3 class="form-heading">Drop your details here</h3>
-      <form action="" class="consultant-form" method="post">
-        {% csrf_token %}
-        <input type="text" value="{{ form.name.value|default_if_none:'' }}" placeholder="Name" name="name" required="" class="form-input">
-        {% if form.name.errors %}
-          <div class="text-danger">
-            {% for error in form.name.errors %}
-            <p>{{ error }}</p>
-            {% endfor %}
+    <div class="dynamic-crm">
+      <h2 class="crm-heading"> <span>B</span>inmile!</h2>
+
+      <h2 class="crm-heading crm-heading-2">Your Microsoft Dynamics CRM Consultant</h2>
+      <p class="dynamic-crm-text">
+        Binmile Technologies is a Microsoft Registered Company. We provide
+        complete CRM services for companies that chose Microsoft Dynamics 365 as
+        their CRM platform. Whenever you need to implement Dynamics from
+        scratch, customize Dynamics around your own unique needs, integrate with
+        other systems, migrate data, or create custom apps, we are here to
+        assist you. With our years of experience and expertise in managing
+        varied projects we are sure to add value to your business.
+      </p>
+    </div>
+
+    <div class="crm-user">
+      <h1 class="crm-user-heading" style="text-align: center;">&nbsp; Solutions &nbsp;</h1>
+      <div class="crm-cards">
+        <div class="crm-card crm-card-1">
+          <h3 class="crm-card-heading">Implementation Service</h3>
+          <p class="crm-card-para">
+            We’ll build a detailed Dynamics CRM implementation plan and will
+            help you to migrate to Dynamics 365 smoothly.
+          </p>
+        </div>
+        <div class="crm-card crm-card-2">
+          <h3 class="crm-card-heading">
+            Dynamic CRM Configuration & customization
+          </h3>
+          <p class="crm-card-para">
+            We’ll help you to configure your CRM to streamline your business
+            processes and to take into account your business domain.
+          </p>
+        </div>
+        <div class="crm-card crm-card-3">
+          <h3 class="crm-card-heading">
+            Microsoft Dynamics CRM Custom Development
+          </h3>
+          <p class="crm-card-para">
+            Get your own modules and apps, custom objects to take the most out
+            of Microsoft products.
+          </p>
+        </div>
+        <div class="crm-card crm-card-4">
+          <h3 class="crm-card-heading">Dynamics 365 Integration</h3>
+          <p class="crm-card-para">
+            Integrate your CRM with other software and platforms, thanks to our
+            Microsoft Dynamics CRM integration services.
+          </p>
+        </div>
+        <div class="crm-card crm-card-5">
+          <h3 class="crm-card-heading">Dynamics 365 Data Migration</h3>
+          <p class="crm-card-para">
+            Migrate your data from any system to Dynamics CRM. We’ll help you
+            consolidate, clean, deduplicate your data and import it to your CRM.
+          </p>
+        </div>
+        <div class="crm-card crm-card-6">
+          <h3 class="crm-card-heading">CRM Upgrade</h3>
+          <p class="crm-card-para">
+            Upgrade your Dynamics 365 to the latest version smoothly with our
+            help.
+          </p>
+        </div>
+        <div class="crm-card crm-card-7">
+          <h3 class="crm-card-heading">Migration to Dynamics 365</h3>
+          <p class="crm-card-para">
+            Binmile has worked with no less than 10 CRM platforms and will make
+            your migration to Dynamics 365 run smoothly. Migrate from Salesforce
+            to Dynamics CRM with our help.
+          </p>
+        </div>
+        <div class="crm-card crm-card-8">
+          <h3 class="crm-card-heading">
+            Dynamics 365 Administration and Support
+          </h3>
+          <p class="crm-card-para">
+            Hire our Microsoft Dynamics CRM Consultants to administrate,
+            optimize, and support your system on an ongoing basis. We’ll take
+            care of everything!
+          </p>
+        </div>
+        <div class="crm-card crm-card-9">
+          <h3 class="crm-card-heading">
+            Civil Construction Solutions for Dynamics 365
+          </h3>
+          <p class="crm-card-para">
+            No other CRM consultant has more completed then Binmile. For over
+            the years, we’ve been helping USA and UK highly renowned companies
+            Dynamics 365 to their needs.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial Slider -->
+
+    <!-- <div class="owl-two owl-carousel owl-theme owl-loaded">
+      <h2 class="testimonial-heading">Client Testimonial</h2>
+      <div class="owl-stage-outer">
+        <div class="owl-stage test">
+          <div class="owl-item test-card col-xs-12">
+            <i class="fas fa-quote-left fa-2x" style="color: #072A98;"></i>
+            <h5>Highly responsive for any service issues</h5>
+            <p>
+              Binmile helped us focus on our core business without worrying
+              about service issues. Being a small team, this has been extremely
+              beneficial for us to run efficiently. Binmile integration was a
+              breeze and team has always been very responsive while dealing with
+              any kind of service issues.
+            </p>
+
+            <div class="test-details">
+              <img
+                src="{% static 'assets/images/microsoft-logo.png' %}"
+                class="test-image"
+                style="width: 14em"
+              />
+              <p class="test-author">
+                Satya Nadela<br />Chief Operating Officer
+              </p>
+            </div>
           </div>
-        {% endif %}
-        <input type="text" value="{{ form.company.value|default_if_none:'' }}" placeholder="Company" name="company" required="" class="form-input">
-        {% if form.company.errors %}
-          <div class="text-danger">
-            {% for error in form.company.errors %}
-            <p>{{ error }}</p>
-            {% endfor %}
+          <div class="owl-item test-card col-xs-12">
+            <i class="fas fa-quote-left fa-2x" style="color: #072A98;"></i>
+            <h5>Highly responsive for any service issues</h5>
+            <p>
+              Binmile helped us focus on our core business without worrying
+              about service issues. Being a small team, this has been extremely
+              beneficial for us to run efficiently. Binmile integration was a
+              breeze and team has always been very responsive while dealing with
+              any kind of service issues.
+            </p>
+
+            <div class="test-details">
+              <img
+                src="{% static 'assets/images/microsoft-logo.png' %}"
+                class="test-image"
+                style="width: 14em"
+              />
+              <p class="test-author">
+                Satya Nadela<br />Chief Operating Officer
+              </p>
+            </div>
           </div>
-        {% endif %}
-        <input type="text" value="{{ form.email.value|default_if_none:'' }}" placeholder="Email Id" name="email" required-x="" class="form-input">
-        {% if form.email.errors %}
-          <div class="text-danger">
-            {% for error in form.email.errors %}
-            <p>{{ error }}</p>
-            {% endfor %}
+          <div class="owl-item test-card col-xs-12">
+            <i class="fas fa-quote-left fa-2x" style="color: #072A98;"></i>
+            <h5>Highly responsive for any service issues</h5>
+            <p>
+              Binmile helped us focus on our core business without worrying
+              about service issues. Being a small team, this has been extremely
+              beneficial for us to run efficiently. Binmile integration was a
+              breeze and team has always been very responsive while dealing with
+              any kind of service issues.
+            </p>
+
+            <div class="test-details">
+              <img
+                src="{% static 'assets/images/microsoft-logo.png' %}"
+                class="test-image"
+                style="width: 14em"
+              />
+              <p class="test-author">
+                Satya Nadela<br />Chief Operating Officer
+              </p>
+            </div>
           </div>
-        {% endif %}
-        <button class="form-btn">Submit</button>
-      </form>
-    {% endif %}
-  </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- Testimonial Slider ends -->
 
-   <!-- footer starts -->
-  {% include "footer.html" %}
-  <!-- footer ends -->
+    <div class="crm__support">
+      <div class="crm__support-content">
+        <h2 class="support-heading">
+          Dynamics CRM Customization and Support for ImproveGroup
+        </h2>
+        <p class="support-para">
+          “Binmile integrated our Microsoft CRM into one of their products
+          initially, but we also now use several of their products for many of
+          our locations around the world. They provide services from three
+          different teams: support, concierge, and operations. The quality of
+          work they provide is second to none. They’ve provided CRM solutions
+          that no one else has been able to. Their work had driven our adoption,
+          which had increased by about six times what it was before we started
+          working with them.
+        </p>
+      </div>
+      <div class="crm__support-image">
+        <img src="{% static 'assets/images/team/crm2.png' %}" alt="" class="support-img" />
+      </div>
+    </div>
 
-{% endblock content %}
+    <div class="crm__consultant" id="consultForm">
+      <h2 class="consultant-heading">Consult with us</h2>
+      <p class="consultant-para">
+        We are a team of experienced Dynamics CRM developers and Consultants.
+        Leverage the dynamism of Dynamics 365 CRM with our cooperation. We
+        handle projects of any size from small customization requests to
+        enterprise deployments. Not sure if Dynamics 365 is the best choice for
+        you? Contact us, and we’ll help you to define the optimal CRM system for
+        you!
+      </p>
+      {% if messages %}
+          {% for message in messages %}
+              <h3 class="text-{{ message.tags }}">{{ message }}</h3>
+          {% endfor %}
+      {% else %}
+        <h3 class="form-heading">Drop your details here</h3>
+        <form action="." method="post" class="consultant-form">
+          {% csrf_token %}
+          <input type="text" placeholder="Name" name="name" required="" value="{{ form.name.value|default_if_none:'' }}" class="form-input">
+          {% if form.name.errors %}
+            <div class="text-danger">
+              {% for error in form.name.errors %}
+              <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <input type="text" value="{{ form.company.value|default_if_none:'' }}" placeholder="Company" name="company" required="" class="form-input">
+          {% if form.company.errors %}
+            <div class="text-danger">
+              {% for error in form.company.errors %}
+              <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <input type="text" value="{{ form.email.value|default_if_none:'' }}" name="email" required="" placeholder="Email Id" class="form-input">
+          {% if form.email.errors %}
+            <div class="text-danger">
+              {% for error in form.email.errors %}
+              <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+          <button class="form-btn">Submit</button>
+        </form>
+      {% endif %}
+    </div>
 
-{% block scripts %}
+    <!-- footer starts -->
+    {% include "footer.html" %}
+    <!-- footer ends -->
 
-{{ block.super }}
+    <!-- <div class="float-contact">
+      <a href="{% url 'posts:contact-us' %}">
+        <img
+          src="{% static 'assets/images/hero_images/support.png' %}"
+          alt=""
+          class="support-image"
+        />
+      </a>
+    </div> -->
+  </body>
+<script src="//code.tidio.co/ntbvrxc2bygx9vrnptufdvakjunxcnsw.js" async></script>
 
-<script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-<script>
-  $(".owl-two").owlCarousel({
-    center: true,
-    items: 1,
-    margin: 10,
-    loop: true,
-    slideSpeed: 800,
-    autoplay: true,
-    autoPlaySpeed: 8000,
-    autoPlayTimeout: 5000,
-    autoplayHoverPause: true,
+  <script>
+    $(".owl-two").owlCarousel({
+      center: true,
+      items: 1,
+      margin: 10,
+      loop: true,
+      slideSpeed: 800,
+      autoplay: true,
+      autoPlaySpeed: 8000,
+      autoPlayTimeout: 5000,
+      autoplayHoverPause: true,
 
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 1
-      },
-      1000: {
-        items: 2
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 2
+        }
       }
-    }
-  });
-</script>
-{% include "footer_script.html" with top_color='transparent' top_height='15vh' %}
+    });
 
-{% endblock scripts %}
+    $(document).ready(function() {
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll > 700) {
+          $("#navbar").css("background", "#062772"),
+            $("#navbar").css("height", "8vh"),
+            $(".dropdown").css("transform", "translateY(-2px)"),
+            $(".navbar-toggler").css("top", "-1rem");
+        } else {
+          $("#navbar").css("background", "transparent");
+        }
+      });
+    });
+
+    /** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
+$(document).ready(function () {
+     $(document).click(function (event) {
+         var clickover = $(event.target);
+         var _opened = $(".navbar-collapse").hasClass("show");
+         if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+             $(".navbar-toggler").click();
+         }
+     });
+ });
+
+ $('.dropdown').on('click', function(event){
+    // The event won't be propagated up to the document NODE and
+    // therefore delegated events won't be fired
+    event.stopPropagation();
+});
+  </script>
+</html>
