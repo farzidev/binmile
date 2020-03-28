@@ -99,6 +99,11 @@
   border-radius: 10px;
   box-shadow: 0 0 10px #0000003b;
   position: relative;
+  transition: all .2s;
+}
+
+.team-member:hover{
+  box-shadow: 0 0 3px #0000003b;
 }
 
 .team-name{
@@ -142,7 +147,7 @@
   }
 
   .about-content{
-    padding: 4rem;
+    padding: 2rem 6rem;
   }
 
   .content{
@@ -168,12 +173,12 @@
   
 
   .about-section{
-    height: 50vh;
+    height: 40vh;
     margin-top: 3rem;
   }
 
   .header-heading{
-    transform: translateY(-2rem);
+    transform: translateY(-1rem);
   }
   .team-member{
     min-width: 30%;
@@ -192,13 +197,26 @@
     width: 70%;
   }
 }
+
+@media (min-width: 768px) and (max-width: 920px){
+  .header-para{
+    transform: translateY(-3rem);
+  }
+}
 /*   ##Device = Tablets, Ipads (landscape)  ##Screen = B/w 768px to 1024px*/
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+}
+
+
+@media (min-width:482px) and (max-width:550px){
+  .about-section{
+    height: 25vh !important;
+  }
 }
 /*   ##Device = Low Resolution Tablets, Mobiles (Landscape)  ##Screen = B/w 481px to 767px*/
 @media (min-width: 481px) and (max-width: 767px) {
   .about-section{
-    height: 40vh;
+    height: 30vh;
     margin-top: 3rem;
     padding-left: 3rem;
   }
@@ -208,7 +226,7 @@
   }
 
   .header-heading{
-    transform: translateY(-2rem);
+ 
     font-size: 2rem;
   }
 
@@ -337,3 +355,23 @@
 
 }
 
+
+@media (min-width: 381px) and (max-width:450px){
+  .for-testing{
+    transform: translateY(-2rem);
+  }
+
+  .header-para{
+    font-size: .7rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 381px){
+  .for-testing{
+    transform: translateY(-2rem);
+  }
+
+  .header-para{
+    font-size: .6rem;
+  }
+}

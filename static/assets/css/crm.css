@@ -42,7 +42,7 @@
   font-weight: 600;
   width: 85%;
   color: #130f40;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .crm-heading span{
@@ -153,16 +153,20 @@
   justify-content: center;
   align-items: center;
 
+  
+
 }
 
 .crm__support-content {
   color: white;
   width: 60%;
+  position: relative;
   z-index: 5;
 }
 
 .crm__support-image{
   width: 60%;
+
   z-index: 1;
   overflow: hidden;
 }
@@ -231,6 +235,12 @@
     font-weight: 600;
 }
 
+@media (min-width:1300px) and (max-width: 1400px){
+  .crm__consultant{
+    width: 90%;
+  }
+}
+
 @media (min-width: 1281px) and (max-width: 1300px)  {
 
   
@@ -271,6 +281,17 @@
   }
 
 
+}
+
+
+@media (min-width: 768px) and (max-width: 880px){
+  .hero-text h1{
+    font-size: 2rem;
+  }
+
+  .hero-h3{
+    font-size: 1.5rem;
+  }
 }
 /*   ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px*/
 @media (min-width: 768px) and (max-width: 1024px) {

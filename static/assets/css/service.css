@@ -294,6 +294,10 @@
   .service-right{
     width: 40% !important;
   }
+
+  #service-pillar-img{
+    min-width: 80%;
+  }
 }
 /*   ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px*/
 @media (min-width: 320px) and (max-width: 480px) {

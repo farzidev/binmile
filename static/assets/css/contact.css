@@ -211,12 +211,21 @@ header {
     min-width: 100%;
     transform: unset;
     padding-top: 5rem;
+    text-align: center;
   }
 
   .contact__form {
     flex: 100%;
     min-width: 100%;
     justify-content: flex-start;
+  }
+
+  .contact-information{
+    text-align: center;
+  }
+
+  .contact-information p{
+    text-align: center !important;
   }
 }
 /*   ##Device = Tablets, Ipads (landscape)  ##Screen = B/w 768px to 1024px*/
@@ -232,6 +241,7 @@ header {
     min-width: 100%;
     transform: unset;
     padding-top: 5rem;
+    text-align: center;
   }
 
   .contact__form {
@@ -244,6 +254,14 @@ header {
 
   .form{
     width: 100%;
+  }
+
+  .contact-information{
+    text-align: center;
+  }
+
+  .contact-information p{
+    text-align: center !important;
   }
 }
 /*   ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px*/
