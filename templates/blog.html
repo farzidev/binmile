@@ -96,6 +96,12 @@
                 >
                   All&nbsp; Articles
                 </button>
+                <button
+                  class="tablinks"
+                  onclick="openArticles(event, 'Case_Studies')"
+                >
+                  Case&nbsp; Studies
+                </button>
                 {% for category in categories %}
                   <button
                     class="tablinks"
@@ -166,6 +172,58 @@
                   </div>
                 </div>
               </div>
+            {% endfor %}
+          </div>
+          <div style="width: 100%;text-align:center;margin:2em 0">
+            <button class="load-more-btn">Load More</button>
+          </div>
+        </div>
+
+        <div id="Case_Studies" class="tabcontent">
+          <div class="row article-row" style="margin-top: 3em">
+            {% for post in object_list %}
+              {% if post.purpose == 'CS' %}
+                <div class="col-md-4" style="margin-bottom: 3em">
+                  <div class="card">
+                    <a href="{{ post.get_absolute_url }}">
+                      <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+                    </a>
+
+                    <div class="card-body">
+                      <div class="pre-article">
+                        <a href="#" class="category-button">{{ post.category.name }}</a>
+                        <span class="read-time">
+                          {% if post.read_minutes %}
+                            {{ post.read_minutes }} mins read
+                          {% endif %}
+                        </span>
+                      </div>
+                      <h5 class="card-title">
+                        {{ post.title }}
+                      </h5>
+                      <p style="letter-spacing: 0.24px;color: #212121;">
+                        {{ post.highlight }}
+                      </p>
+                      <div class="post-article">
+                        <button class="read-more">
+                          <a href="{{ post.get_absolute_url }}" class="article-link"
+                            >Read More</a
+                          >
+                        </button>
+                        <span class="views">5.4k Views</span>
+                      </div>
+                      <div class="blog-info">
+                        <span class="author">
+                          {% if post.author %}
+                            {{ post.author }}
+                          {% endif %}
+                        </span>
+                        <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
             {% endfor %}
           </div>
           <div style="width: 100%;text-align:center;margin:2em 0">
