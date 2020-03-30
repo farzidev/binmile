@@ -314,6 +314,15 @@
     height: 2rem;
   }
 
+  .heading-about{
+    padding-left: .5rem;
+  }
+
+  .content-img-responsive{
+    width: 2.5rem;
+    height: 2rem;
+  }
+
   .heading-tertiary{
     font-size: 1.2rem;
   }

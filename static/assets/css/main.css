@@ -49,7 +49,7 @@ body {
   font-family: "Open Sans";
   letter-spacing: 0.4px;
   padding: 1em 1.4em;
-  height: 5em !important;
+  height: 6em !important;
   left: 6em;
   max-width: 18em !important;
 }
@@ -435,11 +435,11 @@ footer {
   }
 } */
 
-@media (min-width: 1281px) {
+@media (min-width: 1281px) {   
 
   }
 /*   ##Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px*/
-@media (min-width: 1025px) and (max-width: 1280px) {
+@media (min-width: 1025px) and (max-width: 1280px) {  
   .article-section{
     flex-wrap: nowrap !important;
   }
@@ -450,7 +450,7 @@ footer {
   }
   }
 /*   ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px*/
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {  
     .nav{
       height: 7vh;
     }
@@ -468,7 +468,7 @@ footer {
       flex-direction: column !important;
       height: unset;
       align-items: flex-start !important;
-
+   
     }
 
     .blog_navigation{
@@ -490,7 +490,7 @@ footer {
       margin-top: 2rem;
     }
 
-
+   
     .footer__logo{
      width: 14rem;
     }
@@ -536,11 +536,11 @@ footer {
     }
   }
 /*   ##Device = Tablets, Ipads (landscape)  ##Screen = B/w 768px to 1024px*/
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {  
 
   }
 /*   ##Device = Low Resolution Tablets, Mobiles (Landscape)  ##Screen = B/w 481px to 767px*/
-@media (min-width: 481px) and (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 767px) {  
   .nav{
     height: 7vh;
   }
@@ -573,8 +573,8 @@ footer {
   .tab button{
     font-size: .7rem;
   }
-
-
+  
+  
   .footer__nav{
     display: flex;
     width: 120%;
@@ -595,7 +595,7 @@ footer {
     flex-direction: column !important;
     height: unset;
     align-items: flex-start !important;
-
+ 
   }
 
   .blog_navigation{
@@ -614,7 +614,7 @@ footer {
   }
 }
 /*   ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px*/
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 480px) {  
   .nav{
     height: 5vh;
   }
@@ -641,7 +641,7 @@ footer {
     height: 41.5vh;
   }
 
-
+  
 
   .navbar-toggler{
     top: 0 !important;
@@ -657,7 +657,7 @@ footer {
   .tab button{
     font-size: .9rem;
     margin-right: 0 !important;
-
+   
   }
   .card {
     margin-left: 0 !important;
@@ -673,8 +673,8 @@ footer {
     width: 16rem;
    }
 
-
-
+  
+  
   .footer__nav{
     display: flex;
     width: 120%;
@@ -691,7 +691,7 @@ footer {
   .bottom-footer{
     font-size: 1rem;
   }
-
+ 
   .bottom-nav{
     height: unset !important;
   }
@@ -705,7 +705,7 @@ footer {
     grid-column: 1 / -1;
     align-self: center !important;
     margin: 0 !important;
-
+    
   }
   .tab {
     display: flex;
