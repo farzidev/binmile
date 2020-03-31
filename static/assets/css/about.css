@@ -132,7 +132,7 @@
 
 
 @media (min-width: 1281px) {
-  
+
 
 }
 /*   ##Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px*/
@@ -170,7 +170,7 @@
 }
 /*   ##Device = Tablets, Ipads (portrait)  ##Screen = B/w 768px to 1024px*/
 @media (min-width: 768px) and (max-width: 1024px) {
-  
+
 
   .about-section{
     height: 40vh;
@@ -226,7 +226,7 @@
   }
 
   .header-heading{
- 
+
     font-size: 2rem;
   }
 
@@ -234,7 +234,7 @@
     padding-top: unset;
     width: 50%;
   }
-  
+
   .binmile-teams{
     flex-direction: column;
     justify-content: center;
@@ -245,7 +245,7 @@
     min-width: 60%;
     margin-bottom: 2rem;
   }
-  
+
   .team-section{
     padding: 2rem ;
   }
@@ -354,7 +354,7 @@
     font-size: 1.4rem;
     transform: translateY(3rem);
   }
-  
+
 
   .header-para{
     font-size: .7rem;

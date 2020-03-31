@@ -2,6 +2,7 @@
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView, FormView, ListView
 from django.contrib import messages
+from django.shortcuts import redirect
 from django.db.models import Q
 
 from .models import Post, Category, Form
@@ -112,3 +113,8 @@ class MicrosoftDynamicsView(FormView):
         messages.success(self.request, "Thanks for submitting the form.")
         form.send_mail()
         return super().form_valid(form)
+
+
+# custom 404 handler view
+def custom_404_handler(request, exception):
+    return redirect('posts:index')
