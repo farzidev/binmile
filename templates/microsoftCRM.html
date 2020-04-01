@@ -80,80 +80,14 @@
     <div class="crm-user">
       <h1 class="crm-user-heading" style="text-align: center;">&nbsp; Solutions &nbsp;</h1>
       <div class="crm-cards">
-        <div class="crm-card crm-card-1">
-          <h3 class="crm-card-heading">Implementation Service</h3>
-          <p class="crm-card-para">
-            We’ll build a detailed Dynamics CRM implementation plan and will
-            help you to migrate to Dynamics 365 smoothly.
-          </p>
-        </div>
-        <div class="crm-card crm-card-2">
-          <h3 class="crm-card-heading">
-            Dynamic CRM Configuration & customization
-          </h3>
-          <p class="crm-card-para">
-            We’ll help you to configure your CRM to streamline your business
-            processes and to take into account your business domain.
-          </p>
-        </div>
-        <div class="crm-card crm-card-3">
-          <h3 class="crm-card-heading">
-            Microsoft Dynamics CRM Custom Development
-          </h3>
-          <p class="crm-card-para">
-            Get your own modules and apps, custom objects to take the most out
-            of Microsoft products.
-          </p>
-        </div>
-        <div class="crm-card crm-card-4">
-          <h3 class="crm-card-heading">Dynamics 365 Integration</h3>
-          <p class="crm-card-para">
-            Integrate your CRM with other software and platforms, thanks to our
-            Microsoft Dynamics CRM integration services.
-          </p>
-        </div>
-        <div class="crm-card crm-card-5">
-          <h3 class="crm-card-heading">Dynamics 365 Data Migration</h3>
-          <p class="crm-card-para">
-            Migrate your data from any system to Dynamics CRM. We’ll help you
-            consolidate, clean, deduplicate your data and import it to your CRM.
-          </p>
-        </div>
-        <div class="crm-card crm-card-6">
-          <h3 class="crm-card-heading">CRM Upgrade</h3>
-          <p class="crm-card-para">
-            Upgrade your Dynamics 365 to the latest version smoothly with our
-            help.
-          </p>
-        </div>
-        <div class="crm-card crm-card-7">
-          <h3 class="crm-card-heading">Migration to Dynamics 365</h3>
-          <p class="crm-card-para">
-            Binmile has worked with no less than 10 CRM platforms and will make
-            your migration to Dynamics 365 run smoothly. Migrate from Salesforce
-            to Dynamics CRM with our help.
-          </p>
-        </div>
-        <div class="crm-card crm-card-8">
-          <h3 class="crm-card-heading">
-            Dynamics 365 Administration and Support
-          </h3>
-          <p class="crm-card-para">
-            Hire our Microsoft Dynamics CRM Consultants to administrate,
-            optimize, and support your system on an ongoing basis. We’ll take
-            care of everything!
-          </p>
-        </div>
-        <div class="crm-card crm-card-9">
-          <h3 class="crm-card-heading">
-            Civil Construction Solutions for Dynamics 365
-          </h3>
-          <p class="crm-card-para">
-            No other CRM consultant has more completed then Binmile. For over
-            the years, we’ve been helping USA and UK highly renowned companies
-            Dynamics 365 to their needs.
-          </p>
-        </div>
+        {% for object in object_list %}
+          <div class="crm-card crm-card-{{ forloop.counter }}">
+            <h3 class="crm-card-heading">{{ object.title }}</h3>
+            <p class="crm-card-para">
+              {{ object.content }}
+            </p>
+          </div>
+        {% endfor %}
       </div>
     </div>
 

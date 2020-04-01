@@ -69,11 +69,9 @@
           </div>
           <div class="bi__content-info">
               <ul class="list-content">
-                  <li class="mb-small">Employ streaming technology to see real-time data. (IoT Metrics)</li>
-                  <li class="mb-small"> Connect to many of your favorite assets (Dynamics 365, Mail Chimp, Quickbooks, Facebook, and More!)</li>
-                  <li class="mb-small">Build reactive dashboards to uncover trends. </li>
-                  <li class="mb-small">Build content packs to deliver dashboard sets to yourstaff quickly.</li>
-                  <li> Secure data by user roles.</li>
+                {% for object in object_list %}
+                  <li class="mb-small">{{ object.title }}</li>
+                {% endfor %}
               </ul>
           </div>
       </div>

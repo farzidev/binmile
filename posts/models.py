@@ -112,7 +112,7 @@ class MicrosoftDynamics365(models.Model):
     purpose = models.CharField(choices=PURPOSES, max_length=2, default='SS')
 
     def __str__(self):
-        return "%s - %s" % (self.title, self.purpose)
+        return "%s - %s" % (self.title, self.get_purpose_display())
 
     class Meta:
         verbose_name = 'Microsoft Dynamics 365'

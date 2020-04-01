@@ -52,98 +52,75 @@
         </ul>
       </div>
       <div class="col-md-9 tab-content for-height">
-        <div id="menu1" class="container tab-pane fade">
-          <h1 class="article-heading">IT Operations Management</h1>
-          <p>
-            A bird’s eye view of your IT Operations is indispensable. With various components that make up this ecosystem, from the old legacy to the new cutting edge technologies, there are a lot of blind spot that could render your systems incapacitated. Using the proactive ServiceNow ITOM platform will mean you will be in control of the health, optimization and have a holistic view of your services. Binmile’s methodology can prevent outages by proactively identifying changes so that you are aware, if there are going to be any adverse effects on your infrastructure. It also aims to reduce event noise, offer insight into costs and keep your business policy compliant enterprise wide. A customized ITOM solution, can help you gain clarity into essential business services, infrastructure and also help improve the health of the services, and introduce automation that will make your systems further efficient.
-          </p>
-        </div>
-        <div id="menu2" class=" container tab-pane fade">
-          <h1 class="article-heading">IT Business Management
-          </h1>
-          <p>
-            ITBM solutions can span various projects and objectives; from new system implementations, demand and production management, financial management and test management. We realize that each of these can bring with them unique challenges. Binmile’s experts in ServiceNow ITBM will work with your organization to come up with an end-to-end solution. The solutions will offer your business greater agility and the power to adapt as required. We will help you strategize, execute, plan, document and guide you through every step so to be aligned with your business objectives and strategies. This will help your organization keep tabs on expenditure, while giving you the edge of having a reduced time to market.
-          </p>
-        </div>
-        <div id="menu3" class=" container tab-pane fade">
-          <h1 class="article-heading">Governance Risk and Compliance</h1>
-          <p>
-            Organizations are expanding, entering new geographies and even new sectors which they did not cater to earlier. With this growing complexity the organizations are exposed to new risks, laws and governing policies. ServiceNow provides in-depth modules to help you better manage and mitigate risks. Be it vendor risk management or compliance management. It provides you with real time dashboards for high risks areas, updates on non-compliance and audit finding. All this will enable you to make better and informed decisions resulting in performance enhancement of overall business. We at Binmile understand this crucial and important aspect of GRC. We help you in planning your GRC implementation by understanding and evaluating your business requirement and process.
+        {% for object in object_list %}
+          <div id="menu{{ forloop.counter }}" class="container tab-pane {% if object.title == 'Service Portal' %}active{% endif %}">
+            <h1 class="article-heading">{{ object.title }}</h1>
+            <p>
+              {{ object.content }}
 
+              {% if object.title == 'Service Portal' %}
+                <h4><b>Our methodology</b></h4>
 
-          </p>
-        </div>
-        <div id="menu4" class=" container tab-pane fade">
-          <h1 class="article-heading">Integration Implementation Services</h1>
-          <p>
-            ITBM business solutions can span various projects and objectives; from new system implementations, demand and production management or financial or test management and we realize that each of these can bring with them unique challenges. BinMile’s experts in ServiceNow ITBM, will work with your organization to come up with an end-to-end solution. The solutions will offer your business greater agility and the power to adapt as required. We will help you strategize, execute, plan, document and guide you through every step so that it’s aligned to your business goals.This will help your organization keep tabs on expenditure, while giving you the edge of having a reduced time to market.
-          </p>
-        </div>
-        <div id="menu5" class="container tab-pane active">
-          <h1 class="article-heading">Service Portal</h1>
-          <p>
-            ServiceNow is more than just PaaS. It is focused at providing a better user experience. With so much of changes in technology, the end user may get perplexed and not be able to make the best of the technology. For this ServiceNow Service Portal was introduced, allowing users to interact with parts of ServiceNow Platform and enabling them to use its features. Binmile has implemented many Projects and hence developed expertise in Service Portal. We are well versed varied business needs and will make your Service Portal experience an optimum one.
+                Your Service Portals are created keeping design thinking principles in mind. To
+                create an effective plan that helps run your systems effectively, we run workshops with you to understand
+                your needs. We then bring your requirements to life, in a tailor made service portal.
+                <ul class="icon-list">
+                  <li class="service">
+                    <div class="service__img">
+                     <img src="{% static 'assets/images/1.png' %}" alt="" class="service__img service__img-1">
+                    </div>
+                    <div>
+                      <h5>Empathise</h5>
+                      <p>Putting ourselves in your shoes, helps us see it from your point of view</p>
+                    </div>
 
-            <h4><b>Our methodology</b></h4>
+                  </li>
+                  <li class="service">
+                    <div>
+                      <h5>Define</h5>
+                      <p>Create an aim, that encompasses your needs , and our deep insights</p>
+                    </div>
 
-            Your Service Portals are created keeping design thinking principles in mind. To
-            create an effective plan that helps run your systems effectively, we run workshops with you to understand
-            your needs. We then bring your requirements to life, in a tailor made service portal.
-            <ul class="icon-list">
-              <li class="service">
-                <div class="service__img">
-                 <img src="{% static 'assets/images/1.png' %}" alt="" class="service__img service__img-1">
-                </div>
-                <div>
-                  <h5>Empathise</h5>
-                  <p>Putting ourselves in your shoes, helps us see it from your point of view</p>
-                </div>
+                    <div class="service__img">
+                      <img src="{% static 'assets/images/2.png' %}" alt="" class="service__img service__img-2">
+                     </div>
+                  </li>
+                  <li class="service">
+                    <div class="service__img">
+                      <img src="{% static 'assets/images/3.png' %}" alt="" class="service__img service__img-3">
+                     </div>
+                     <div>
+                      <h5>Ideate</h5>
+                      <p class="for-left">Formulate a solution with an eye on innovation</p>
+                     </div>
 
-              </li>
-              <li class="service">
-                <div>
-                  <h5>Define</h5>
-                  <p>Create an aim, that encompasses your needs , and our deep insights</p>
-                </div>
+                  </li>
+                  <li class="service">
+                    <div>
+                      <h5>Prototype</h5>
+                      <p>An outcome that not only solves your needs, but goes much beyond</p>
+                    </div>
+                    <div class="service__img">
+                      <img src="{% static 'assets/images/4.png' %}" alt="" class="service__img service__img-4">
+                     </div>
 
-                <div class="service__img">
-                  <img src="{% static 'assets/images/2.png' %}" alt="" class="service__img service__img-2">
-                 </div>
-              </li>
-              <li class="service">
-                <div class="service__img">
-                  <img src="{% static 'assets/images/3.png' %}" alt="" class="service__img service__img-3">
-                 </div>
-                 <div>
-                  <h5>Ideate</h5>
-                  <p class="for-left">Formulate a solution with an eye on innovation</p>
-                 </div>
+                  </li>
 
-              </li>
-              <li class="service">
-                <div>
-                  <h5>Prototype</h5>
-                  <p>An outcome that not only solves your needs, but goes much beyond</p>
-                </div>
-                <div class="service__img">
-                  <img src="{% static 'assets/images/4.png' %}" alt="" class="service__img service__img-4">
-                 </div>
+                  <li class="service">
+                    <div class="service__img">
+                      <img src="{% static 'assets/images/5.png' %}" alt="" class="service__img service__img-5">
+                     </div>
+                     <div>
+                      <h5>Test</h5>
+                      <p>Make sure our solution, meets our stringent standards and is fit for rollout</p>
+                     </div>
 
-              </li>
-
-              <li class="service">
-                <div class="service__img">
-                  <img src="{% static 'assets/images/5.png' %}" alt="" class="service__img service__img-5">
-                 </div>
-                 <div>
-                  <h5>Test</h5>
-                  <p>Make sure our solution, meets our stringent standards and is fit for rollout</p>
-                 </div>
-
-              </li>
-            </ul>
-          </p>
-        </div>
+                  </li>
+                </ul>
+              {% endif %}
+            </p>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -157,182 +134,96 @@
    <!--Accordion wrapper-->
 <div class="accordion md-accordion phn-view" id="accordionEx" role="tablist" aria-multiselectable="true">
 
-  <!-- Accordion card -->
-  <div class="card">
+  {% for object in object_list %}
+    <!-- Accordion card -->
+    <div class="card">
 
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="headingOne1">
-      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
-        aria-controls="collapseOne1" class="panel-link">
-        <h5 class="mb-0 for-center ">
-          IT Operations Management <i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
-        </h5>
-      </a>
-    </div>
-
-    <!-- Card body -->
-    <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
-      <div class="card-body">
-        A bird’s eye view of your IT Operations is indispensable. With various components that make up this ecosystem, from the old legacy to the new cutting edge technologies, there are a lot of blind spot that could render your systems incapacitated. Using the proactive ServiceNow ITOM platform will mean you will be in control of the health, optimization and have a holistic view of your services. Binmile’s methodology can prevent outages by proactively identifying changes so that you are aware, if there are going to be any adverse effects on your infrastructure. It also aims to reduce event noise, offer insight into costs and keep your business policy compliant enterprise wide. A customized ITOM solution, can help you gain clarity into essential business services, infrastructure and also help improve the health of the services, and introduce automation that will make your systems further efficient.
+      <!-- Card header -->
+      <div class="card-header" role="tab" id="heading{{ forloop.counter }}">
+        <a class="collapsed panel-link" data-toggle="collapse" data-parent="#accordionEx" href="#collapse{{ forloop.counter }}"
+          aria-expanded="{% if forloop.counter == 1 %}true{% else %}false{% endif %}" aria-controls="collapse{{ forloop.counter }}">
+          <h5 class="mb-0 for-center">
+            {{ object.title }}<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
+          </h5>
+        </a>
       </div>
-    </div>
 
-  </div>
-  <!-- Accordion card -->
-
-  <!-- Accordion card -->
-  <div class="card">
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="headingTwo2">
-      <a class="collapsed panel-link" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
-        aria-expanded="false" aria-controls="collapseTwo2">
-        <h5 class="mb-0 for-center">
-          IT Business Management<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
-        </h5>
-      </a>
-    </div>
-
-    <!-- Card body -->
-    <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
-      <div class="card-body">
-        ITBM solutions can span various projects and objectives; from new system implementations, demand and production management, financial management and test management. We realize that each of these can bring with them unique challenges. Binmile’s experts in ServiceNow ITBM will work with your organization to come up with an end-to-end solution. The solutions will offer your business greater agility and the power to adapt as required. We will help you strategize, execute, plan, document and guide you through every step so to be aligned with your business objectives and strategies. This will help your organization keep tabs on expenditure, while giving you the edge of having a reduced time to market.
-
-
-      </div>
-    </div>
-
-  </div>
-  <!-- Accordion card -->
-
-  <!-- Accordion card -->
-  <div class="card">
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="headingThree3">
-      <a class="collapsed panel-link" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
-        aria-expanded="false" aria-controls="collapseThree3">
-        <h5 class="mb-0 for-center">
-          Governance Risk and Compliance<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
-        </h5>
-      </a>
-    </div>
-
-    <!-- Card body -->
-    <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
-      <div class="card-body">
-        Organizations are expanding, entering new geographies and even new sectors which they did not cater to earlier. With this growing complexity the organizations are exposed to new risks, laws and governing policies. ServiceNow provides in-depth modules to help you better manage and mitigate risks. Be it vendor risk management or compliance management. It provides you with real time dashboards for high risks areas, updates on non-compliance and audit finding. All this will enable you to make better and informed decisions resulting in performance enhancement of overall business. We at Binmile understand this crucial and important aspect of GRC. We help you in planning your GRC implementation by understanding and evaluating your business requirement and process.
-      </div>
-    </div>
-
-  </div>
-  <!-- Accordion card -->
-  <!-- Accordion card -->
-  <div class="card">
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="headingFour4">
-      <a class="collapsed panel-link" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFour4"
-        aria-expanded="false" aria-controls="collapseFour4">
-        <h5 class="mb-0 for-center">
-          Integration Implementation Services<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
-        </h5>
-      </a>
-    </div>
-
-    <!-- Card body -->
-    <div id="collapseFour4" class="collapse" role="tabpanel" aria-labelledby="headingFour4" data-parent="#accordionEx">
-      <div class="card-body">
-        ITBM business solutions can span various projects and objectives; from new system implementations, demand and production management or financial or test management and we realize that each of these can bring with them unique challenges. BinMile’s experts in ServiceNow ITBM, will work with your organization to come up with an end-to-end solution. The solutions will offer your business greater agility and the power to adapt as required. We will help you strategize, execute, plan, document and guide you through every step so that it’s aligned to your business goals.This will help your organization keep tabs on expenditure, while giving you the edge of having a reduced time to market.
-      </div>
-    </div>
-
-  </div>
-  <!-- Accordion card -->
-  <!-- Accordion card -->
-  <div class="card">
-
-    <!-- Card header -->
-    <div class="card-header" role="tab" id="headingFive5">
-      <a class="collapsed panel-link" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFive5"
-        aria-expanded="false" aria-controls="collapseFive5">
-        <h5 class="mb-0 for-center">
-          Service Portal<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
-        </h5>
-      </a>
-    </div>
-
-    <!-- Card body -->
-    <div id="collapseFive5" class="collapse" role="tabpanel" aria-labelledby="headingFive5" data-parent="#accordionEx">
-      <div class="card-body">
-          <h1 class="article-heading">Service Portal</h1>
+      <!-- Card body -->
+      <div id="collapse{{ forloop.counter }}" class="collapse {% if forloop.counter == 1 %}show{% endif %}" role="tabpanel" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionEx">
+        <div class="card-body">
+          {% if object.title == 'Service Portal' %}
+            <h1 class="article-heading">Service Portal</h1>
+          {% endif %}
           <p>
-            ServiceNow is more than just PaaS. It is focused at providing a better user experience. With so much of changes in technology, the end user may get perplexed and not be able to make the best of the technology. For this ServiceNow Service Portal was introduced, allowing users to interact with parts of ServiceNow Platform and enabling them to use its features. Binmile has implemented many Projects and hence developed expertise in Service Portal. We are well versed varied business needs and will make your Service Portal experience an optimum one.
+              {{ object.content }}
 
-            <h4><b>Our methodology</b></h4>
+            {% if object.title == 'Service Portal' %}
+              <h4><b>Our methodology</b></h4>
 
-            Your Service Portals are created keeping design thinking principles in mind. To
-            create an effective plan that helps run your systems effectively, we run workshops with you to understand
-            your needs. We then bring your requirements to life, in a tailor made service portal.
-            <ul class="icon-list">
-              <li class="service">
-                <div class="service__img">
-                 <img src="{% static 'assets/images/1.png' %}" alt="" class="service__img service__img-1">
-                </div>
-                <div>
-                  <h5>Empathise</h5>
-                  <p>Putting ourselves in your shoes, helps us see it from your point of view</p>
-                </div>
+              Your Service Portals are created keeping design thinking principles in mind. To
+              create an effective plan that helps run your systems effectively, we run workshops with you to understand
+              your needs. We then bring your requirements to life, in a tailor made service portal.
+              <ul class="icon-list">
+                <li class="service">
+                  <div class="service__img">
+                   <img src="{% static 'assets/images/1.png' %}" alt="" class="service__img service__img-1">
+                  </div>
+                  <div>
+                    <h5>Empathise</h5>
+                    <p>Putting ourselves in your shoes, helps us see it from your point of view</p>
+                  </div>
 
-              </li>
-              <li class="service">
-                <div>
-                  <h5>Define</h5>
-                  <p>Create an aim, that encompasses your needs , and our deep insights</p>
-                </div>
+                </li>
+                <li class="service">
+                  <div>
+                    <h5>Define</h5>
+                    <p>Create an aim, that encompasses your needs , and our deep insights</p>
+                  </div>
 
-                <div class="service__img">
-                  <img src="{% static 'assets/images/2.png' %}" alt="" class="service__img service__img-2">
-                 </div>
-              </li>
-              <li class="service">
-                <div class="service__img">
-                  <img src="{% static 'assets/images/3.png' %}" alt="" class="service__img service__img-3">
-                 </div>
-                 <div>
-                  <h5>Ideate</h5>
-                  <p>Formulate a solution with an eye on innovation</p>
-                 </div>
+                  <div class="service__img">
+                    <img src="{% static 'assets/images/2.png' %}" alt="" class="service__img service__img-2">
+                   </div>
+                </li>
+                <li class="service">
+                  <div class="service__img">
+                    <img src="{% static 'assets/images/3.png' %}" alt="" class="service__img service__img-3">
+                   </div>
+                   <div>
+                    <h5>Ideate</h5>
+                    <p>Formulate a solution with an eye on innovation</p>
+                   </div>
 
-              </li>
-              <li class="service">
-                <div>
-                  <h5>Prototype</h5>
-                  <p>An outcome that not only solves your needs, but goes much beyond</p>
-                </div>
-                <div class="service__img">
-                  <img src="{% static 'assets/images/4.png' %}" alt="" class="service__img service__img-4">
-                 </div>
+                </li>
+                <li class="service">
+                  <div>
+                    <h5>Prototype</h5>
+                    <p>An outcome that not only solves your needs, but goes much beyond</p>
+                  </div>
+                  <div class="service__img">
+                    <img src="{% static 'assets/images/4.png' %}" alt="" class="service__img service__img-4">
+                   </div>
 
-              </li>
+                </li>
 
-              <li class="service">
-                <div class="service__img">
-                  <img src="{% static 'assets/images/5.png' %}" alt="" class="service__img service__img-5">
-                 </div>
-                 <div>
-                  <h5>Test</h5>
-                  <p>Make sure our solution, meets our stringent standards and is fit for rollout</p>
-                 </div>
+                <li class="service">
+                  <div class="service__img">
+                    <img src="{% static 'assets/images/5.png' %}" alt="" class="service__img service__img-5">
+                   </div>
+                   <div>
+                    <h5>Test</h5>
+                    <p>Make sure our solution, meets our stringent standards and is fit for rollout</p>
+                   </div>
 
-              </li>
-            </ul>
+                </li>
+              </ul>
+            {% endif %}
           </p>
+        </div>
       </div>
-    </div>
 
-  </div>
-  <!-- Accordion card -->
+    </div>
+    <!-- Accordion card -->
+  {% endfor %}
 
 </div>
 <!-- Accordion wrapper -->
