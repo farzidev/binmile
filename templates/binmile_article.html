@@ -94,8 +94,8 @@
       <h2 class="bold">Related Articles</h2>
       <div class="row" style="margin-top: 3em">
         {% for obj in related_posts %}
-          <div class="col-md-4">
-            <div class="card">
+          <div class="col-md-12 col-lg-4">
+            <div class="card mb-5">
               <img src="{% if obj.thumbnail_img %}{{ obj.thumbnail_img.url }}{% endif %}" class="card-img-top">
               <div class="card-body">
                 <div class="pre-article">
@@ -130,20 +130,32 @@
 
 
     </div>
-    <section class="arrow-section">
-      <img src="{% static 'assets/images/arrow-image.png' %}" class="col-md-6 col-lg-6 col-sm-12 col-xs-12 arrow-image">
-      <aside class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
-        <h4 style="font-weight: bold; margin: 1.5em auto">Join the 1000+ businesses using Binmile</h4>
-        <p>
-          We make it easier for you to focus on building great products while we work on simplifying your technology.
-          Become one of us by joining thousands of our happy users and simplify the online experience for your
-          customers.
-        </p>
-        <p>
-          Focus on your business while we handle the complexities of technology for you.
-        </p>
-        <button class="get-in-touch">Get in touch</button>
-      </aside>
+    <section style="display:flex;justify-content: space-between;">
+      <div class="row article-section">
+        <a href="binmile_article.html">
+          <img
+          src="{% static 'assets/images/arrow-image.png' %}"
+          class="col-md-6 col-xs-12 col-sm-12 arrow-image"
+        />
+        </a>
+
+        <aside class="col-md-6 col-sm-12 col-xs-12 article-content">
+          <h4 style="font-weight: bold; margin: 1.5em auto">
+            Join the list of businesses whom we helped transform
+          </h4>
+          <p>
+            We make it easier for you to focus on building great products
+            while we work on simplifying your technology. Become one of us
+            by joining thousands of our happy users and simplify the online
+            experience for your customers.
+          </p>
+          <p>
+            Focus on your business while we handle the complexities of
+            technology for you.
+          </p>
+          <button class="get-in-touch"> <a href="{% url 'posts:contact-us' %}" class="contact-link">Get in touch</a></button>
+        </aside>
+      </div>
     </section>
 
   </main>

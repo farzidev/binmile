@@ -61,6 +61,10 @@ class AboutUsView(ListView):
     queryset = AboutUs.objects.all()
 
 
+class CareerView(TemplateView):
+    template_name = "career.html"
+
+
 # Power Platform View
 class PowerPFView(FormView):
     template_name = "powerBI.html"
