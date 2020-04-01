@@ -277,6 +277,10 @@ float: right;
     padding-top: 3rem;
 }
 
+.card{
+    min-width: 50rem;
+}
+
 
 
 /* media queries */
@@ -287,6 +291,8 @@ float: right;
     .for-counts{
         font-size: 5rem;
     }
+
+    
 }
 
 @media (min-width:1260px) and (max-width:1300px){
@@ -493,6 +499,10 @@ float: right;
     .jobs-card{
         padding: 0;
     }
+
+    .card{
+        min-width: 45rem;
+    }
 }
 
 
@@ -607,6 +617,10 @@ float: right;
 
     .life-stories{
         flex-direction: column;
+    }
+
+    .card{
+        min-width: 40rem;
     }
 }
 
@@ -747,6 +761,10 @@ float: right;
 
     .jobs-description{
         font-size: .8rem;
+    }
+
+    .card{
+        min-width: 32rem;
     }
 }
 
@@ -937,6 +955,10 @@ float: right;
     .for-center{
         font-size: 1.1rem;
     }
+
+    .card{
+        min-width: 28rem;
+    }
 }
 
 
@@ -1124,6 +1146,10 @@ float: right;
 
     .for-center{
         font-size: 1.1rem;
+    }
+
+    .card{
+        min-width: 25rem;
     }
 }
 
@@ -1317,6 +1343,10 @@ float: right;
 
     .for-center{
         font-size: 1.1rem;
+    }
+
+    .card{
+        min-width: 20rem;
     }
 }
 
