@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Post, Category, Form, Author
+from .models import Post, Category, Form, Author, AboutUs
 
 
 @admin.register(Post)
@@ -17,6 +17,7 @@ class PostModelAdmin(admin.ModelAdmin):
 
 admin.site.register(Category)
 admin.site.register(Author)
+admin.site.register(AboutUs)
 
 
 @admin.register(Form)

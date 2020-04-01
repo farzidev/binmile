@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.db.models import Q
 
-from .models import Post, Category, Form
+from .models import Post, Category, Form, AboutUs
 from .forms import ContactForm
 
 
@@ -55,8 +55,10 @@ class PostDetailView(DetailView):
         return context
 
 
-class AboutUsView(TemplateView):
+class AboutUsView(ListView):
     template_name = "aboutUs.html"
+    model = AboutUs
+    queryset = AboutUs.objects.all()
 
 
 # Power Platform View

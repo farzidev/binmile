@@ -6,6 +6,7 @@ from django.core.validators import MinValueValidator
 
 # from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+from PIL import Image
 
 from .utils import create_post_slug
 
@@ -64,6 +65,29 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class AboutUs(models.Model):
+    name = models.CharField(max_length=200)
+    title = models.CharField(max_length=255)
+    linkedin_url = models.URLField(max_length=255)
+    image = models.ImageField(upload_to='aboutus')
+
+    class Meta:
+        verbose_name = 'About Us'
+        verbose_name_plural = 'About Us'
+
+    def __str__(self):
+        return "%s - %s" % (self.name, self.title)
+
+    def save(self, *args, **kwargs):
+        if not self.image:
+            return
+
+        super().save()
+        photo = Image.open(self.image)
+        photo = photo.resize((1133, 1163), Image.ANTIALIAS)
+        photo.save(self.image.path)
 
 
 class Form(models.Model):

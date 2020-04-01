@@ -102,81 +102,20 @@
     <h2 class="team-heading">Meet Leaders behind Binmile Technology
       Find Your Valuable Team</h2>
     <div class="binmile-teams">
-      <div class="team-member">
-        <a
-        href="https://www.linkedin.com/in/avanishkamboj/"
-        target="_blank"
-        class="team-linkedin"
-      >
-        <i class="fab fa-linkedin"></i>
-      </a>
-        <img src="{% static 'assets/images/team/AvanishSir1.jpg' %}" alt="" class="team-img">
-        <h4 class="team-name">Avanish</h4>
-        <p class="team-designation">Chief Executive Officer & Founder</p>
-      </div>
-      <div class="team-member">
-        <a
-        href="https://www.linkedin.com/in/padmaja-shukla-pmp-26337021/"
-        target="_blank"
-        class="team-linkedin"
-      >
-        <i class="fab fa-linkedin"></i>
-      </a>
-        <img src="{% static 'assets/images/team/Padmaja1.jpg' %}" alt="" class="team-img">
-        <h4 class="team-name">Padmaja</h4>
-        <p class="team-designation">Chief Technology Officer</p>
-      </div>
-      <div class="team-member">
-        <a
-        href="https://www.linkedin.com/in/rahuldeorathore/"
-        target="_blank"
-        class="team-linkedin"
-      >
-        <i class="fab fa-linkedin"></i>
-      </a>
-        <img src="{% static 'assets/images/team/Rahul1.jpg' %}" alt="" class="team-img">
-        <h4 class="team-name">Rahul</h4>
-        <p class="team-designation">Customer Success Manager</p>
-      </div>
-    </div>
-
-    <div class="binmile-teams remove-padding">
-      <div class="team-member">
-        <a
-        href="https://www.linkedin.com/in/yashgupta755/"
-        target="_blank"
-        class="team-linkedin"
-      >
-        <i class="fab fa-linkedin"></i>
-      </a>
-        <img src="{% static 'assets/images/team/Yash1.jpg' %}" alt="" class="team-img">
-        <h4 class="team-name">Yash</h4>
-        <p class="team-designation">ServiceNow Technical Consultant</p>
-      </div>
-      <div class="team-member">
-        <a
-        href="https://www.linkedin.com/in/mohd-nazish-b460baa4/"
-        target="_blank"
-        class="team-linkedin"
-      >
-        <i class="fab fa-linkedin"></i>
-      </a>
-        <img src="{% static 'assets/images/team/Nazish1.jpg' %}" alt="" class="team-img">
-        <h4 class="team-name">Nazish</h4>
-        <p class="team-designation">Microsoft &amp; Power Platform Technical Lead</p>
-      </div>
-      <div class="team-member">
-        <a
-        href="https://www.linkedin.com/in/connectwithshariq/"
-        target="_blank"
-        class="team-linkedin"
-      >
-        <i class="fab fa-linkedin"></i>
-      </a>
-        <img src="{% static 'assets/images/team/shariq.jpeg' %}" alt="" class="team-img">
-        <h4 class="team-name">Shariq</h4>
-        <p class="team-designation">Business Analyst</p>
-      </div>
+      {% for object in object_list %}
+        <div class="team-member">
+          <a
+          href="{{ object.linkedin_url }}"
+          target="_blank"
+          class="team-linkedin"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <img src="{% if object.image %}{{ object.image.url }}{% endif %}" alt="" class="team-img">
+          <h4 class="team-name">{{ object.name }}</h4>
+          <p class="team-designation">{{ object.title }}</p>
+        </div>
+      {% endfor %}
     </div>
   </section>
 
