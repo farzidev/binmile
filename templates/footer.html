@@ -1,6 +1,7 @@
 {% load static %}
 
 <footer class="footer">
+  {% if extra|default_if_none:True %}
   <section class="top-footer text-center">
     <div class="container">
 
@@ -21,6 +22,7 @@
       <button class="estimate-btn" style="margin: 2em auto">Get an estimate</button>
     </div>
   </section>
+  {% endif %}
   <section class="main-footer">
     <div class="container">
       <div class="row footer__info">
