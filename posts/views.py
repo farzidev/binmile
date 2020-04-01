@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.db.models import Q
 
-from .models import Post, Category, Form, AboutUs
+from .models import Post, Category, Form, AboutUs, ServiceNow, PowerPlatform, MicrosoftDynamics365
 from .forms import ContactForm
 
 
@@ -38,8 +38,10 @@ class InsightsView(ListView):
         return context
 
 
-class ServicesView(TemplateView):
+class ServicesView(ListView):
     template_name = "service.html"
+    model = ServiceNow
+    queryset = ServiceNow.objects.all()
 
 
 class PostDetailView(DetailView):
@@ -71,6 +73,11 @@ class PowerPFView(FormView):
     form_class = ContactForm
     success_url = "#consultForm"
     page = "microsoft"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["object_list"] = PowerPlatform.objects.all()
+        return context
 
     def get_form_kwargs(self, **kwargs):
         kwargs = super().get_form_kwargs(**kwargs)
@@ -108,6 +115,11 @@ class MicrosoftDynamicsView(FormView):
     form_class = ContactForm
     success_url = "#consultForm"
     page = "microsoft"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["object_list"] = MicrosoftDynamics365.objects.all()
+        return context
 
     def get_form_kwargs(self, **kwargs):
         kwargs = super().get_form_kwargs(**kwargs)

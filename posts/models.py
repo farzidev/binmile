@@ -90,6 +90,42 @@ class AboutUs(models.Model):
         photo.save(self.image.path)
 
 
+class ServiceNow(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+
+    class Meta:
+        verbose_name = 'ServiceNow'
+        verbose_name_plural = 'ServiceNow'
+
+    def __str__(self):
+        return self.title
+
+
+class MicrosoftDynamics365(models.Model):
+    title = models.CharField(max_length=100)
+    content = models.TextField(max_length=180)
+
+    PURPOSES = (
+        ('SS', 'Solutions'),
+    )
+    purpose = models.CharField(choices=PURPOSES, max_length=2, default='SS')
+
+    def __str__(self):
+        return "%s - %s" % (self.title, self.purpose)
+
+    class Meta:
+        verbose_name = 'Microsoft Dynamics 365'
+        verbose_name_plural = 'Microsoft Dynamics 365'
+
+
+class PowerPlatform(models.Model):
+    title = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.title
+
+
 class Form(models.Model):
     name = models.CharField(max_length=255)
     company = models.CharField(max_length=255, null=True, blank=True)

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Post, Category, Form, Author, AboutUs
+from .models import Post, Category, Form, Author, AboutUs, MicrosoftDynamics365, PowerPlatform, ServiceNow
 
 
 @admin.register(Post)
@@ -18,6 +18,9 @@ class PostModelAdmin(admin.ModelAdmin):
 admin.site.register(Category)
 admin.site.register(Author)
 admin.site.register(AboutUs)
+admin.site.register(ServiceNow)
+admin.site.register(MicrosoftDynamics365)
+admin.site.register(PowerPlatform)
 
 
 @admin.register(Form)
