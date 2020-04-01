@@ -59,6 +59,10 @@ class AboutUsView(TemplateView):
     template_name = "aboutUs.html"
 
 
+class CareerView(TemplateView):
+    template_name = "career.html"
+
+
 # Power Platform View
 class PowerPFView(FormView):
     template_name = "powerBI.html"

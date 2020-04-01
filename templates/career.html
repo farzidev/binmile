@@ -1,0 +1,450 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'assets/images/faviconlogo.png' %}"
+      type="image/x-icon"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/owl.carousel.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/owl.theme.default.min.css' %}"
+    />
+
+    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/service.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/crm.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/career.css' %}" />
+
+    <script
+      src="https://kit.fontawesome.com/16370dbf02.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    {% include "header.html" %}
+
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-text">
+          <h1>Careers</h1>
+          <h3 class="hero-h3">
+            at Binmile
+          </h3>
+          <p class="career_header-para">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
+            ut perferendis unde sapiente hic nihil impedit commodi, animi dicta
+            officia consectetur accusantium debitis quae quia iusto autem maxime
+            iure magni!
+          </p>
+        </div>
+        <button class="get-started">
+          <a href="#start" class="contact-link"
+            >Let's Get Started</a
+          >
+        </button>
+      </div>
+      <div class="hero-right career-right">
+        <img
+          src="{% static 'assets/images/career/career-header.png' %}"
+          alt="career-img"
+          class="career-img"
+          id="careerImg"
+        />
+      </div>
+    </div>
+
+    <section class="career_first-section" id="start">
+      <h3 class="section-heading">
+        We're fixing how people manage their social networks. So we have to find
+        the right people to make that happen. If that's you, awesome. Come join
+        us on this journey.
+      </h3>
+
+      <div class="for-position">
+        <ul>
+          <li>We are currently looking for new people to join us.</li>
+        </ul>
+
+        <button class="get-started">
+          <a href="#for-jobs" class="contact-link">View Open Position</a>
+        </button>
+      </div>
+    </section>
+
+    <section class="life_at-binmile">
+      <div class="about-life">
+        <h3 class="life-heading">Life at Binmile</h3>
+        <p class="life-para">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias magnam
+          doloremque consectetur voluptates laborum hic perspiciatis reiciendis
+          aliquam eos accusantium, unde fuga quidem incidunt aliquid ab
+          excepturi a earum modi.
+        </p>
+      </div>
+
+      <div class="life-stories">
+        <div class="life-stories-1">
+          <h3 class="life-stories-heading">Be Happy <span class="for-counts">1</span></h3>
+
+          <p class="life-stories-para">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            exercitationem illum nulla iure doloremque, nesciunt quasi
+            accusantium repellendus tempore. Distinctio?
+          </p>
+        </div>
+        <div class="life-stories-2">
+          <h3 class="life-stories-heading">Breathe <span class="for-counts">2</span></h3>
+          <p class="life-stories-para">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            exercitationem illum nulla iure doloremque, nesciunt quasi
+            accusantium repellendus tempore. Distinctio?
+          </p>
+        </div>
+        <div class="life-stories-3">
+          <h3 class="life-stories-heading">Meet Greet People <span class="for-counts">3</span></h3>
+          <p class="life-stories-para">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            exercitationem illum nulla iure doloremque, nesciunt quasi
+            accusantium repellendus tempore. Distinctio?
+          </p>
+        </div>
+      </div>
+
+      <div class="life-stories life-stories-second">
+        <div class="life-stories-4">
+          <h3 class="life-stories-heading">Start Doing <span class="for-counts">4</span></h3>
+          <p class="life-stories-para">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            exercitationem illum nulla iure doloremque, nesciunt quasi
+            accusantium repellendus tempore. Distinctio?
+          </p>
+        </div>
+        <div class="life-stories-5">
+          <h3 class="life-stories-heading">Work Smarter <span class="for-counts">5</span></h3>
+          <p class="life-stories-para">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            exercitationem illum nulla iure doloremque, nesciunt quasi
+            accusantium repellendus tempore. Distinctio?
+          </p>
+        </div>
+        <div class="life-stories-6">
+          <h3 class="life-stories-heading">Become a Better you <span class="for-counts">6</span></h3>
+          <p class="life-stories-para">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            exercitationem illum nulla iure doloremque, nesciunt quasi
+            accusantium repellendus tempore. Distinctio?
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+     <section class="gallery">
+      <figure class="gallery__item gallery__item--1">
+        <img src="{% static 'assets/images/gallery/1.jpeg' %}" alt="Gallery image 1" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--2">
+        <img src="{% static 'assets/images/gallery/2.jpeg' %}" alt="Gallery image 2" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--3">
+        <img src="{% static 'assets/images/gallery/3.jpeg' %}" alt="Gallery image 3" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--4">
+        <img src="{% static 'assets/images/gallery/4.jpeg' %}" alt="Gallery image 4" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--5">
+        <img src="{% static 'assets/images/gallery/5.jpeg' %}" alt="Gallery image 5" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--6">
+        <img src="{% static 'assets/images/gallery/6.jpeg' %}" alt="Gallery image 6" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--7">
+        <img src="{% static 'assets/images/gallery/7.jpeg' %}" alt="Gallery image 7" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--8">
+        <img src="{% static 'assets/images/gallery/8.jpeg' %}" alt="Gallery image 8" class="gallery__img" />
+      </figure>
+      <figure class="gallery__item gallery__item--9">
+        <img src="{% static 'assets/images/gallery/9.jpeg' %}" alt="Gallery image 9" class="gallery__img" />
+      </figure>
+    </section>
+
+    <section class="section-employee-reviews">
+      <h4 class="reviews-heading-1">
+        People love working here
+      </h4>
+      <h1 class="reviews-main-heading">
+        Why employees love working here at Binmile?
+      </h1>
+
+      <div class="employee-reviews">
+        <div class="reviews">
+          <div class="review-first">
+            <img
+              src="{% static 'assets/images/team/Rahul1.jpg' %}"
+              alt=""
+              class="review-img"
+            />
+            <p class="review-para">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Similique sed dolorem, quos nisi fugit ratione recusandae! Minima
+              quia sed blanditiis eum commodi consequuntur unde, rem consectetur
+              impedit? Beatae quidem a in? Cum velit id soluta eius quasi
+              officia molestias, laudantium earum molestiae dolore fuga ex
+              deleniti adipisci ut ipsa! Amet.
+            </p>
+            <h3 class="review-name">Rahul</h3>
+          </div>
+        </div>
+        <div class="reviews-1">
+          <div class="review-first">
+            <img
+              src="{% static 'assets/images/team/yash1.jpg' %}"
+              alt=""
+              class="review-img"
+            />
+            <p class="review-para">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Similique sed dolorem, quos nisi fugit ratione recusandae! Minima
+              quia sed blanditiis eum commodi consequuntur unde, rem consectetur
+              impedit? Beatae quidem a in? Cum velit id soluta eius quasi
+              officia molestias, laudantium earum molestiae dolore fuga ex
+              deleniti adipisci ut ipsa! Amet.
+            </p>
+            <h3 class="review-name">Yash</h3>
+          </div>
+
+          <div class="review-first">
+            <img
+              src="{% static 'assets/images/team/nazish1.jpg' %}"
+              alt=""
+              class="review-img"
+            />
+            <p class="review-para">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Similique sed dolorem, quos nisi fugit ratione recusandae! Minima
+              quia sed blanditiis eum commodi consequuntur unde, rem consectetur
+              impedit? Beatae quidem a in? Cum velit id soluta eius quasi
+              officia molestias, laudantium earum molestiae dolore fuga ex
+              deleniti adipisci ut ipsa! Amet.
+            </p>
+            <h3 class="review-name">Nazish</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="jobs" id="for-jobs">
+        <div class="jobs-content">
+            <h3 class="jobs-heading">Want to become one of us?</h3>
+            <p class="jobs-para">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque iure libero incidunt tempora fuga sequi temporibus quidem perferendis. Nesciunt commodi labore aspernatur sed doloribus quia ratione asperiores molestias, vitae similique?</p>
+        </div>
+       
+           <!--Accordion wrapper-->
+            <div class="accordion md-accordion jobs-card" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+            
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingOne1">
+                    <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
+                    aria-controls="collapseOne1" class="panel-link">
+                    <h5 class="mb-0 for-center ">
+                        ServiceNow Developer<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
+                    </h5>
+                    </a>
+                </div>
+            
+                <!-- Card body -->
+                <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                    <div class="card-body">
+                        <p class="job-location">Location: <span>New Delhi</span></p>
+                        <p class="job-experience">Experience: <span>01 -02 Years</span></p>
+                        <p class="job-position">Position: <span>01</span> </p>
+                        <p class="jobs-description">In this paragraph can be described as what should be the role of Employee in this field.
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea</p>
+
+                            <button class="get-started send-cv-btn">
+                                <a href="mailto:business@binmile.com" class="contact-link"
+                                  >Send us your CV</a
+                                >
+                              </button>
+                    </div>
+                </div>
+            
+                </div>
+                <!-- Accordion card -->
+            
+                <!-- Accordion card -->
+                <div class="card">
+            
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingTwo2">
+                    <a class="collapsed panel-link" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
+                    aria-expanded="false" aria-controls="collapseTwo2">
+                    <h5 class="mb-0 for-center">
+                        Dynamics 365 Developer<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
+                    </h5>
+                    </a>
+                </div>
+            
+                <!-- Card body -->
+                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
+                    <div class="card-body">
+                        <p class="job-location">Location: <span>New Delhi</span></p>
+                        <p class="job-experience">Experience: <span>01 -02 Years</span></p>
+                        <p class="job-position">01</p>
+                        <p class="jobs-description">In this paragraph can be described as what should be the role of Employee in this field.
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea</p>
+                            <button class="get-started send-cv-btn">
+                                <a href="mailto:business@binmile.com" class="contact-link"
+                                  >Send us your CV</a
+                                >
+                              </button>
+                    </div>
+                </div>
+            
+                </div>
+                <!-- Accordion card -->
+            
+                <!-- Accordion card -->
+                <div class="card">
+            
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingThree3">
+                    <a class="collapsed panel-link" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
+                    aria-expanded="false" aria-controls="collapseThree3">
+                    <h5 class="mb-0 for-center">
+                        Power BI Developer<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
+                    </h5>
+                    </a>
+                </div>
+            
+                <!-- Card body -->
+                <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
+                    <div class="card-body">
+                        <p class="job-location">Location: <span>New Delhi</span></p>
+                        <p class="job-experience">Experience: <span>01 -02 Years</span></p>
+                        <p class="job-position">01</p>
+                        <p class="jobs-description">In this paragraph can be described as what should be the role of Employee in this field.
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea</p>
+                            <button class="get-started send-cv-btn">
+                                <a href="mailto:business@binmile.com" class="contact-link"
+                                  >Send us your CV</a
+                                >
+                              </button>
+                    </div>
+                </div>
+            
+                </div>
+                <!-- Accordion card -->
+                <!-- Accordion card -->
+                <div class="card">
+            
+                <!-- Card header -->
+                <div class="card-header" role="tab" id="headingFour4">
+                    <a class="collapsed panel-link" data-toggle="collapse" data-parent="#accordionEx" href="#collapseFour4"
+                    aria-expanded="false" aria-controls="collapseFour4">
+                    <h5 class="mb-0 for-center">
+                        Business Analyst<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
+                    </h5>
+                    </a>
+                </div>
+            
+                <!-- Card body -->
+                <div id="collapseFour4" class="collapse" role="tabpanel" aria-labelledby="headingFour4" data-parent="#accordionEx">
+                    <div class="card-body">
+                        <p class="job-location">Location: <span>New Delhi</span></p>
+                        <p class="job-experience">Experience: <span>01 -02 Years</span></p>
+                        <p class="job-position">01</p>
+                        <p class="jobs-description">In this paragraph can be described as what should be the role of Employee in this field.
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea</p>
+                            <button class="get-started send-cv-btn">
+                                <a href="mailto:business@binmile.com" class="contact-link"
+                                  >Send us your CV</a
+                                >
+                              </button>
+                    </div>
+                </div>
+            
+                </div>
+                <!-- Accordion card -->
+               
+            
+            </div>
+            <!-- Accordion wrapper -->
+
+            <div class="anyway-send-cv">
+                <p>Didn't find a position that suits you? Don't worry you can send us your CV and we will review it. </p>
+                <button class="get-started">
+                    <a href="mailto:business@binmile.com" class="contact-link"
+                      >Send CV</a
+                    >
+                  </button>
+            </div>
+    </section>
+
+    {% include "footer.html" %}
+  </body>
+
+  <script
+    src="//code.tidio.co/ntbvrxc2bygx9vrnptufdvakjunxcnsw.js"
+    async
+  ></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll > 700) {
+          $("#navbar").css("background", "#062772"),
+            $("#navbar").css("height", "8vh"),
+            $(".dropdown").css("transform", "translateY(-2px)"),
+            $(".navbar-toggler").css("top", "-1rem");
+        } else {
+          $("#navbar").css("background", "transparent");
+        }
+      });
+    });
+
+    /** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
+    $(document).ready(function() {
+      $(document).click(function(event) {
+        var clickover = $(event.target);
+        var _opened = $(".navbar-collapse").hasClass("show");
+        if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+          $(".navbar-toggler").click();
+        }
+      });
+    });
+
+    $(".dropdown").on("click", function(event) {
+      // The event won't be propagated up to the document NODE and
+      // therefore delegated events won't be fired
+      event.stopPropagation();
+    });
+  </script>
+</html>

@@ -2,7 +2,7 @@ from django.urls import path
 
 from .views import (
     IndexView, InsightsView, ServicesView, PostDetailView,
-    AboutUsView, ContactUsView, MicrosoftDynamicsView, PowerPFView
+    AboutUsView, ContactUsView, MicrosoftDynamicsView, PowerPFView, CareerView
 )
 
 app_name = 'posts'
@@ -16,4 +16,5 @@ urlpatterns = [
     path('contact-us/', ContactUsView.as_view(), name='contact-us'),
     path('microsoft-dynamics-365/', MicrosoftDynamicsView.as_view(), name='microsoft-dynamics-365'),
     path('power-platform/', PowerPFView.as_view(), name='power-platform'),
+    path('career/', CareerView.as_view(), name='career'),
 ]

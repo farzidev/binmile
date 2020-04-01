@@ -59,6 +59,8 @@
             <li><a href="{% url 'posts:about-us' %}" class="nav-link">About Us</a></li>
             <li><a href="{% url 'posts:insights' %}" class="nav-link">Insights</a></li>
             <li><a href="{% url 'posts:contact-us' %}" class="nav-link">Contact Us</a></li>
+            <li><a href="{% url 'posts:career' %}" class="nav-link">Career</a></li>
+
 
           </ul>
         </div>
@@ -132,7 +134,7 @@
             {% endif %}
             <!-- SEARCH RESULTS ENDS -->
             {% for post in object_list %}
-              <div class="col-md-4" style="margin-bottom: 3em">
+              <div class="col-md-6" style="margin-bottom: 3em">
                 <div class="card">
                   <a href="{{ post.get_absolute_url }}">
                     <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
@@ -236,7 +238,7 @@
             <div class="row article-row" style="margin-top: 3em">
               {% for post in object_list %}
                 {% if post.category == category %}
-                  <div class="col-md-4" style="margin-bottom: 3em">
+                  <div class="col-md-4 col-lg-4" style="margin-bottom: 3em">
                     <div class="card">
                       <a href="{{ post.get_absolute_url }}">
                         <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
