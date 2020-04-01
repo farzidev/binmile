@@ -1,6 +1,6 @@
 {% load static %}
 
-<footer class="footer">
+<footer class="footer" style="background-{% if extra|default_if_none:True %}image:url({% static 'assets/images/hero_images/footer-img.png' %}){% else %}color: #92D4FC{% endif %}">
   {% if extra|default_if_none:True %}
   <section class="top-footer text-center">
     <div class="container">

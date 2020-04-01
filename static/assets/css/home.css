@@ -508,7 +508,7 @@ header {
 
 .footer-links:link,
 .footer-links:active{
-  
+
   text-decoration: none;
 }
 
@@ -630,7 +630,7 @@ header {
   .nav-link:visited {
     color: white;
   }
-  
+
   .navbar-toggler {
     z-index: 999;
   }
@@ -645,7 +645,7 @@ header {
   }
   .work-card {
     width: 70vw;
-    
+
   }
   .main-footer .container > div {
     width: fit-content;
@@ -668,7 +668,6 @@ header {
 
 footer {
   /* background-color: #6dbffc; */
-  background-image:url(../images/hero_images/footer-img.png);
   background-repeat: no-repeat;
   background-size: 175%;
   background-position: top;
@@ -692,7 +691,7 @@ footer {
 
 .bold {
   font-weight: bold;
-  
+
 }
 
 .main-footer {
@@ -922,7 +921,7 @@ footer {
   .test {
     width: 10000px !important;
   }
-  
+
 }
 
 /*   ##Device = Low Resolution Tablets, Mobiles (Landscape)  ##Screen = B/w 481px to 767px*/
@@ -958,7 +957,7 @@ footer {
   }
   .top-logo {
     max-width: 15rem;
-  
+
   }
   .owl-two .test-card {
     margin-left: 3.3rem !important;
@@ -1060,7 +1059,7 @@ footer {
     flex-direction: row;
   }
 
-  
+
 
   .bottom-nav li {
     flex: 40%;
@@ -1101,7 +1100,7 @@ footer {
   }
 
   #floating-image-2 {
-    
+
     margin-top: 4rem;
     margin-right: .5rem;
   }
@@ -1212,7 +1211,7 @@ footer {
   .test-card{
     min-height: 10rem !important;
   }
-  
+
   .main-footer{
     background-size: 120%;
   }
