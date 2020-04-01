@@ -54,7 +54,11 @@
           {{ object.title }}
         </h1>
         <div class="article-author">
-          <span>{{ object.author }}</span>
+          <span>
+            {% if obj.author %}
+              {{ object.author }}
+            {% endif %}
+          </span>
           <span class="author-social">
             <span>
               <a class="sharing-links" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}&amp;title={{ object.title }}">

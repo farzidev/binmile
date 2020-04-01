@@ -125,3 +125,5 @@ DOUBTS.md
 # sublime project
 bin.sublime-project
 bin.sublime-workspace
+
+templates/insights.html

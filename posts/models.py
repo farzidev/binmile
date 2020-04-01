@@ -1,3 +1,5 @@
+import random
+
 from django.db import models
 from django.urls import reverse_lazy
 from django.dispatch import receiver
@@ -23,7 +25,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     content = RichTextUploadingField()
     thumbnail_img = models.ImageField(upload_to=post_img_dir)
-    highlight = models.TextField()
+    highlight = models.TextField(max_length=170, help_text='Maximum characters allowed are 170')
     tags = models.TextField()
     read_minutes = models.PositiveIntegerField(
         help_text="Time needed in minutes to read this Insight", blank=True)
@@ -45,6 +47,18 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse_lazy('posts:detail', kwargs={'slug': self.slug})
+
+    def save(self, *args, **kwargs):
+        if not self.thumbnail_img:
+            return
+
+        if not self.read_minutes:
+            self.read_minutes = random.randrange(5, 10)
+
+        super().save()
+        photo = Image.open(self.thumbnail_img)
+        photo = photo.resize((412, 300), Image.ANTIALIAS)
+        photo.save(self.thumbnail_img.path)
 
 
 @receiver(pre_save, sender=Post)
