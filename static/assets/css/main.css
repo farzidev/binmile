@@ -529,6 +529,10 @@ footer {
       justify-content: center;
       align-items: center;
     }
+
+    .article-content-blog{
+      min-width: 90% !important;
+    }
     .article-section{
       display: flex;
       justify-content: center;

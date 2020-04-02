@@ -132,7 +132,7 @@
   font-weight: 600;
 }
 .icon-list li {
-  margin: 1em;
+  margin: 0em;
 }
 
 .icon-list li:nth-child(even) {
@@ -157,11 +157,16 @@
 .service {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .service__img {
-  width: 10rem;
+  width: 9rem;
+}
+
+.for-rotate-image{
+  transform: scaleX(-1);
+  margin-right: 1rem;
 }
 
 .service__img-2 {
@@ -297,6 +302,10 @@
 
   #service-pillar-img{
     min-width: 80%;
+  }
+
+  .service__img {
+    width: 7rem;
   }
 }
 /*   ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px*/
