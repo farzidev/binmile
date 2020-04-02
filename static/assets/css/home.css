@@ -668,6 +668,7 @@ header {
 
 footer {
   /* background-color: #6dbffc; */
+  background-image:url(../images/hero_images/footer-img.png);
   background-repeat: no-repeat;
   background-size: 175%;
   background-position: top;
