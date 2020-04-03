@@ -76,7 +76,7 @@ class PowerPFView(FormView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context["object_list"] = PowerPlatform.objects.all()
+        context["object_list"] = PowerPlatform.objects.filter(order__isnull=False).order_by('order')
         return context
 
     def get_form_kwargs(self, **kwargs):
@@ -118,7 +118,7 @@ class MicrosoftDynamicsView(FormView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context["object_list"] = MicrosoftDynamics365.objects.all()
+        context["object_list"] = MicrosoftDynamics365.objects.filter(order__isnull=False).order_by('order')
         return context
 
     def get_form_kwargs(self, **kwargs):

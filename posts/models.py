@@ -5,6 +5,8 @@ from django.urls import reverse_lazy
 from django.dispatch import receiver
 from django.db.models.signals import pre_save
 from django.core.validators import MinValueValidator
+from django.core.exceptions import ValidationError
+from django.utils.safestring import mark_safe
 
 # from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -120,6 +122,19 @@ class MicrosoftDynamics365(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField(max_length=180)
 
+    ORDERS = (
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+        ('6', '6'),
+        ('7', '7'),
+        ('8', '8'),
+        ('9', '9'),
+    )
+    order = models.CharField(choices=ORDERS, max_length=2, blank=True, null=True)
+
     PURPOSES = (
         ('SS', 'Solutions'),
     )
@@ -131,13 +146,52 @@ class MicrosoftDynamics365(models.Model):
     class Meta:
         verbose_name = 'Microsoft Dynamics 365'
         verbose_name_plural = 'Microsoft Dynamics 365'
+        ordering = ('order',)
+
+    def clean(self, *args, **kwargs):
+        if self.order:
+            qs = self.__class__.objects.filter(order=self.order).exclude(pk=self.pk)
+            if qs.exists():
+                url = reverse_lazy(f'admin:posts_microsoftdynamics365_change', kwargs={'object_id': qs.first().id})
+                print(url)
+                raise ValidationError(
+                    {"order": mark_safe(
+                        f"Solution with this order already exists, you can change it <a target='_blank' href='{url}'>here</a>."
+                    )}
+                )
+        return super().clean(*args, **kwargs)
 
 
 class PowerPlatform(models.Model):
     title = models.CharField(max_length=150)
 
+    ORDERS = (
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5')
+    )
+    order = models.CharField(choices=ORDERS, max_length=2, blank=True, null=True)
+
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ('order',)
+
+    def clean(self, *args, **kwargs):
+        if self.order:
+            qs = self.__class__.objects.filter(order=self.order).exclude(pk=self.pk)
+            if qs.exists():
+                url = reverse_lazy(f'admin:posts_powerplatform_change', kwargs={'object_id': qs.first().id})
+                print(url)
+                raise ValidationError(
+                    {"order": mark_safe(
+                        f"Point with this order already exists, you can change it <a target='_blank' href='{url}'>here</a>."
+                    )}
+                )
+        return super().clean(*args, **kwargs)
 
 
 class Form(models.Model):
