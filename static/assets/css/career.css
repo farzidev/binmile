@@ -205,15 +205,15 @@
 }
 
 .review-img-1{
-  background-image: url(../images/career/employee1.jpg);
+  background-image: url(../images/career/rohit.jpeg);
 }
 
 .review-img-2{
-  background-image: url(../images/career/employee2.jpg);
+  background-image: url(../images/career/shruti.jpeg);
 }
 
 .review-img-3{
-  background-image: url(../images/career/employee3.jpg);
+  background-image: url(../images/career/shipra.jpeg);
 }
 
 .review-name {
@@ -756,6 +756,11 @@
   .review-first {
     width: 95%;
   }
+
+  .review-img{
+    width: 3rem;
+    height: 3rem;
+  }
 }
 
 @media (min-width: 440px) and (max-width: 485px) {
@@ -997,6 +1002,11 @@
   .gallery__item--9 {
     grid-row: 17 / span 4;
     grid-column: 1 / span 4;
+  }
+
+  .review-img{
+    width: 3rem;
+    height: 3rem;
   }
 }
 
@@ -1243,6 +1253,11 @@
 
   .about-life {
     padding: 1rem;
+  }
+
+  .review-img{
+    width: 3rem;
+    height: 3rem;
   }
 }
 
@@ -1495,6 +1510,12 @@
     grid-row: 17 / span 4;
     grid-column: 1 / span 4;
   }
+
+  .review-img{
+    width: 3rem;
+    height: 3rem;
+    transform: translateX(-3.5rem);
+  }
 }
 
 @media (min-width: 300px) and (max-width: 350px) {
@@ -1745,5 +1766,11 @@
   .gallery__item--9 {
     grid-row: 17 / span 4;
     grid-column: 1 / span 4;
+  }
+
+  .review-img{
+    width: 3rem;
+    height: 3rem;
+    transform: translateX(-3.5rem);
   }
 }
