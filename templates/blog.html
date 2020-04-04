@@ -320,7 +320,7 @@
     <!-- footer starts -->
     <footer class="footer">
       <section class="top-footer text-center">
-        <div class="container">
+        <div class="container for-remove-margin">
           <h3
             style="font-weight: bold;letter-spacing: 0.4px;color: #062772;"
             class="footer-heading"
@@ -331,13 +331,13 @@
           <div
             style="text-align:center;margin:2em auto;border-radius: 5em;width: 10em;height:0.5em;background-color:#062772;"
           ></div>
-          <p style="letter-spacing: 0.24px; color: #062772;">
+          <p style="letter-spacing: 0.24px; color: #062772;" class="top-footer-para">
             Do you need an elite team of technologist and idea-makers? Is
             quality important to you? Is scalability and endless customization
             paramount? Do you need a brand that is built specifically for your
             company and can be as innovative as you are?
           </p>
-          <p style="letter-spacing: 0.24px; color: #062772;">
+          <p style="letter-spacing: 0.24px; color: #062772;" class="top-footer-para">
             Contact our Business Analyst and get the journey started.
           </p>
           <button class="estimate-btn" style="margin: 2em auto">
@@ -346,7 +346,7 @@
         </div>
       </section>
       <section class="main-footer">
-        <div class="container">
+        <div class="container for-remove-margin">
           <div class="row footer__info">
             <div class="col-md-4 footer__info-content">
               <img
@@ -359,7 +359,7 @@
             <p class="contact-num">+1(415)-915-7177</p>
 
               <p class="contact-num">+91.9811643424</p> -->
-                <a href="mailto:business@binmile.com" class="join-us"
+                <a href="{% url 'posts:career' %}" class="join-us"
                   >Join Us</a
                 >
               </div>
@@ -439,6 +439,16 @@
                   <li>
                     <a href="{% url 'posts:insights' %}?tab=Case_Studies" class="footer-links">Case Studies</a>
                   </li>
+                </ul>
+
+                <ul>
+                  <li>
+                    <h4 class="bold">Career</h4>
+                  </li>
+                  <li>
+                    <div class="line"></div>
+                  </li>
+                  <li><a href="{% url 'posts:career' %}"class="footer-links">Career</a></li>
                 </ul>
               </div>
             </div>
