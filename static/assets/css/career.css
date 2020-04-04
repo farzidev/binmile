@@ -199,6 +199,21 @@
   height: 4rem;
   border-radius: 50%;
   transform: translateX(-4rem);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.review-img-1{
+  background-image: url(../images/career/employee1.jpg);
+}
+
+.review-img-2{
+  background-image: url(../images/career/employee2.jpg);
+}
+
+.review-img-3{
+  background-image: url(../images/career/employee3.jpg);
 }
 
 .review-name {
