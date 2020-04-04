@@ -1,8 +1,15 @@
 from django.contrib import admin, messages
-from django.db.models import IntegerField
-from django.db.models.functions import Cast
 
-from .models import Post, Category, Form, Author, AboutUs, MicrosoftDynamics365, PowerPlatform, ServiceNow
+from .models import (
+    Post, Category, Form, Author, AboutUs, MicrosoftDynamics365, PowerPlatform, ServiceNow,
+    CareerGallery, JobProfile
+)
+
+
+admin.site.register(Category)
+admin.site.register(Author)
+admin.site.register(AboutUs)
+admin.site.register(ServiceNow)
 
 
 @admin.register(Post)
@@ -15,12 +22,6 @@ class PostModelAdmin(admin.ModelAdmin):
         return obj.get_purpose_display()
 
     get_purpose.short_description = "Purpose"
-
-
-admin.site.register(Category)
-admin.site.register(Author)
-admin.site.register(AboutUs)
-admin.site.register(ServiceNow)
 
 
 @admin.register(MicrosoftDynamics365)
@@ -53,6 +54,21 @@ class PowerPlatformAdmin(admin.ModelAdmin):
             changed_order = form.cleaned_data.get('order')
             messages.info(request, f'Order changed to "{changed_order}" for Point - "{obj.title}"')
         super().save_model(request, obj, form, change)
+
+
+@admin.register(CareerGallery)
+class CareerGalleryAdmin(admin.ModelAdmin):
+    list_display = ('get_image_name', 'order')
+
+    def get_image_name(self, obj):
+        return obj.image.name
+
+    get_image_name.short_decription = "Image"
+
+
+@admin.register(JobProfile)
+class JobProfileAdmin(admin.ModelAdmin):
+    list_display = ('title', 'location', 'positions', 'is_active')
 
 
 @admin.register(Form)

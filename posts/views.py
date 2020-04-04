@@ -5,7 +5,10 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.db.models import Q
 
-from .models import Post, Category, Form, AboutUs, ServiceNow, PowerPlatform, MicrosoftDynamics365
+from .models import (
+    Post, Category, Form, AboutUs, ServiceNow, PowerPlatform, MicrosoftDynamics365, CareerGallery,
+    JobProfile
+)
 from .forms import ContactForm
 
 
@@ -63,8 +66,15 @@ class AboutUsView(ListView):
     queryset = AboutUs.objects.all()
 
 
-class CareerView(TemplateView):
+class CareerView(ListView):
+    model = CareerGallery
+    queryset = CareerGallery.objects.filter(order__isnull=False).order_by('order')
     template_name = "career.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["job_profiles"] = JobProfile.objects.filter(is_active=True)
+        return context
 
 
 # Power Platform View

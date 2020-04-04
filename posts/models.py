@@ -194,6 +194,42 @@ class PowerPlatform(models.Model):
         return super().clean(*args, **kwargs)
 
 
+class CareerGallery(models.Model):
+    image = models.ImageField(upload_to='gallery')
+
+    ORDERS = (
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+        ('6', '6'),
+        ('7', '7'),
+        ('8', '8'),
+        ('9', '9'),
+    )
+    order = models.CharField(choices=ORDERS, max_length=2, blank=True, null=True)
+
+    def __str__(self):
+        return self.image.name
+
+
+class JobProfile(models.Model):
+    title = models.CharField(max_length=255)
+    location = models.CharField(max_length=100)
+
+    EXPERIENCE_YEARS = ((f'{i} - {i + 1}', f'{i} - {i + 1}') for i in range(0, 10))
+    experience_years = models.CharField(choices=EXPERIENCE_YEARS, max_length=10)
+    positions = models.IntegerField()
+    description = models.TextField()
+    is_active = models.BooleanField(default=True)
+
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+
 class Form(models.Model):
     name = models.CharField(max_length=255)
     company = models.CharField(max_length=255, null=True, blank=True)
