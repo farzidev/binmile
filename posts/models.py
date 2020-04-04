@@ -234,7 +234,7 @@ class Form(models.Model):
     name = models.CharField(max_length=255)
     company = models.CharField(max_length=255, null=True, blank=True)
     email = models.EmailField()
-    phone_number = models.IntegerField(validators=[MinValueValidator(0)],
+    phone_number = models.BigIntegerField(validators=[MinValueValidator(0)],
         null=True, blank=True)
     subject = models.CharField(max_length=255, null=True, blank=True)
     message = models.TextField()
