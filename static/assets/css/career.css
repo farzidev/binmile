@@ -1684,6 +1684,7 @@
   .gallery {
     grid-template: repeat(20, 5vw) / repeat(8, 1fr);
     grid-gap: 0.2rem;
+    grid-auto-rows: 5vw;
   }
 
   .gallery__item--1 {
