@@ -11,6 +11,19 @@
 .hero-right {
   top: 10%;
   height: 70vh;
+  right: 3rem;
+  animation: floating 4s infinite ease-in-out;
+}
+
+@keyframes floating{
+  50%{
+    transform: translate(1.5rem, -1.5rem);
+  }
+
+  100%{
+    transform: translate(0, 0);
+  }
+
 }
 
 .hero-h3 {
@@ -199,21 +212,6 @@
   height: 4rem;
   border-radius: 50%;
   transform: translateX(-4rem);
-  background-position: center;
-  background-repeat: repeat;
-  background-size: cover;
-}
-
-.review-img-1{
-  background-image: url(../images/career/Rohit.jpg);
-}
-
-.review-img-2{
-  background-image: url(../images/career/Shruti.jpg);
-}
-
-.review-img-3{
-  background-image: url(../images/career/Shipra.jpg);
 }
 
 .review-name {
@@ -335,6 +333,14 @@
     padding: 1rem;
   }
 
+  .hero-right{
+    right: 25%;
+  }
+
+  .jobs-card{
+    padding: 0;
+  }
+
   .for-counts {
     font-size: 5rem;
   }
@@ -380,6 +386,10 @@
 @media (min-width: 750px) and (max-width: 900px) {
   .for-counts {
     font-size: 5rem;
+  }
+
+  .hero-right{
+    right: 25%;
   }
 
   .life-stories {
@@ -463,6 +473,10 @@
 @media (min-width: 600px) and (max-width: 750px) {
   .for-counts {
     font-size: 5rem;
+  }
+
+  .hero-right{
+    right: 28%;
   }
 
   .life-stories-heading {
@@ -560,13 +574,17 @@
   }
 
   .card {
-    min-width: 40rem;
+    min-width: 38rem;
   }
 }
 
 @media (min-width: 485px) and (max-width: 600px) {
   .for-counts {
     font-size: 4rem;
+  }
+
+  .hero-right{
+    right: 28%;
   }
 
   .life-stories-heading {
@@ -756,11 +774,6 @@
   .review-first {
     width: 95%;
   }
-
-  .review-img{
-    width: 3rem;
-    height: 3rem;
-  }
 }
 
 @media (min-width: 440px) and (max-width: 485px) {
@@ -927,7 +940,7 @@
   }
 
   .card {
-    min-width: 28rem;
+    min-width: 27rem;
   }
 
   .life-stories {
@@ -1002,11 +1015,6 @@
   .gallery__item--9 {
     grid-row: 17 / span 4;
     grid-column: 1 / span 4;
-  }
-
-  .review-img{
-    width: 3rem;
-    height: 3rem;
   }
 }
 
@@ -1174,7 +1182,7 @@
   }
 
   .card {
-    min-width: 25rem;
+    min-width: 24rem;
   }
 
   .life-stories {
@@ -1253,11 +1261,6 @@
 
   .about-life {
     padding: 1rem;
-  }
-
-  .review-img{
-    width: 3rem;
-    height: 3rem;
   }
 }
 
@@ -1434,7 +1437,7 @@
   }
 
   .card {
-    min-width: 21rem;
+    min-width: 20rem;
   }
 
   .life-stories {
@@ -1509,12 +1512,6 @@
   .gallery__item--9 {
     grid-row: 17 / span 4;
     grid-column: 1 / span 4;
-  }
-
-  .review-img{
-    width: 3rem;
-    height: 3rem;
-    transform: translateX(-3.5rem);
   }
 }
 
@@ -1766,11 +1763,5 @@
   .gallery__item--9 {
     grid-row: 17 / span 4;
     grid-column: 1 / span 4;
-  }
-
-  .review-img{
-    width: 3rem;
-    height: 3rem;
-    transform: translateX(-3.5rem);
   }
 }
