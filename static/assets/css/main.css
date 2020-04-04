@@ -749,4 +749,12 @@ footer {
     margin-top: 0 !important;
   }
 
+  .for-remove-margin{
+    margin: unset !important;
+  }
+
+  .read-more{
+    padding: .5rem 1rem;
+  }
+
 }

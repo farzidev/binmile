@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Career</title>
+    <title>Career at Binmile</title>
     <link
       rel="shortcut icon"
       href="{% static 'assets/images/faviconlogo.png' %}"
@@ -48,13 +48,12 @@
             at Binmile
           </h3>
           <p class="career_header-para">
-            We’re helping businesses solve technological challenges faced by companies globally and are looking for go-getters to join the team.
+            We’re helping businesses solve technological challenges faced by
+            companies globally and are looking for go-getters to join the team.
           </p>
         </div>
         <button class="get-started">
-          <a href="#start" class="contact-link"
-            >Join us</a
-          >
+          <a href="#start" class="contact-link">Join us</a>
         </button>
       </div>
       <div class="hero-right">
@@ -68,7 +67,10 @@
 
     <section class="career_first-section" id="start">
       <h3 class="section-heading">
-        We are a team of coders and consultants, solving the technology needs of clients all around the world. As an enterprise, we are aggressively growing with a presence in India and the USA. We take pride in our work culture by recognizing individual contributions.
+        We are a team of coders and consultants, solving the technology needs of
+        clients all around the world. As an enterprise, we are aggressively
+        growing with a presence in India and the USA. We take pride in our work
+        culture by recognizing individual contributions.
       </h3>
 
       <div class="for-position">
@@ -86,34 +88,47 @@
       <div class="about-life">
         <h3 class="life-heading">Life at Binmile</h3>
         <p class="life-para">
-          At Binmile, we believe in enjoying the small wins, cherish the moments, and stand by our teammates. A typical day at work comprises laughter, team activities, and lots of learning.
+          At Binmile, we believe in enjoying the small wins, cherish the
+          moments, and stand by our teammates. A typical day at work comprises
+          laughter, team activities, and lots of learning.
         </p>
       </div>
 
       <div class="life-stories">
         <div class="life-stories-1 life-stories-content">
-          <h3 class="life-stories-heading">Be Happy <span class="for-counts">1</span></h3>
+          <h3 class="life-stories-heading">
+            Be Happy <span class="for-counts">1</span>
+          </h3>
 
           <p class="life-stories-para">
             Our Mantra! Keep smiling and be focused.
           </p>
         </div>
         <div class="life-stories-2 life-stories-content">
-          <h3 class="life-stories-heading">Learn <span class="for-counts">2</span></h3>
+          <h3 class="life-stories-heading">
+            Learn <span class="for-counts">2</span>
+          </h3>
           <p class="life-stories-para">
-            Experience learning never like before, with hands on projects with devoted mentorship
+            Experience learning never like before, with hands on projects with
+            devoted mentorship
           </p>
         </div>
         <div class="life-stories-3 life-stories-content">
-          <h3 class="life-stories-heading">Innovate <span class="for-counts">3</span></h3>
+          <h3 class="life-stories-heading">
+            Innovate <span class="for-counts">3</span>
+          </h3>
           <p class="life-stories-para">
-            Ample opportunities to innovate ideas and process, giving you the environment to be a free thinker
+            Ample opportunities to innovate ideas and process, giving you the
+            environment to be a free thinker
           </p>
         </div>
         <div class="life-stories-4 life-stories-content">
-          <h3 class="life-stories-heading">Collaborate <span class="for-counts">4</span></h3>
+          <h3 class="life-stories-heading">
+            Collaborate <span class="for-counts">4</span>
+          </h3>
           <p class="life-stories-para">
-            Soft Skills are as important as technical skills. Don’t just grow professionally but as person as well.
+            Soft Skills are as important as technical skills. Don’t just grow
+            professionally but as person as well.
           </p>
         </div>
       </div>
@@ -142,7 +157,10 @@
               class="review-img"
             />
             <p class="review-para">
-              ‘I cherish my work at Binmile. The Founder takes the time to invest in employees and helps us get to where we need to be to succeed. I am at a place in my career that I never thought I would be.
+              ‘I cherish my work at Binmile. The Founder takes the time to
+              invest in employees and helps us get to where we need to be to
+              succeed. I am at a place in my career that I never thought I would
+              be.
             </p>
             <h3 class="review-name">Rohit</h3>
           </div>
@@ -155,7 +173,10 @@
               class="review-img"
             />
             <p class="review-para">
-              ‘Since day one at Binmile, every day has been learning. The mentorship and hands-on with live projects, along with regular mocks and training sessions, have helped me grow both personally and professionally.
+              ‘Since day one at Binmile, every day has been learning. The
+              mentorship and hands-on with live projects, along with regular
+              mocks and training sessions, have helped me grow both personally
+              and professionally.
             </p>
             <h3 class="review-name">Shruti</h3>
           </div>
@@ -167,7 +188,9 @@
               class="review-img"
             />
             <p class="review-para">
-              ‘The best thing about working at Binmile is the diversity in work. Every day is a new challenge, constantly growing and learning. The culture at Binmile is closer to that of a symbiosis relationship.’
+              ‘The best thing about working at Binmile is the diversity in work.
+              Every day is a new challenge, constantly growing and learning. The
+              culture at Binmile is closer to that of a symbiosis relationship.’
             </p>
             <h3 class="review-name">Deepa</h3>
           </div>
@@ -175,53 +198,54 @@
       </div>
     </section>
 
-
     <section class="jobs" id="for-jobs">
-        <div class="jobs-content">
-            <h3 class="jobs-heading">Want to become one of us?</h3>
-            <p class="jobs-para">We’re looking for talented people to do be part of journey to an endless growth.</p>
-        </div>
+      <div class="jobs-content">
+        <h3 class="jobs-heading">Want to become one of us?</h3>
+        <p class="jobs-para">
+          We’re looking for talented people to do be part of journey to an
+          endless growth.
+        </p>
+      </div>
+     <!--Accordion wrapper-->
+      <div class="accordion md-accordion jobs-card" id="accordionEx" role="tablist" aria-multiselectable="true">
+          {% for object in job_profiles %}
+              <!-- Accordion card -->
+              <div class="card">
+                  <!-- Card header -->
+                  <div class="card-header" role="tab" id="heading{{ forloop.counter }}">
+                      <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse{{ forloop.counter }}" aria-expanded="{% if forloop.counter == 1 %}true{% else %}false{% endif %}"
+                      aria-controls="collapse{{ forloop.counter }}" class="{% if not forloop.counter == 1 %}collapsed{% endif %} panel-link">
+                          <h5 class="mb-0 for-center ">
+                              {{ object.title }}<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
+                          </h5>
+                      </a>
+                  </div>
+                  <!-- Card body -->
+                  <div id="collapse{{ forloop.counter }}" class="collapse {% if forloop.counter == 1 %}show{% endif %}" role="tabpanel" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionEx">
+                      <div class="card-body">
+                          <p class="job-location">Location: <span>{{ object.location }}</span></p>
+                          <p class="job-experience">Experience: <span>{{ object.experience_years }} Years</span></p>
+                          <p class="job-position">Position: <span>{{ object.positions }}</span> </p>
+                          <p class="jobs-description">
+                              {{ object.description }}
+                          </p>
+                          <button class="get-started send-cv-btn">
+                              <a href="mailto:business@binmile.com" class="contact-link">Send us your CV</a>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+              <!-- Accordion card -->
+          {% endfor %}
+      </div>
+      <!-- Accordion wrapper -->
 
-           <!--Accordion wrapper-->
-            <div class="accordion md-accordion jobs-card" id="accordionEx" role="tablist" aria-multiselectable="true">
-                {% for object in job_profiles %}
-                    <!-- Accordion card -->
-                    <div class="card">
-                        <!-- Card header -->
-                        <div class="card-header" role="tab" id="heading{{ forloop.counter }}">
-                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapse{{ forloop.counter }}" aria-expanded="{% if forloop.counter == 1 %}true{% else %}false{% endif %}"
-                            aria-controls="collapse{{ forloop.counter }}" class="{% if not forloop.counter == 1 %}collapsed{% endif %} panel-link">
-                                <h5 class="mb-0 for-center ">
-                                    {{ object.title }}<i class="fas fa-angle-down rotate-icon icon-down small-margin"></i>
-                                </h5>
-                            </a>
-                        </div>
-                        <!-- Card body -->
-                        <div id="collapse{{ forloop.counter }}" class="collapse {% if forloop.counter == 1 %}show{% endif %}" role="tabpanel" aria-labelledby="heading{{ forloop.counter }}" data-parent="#accordionEx">
-                            <div class="card-body">
-                                <p class="job-location">Location: <span>{{ object.location }}</span></p>
-                                <p class="job-experience">Experience: <span>{{ object.experience_years }} Years</span></p>
-                                <p class="job-position">Position: <span>{{ object.positions }}</span> </p>
-                                <p class="jobs-description">
-                                    {{ object.description }}
-                                </p>
-                                <button class="get-started send-cv-btn">
-                                    <a href="mailto:business@binmile.com" class="contact-link">Send us your CV</a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Accordion card -->
-                {% endfor %}
-            </div>
-            <!-- Accordion wrapper -->
-
-            <div class="anyway-send-cv">
-                <p>Didn't find a position that suits you? Don't worry you can send us your CV and we will review it. </p>
-                <button class="get-started">
-                    <a href="mailto:business@binmile.com" class="contact-link">Send CV</a>
-                </button>
-            </div>
+      <div class="anyway-send-cv">
+          <p>Didn't find a position that suits you? Don't worry you can send us your CV and we will review it. </p>
+          <button class="get-started">
+              <a href="mailto:business@binmile.com" class="contact-link">Send CV</a>
+          </button>
+      </div>
     </section>
 
     {% include "footer.html" with extra=0 %}

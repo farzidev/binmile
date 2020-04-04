@@ -9,15 +9,16 @@
       <div
         style="text-align:center;margin:2em auto;border-radius: 5em;width: 10em;height:0.5em;background-color:#062772;">
       </div>
-      <p style="letter-spacing: 0.24px; color: #062772;">
+      <p style="letter-spacing: 0.24px; color: #062772;" class="top-footer-para">
         Do you need an elite team of technologist and idea-makers? Is quality important to you? Is scalability and
         endless customization paramount? Do you need a brand that is built specifically for your company and can be
         as innovative as you are?
       </p>
-      <p style="letter-spacing: 0.24px; color: #062772;">
+      <p style="letter-spacing: 0.24px; color: #062772;" class="top-footer-para">
         Contact our Business Analyst and get the journey started.
       </p>
-      <button class="estimate-btn" style="margin: 2em auto">Get an estimate</button>
+      <button class="estimate-btn" style="margin: 2em auto">
+        <a href="{% url 'posts:contact-us' %}" class="contact-link">Get an estimate</a></button>
     </div>
   </section>
   <section class="main-footer">
@@ -30,7 +31,7 @@
           <p class="contact-num">+1(415)-915-7177</p>
 
             <p class="contact-num">+91.9811643424</p> -->
-            <a href="mailto:business@binmile.com" class="join-us">Join Us</a>
+            <a href="{% url 'posts:career' %}" class="join-us">Join Us</a>
           </div>
 
           <div class="social-icon">

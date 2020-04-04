@@ -1188,8 +1188,12 @@ footer {
   }
 
   .social-icon{
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
+  }
+
+  .social-links{
+    font-size: 1.2rem;
   }
 
   .owl-carousel .owl-slide{
@@ -1233,6 +1237,15 @@ footer {
   }
  .blog-top-logo{
    height: 4em !important;
+ }
+
+ .join-us{
+   padding: .5rem 3rem;
+   font-size: .9rem;
+ }
+
+ .top-footer-para{
+   font-size: .8rem;
  }
 }
 
