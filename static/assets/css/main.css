@@ -66,6 +66,7 @@ body {
 
 
 
+
 .container {
   margin-top: 4em;
 }
@@ -103,12 +104,21 @@ main .navbar-nav, .scrollmenu {
   border-radius: 0.7em;
   transition-duration: 0.5s;
 }
+
+.blog-card{
+  min-height: 50rem;
+}
 .card-body {
   padding-top: 0;
 }
 
 .card-img-top {
   border-radius: 0.7em 0.7em 0 0;
+  max-height: 20rem;
+}
+
+.card-body-para{
+  min-height: 11rem;
 }
 
 .card-title {
@@ -314,12 +324,15 @@ footer {
 }
 
 #article-title {
-  text-align: center;
   margin: 1.5em 0 1em 0;
 }
 
 .article-image {
   width: 100%;
+}
+
+.blog-article-img{
+  width: 50%;
 }
 
 .article-author,
@@ -366,7 +379,7 @@ footer {
 
 footer {
   /* background-color: #6dbffc; */
-  background-image:url(../images/hero_images/footer-img.png);
+  background-image:url(../images/hero_images/footer-img-2.png);
   background-repeat: no-repeat;
   background-size: 175%;
   background-position: top;

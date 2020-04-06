@@ -46,7 +46,7 @@
             <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
             <li>
               <div class="dropdown">
-                <button class="dropbtn">Services
+                <button class="dropbtn">Platform
                   <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
@@ -135,8 +135,8 @@
             {% endif %}
             <!-- SEARCH RESULTS ENDS -->
             {% for post in object_list %}
-              <div class="col-md-6" style="margin-bottom: 3em">
-                <div class="card">
+              <div class="col-md-6 col-lg-4" style="margin-bottom: 3em">
+                <div class="card blog-card">
                   <a href="{{ post.get_absolute_url }}" target="_blank">
                     <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
                   </a>
@@ -153,7 +153,7 @@
                     <h5 class="card-title">
                       {{ post.title }}
                     </h5>
-                    <p style="letter-spacing: 0.24px;color: #212121;">
+                    <p style="letter-spacing: 0.24px;color: #212121;" class="card-body-para">
                       {{ post.highlight }}
                     </p>
                     <div class="post-article">

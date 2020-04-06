@@ -113,6 +113,8 @@ header {
   width: 14em;
   background-color: white;
   color: #f18e43;
+  font-weight: 600;
+  font-size: 1.1rem;
   border: 4px double #f18e43;
   border-radius: 40px;
   transition-duration: 0.5s;

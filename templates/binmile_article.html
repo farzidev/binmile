@@ -81,7 +81,7 @@
           <span>{{ object.timestamp|date:'j M Y' }}</span>
           <span>5.4k Views</span>
         </div>
-        <img src="{% if object.thumbnail_img %}{{ object.thumbnail_img.url }}{% endif %}" class="article-image">
+        <img src="{% if object.thumbnail_img %}{{ object.thumbnail_img.url }}{% endif %}" class="article-image blog-article-img">
         <div class="pre-article">
           <span class="read-time">
             {% if object.read_minutes %}
