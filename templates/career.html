@@ -12,6 +12,8 @@
       type="image/x-icon"
     />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.min.css">
+
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -133,11 +135,12 @@
         </div>
       </div>
     </section>
-    <section class="gallery">
+    <section class="gallery" id="lightgallery">
     {% for object in object_list %}
-      <figure class="gallery__item gallery__item--{{ forloop.counter }}">
-        <img src="{{ object.image.url }}" alt="Gallery Image {{ forloop.counter }}" class="gallery__img" />
-      </figure>
+
+        <a href="{{ object.image.url }}" class="gallery__item gallery__item--{{ forloop.counter }}">
+          <img src="{{ object.image.url }}" alt="Gallery Image {{ forloop.counter }}" class="gallery__img" />
+        </a>
     {% endfor %}
     </section>
     <section class="section-employee-reviews">
@@ -255,6 +258,8 @@
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery-all.min.js"></script>
+
   <script>
     $(document).ready(function() {
       $(window).scroll(function() {
@@ -288,4 +293,17 @@
       event.stopPropagation();
     });
   </script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#lightgallery').lightGallery({
+    mode: 'lg-fade',
+    download: false,
+    slideshow: false,
+    share: false,
+    zoomin: false,
+    zoomout: false,
+    });
+});
+</script>
 </html>
