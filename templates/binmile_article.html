@@ -79,7 +79,6 @@
         </div>
         <div class="article-info">
           <span>{{ object.timestamp|date:'j M Y' }}</span>
-          <span>5.4k Views</span>
         </div>
         <img src="{% if object.thumbnail_img %}{{ object.thumbnail_img.url }}{% endif %}" class="article-image">
         <div class="pre-article">
@@ -116,7 +115,6 @@
                 </p>
                 <div class="post-article">
                   <button class="read-more"><a href="{{ obj.get_absolute_url }}">Read More</a></button>
-                  <span class="views">5.4k Views</span>
                 </div>
                 <div class="blog-info">
                   <span class="author">
@@ -162,7 +160,7 @@
 
 
     </div>
- 
+
 
   </main>
    <!-- footer starts -->
