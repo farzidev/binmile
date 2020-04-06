@@ -27,8 +27,7 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     content = RichTextUploadingField()
     thumbnail_img = models.ImageField(upload_to=post_img_dir)
-    highlight = models.TextField(max_length=210, validators=[MinLengthValidator(170)],
-        help_text='Maximum characters allowed are 170')
+    highlight = models.TextField(max_length=200, help_text='Maximum characters allowed are 170')
     tags = models.TextField()
     read_minutes = models.PositiveIntegerField(
         help_text="Time needed in minutes to read this Insight", blank=True)
