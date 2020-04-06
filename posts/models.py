@@ -89,9 +89,24 @@ class AboutUs(models.Model):
     linkedin_url = models.URLField(max_length=255)
     image = models.ImageField(upload_to='aboutus')
 
+    # (f'{i}', f'{i}') for i in range(1, AboutUs.objects.count())
+    ORDERS = (
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+        ('6', '6'),
+        ('7', '7'),
+        ('8', '8'),
+        ('9', '9'),
+    )
+    order = models.CharField(choices=ORDERS, max_length=2, blank=True, null=True)
+
     class Meta:
         verbose_name = 'About Us'
         verbose_name_plural = 'About Us'
+        ordering = ('order',)
 
     def __str__(self):
         return "%s - %s" % (self.name, self.title)
@@ -104,6 +119,19 @@ class AboutUs(models.Model):
         photo = Image.open(self.image)
         photo = photo.resize((1133, 1163), Image.ANTIALIAS)
         photo.save(self.image.path)
+
+    def clean(self, *args, **kwargs):
+        if self.order:
+            qs = self.__class__.objects.filter(order=self.order).exclude(pk=self.pk)
+            if qs.exists():
+                url = reverse_lazy(f'admin:posts_aboutus_change', kwargs={'object_id': qs.first().id})
+                print(url)
+                raise ValidationError(
+                    {"order": mark_safe(
+                        f"Solution with this order already exists, you can change it <a target='_blank' href='{url}'>here</a>."
+                    )}
+                )
+        return super().clean(*args, **kwargs)
 
 
 class ServiceNow(models.Model):

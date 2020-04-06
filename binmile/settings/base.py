@@ -132,7 +132,7 @@ CKEDITOR_CONFIGS = {
         #     {'name': 'PullQuote', 'element': 'blockquote', 'styles': {'color': 'blue'}}
         # ],
         'toolbar_Full': [
-            ['Styles', 'Font', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo', 'FontSize'],  # 'Format'
+            ['Styles', 'Format', 'Font', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo', 'FontSize'],
             ['Link', 'Unlink', 'Anchor'],
             ['Image', 'Flash', 'Table', 'HorizontalRule'],
             ['TextColor', 'BGColor'],
