@@ -131,6 +131,36 @@
   color: rgb(160, 97, 55);
 }
 
+.technology-partner{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.partner-heading{
+  font-size: 3rem;
+  font-weight: 600;
+  color: #00206B;
+}
+
+.technology-partner-images{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.partner-img{
+  flex: 0 0 40%;
+  min-width: 40%;
+}
+
+.partner-logo{
+  width: 100%;
+}
+
 
 
 
@@ -271,10 +301,47 @@
   .content{
     width: 100%;
   }
+
+  .technology-partner-images{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .partner-heading{
+    font-size: 2rem;
+  }
+
+  .partner-logo{
+    width: 50%;
+  }
+
+  .partner-img{
+    width: 90%;
+    text-align: center;
+  }
 }
 /*   ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px*/
 @media (min-width: 320px) and (max-width: 480px) {
   .binmile-teams{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .partner-logo{
+    width: 50%;
+  }
+
+  .partner-img{
+    width: 90%;
+    text-align: center;
+  }
+  .partner-heading{
+    font-size: 2rem;
+  }
+
+  .technology-partner-images{
     flex-direction: column;
     justify-content: center;
     align-items: center;
