@@ -212,7 +212,27 @@
   height: 4rem;
   border-radius: 50%;
   transform: translateX(-4rem);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
 }
+
+.review-img-1{
+  background-image: url(../images/career/Rohit.jpg);
+}
+
+.review-img-2{
+  background-image: url(../images/career/Shruti.jpg);
+}
+
+
+.review-img-3{
+  background-image: url(../images/career/Shipra.jpg);
+}
+
+
+
 
 .review-name {
   float: right;
