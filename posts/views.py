@@ -63,7 +63,7 @@ class PostDetailView(DetailView):
 class AboutUsView(ListView):
     template_name = "aboutUs.html"
     model = AboutUs
-    queryset = AboutUs.objects.all()
+    queryset = AboutUs.objects.filter(order__isnull=False).order_by('order')
 
 
 class CareerView(ListView):
