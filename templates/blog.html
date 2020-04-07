@@ -156,21 +156,24 @@
                     <p style="letter-spacing: 0.24px;color: #212121;" class="card-body-para">
                       {{ post.highlight }}
                     </p>
-                    <div class="post-article">
-                      <button class="read-more">
-                        <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link"
-                          >Read More</a
-                        >
-                      </button>
+                    <div class="card-bottom-part">
+                      <div class="post-article">
+                        <button class="read-more">
+                          <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link"
+                            >Read More</a
+                          >
+                        </button>
+                      </div>
+                      <div class="blog-info">
+                        <span class="author">
+                          {% if post.author %}
+                            {{ post.author }}
+                          {% endif %}
+                        </span>
+                        <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                      </div>
                     </div>
-                    <div class="blog-info">
-                      <span class="author">
-                        {% if post.author %}
-                          {{ post.author }}
-                        {% endif %}
-                      </span>
-                      <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
-                    </div>
+                   
                   </div>
                 </div>
               </div>
@@ -186,7 +189,7 @@
             {% for post in object_list %}
               {% if post.purpose == 'CS' %}
                 <div class="col-md-4" style="margin-bottom: 3em">
-                  <div class="card">
+                  <div class="card blog-card">
                     <a href="{{ post.get_absolute_url }}" target="_blank">
                       <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
                     </a>
@@ -203,24 +206,28 @@
                       <h5 class="card-title">
                         {{ post.title }}
                       </h5>
-                      <p style="letter-spacing: 0.24px;color: #212121;">
+                      <p style="letter-spacing: 0.24px;color: #212121;" class="card-body-para">
                         {{ post.highlight }}
                       </p>
-                      <div class="post-article">
-                        <button class="read-more">
-                          <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link"
-                            >Read More</a
-                          >
-                        </button>
+
+                      <div class="card-bottom-part">
+                        <div class="post-article">
+                          <button class="read-more">
+                            <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link"
+                              >Read More</a
+                            >
+                          </button>
+                        </div>
+                        <div class="blog-info">
+                          <span class="author">
+                            {% if post.author %}
+                              {{ post.author }}
+                            {% endif %}
+                          </span>
+                          <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                        </div>
                       </div>
-                      <div class="blog-info">
-                        <span class="author">
-                          {% if post.author %}
-                            {{ post.author }}
-                          {% endif %}
-                        </span>
-                        <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
-                      </div>
+                      
                     </div>
                   </div>
                 </div>
@@ -238,7 +245,7 @@
               {% for post in object_list %}
                 {% if post.category == category %}
                   <div class="col-md-4 col-lg-4" style="margin-bottom: 3em">
-                    <div class="card">
+                    <div class="card blog-card">
                       <a href="{{ post.get_absolute_url }}" target="_blank">
                         <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
                       </a>
@@ -255,24 +262,28 @@
                         <h5 class="card-title">
                           {{ post.title }}
                         </h5>
-                        <p style="letter-spacing: 0.24px;color: #212121;">
+                        <p style="letter-spacing: 0.24px;color: #212121;" class="card-body-para">
                           {{ post.highlight }}
                         </p>
-                        <div class="post-article">
-                          <button class="read-more">
-                            <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link"
-                              >Read More</a
-                            >
-                          </button>
+
+                        <div class="card-bottom-part">
+                          <div class="post-article">
+                            <button class="read-more">
+                              <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link"
+                                >Read More</a
+                              >
+                            </button>
+                          </div>
+                          <div class="blog-info">
+                            <span class="author">
+                              {% if post.author %}
+                                {{ post.author }}
+                              {% endif %}
+                            </span>
+                            <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                          </div>
                         </div>
-                        <div class="blog-info">
-                          <span class="author">
-                            {% if post.author %}
-                              {{ post.author }}
-                            {% endif %}
-                          </span>
-                          <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
-                        </div>
+                       
                       </div>
                     </div>
                   </div>
