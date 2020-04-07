@@ -7,7 +7,7 @@ from django.db.models import Q
 
 from .models import (
     Post, Category, Form, AboutUs, ServiceNow, PowerPlatform, MicrosoftDynamics365, CareerGallery,
-    JobProfile
+    JobProfile, TechnologyPartner
 )
 from .forms import ContactForm
 
@@ -64,6 +64,11 @@ class AboutUsView(ListView):
     template_name = "aboutUs.html"
     model = AboutUs
     queryset = AboutUs.objects.filter(order__isnull=False).order_by('order')
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["technology_partners"] = TechnologyPartner.objects.all()
+        return context
 
 
 class CareerView(ListView):

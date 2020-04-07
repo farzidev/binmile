@@ -258,6 +258,13 @@ class JobProfile(models.Model):
         return self.title
 
 
+class TechnologyPartner(models.Model):
+    image = models.ImageField(upload_to='partners')
+
+    def __str__(self):
+        return self.image.name
+
+
 class Form(models.Model):
     name = models.CharField(max_length=255)
     company = models.CharField(max_length=255, null=True, blank=True)

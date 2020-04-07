@@ -2,13 +2,14 @@ from django.contrib import admin, messages
 
 from .models import (
     Post, Category, Form, Author, AboutUs, MicrosoftDynamics365, PowerPlatform, ServiceNow,
-    CareerGallery, JobProfile
+    CareerGallery, JobProfile, TechnologyPartner
 )
 
 
 admin.site.register(Category)
 admin.site.register(Author)
 admin.site.register(ServiceNow)
+admin.site.register(TechnologyPartner)
 
 
 @admin.register(AboutUs)

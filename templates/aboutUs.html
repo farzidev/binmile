@@ -78,7 +78,7 @@
 
 
      <div class="content">
-     
+
 
        <div class="content-inner">
         <div class="content-heading">
@@ -125,15 +125,12 @@
     <h3 class="partner-heading">
       Our Partners
     </h3>
-    <div class="technology-partner-images">
-      <div class="partner-img">
-        <img src="../static/assets/images/about/empowerall.png" alt="" class="partner-logo">
-
-      </div>
-      <div class="partner-img">
-        <img src="../static/assets/images/about/simpatico.png" alt="" class="partner-logo">
-
-      </div>
+    <div class="technology-partner-images mb-5">
+      {% for object in technology_partners %}
+        <div class="partner-img">
+          <img src="{{ object.image.url }}" alt="{{ object.image.name }}" class="partner-logo">
+        </div>
+      {% endfor %}
     </div>
   </section>
 
