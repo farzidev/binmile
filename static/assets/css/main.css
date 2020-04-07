@@ -115,7 +115,7 @@ main .navbar-nav, .scrollmenu {
 
 .card-bottom-part{
   width: 100%;
-  margin-top: 5rem;
+  margin: auto 0;
 }
 
 .blog-card{
