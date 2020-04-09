@@ -153,20 +153,23 @@
                   </a>
 
                   <div class="card-body">
-                    <div class="pre-article">
-                      <a href="#" class="category-button">{{ post.category.name }}</a>
-                      <span class="read-time">
-                        {% if post.read_minutes %}
-                          {{ post.read_minutes }} mins read
-                        {% endif %}
-                      </span>
+                    <div class="card-upper-part">
+                      <div class="pre-article">
+                        <a href="#" class="category-button">{{ post.category.name }}</a>
+                        <span class="read-time">
+                          {% if post.read_minutes %}
+                            {{ post.read_minutes }} mins read
+                          {% endif %}
+                        </span>
+                      </div>
+                      <h5 class="card-title">
+                        {{ post.title }}
+                      </h5>
+                      <p style="letter-spacing: 0.24px;color: #212121;">
+                        {{ post.highlight }}
+                      </p>
                     </div>
-                    <h5 class="card-title">
-                      {{ post.title }}
-                    </h5>
-                    <p style="letter-spacing: 0.24px;color: #212121;" class="card-body-para">
-                      {{ post.highlight }}
-                    </p>
+                    
                     <div class="card-bottom-part">
                       <div class="post-article">
                         <button class="read-more">
@@ -206,20 +209,23 @@
                     </a>
 
                     <div class="card-body">
-                      <div class="pre-article">
-                        <a href="#" class="category-button">{{ post.category.name }}</a>
-                        <span class="read-time">
-                          {% if post.read_minutes %}
-                            {{ post.read_minutes }} mins read
-                          {% endif %}
-                        </span>
+                      <div class="card-upper-part">
+                        <div class="pre-article">
+                          <a href="#" class="category-button">{{ post.category.name }}</a>
+                          <span class="read-time">
+                            {% if post.read_minutes %}
+                              {{ post.read_minutes }} mins read
+                            {% endif %}
+                          </span>
+                        </div>
+                        <h5 class="card-title">
+                          {{ post.title }}
+                        </h5>
+                        <p style="letter-spacing: 0.24px;color: #212121;">
+                          {{ post.highlight }}
+                        </p>
                       </div>
-                      <h5 class="card-title">
-                        {{ post.title }}
-                      </h5>
-                      <p style="letter-spacing: 0.24px;color: #212121;" class="card-body-para">
-                        {{ post.highlight }}
-                      </p>
+                   
 
                       <div class="card-bottom-part">
                         <div class="post-article">
@@ -262,20 +268,24 @@
                       </a>
 
                       <div class="card-body">
-                        <div class="pre-article">
-                          <a href="#" class="category-button">{{ post.category.name }}</a>
-                          <span class="read-time">
-                            {% if post.read_minutes %}
-                              {{ post.read_minutes }} mins read
-                            {% endif %}
-                          </span>
+
+                        <div class="card-upper-part">
+                          <div class="pre-article">
+                            <a href="#" class="category-button">{{ post.category.name }}</a>
+                            <span class="read-time">
+                              {% if post.read_minutes %}
+                                {{ post.read_minutes }} mins read
+                              {% endif %}
+                            </span>
+                          </div>
+                          <h5 class="card-title">
+                            {{ post.title }}
+                          </h5>
+                          <p style="letter-spacing: 0.24px;color: #212121;">
+                            {{ post.highlight }}
+                          </p>
                         </div>
-                        <h5 class="card-title">
-                          {{ post.title }}
-                        </h5>
-                        <p style="letter-spacing: 0.24px;color: #212121;" class="card-body-para">
-                          {{ post.highlight }}
-                        </p>
+                     
 
                         <div class="card-bottom-part">
                           <div class="post-article">

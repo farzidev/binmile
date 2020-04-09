@@ -113,8 +113,11 @@ main .navbar-nav, .scrollmenu {
 
 }
 
+.card-upper-part{
+  min-height: 26rem;
+}
+
 .card-bottom-part{
-  width: 100%;
   margin: auto 0;
 }
 
@@ -644,11 +647,19 @@ footer {
   .blog-top-nav{
     padding: unset;
   }
+
+  .card-upper-part{
+    min-height: unset;
+  }
 }
 /*   ##Device = Most of the Smartphones Mobiles (Portrait)  ##Screen = B/w 320px to 479px*/
 @media (min-width: 320px) and (max-width: 480px) {
   .nav{
     height: 5vh;
+  }
+
+  .card-upper-part{
+    min-height: unset;
   }
   .navbar-nav{
     flex-direction: row;
