@@ -12,6 +12,17 @@
     />
 
     <title>BINMILE | Blog</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163221516-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-163221516-1');
+    </script>
+
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css' />
 
 
@@ -173,7 +184,7 @@
                         <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
                       </div>
                     </div>
-                   
+
                   </div>
                 </div>
               </div>
@@ -227,7 +238,7 @@
                           <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
                         </div>
                       </div>
-                      
+
                     </div>
                   </div>
                 </div>
@@ -283,7 +294,7 @@
                             <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
                           </div>
                         </div>
-                       
+
                       </div>
                     </div>
                   </div>
