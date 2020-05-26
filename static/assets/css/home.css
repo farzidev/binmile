@@ -1249,5 +1249,9 @@ footer {
  .top-footer-para{
    font-size: .8rem;
  }
+
+ .rmv-margin{
+   margin-top: 0;
+ }
 }
 
