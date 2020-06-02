@@ -147,14 +147,16 @@
 .technology-partner-images{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-evenly;
 
 }
 
+
+
 .partner-img{
-  flex: 0 0 40%;
-  min-width: 40%;
+  flex: 0 0 20%;
+  max-width: 20%;
 }
 
 .partner-logo{
