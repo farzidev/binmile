@@ -260,6 +260,7 @@ class JobProfile(models.Model):
 
 class TechnologyPartner(models.Model):
     image = models.ImageField(upload_to='partners')
+    link = models.URLField(max_length=255)
 
     def __str__(self):
         return self.image.name
