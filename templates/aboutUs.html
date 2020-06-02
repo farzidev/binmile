@@ -138,9 +138,11 @@
     </h3>
     <div class="technology-partner-images mb-5">
       {% for object in technology_partners %}
+      <a href="{{ object.link }}">
         <div class="partner-img">
           <img src="{{ object.image.url }}" alt="{{ object.image.name }}" class="partner-logo">
         </div>
+      </a>
       {% endfor %}
     </div>
   </section>
