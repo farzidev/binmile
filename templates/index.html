@@ -74,7 +74,7 @@
 
   <!-- hero slider starts -->
 
-  <div class="owl-one owl-carousel owl-theme">
+  <div class="owl-one owl-carousel owl-theme" id="home">
     <div class="owl-slide d-flex align-items-center cover c-item-rg"
       style="background: transparent radial-gradient(closest-side at 74% 44%, #0A30C8 0%, #092EB9 18%, #072A94 51%, #052458 96%, #052454 100%) 0% 0% no-repeat padding-box;">
       <div class="container">
@@ -391,6 +391,45 @@
     </a>
   </div> -->
 
+
+
+  <div class="popup" id="hideme">
+    <div class="popup-content">
+      <span id='close' onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;'>x</span>
+      <div class="popup-left">
+        <img src="{% static 'assets/images/binmile_logo.png' %}" class="popup-logo">
+
+        <h2>Your Partner for Complete Digital Transformation Services</h2>
+        <p>Maximise your return on Technology Investmennt</p>
+
+        <p>IT Digital Transformation | D365 CRM & ERP | Integrations |Customizations | Test Automation|Advisory | ServiceNow</p>
+
+
+      </div>
+      <div class="popup-right">
+        <form action="#" class="form">
+          <h2>Schedule a free consultation!</h2>
+          <input type="text" placeholder="Full Name" class="input" />
+          <input
+            type="email"
+            name="email"
+            id=""
+            placeholder="Email Id"
+            class="input"
+          />
+          <textarea
+            name="message"
+            rows="5"
+            cols="30"
+            placeholder="Message Here"
+            class="input-msg"
+          ></textarea>
+          <button class="send-btn">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -516,6 +555,31 @@ $(document).ready(function () {
     event.stopPropagation();
 });
 
+$('.dropdown-submenu').on('click', function(event){
+    // The event won't be propagated up to the document NODE and
+    // therefore delegated events won't be fired
+    event.stopPropagation();
+});
+
+$(".btn-group, .dropdown").hover(
+                        function () {
+                            $('>.dropdown-menu', this).stop(true, true).fadeIn("fast");
+                            $(this).addClass('open');
+                        },
+                        function () {
+                            $('>.dropdown-menu', this).stop(true, true).fadeOut("fast");
+                            $(this).removeClass('open');
+                        });
+
+</script>
+
+
+<script>
+
+  setTimeout(() => {
+  var element = document.getElementById("hideme");
+  element.classList.toggle("popup-show");
+  }, 60000);
 </script>
 
 </html>

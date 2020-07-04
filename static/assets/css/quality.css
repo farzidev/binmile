@@ -1,0 +1,242 @@
+.list-item {
+  padding-left: 3rem;
+}
+
+.nav-pillar-height {
+  min-height: 10rem;
+}
+
+.quality-img {
+  height: 80%;
+  width: 100% !important;
+}
+
+.hero-text h1{
+    font-size: 3rem;
+}
+
+.first-section {
+  padding: 2rem 5rem;
+}
+
+.first-section-content {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.first-section-content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #062772;
+}
+
+.quality-assurance {
+  padding: 2rem 4rem;
+}
+
+.quality-assurance h1 {
+  text-align: center;
+  font-weight: 600;
+  color: #f5aa54;
+}
+
+.main-heading {
+  font-size: 1.5rem;
+  color: #062772;
+  font-weight: 600;
+}
+
+.sub-heading {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #83e4fe;
+  text-align: center;
+}
+
+.quality-assurance-offers,
+.more-offers {
+  display: flex;
+  flex: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.test-automation,
+.mobile-testing {
+  flex: 0 0 48%;
+  max-width: 48%;
+  min-height: 20rem;
+  padding: 2rem 3rem;
+  line-height: 1.9;
+  border-radius: 10px;
+  box-shadow: 0 0 3rem 0.5rem rgb(240, 240, 240);
+}
+
+.regression-testing,
+.functional-testing,
+.crowdsourced-testing {
+  flex: 0 0 30%;
+  max-width: 30%;
+  min-height: 27rem;
+  padding: 2rem 3rem;
+  line-height: 1.9;
+  border-radius: 10px;
+  box-shadow: 0 0 3rem 0.5rem rgb(240, 240, 240);
+}
+
+.quality-engineering {
+  padding: 2rem 5rem;
+  text-align: center;
+}
+
+.quality-engineering-content {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.quality-engineering-content h1 {
+  font-weight: 600;
+  color: #f5aa54;
+  padding-bottom: 2rem;
+}
+
+.quality-engineering-content p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #062772;
+}
+
+.quality-engineering-services {
+  display: flex;
+  flex: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+
+.agile-testing,
+.devops {
+  flex: 45%;
+  max-width: 45%;
+  line-height: 1.9;
+}
+
+.digital-assurance h1 {
+  font-weight: 600;
+  color: #f5aa54;
+  text-align: center;
+}
+
+.digital-assurance {
+  padding: 2rem 5rem;
+  text-align: center;
+}
+
+.digital-assurance-services {
+  display: flex;
+  flex: 100%;
+  justify-content: space-between;
+  padding: 2rem 4rem;
+}
+
+.erp-testing,
+.servicenow-testing {
+  flex: 45%;
+  max-width: 45%;
+  line-height: 1.9;
+}
+
+@media only screen and (max-width: 900px) {
+  .quality-img {
+    height: 60%;
+  }
+
+  .quality-engineering,
+  .digital-assurance{
+      padding: 2rem;
+  }
+
+  .quality-engineering-services{
+      margin-top: 4rem;
+  }
+
+  .more-offers,
+  .quality-assurance-offers,
+  .digital-assurance-services,
+  .quality-engineering-services {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+  }
+
+  .regression-testing,
+  .functional-testing,
+  .crowdsourced-testing,
+  .test-automation,
+  .mobile-testing,
+  .erp-testing,
+  .servicenow-testing,
+  .agile-testing,
+  .devops {
+    flex: 100%;
+    min-width: 100%;
+    min-height: unset;
+    margin-bottom: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .quality-img {
+    transform: translateX(-15%);
+  }
+
+  .first-section{
+      padding: 2rem;
+  }
+
+  .first-section p{
+      font-size: 1rem;
+  }
+
+  .quality-assurance{
+      padding: 2rem;
+  }
+
+  .quality-assurance h1{
+      font-size: 1.8rem;
+  }
+  .test-automation,
+  .mobile-testing{
+      padding: 1rem;
+      padding-left: 2rem;
+  }
+
+  .more-offers{
+      margin-top: 1rem;
+  }
+  .main-heading{
+      font-size: 1.5rem !important;
+  }
+  .sub-heading{
+      font-size: 1.2rem;
+  }
+
+  .quality-engineering-content{
+      width: 100%;
+  }
+
+  .quality-engineering-content h1{
+      font-size: 1.8rem;
+  }
+
+  .quality-engineering-content p{
+      font-size: 1rem;
+  }
+
+  .digital-assurance h1{
+      font-size: 1.8rem;
+  }
+
+}

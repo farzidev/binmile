@@ -2,7 +2,7 @@
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView, FormView, ListView
 from django.contrib import messages
-from django.shortcuts import redirect
+from django.shortcuts import redirect, render
 from django.db.models import Q
 
 from .models import (
@@ -14,6 +14,13 @@ from .forms import ContactForm
 
 class IndexView(TemplateView):
     template_name = "index.html"
+
+
+# class QualityView(ListView):
+#     template_name = "quality.html"
+
+def QualityView(request):
+    return render (request, 'quality.html', {})
 
 
 class InsightsView(ListView):

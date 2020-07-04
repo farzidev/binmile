@@ -14,16 +14,48 @@
       <ul class="navbar-nav">
         <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
         <li>
-          <div class="dropdown">
-            <button class="dropbtn">Platform
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="{% url 'posts:services' %}">ServiceNow</a>
-              <a href="{% url 'posts:microsoft-dynamics-365' %}">Microsoft Dynamics 365</a>
-              <a href="{% url 'posts:power-platform' %}">Power Platform</a>
-            </div>
-          </div>
+          <div class="btn-group">
+            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle dropdown-btn"
+               href="">
+                Services
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                <li><a href="{% url 'posts:services' %}">ServiceNow</a></li>
+                <li><a href="{% url 'posts:microsoft-dynamics-365' %}">Microsoft Dynamics 365</a></li>
+                <li><a href="{% url 'posts:power-platform' %}">Power Platform</a></li>
+                <li class="dropdown-submenu">
+                    <a class="dropdown-item" tabindex="-1" href="#">
+                      Quality Assurance
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" tabindex="-1" href="{% url 'posts:quality' %}">Test Automation</a></li>
+                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}">Regression Testing</a></li>
+                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}">Mobile Testing</a></li>
+                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}">Functional Testing</a></li>
+                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}">Crowdsourced Testing</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item" tabindex="-2" href="#">
+                    Quality Engineering
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" tabindex="-2" href="{% url 'posts:quality' %}">Agile Testing</a></li>
+                      <li><a class="dropdown-item" href="{% url 'posts:quality' %}">Devops Testing</a></li>
+                  </ul>
+              </li>
+              <li class="dropdown-submenu">
+                <a class="dropdown-item" tabindex="-3" href="#">
+                    Digital Assurance
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" tabindex="-3" href="{% url 'posts:quality' %}">CRM & ERP Testing</a></li>
+                    <li><a class="dropdown-item" href="{% url 'posts:quality' %}">ServiceNow Automation</a></li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+        
         </li>
         <li><a href="{% url 'posts:about-us' %}" class="nav-link">About Us</a></li>
         <li><a href="{% url 'posts:insights' %}" class="nav-link">Insights</a></li>
