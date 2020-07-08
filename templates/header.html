@@ -24,43 +24,43 @@
                 <li><a href="{% url 'posts:microsoft-dynamics-365' %}">Microsoft Dynamics 365</a></li>
                 <li><a href="{% url 'posts:power-platform' %}">Power Platform</a></li>
                 <li class="dropdown-submenu">
-                    <a class="dropdown-item" tabindex="-1" href="#">
+                    <a class="dropdown-item" tabindex="-1" href="{% url 'posts:quality' %}#quality-assurance">
                       Quality Assurance
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" tabindex="-1" href="{% url 'posts:quality' %}">Test Automation</a></li>
-                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}">Regression Testing</a></li>
-                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}">Mobile Testing</a></li>
-                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}">Functional Testing</a></li>
-                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}">Crowdsourced Testing</a></li>
+                        <li><a class="dropdown-item" tabindex="-1" href="{% url 'posts:quality' %}#quality-assurance">Test Automation</a></li>
+                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}#regression-testing">Regression Testing</a></li>
+                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}#quality-assurance">Mobile Testing</a></li>
+                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}#regression-testing">Functional Testing</a></li>
+                        <li><a class="dropdown-item" href="{% url 'posts:quality' %}#regression-testing">Crowdsourced Testing</a></li>
                     </ul>
                 </li>
                 <li class="dropdown-submenu">
-                  <a class="dropdown-item" tabindex="-2" href="#">
+                  <a class="dropdown-item" tabindex="-2" href="{% url 'posts:quality' %}#quality-engineering">
                     Quality Engineering
                   </a>
                   <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" tabindex="-2" href="{% url 'posts:quality' %}">Agile Testing</a></li>
-                      <li><a class="dropdown-item" href="{% url 'posts:quality' %}">Devops Testing</a></li>
+                      <li><a class="dropdown-item" tabindex="-2" href="{% url 'posts:quality' %}#quality-engineering">Agile Testing</a></li>
+                      <li><a class="dropdown-item" href="{% url 'posts:quality' %}#quality-engineering">Devops Testing</a></li>
                   </ul>
               </li>
               <li class="dropdown-submenu">
-                <a class="dropdown-item" tabindex="-3" href="#">
+                <a class="dropdown-item" tabindex="-3" href="{% url 'posts:quality' %}#digital-assurance">
                     Digital Assurance
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" tabindex="-3" href="{% url 'posts:quality' %}">CRM & ERP Testing</a></li>
-                    <li><a class="dropdown-item" href="{% url 'posts:quality' %}">ServiceNow Automation</a></li>
+                    <li><a class="dropdown-item" tabindex="-3" href="{% url 'posts:quality' %}#digital-assurance">CRM & ERP Testing</a></li>
+                    <li><a class="dropdown-item" href="{% url 'posts:quality' %}#digital-assurance">ServiceNow Automation</a></li>
                 </ul>
             </li>
             </ul>
         </div>
-        
+
         </li>
         <li><a href="{% url 'posts:about-us' %}" class="nav-link">About Us</a></li>
         <li><a href="{% url 'posts:insights' %}" class="nav-link">Insights</a></li>
         <li><a href="{% url 'posts:contact-us' %}" class="nav-link">Contact Us</a></li>
-        <li><a href="{% url 'posts:career' %}" class="nav-link">Career</a></li> 
+        <li><a href="{% url 'posts:career' %}" class="nav-link">Career</a></li>
       </ul>
     </div>
   </div>

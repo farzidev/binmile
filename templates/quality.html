@@ -40,7 +40,7 @@
   <div class="hero">
     <div class="hero-left">
       <div class="hero-text">
-        <h1>Quality Assurance</h1>
+        <h1>Ensuring Quality</h1>
         <h1>Enhancing User Experience</h1>
         <h3 class="hero-h3">Your Partner for complete Testing Services</h3>
       </div>
@@ -60,7 +60,7 @@
     </div>
   </section>
 
-  <section class="quality-assurance">
+  <section id="quality-assurance" class="quality-assurance">
     <h1>Quality Assurance</h1>
 
     <div class="quality-assurance-offers">
@@ -91,7 +91,7 @@
         </ul>
       </div>
     </div>
-    <div class="more-offers">
+    <div id="regression-testing" class="more-offers">
       <div class="regression-testing">
         <h1 class="main-heading">Regression Testing</h1>
         <h3 class="sub-heading">Be assured of the changes taking place</h3>
@@ -115,7 +115,7 @@
     </div>
   </section>
 
-  <section class="quality-engineering">
+  <section id="quality-engineering" class="quality-engineering">
     <div class="quality-engineering-content">
       <h1>Quality Engineering</h1>
       <p>With the ever increasing race to be on top of providing users/customers with top notch applications and products, enterprises need to make sure that they develop fast and quality products that are in line with user requirement at all times.</p>
@@ -125,29 +125,29 @@
       <div class="agile-testing">
         <h1 class="main-heading">Agile Testing</h1>
         <h3 class="sub-heading">For continuous & better service</h3>
-        <p>As is the case with agile Software Development, Testing also need to be agile. Keeping pace with the software/application development. A quality product is key to the success of your enterprise. Binmile has been a trusted service provider to a number of clients globally, Helping them to be always ahead of their competitors in terms of go to market time, quality, cost and user experience.</p>
+        <p style="text-align: justify; text-justify: inter-word;">As is the case with agile Software Development, Testing also need to be agile. Keeping pace with the software/application development. A quality product is key to the success of your enterprise. Binmile has been a trusted service provider to a number of clients globally, Helping them to be always ahead of their competitors in terms of go to market time, quality, cost and user experience.</p>
       </div>
       <div class="devops">
         <h1 class="main-heading">Devops</h1>
         <h3 class="sub-heading">Quality Delivered at Speed</h3>
-        <p>The lesser mean time to market, the better the quality and user experience the higher chances of success for application/software. With Binmile’s expertise in delivering services in space of DevOps testing, we provide you with a fast and continuous development, delivery and deployment of cloud based applications over a range of platforms. Enabling development, operations and testing team to have a seamless collaboration experience.</p>
+        <p style="text-align: justify; text-justify: inter-word;">The lesser mean time to market, the better the quality and user experience the higher chances of success for application/software. With Binmile’s expertise in delivering services in space of DevOps testing, we provide you with a fast and continuous development, delivery and deployment of cloud based applications over a range of platforms. Enabling development, operations and testing team to have a seamless collaboration experience.</p>
       </div>
     </div>
   </section>
 
 
-  <section class="digital-assurance">
+  <section id="digital-assurance" class="digital-assurance">
     <h1>Digital Assurance</h1>
     <div class="digital-assurance-services">
       <div class="erp-testing">
-        <h1 class="main-heading">ERP Testing</h1>
+        <h1 class="main-heading">CRM &amp; ERP Testing</h1>
         <h3 class="sub-heading">Achieve optimum roll outs, upgrades, maintenance & Support</h3>
-        <p>As an enterprise you must have invested millions of dollars into procuring, developing and implementing ERPs, and hence it becomes of prime importance that return is greater than investment. Binmile Technologies provide you with complete ERP testing services for ERPs such as Dynamics 365, Power Platforms and many others throughout the project, from implementations, upgradations, Rollouts, production, support to maintenance services. </p>
+        <p style="text-align: justify; text-justify: inter-word;">As an enterprise you must have invested millions of dollars into procuring, developing and implementing ERPs, and hence it becomes of prime importance that return is greater than investment. Binmile Technologies provide you with complete ERP testing services for ERPs such as Dynamics 365, Power Platforms and many others throughout the project, from implementations, upgradations, Rollouts, production, support to maintenance services. </p>
       </div>
       <div class="servicenow-testing">
         <h1 class="main-heading">ServiceNow Testing</h1>
         <h3 class="sub-heading">Maximizing your investments in the platform</h3>
-        <p>ServiceNow is the leader in Digital Transformation space, providing services to most of the fortune 500 companies. Binmile Technologies has developed core expertise in ServiceNow platform development, implementation and testing for enterprises around the world. </p>
+        <p style="text-align: justify; text-justify: inter-word;">ServiceNow is the leader in Digital Transformation space, providing services to most of the fortune 500 companies. Binmile Technologies has developed core expertise in ServiceNow platform development, implementation and testing for enterprises around the world. </p>
       </div>
     </div>
   </section>
@@ -304,6 +304,11 @@ $(".btn-group, .dropdown").hover(
                             $('>.dropdown-menu', this).stop(true, true).fadeOut("fast");
                             $(this).removeClass('open');
                         });
+
+// smooth scrolling from another page
+$('html,body').animate({
+  scrollTop: $(window.location.hash).offset().top - 50
+});
 </script>
 
 </html>
