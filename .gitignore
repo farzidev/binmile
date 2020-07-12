@@ -115,7 +115,7 @@ README.md
 staticfiles/
 
 # development settings
-binmile/settings/dev.py
+# binmile/settings/dev.py
 
 README.md
 
