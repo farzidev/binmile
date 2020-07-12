@@ -71,6 +71,7 @@
 <img src="{% static 'assets/images/hero_images/Polygon 4@2x.png' %}" alt="" class="float-polygon-2"> -->
 
   {% include "header.html" %}
+  {% include "popup.html" %}
 
   <!-- hero slider starts -->
 
@@ -547,6 +548,15 @@ $(document).ready(function () {
              $(".navbar-toggler").click();
          }
      });
+
+  $('#user-popup').modal({
+    show: false
+  });
+  setTimeout(function() {
+    $('#user-popup').modal({
+      show: true
+    });
+  }, 600);
  });
 
  $('.dropdown').on('click', function(event){
@@ -572,7 +582,6 @@ $(".btn-group, .dropdown").hover(
                         });
 
 </script>
-
 
 <!-- <script>
 
