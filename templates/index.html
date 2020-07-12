@@ -20,10 +20,12 @@
 
   <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon" >
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css' />
+  <link rel="stylesheet" href="{% static 'assets/css/modal.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
   <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}" />
   <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+  
   <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 
   <style>
@@ -430,6 +432,106 @@
     </div>
   </div>
 
+  <!--modal form-->
+  <div class="modal-out">
+     <div class="modal">
+     <div class="invite">
+        <img src="{% static 'assets/images/final-logo-binmille.png' %}" class='img_logo' width="50" height="60"/>
+        <p>Your Partner For Complete digital Transformation Services</p>
+        <p>Maximize your return on Technology investments</p>
+        <p>IT Digital Transformation | D365 CRM & ERP</p>
+        <p>Integration|Customization|Test Automation | Advisory</p>
+
+        <div class="close" title="close"></div>
+      </div>
+      <div class="form">
+      {% if messages %}
+          {% for message in messages %}
+            <h3 class="text-center text-{{ message.tags }}">{{ message }}</h3>
+          {% endfor %}
+      {% else %}
+       <form action="." method="post" >
+            {% csrf_token %}
+            <input type="text" required="" name="name" id="name" value="{{ form.name.value|default_if_none:'' }}" placeholder="Full Name"  />
+            {% if form.name.errors %}
+              <div class="text-danger">
+                {% for error in form.name.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <input
+              type="email"
+              name="email"
+              id="id_email"
+              required=""
+              placeholder="Email Id"
+              class="input"
+              value="{{ form.email.value|default_if_none:'' }}"
+            />
+            {% if form.email.errors %}
+              <div class="text-danger">
+                {% for error in form.email.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <input
+              type="number"
+              name="phone_number"
+              id="id_phone_number"
+              required=""
+              placeholder="Phone"
+              class="input"
+              value="{{ form.phone_number.value|default_if_none:'' }}"
+            />
+            {% if form.phone_number.errors %}
+              <div class="text-danger">
+                {% for error in form.phone_number.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <input
+              type="text"
+              name="subject"
+              id="id_subject"
+              required=""
+              placeholder="Subject"
+              class="input"
+              value="{{ form.subject.value|default_if_none:'' }}"
+            />
+            {% if form.subject.errors %}
+              <div class="text-danger">
+                {% for error in form.subject.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+            <textarea
+              name="message"
+              rows="4"
+              cols="52"
+              placeholder="Message Here"
+              required=""
+              class="input-msg"
+            >{{ form.message.value|default_if_none:'' }}</textarea>
+            {% if form.message.errors %}
+              <div class="text-danger">
+                {% for error in form.message.errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+            
+            <button class="send-btn-modal" type="submit">Send</button>
+        </form> 
+        {% endif %}   
+      </div>
+      
+    </div>
+  </div>
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
@@ -535,8 +637,20 @@
 	  }
   })
 });
+   /** modal js **/
+var popup = localStorage.getItem('popup');
+$(window).on('load',function(){
+  if(!popup){
+  $('.modal').show(); 
+  localStorage.setItem('popup','true');
+  }
+    
+});
 
-
+$(".close, .nope").on('click', function () {
+  $('.modal').addClass('hidden');
+  $('.open').addClass('active');
+})
 
 /** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
 $(document).ready(function () {

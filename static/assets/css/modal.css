@@ -1,0 +1,187 @@
+
+
+*, :before, :after {
+    box-sizing: border-box;
+    margin: 0;
+    transition: 0.4s;
+  }
+  
+  .modal-out{
+    padding-bottom:56%;
+  }
+  
+
+  .modal {
+    max-height: 530px;
+    max-width: 1200px;
+    height:auto;
+    width:90%;   
+    margin: auto;  
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: .4s, box-shadow .3s .4s;
+  }
+
+  .modal.hidden {
+    box-shadow: none;
+    transition: .4s, box-shadow 0s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .modal.hidden .form {
+    top: 100%;
+  }
+  .modal.hidden .invite {
+    top: -100%;
+  }
+  .modal.hidden .invite .close {
+    height: 0;
+    width: 0;
+    top: 0;
+    right: 0;
+  }
+  
+  .invite {
+    background: #fff;
+    width: 50%;
+    height: 100%;
+    padding: 25px;
+    float: left;
+    top: 0;
+    left: 0;
+  }
+  .form {
+    background: #fff;
+    width: 50%;
+    height: 100%;
+    padding: 25px;
+    float:right;
+    top: 0;
+    left: 0;
+    overflow-y: scroll;
+  }
+  
+  input {
+    background: rgba(5, 5, 5, 0.15);
+    width: 100%;
+    max-height:50px;
+    padding: 8px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    color: #000133;
+    font-size: 20px;
+  }
+  input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 500px #7a7a7a inset;
+    -webkit-text-fill-color: #FFF;
+  }
+  .img_logo{
+    height:100px;
+    width: 200px;
+    background-color: white;
+    border-radius: 20px;
+    padding:5px;
+  }
+  
+  label {
+    font: 500 14px Roboto;
+    color: #000133;
+  }
+  
+  .invite {
+    text-align:center;
+    background: linear-gradient(-45deg, #000133, #222344);
+    left: 50%;
+  }
+  
+  .invite h3 {
+    margin-top:50px;
+    font: 30px Roboto;
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  .invite p{
+    margin-top:20px;
+    font-size:20px;
+    color: white;
+  }
+   
+  .close {
+    background: #474747;
+    height: 30px;
+    width: 30px;
+    border: 3px solid #FFF;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    cursor: pointer;
+    transition: .4s .3s;
+  }
+    
+  .close:before, .close:after {
+    content: '';
+    background: #FFF;
+    height: 80%;
+    width: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .close:after {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .send-btn-modal{
+    position: relative;
+    height: 3em;
+    width: 100%;
+    background-color: white;
+    color: #f18e43;
+    border: 4px double #f18e43;
+    border-radius: 40px;
+    transition-duration: 0.5s;
+    margin: 1em auto;
+    background: transparent
+      linear-gradient(285deg, #fddb71 0%, #f0883f 66%, #ee7a37 100%) 0% 0%
+      no-repeat padding-box;
+    color: white;
+    outline: none;
+    justify-content: center;
+    
+  }
+  
+  
+  
+  @media only screen and (max-width: 600px){
+    
+      .modal{
+        height:420px;
+      }
+      input {
+    
+    width: 100%;
+    max-height:70px;
+    padding: 8px;
+    margin: 10px 0;
+    
+    font-size: 10px;
+  }
+  .invite h3 {
+    margin-top:20px;
+    font: 20px Roboto;
+    text-transform: uppercase;
+  }
+  
+  .invite p{
+    margin-top:15px;
+    font-size:14px;
+  }
+  }

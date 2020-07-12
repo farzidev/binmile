@@ -12,10 +12,23 @@ from .models import (
 from .forms import ContactForm
 
 
-class IndexView(TemplateView):
+class IndexView(FormView):
     template_name = "index.html"
+    form_class = ContactForm
+    page="home"
+    success_url = "/"
+    def get_form_kwargs(self, **kwargs):
+        kwargs = super().get_form_kwargs(**kwargs)
+        kwargs.update({'page': self.page})
+        return kwargs
 
+    def form_valid(self, form):
+        Form.objects.get_or_create(**form.cleaned_data)
+        messages.success(self.request, "Thanks for submitting the form.")
+        form.send_mail()
+        return super().form_valid(form)
 
+       
 # class QualityView(ListView):
 #     template_name = "quality.html"
 

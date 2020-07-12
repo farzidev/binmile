@@ -30,6 +30,12 @@ class ContactForm(forms.ModelForm):
             del self.fields["message"]
             self.fields["captcha"].required = False
             del self.fields["captcha"]
+        elif page == "home":
+            self.fields["phone_number"].required = True
+            self.fields["subject"].required = True
+            self.fields["company"].required = False
+            del self.fields["company"]
+            del self.fields["captcha"]
 
     def send_mail(self):
         print("SEND MAIL")
