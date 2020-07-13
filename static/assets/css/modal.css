@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: auto;
   transition: 0.4s;
-  max-height: 530px;
+  max-height: 540px;
   max-width: 1200px;
   height: auto;
   width: 90%;
@@ -54,6 +54,12 @@
   float: right;
   top: 0;
   left: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.form::-webkit-scrollbar {
+  display: none;
 }
 .form form {
   padding-left: 60px;
@@ -82,7 +88,7 @@ input:-webkit-autofill {
 textarea {
   background: rgba(5, 5, 5, 0);
   width: 100%;
-  max-height: 100px;
+  max-height: 90px;
   padding: 8px;
   margin: 15px 0;
   border: 1px solid #4d4e8d;
@@ -168,6 +174,8 @@ label {
   border: 0px double #000133;
   border-radius: 0px;
   transition-duration: 0.5s;
+
+  margin-bottom: 50px;
   margin: 1em auto;
   background: linear-gradient(-45deg, #000133, #000230);
   color: white;
