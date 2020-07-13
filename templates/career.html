@@ -330,5 +330,6 @@
     zoomout: false,
     });
 });
+$(window).bind('beforeunload', function(){   localStorage.removeItem('popup'); });
 </script>
 </html>

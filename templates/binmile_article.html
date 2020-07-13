@@ -177,5 +177,8 @@
    {% include "footer.html" %}
   <!-- footer ends -->
 </body>
+<script>
+$(window).bind('beforeunload', function(){   localStorage.removeItem('popup'); });
+</script>
 
 </html>

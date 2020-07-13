@@ -646,6 +646,7 @@ $(window).on('load',function(){
   }
     
 });
+$(window).bind('beforeunload', function(){   localStorage.removeItem('popup'); });
 
 $(".close, .nope").on('click', function () {
   $('.modal').addClass('hidden');

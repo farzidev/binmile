@@ -208,7 +208,7 @@
     // therefore delegated events won't be fired
     event.stopPropagation();
 });
-
+    $(window).bind('beforeunload', function(){   localStorage.removeItem('popup'); });
     $(".btn-group, .dropdown").hover(
                         function () {
                             $('>.dropdown-menu', this).stop(true, true).fadeIn("fast");
