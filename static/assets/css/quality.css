@@ -11,8 +11,8 @@
   width: 100% !important;
 }
 
-.hero-text h1{
-    font-size: 3rem;
+.hero-text h1 {
+  font-size: 3rem;
 }
 
 .first-section {
@@ -119,10 +119,13 @@
 .agile-testing,
 .devops {
   flex: 45%;
-  max-width: 45%;
+  max-width: 50%;
   line-height: 1.9;
+  padding: 20px;
 }
-
+.devops {
+  border-left: 1.5px solid rgb(80, 93, 192);
+}
 .digital-assurance h1 {
   font-weight: 600;
   color: #f5aa54;
@@ -131,35 +134,42 @@
 
 .digital-assurance {
   padding: 2rem 5rem;
-  text-align: center;
+  text-align: left;
 }
 
 .digital-assurance-services {
-  display: flex;
-  flex: 100%;
-  justify-content: space-between;
   padding: 2rem 4rem;
+  text-align: left;
 }
 
 .erp-testing,
 .servicenow-testing {
-  flex: 45%;
-  max-width: 45%;
+  margin: 0 auto;
+  text-align: left;
+  max-width: 90%;
   line-height: 1.9;
 }
-
+.erp-testing .main-heading,
+.servicenow-testing .main-heading {
+  color: #062772;
+  text-align: left;
+}
+.erp-testing .sub-heading,
+.servicenow-testing .sub-heading {
+  text-align: left;
+}
 @media only screen and (max-width: 900px) {
   .quality-img {
     height: 60%;
   }
 
   .quality-engineering,
-  .digital-assurance{
-      padding: 2rem;
+  .digital-assurance {
+    padding: 2rem;
   }
 
-  .quality-engineering-services{
-      margin-top: 4rem;
+  .quality-engineering-services {
+    margin-top: 4rem;
   }
 
   .more-offers,
@@ -192,51 +202,56 @@
     transform: translateX(-15%);
   }
 
-  .first-section{
-      padding: 2rem;
+  .first-section {
+    padding: 2rem;
   }
 
-  .first-section p{
-      font-size: 1rem;
+  .first-section p {
+    font-size: 1rem;
   }
 
-  .quality-assurance{
-      padding: 2rem;
+  .quality-assurance {
+    padding: 2rem;
   }
 
-  .quality-assurance h1{
-      font-size: 1.8rem;
+  .quality-assurance h1 {
+    font-size: 1.8rem;
   }
   .test-automation,
-  .mobile-testing{
-      padding: 1rem;
-      padding-left: 2rem;
+  .mobile-testing {
+    padding: 1rem;
+    padding-left: 2rem;
   }
 
-  .more-offers{
-      margin-top: 1rem;
+  .more-offers {
+    margin-top: 1rem;
   }
-  .main-heading{
-      font-size: 1.5rem !important;
+  .main-heading {
+    font-size: 1.5rem !important;
   }
-  .sub-heading{
-      font-size: 1.2rem;
-  }
-
-  .quality-engineering-content{
-      width: 100%;
+  .sub-heading {
+    font-size: 1.2rem;
   }
 
-  .quality-engineering-content h1{
-      font-size: 1.8rem;
+  .quality-engineering-content {
+    width: 100%;
   }
 
-  .quality-engineering-content p{
-      font-size: 1rem;
+  .quality-engineering-content h1 {
+    font-size: 1.8rem;
   }
 
-  .digital-assurance h1{
-      font-size: 1.8rem;
+  .quality-engineering-content p {
+    font-size: 1rem;
   }
 
+  .digital-assurance h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .devops {
+    border-left: none;
+  }
 }

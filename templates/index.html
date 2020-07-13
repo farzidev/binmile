@@ -436,20 +436,24 @@
   <div class="modal-out">
      <div class="modal">
      <div class="invite">
-        <img src="{% static 'assets/images/final-logo-binmille.png' %}" class='img_logo' width="50" height="60"/>
-        <p>Your Partner For Complete digital Transformation Services</p>
-        <p>Maximize your return on Technology investments</p>
-        <p>IT Digital Transformation | D365 CRM & ERP</p>
-        <p>Integration|Customization|Test Automation | Advisory</p>
+        <img src="{% static 'assets/images/final-logo-binmille.png' %}" class='img_logo' />
+        <h3>"<i>Your Partner For Complete digital Transformation Services</i>&nbsp;"</h3>
+        <p><i><b>Maximize</b> your return on <b>Technology investments</b></i></p>
+        <p></p>
+        <div style=" text-align: center;" class="align-bottom">
+        <p style=" font-size: 14px;"><b>IT Digital Transformation | D365 CRM & ERP | Integration <br/> Customization | Test Automation | Advisory</b></p>
+        </div>
 
         <div class="close" title="close"></div>
       </div>
-      <div class="form">
+    
+      <div class="form" style="text-align: center;">
       {% if messages %}
           {% for message in messages %}
             <h3 class="text-center text-{{ message.tags }}">{{ message }}</h3>
           {% endfor %}
       {% else %}
+      <h3 class="Form-head"><b>Contact Us!</b></h3>
        <form action="." method="post" >
             {% csrf_token %}
             <input type="text" required="" name="name" id="name" value="{{ form.name.value|default_if_none:'' }}" placeholder="Full Name"  />
@@ -524,11 +528,11 @@
               </div>
             {% endif %}
             
-            <button class="send-btn-modal" type="submit">Send</button>
+            <button class="send-btn-modal" type="submit">Submit</button>
         </form> 
         {% endif %}   
       </div>
-      
+    
     </div>
   </div>
 
