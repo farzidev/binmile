@@ -6,14 +6,14 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon" >
+  <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon">
 
   <title>BINMILE | Article</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91243033-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-91243033-1');
@@ -37,10 +37,8 @@
   <header>
     <span class="top-logo">
       <h3> <a href="{% url 'posts:index' %}" class="logo">BIN<span
-        style="color: #EE7A37;border-right: 3px solid lightgray; padding-right: 5px"
-        >MILE</span
-      >
-      Blog</a></h3>
+            style="color: #EE7A37;border-right: 3px solid lightgray; padding-right: 5px">MILE</span>
+          Blog</a></h3>
     </span>
     <div class="nav article-nav">
       <a href="{% url 'posts:contact-us' %}" style="text-decoration: none; color: white;"> Contact Us</a>
@@ -66,22 +64,25 @@
         <div class="article-author">
           <span>
             {% if obj.author %}
-              {{ object.author }}
+            {{ object.author }}
             {% endif %}
           </span>
           <span class="author-social">
             <span>
-              <a class="sharing-links" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}&amp;title={{ object.title }}">
+              <a class="sharing-links" target="_blank"
+                href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}&amp;title={{ object.title }}">
                 <i class="fab fa-facebook-f"></i>
               </a>
             </span>
             <span>
-              <a class="sharing-links" target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&title=&summary={{ object.title }} at Binmile&amp;url={{ request.build_absolute_uri }}">
+              <a class="sharing-links" target="_blank"
+                href="https://www.linkedin.com/shareArticle?mini=true&title=&summary={{ object.title }} at Binmile&amp;url={{ request.build_absolute_uri }}">
                 <i class="fab fa-linkedin"></i>
               </a>
             </span>
             <span>
-              <a class="sharing-links" target="_blank" href="https://twitter.com/intent/tweet?text={{ object.title }} at Binmile%20{{ request.build_absolute_uri }}">
+              <a class="sharing-links" target="_blank"
+                href="https://twitter.com/intent/tweet?text={{ object.title }} at Binmile%20{{ request.build_absolute_uri }}">
                 <i class="fab fa-twitter"></i>
               </a>
             </span>
@@ -90,11 +91,12 @@
         <div class="article-info">
           <span>{{ object.timestamp|date:'j M Y' }}</span>
         </div>
-        <img src="{% if object.thumbnail_img %}{{ object.thumbnail_img.url }}{% endif %}" class="article-image blog-article-img">
+        <img src="{% if object.thumbnail_img %}{{ object.thumbnail_img.url }}{% endif %}"
+          class="article-image blog-article-img">
         <div class="pre-article">
           <span class="read-time">
             {% if object.read_minutes %}
-              {{ object.read_minutes }} mins read
+            {{ object.read_minutes }} mins read
             {% endif %}
           </span>
           <a href="#!" class="category-button">{{ object.category.name }}</a>
@@ -107,45 +109,43 @@
       <h2 class="bold">Related Articles</h2>
       <div class="row" style="margin-top: 3em">
         {% for obj in related_posts %}
-          <div class="col-md-12 col-lg-4">
-            <div class="card mb-5">
-              <img src="{% if obj.thumbnail_img %}{{ obj.thumbnail_img.url }}{% endif %}" class="card-img-top">
-              <div class="card-body">
-                <div class="pre-article">
-                  <a href="#" class="category-button">{{ obj.category.name }}</a>
-                  <span class="read-time">
-                    {% if object.read_minutes %}
-                      {{ object.read_minutes }} mins read
-                    {% endif %}
-                  </span>
-                </div>
-                <h5 class="card-title">{{ obj.title }}</h5>
-                <p style="letter-spacing: 0.24px;color: #212121;">
-                  {{ obj.highlight }}
-                </p>
-                <div class="post-article">
-                  <button class="read-more"><a href="{{ obj.get_absolute_url }}">Read More</a></button>
-                </div>
-                <div class="blog-info">
-                  <span class="author">
-                    {% if obj.author %}
-                      {{ obj.author }}
-                    {% endif %}
-                  </span>
-                  <span class="blog-date">{{ obj.timestamp|date:'j M Y' }}</span>
-                </div>
+        <div class="col-md-12 col-lg-4">
+          <div class="card mb-5">
+            <img src="{% if obj.thumbnail_img %}{{ obj.thumbnail_img.url }}{% endif %}" class="card-img-top">
+            <div class="card-body">
+              <div class="pre-article">
+                <a href="#" class="category-button">{{ obj.category.name }}</a>
+                <span class="read-time">
+                  {% if object.read_minutes %}
+                  {{ object.read_minutes }} mins read
+                  {% endif %}
+                </span>
+              </div>
+              <h5 class="card-title">{{ obj.title }}</h5>
+              <p style="letter-spacing: 0.24px;color: #212121;">
+                {{ obj.highlight }}
+              </p>
+              <div class="post-article">
+                <button class="read-more"><a href="{{ obj.get_absolute_url }}">Read More</a></button>
+              </div>
+              <div class="blog-info">
+                <span class="author">
+                  {% if obj.author %}
+                  {{ obj.author }}
+                  {% endif %}
+                </span>
+                <span class="blog-date">{{ obj.timestamp|date:'j M Y' }}</span>
               </div>
             </div>
           </div>
+        </div>
         {% endfor %}
 
         <section style="display:flex;justify-content: space-between;">
           <div class="row article-section">
             <a href="binmile_article.html">
-              <img
-              src="{% static 'assets/images/arrow-image.png' %}"
-              class="col-md-6 col-xs-12 col-sm-12 arrow-image"
-            />
+              <img src="{% static 'assets/images/arrow-image.png' %}"
+                class="col-md-6 col-xs-12 col-sm-12 arrow-image" />
             </a>
 
             <aside class="col-md-6 col-sm-12 col-xs-12 article-content">
@@ -162,7 +162,8 @@
                 Focus on your business while we handle the complexities of
                 technology for you.
               </p>
-              <button class="get-in-touch"> <a href="{% url 'posts:contact-us' %}" class="contact-link">Get in touch</a></button>
+              <button class="get-in-touch"> <a href="{% url 'posts:contact-us' %}" class="contact-link">Get in
+                  touch</a></button>
             </aside>
           </div>
         </section>
@@ -173,12 +174,33 @@
 
 
   </main>
-   <!-- footer starts -->
-   {% include "footer.html" %}
+  <!-- footer starts -->
+  {% include "footer.html" %}
   <!-- footer ends -->
 </body>
 <script>
-$(window).bind('beforeunload', function(){   localStorage.removeItem('popup'); });
+  $(window).bind('beforeunload', function () { localStorage.removeItem('popup'); });
+
+  //disable zoom
+  $(document).ready(function () {
+    $(document).keydown(function (event) {
+      if (event.ctrlKey == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
+        alert('disabling zooming');
+        event.preventDefault();
+        // 107 Num Key  +
+        //109 Num Key  -
+        //173 Min Key  hyphen/underscor Hey
+        // 61 Plus key  +/=
+      }
+    });
+
+    $(window).bind('mousewheel DOMMouseScroll', function (event) {
+      if (event.ctrlKey == true) {
+        alert('disabling zooming');
+        event.preventDefault();
+      }
+    });
+  });
 </script>
 
 </html>
