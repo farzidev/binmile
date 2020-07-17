@@ -2,24 +2,23 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Microsoft CRM 365</title>
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91243033-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Microsoft CRM 365</title>
 
-      gtag('config', 'UA-91243033-1');
-    </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91243033-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <link
-      rel="shortcut icon"
-      href="{% static 'assets/images/faviconlogo.png"
+    gtag('config', 'UA-91243033-1');
+  </script>
+
+  <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png"
       type="image/x-icon"
     />
 
@@ -28,83 +27,77 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
 
-    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/service.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/crm.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/service.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/crm.css' %}" />
 
-    <script
-      src="https://kit.fontawesome.com/16370dbf02.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+  <script src="https://kit.fontawesome.com/16370dbf02.js" crossorigin="anonymous"></script>
+</head>
 
-  <body>
-    {% include "header.html" %}
+<body>
+  {% include "header.html" %}
 
-    <div class="hero">
-      <div class="hero-left">
-        <div class="hero-text">
-          Microsoft
-          <h1>Dynamics 365</h1>
-          <h3 class="hero-h3">Digitally Transform and future proof your business.</h3>
-        </div>
-        <button class="get-started"><a href="{% url 'posts:contact-us' %}" class="contact-link">Let's Get Started</a></button>
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-text">
+        Microsoft
+        <h1>Dynamics 365</h1>
+        <h3 class="hero-h3">Digitally Transform and future proof your business.</h3>
       </div>
-      <div class="hero-right">
-        <img
-          src="{% static 'assets/images/crm1.png' %}"
-          alt="Pillar Image"
-          class="pillar-img"
-        />
+      <button class="get-started"><a href="{% url 'posts:contact-us' %}" class="contact-link">Let's Get
+          Started</a></button>
+    </div>
+    <div class="hero-right">
+      <img src="{% static 'assets/images/crm1.png' %}" alt="Pillar Image" class="pillar-img" />
+    </div>
+  </div>
+
+  <div class="crm__info">
+    <p class="crm__info-text">
+      In a globalised business environment, achieving great customer
+      experience is of utmost importance. Organizations need to distinguish
+      there business from competitors and promote trust and loyalty between
+      partners. Whatever your Business need maybe, Microsoft Dynamics 365 will
+      enable you to achieve it. Be it related to sales, Finance, Project
+      Service Automation or Field Services.
+    </p>
+  </div>
+
+  <div class="dynamic-crm">
+    <h2 class="crm-heading">Binmile!</h2>
+
+    <h2 class="crm-heading crm-heading-2">Your Microsoft Dynamics CRM Consultant</h2>
+    <p class="dynamic-crm-text">
+      Binmile Technologies is a Microsoft Registered Company. We provide
+      complete CRM services for companies that chose Microsoft Dynamics 365 as
+      their CRM platform. Whenever you need to implement Dynamics from
+      scratch, customize Dynamics around your own unique needs, integrate with
+      other systems, migrate data, or create custom apps, we are here to
+      assist you. With our years of experience and expertise in managing
+      varied projects we are sure to add value to your business.
+    </p>
+  </div>
+
+  <div class="crm-user">
+    <h1 class="crm-user-heading" style="text-align: center;">&nbsp; Solutions &nbsp;</h1>
+    <div class="crm-cards">
+      {% for object in object_list %}
+      <div class="crm-card crm-card-{{ forloop.counter }}">
+        <h3 class="crm-card-heading">{{ object.title }}</h3>
+        <p class="crm-card-para">
+          {{ object.content }}
+        </p>
       </div>
+      {% endfor %}
     </div>
+  </div>
 
-    <div class="crm__info">
-      <p class="crm__info-text">
-        In a globalised business environment, achieving great customer
-        experience is of utmost importance. Organizations need to distinguish
-        there business from competitors and promote trust and loyalty between
-        partners. Whatever your Business need maybe, Microsoft Dynamics 365 will
-        enable you to achieve it. Be it related to sales, Finance, Project
-        Service Automation or Field Services.
-      </p>
-    </div>
+  <!-- Testimonial Slider -->
 
-    <div class="dynamic-crm">
-      <h2 class="crm-heading">Binmile!</h2>
-
-      <h2 class="crm-heading crm-heading-2">Your Microsoft Dynamics CRM Consultant</h2>
-      <p class="dynamic-crm-text">
-        Binmile Technologies is a Microsoft Registered Company. We provide
-        complete CRM services for companies that chose Microsoft Dynamics 365 as
-        their CRM platform. Whenever you need to implement Dynamics from
-        scratch, customize Dynamics around your own unique needs, integrate with
-        other systems, migrate data, or create custom apps, we are here to
-        assist you. With our years of experience and expertise in managing
-        varied projects we are sure to add value to your business.
-      </p>
-    </div>
-
-    <div class="crm-user">
-      <h1 class="crm-user-heading" style="text-align: center;">&nbsp; Solutions &nbsp;</h1>
-      <div class="crm-cards">
-        {% for object in object_list %}
-          <div class="crm-card crm-card-{{ forloop.counter }}">
-            <h3 class="crm-card-heading">{{ object.title }}</h3>
-            <p class="crm-card-para">
-              {{ object.content }}
-            </p>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-
-    <!-- Testimonial Slider -->
-
-    <!-- <div class="owl-two owl-carousel owl-theme owl-loaded">
+  <!-- <div class="owl-two owl-carousel owl-theme owl-loaded">
       <h2 class="testimonial-heading">Client Testimonial</h2>
       <div class="owl-stage-outer">
         <div class="owl-stage test">
@@ -177,81 +170,84 @@
         </div>
       </div>
     </div> -->
-    <!-- Testimonial Slider ends -->
+  <!-- Testimonial Slider ends -->
 
-    <div class="crm__support">
-      <div class="crm__support-content">
-        <h2 class="support-heading">
-          Dynamics CRM Customization and Support for Prominent Construction Business House
-        </h2>
-        <p class="support-para">
-          “Binmile integrated our Microsoft CRM into one of their products
-          initially, but we also now use several of their products for many of
-          our locations around the world. They provide services from three
-          different teams: support, concierge, and operations. The quality of
-          work they provide is second to none. They’ve provided CRM solutions
-          that no one else has been able to. Their work had driven our adoption,
-          which had increased by about six times what it was before we started
-          working with them.
-        </p>
-      </div>
-      <div class="crm__support-image">
-        <img src="{% static 'assets/images/team/crm2.png' %}" alt="" class="support-img" />
-      </div>
-    </div>
-
-    <div class="crm__consultant" id="consultForm">
-      <h2 class="consultant-heading">Consult with us</h2>
-      <p class="consultant-para">
-        We are a team of experienced Dynamics CRM developers and Consultants.
-        Leverage the dynamism of Dynamics 365 CRM with our cooperation. We
-        handle projects of any size from small customization requests to
-        enterprise deployments. Not sure if Dynamics 365 is the best choice for
-        you? Contact us, and we’ll help you to define the optimal CRM system for
-        you!
+  <div class="crm__support">
+    <div class="crm__support-content">
+      <h2 class="support-heading">
+        Dynamics CRM Customization and Support for Prominent Construction Business House
+      </h2>
+      <p class="support-para">
+        “Binmile integrated our Microsoft CRM into one of their products
+        initially, but we also now use several of their products for many of
+        our locations around the world. They provide services from three
+        different teams: support, concierge, and operations. The quality of
+        work they provide is second to none. They’ve provided CRM solutions
+        that no one else has been able to. Their work had driven our adoption,
+        which had increased by about six times what it was before we started
+        working with them.
       </p>
-      {% if messages %}
-          {% for message in messages %}
-              <h3 class="text-{{ message.tags }}">{{ message }}</h3>
-          {% endfor %}
-      {% else %}
-        <h3 class="form-heading">Drop your details here</h3>
-        <form action="." method="post" class="consultant-form">
-          {% csrf_token %}
-          <input type="text" placeholder="Name" name="name" required="" value="{{ form.name.value|default_if_none:'' }}" class="form-input">
-          {% if form.name.errors %}
-            <div class="text-danger">
-              {% for error in form.name.errors %}
-              <p>{{ error }}</p>
-              {% endfor %}
-            </div>
-          {% endif %}
-          <input type="text" value="{{ form.company.value|default_if_none:'' }}" placeholder="Company" name="company" required="" class="form-input">
-          {% if form.company.errors %}
-            <div class="text-danger">
-              {% for error in form.company.errors %}
-              <p>{{ error }}</p>
-              {% endfor %}
-            </div>
-          {% endif %}
-          <input type="text" value="{{ form.email.value|default_if_none:'' }}" name="email" required="" placeholder="Email Id" class="form-input">
-          {% if form.email.errors %}
-            <div class="text-danger">
-              {% for error in form.email.errors %}
-              <p>{{ error }}</p>
-              {% endfor %}
-            </div>
-          {% endif %}
-          <button class="form-btn">Submit</button>
-        </form>
-      {% endif %}
     </div>
+    <div class="crm__support-image">
+      <img src="{% static 'assets/images/team/crm2.png' %}" alt="" class="support-img" />
+    </div>
+  </div>
 
-    <!-- footer starts -->
-    {% include "footer.html" %}
-    <!-- footer ends -->
+  <div class="crm__consultant" id="consultForm">
+    <h2 class="consultant-heading">Consult with us</h2>
+    <p class="consultant-para">
+      We are a team of experienced Dynamics CRM developers and Consultants.
+      Leverage the dynamism of Dynamics 365 CRM with our cooperation. We
+      handle projects of any size from small customization requests to
+      enterprise deployments. Not sure if Dynamics 365 is the best choice for
+      you? Contact us, and we’ll help you to define the optimal CRM system for
+      you!
+    </p>
+    {% if messages %}
+    {% for message in messages %}
+    <h3 class="text-{{ message.tags }}">{{ message }}</h3>
+    {% endfor %}
+    {% else %}
+    <h3 class="form-heading">Drop your details here</h3>
+    <form action="." method="post" class="consultant-form">
+      {% csrf_token %}
+      <input type="text" placeholder="Name" name="name" required="" value="{{ form.name.value|default_if_none:'' }}"
+        class="form-input">
+      {% if form.name.errors %}
+      <div class="text-danger">
+        {% for error in form.name.errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <input type="text" value="{{ form.company.value|default_if_none:'' }}" placeholder="Company" name="company"
+        required="" class="form-input">
+      {% if form.company.errors %}
+      <div class="text-danger">
+        {% for error in form.company.errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <input type="text" value="{{ form.email.value|default_if_none:'' }}" name="email" required=""
+        placeholder="Email Id" class="form-input">
+      {% if form.email.errors %}
+      <div class="text-danger">
+        {% for error in form.email.errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <button class="form-btn">Submit</button>
+    </form>
+    {% endif %}
+  </div>
 
-    <!-- <div class="float-contact">
+  <!-- footer starts -->
+  {% include "footer.html" %}
+  <!-- footer ends -->
+
+  <!-- <div class="float-contact">
       <a href="{% url 'posts:contact-us' %}">
         <img
           src="{% static 'assets/images/hero_images/support.png' %}"
@@ -260,83 +256,104 @@
         />
       </a>
     </div> -->
-  </body>
+</body>
 <script src="//code.tidio.co/ntbvrxc2bygx9vrnptufdvakjunxcnsw.js" async></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-  <script>
-    $(".owl-two").owlCarousel({
-      center: true,
-      items: 1,
-      margin: 10,
-      loop: true,
-      slideSpeed: 800,
-      autoplay: true,
-      autoPlaySpeed: 8000,
-      autoPlayTimeout: 5000,
-      autoplayHoverPause: true,
+<script>
+  $(".owl-two").owlCarousel({
+    center: true,
+    items: 1,
+    margin: 10,
+    loop: true,
+    slideSpeed: 800,
+    autoplay: true,
+    autoPlaySpeed: 8000,
+    autoPlayTimeout: 5000,
+    autoplayHoverPause: true,
 
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 1
-        },
-        1000: {
-          items: 2
-        }
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 1
+      },
+      1000: {
+        items: 2
+      }
+    }
+  });
+
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      if (scroll > 700) {
+        $("#navbar").css("background", "#062772"),
+          $("#navbar").css("height", "8vh"),
+          $(".dropdown").css("transform", "translateY(-2px)"),
+          $(".navbar-toggler").css("top", "-1rem"),
+          $("#navbarSupportedContent").css("top", "-1.5rem");
+      } else {
+        $("#navbar").css("background", "transparent");
+      }
+    });
+  });
+
+  /** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
+  $(document).ready(function () {
+    $(document).click(function (event) {
+      var clickover = $(event.target);
+      var _opened = $(".navbar-collapse").hasClass("show");
+      if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+        $(".navbar-toggler").click();
+      }
+    });
+  });
+
+  $('.dropdown').on('click', function (event) {
+    // The event won't be propagated up to the document NODE and
+    // therefore delegated events won't be fired
+    event.stopPropagation();
+  });
+  $('.dropdown-submenu').on('click', function (event) {
+    // The event won't be propagated up to the document NODE and
+    // therefore delegated events won't be fired
+    event.stopPropagation();
+  });
+
+  $(".btn-group, .dropdown").hover(
+    function () {
+      $('>.dropdown-menu', this).stop(true, true).fadeIn("fast");
+      $(this).addClass('open');
+    },
+    function () {
+      $('>.dropdown-menu', this).stop(true, true).fadeOut("fast");
+      $(this).removeClass('open');
+    });
+  //disable zoom
+  $(document).ready(function () {
+    $(document).keydown(function (event) {
+      if (event.ctrlKey == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
+        alert('disabling zooming');
+        event.preventDefault();
+        // 107 Num Key  +
+        //109 Num Key  -
+        //173 Min Key  hyphen/underscor Hey
+        // 61 Plus key  +/=
       }
     });
 
-    $(document).ready(function() {
-      $(window).scroll(function() {
-        var scroll = $(window).scrollTop();
-        if (scroll > 700) {
-          $("#navbar").css("background", "#062772"),
-            $("#navbar").css("height", "8vh"),
-            $(".dropdown").css("transform", "translateY(-2px)"),
-            $(".navbar-toggler").css("top", "-1rem"),
-            $("#navbarSupportedContent").css("top", "-1.5rem");
-        } else {
-          $("#navbar").css("background", "transparent");
-        }
-      });
+    $(window).bind('mousewheel DOMMouseScroll', function (event) {
+      if (event.ctrlKey == true) {
+        alert('disabling zooming');
+        event.preventDefault();
+      }
     });
+  });
+</script>
 
-    /** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
-$(document).ready(function () {
-     $(document).click(function (event) {
-         var clickover = $(event.target);
-         var _opened = $(".navbar-collapse").hasClass("show");
-         if (_opened === true && !clickover.hasClass("navbar-toggler")) {
-             $(".navbar-toggler").click();
-         }
-     });
- });
-
- $('.dropdown').on('click', function(event){
-    // The event won't be propagated up to the document NODE and
-    // therefore delegated events won't be fired
-    event.stopPropagation();
-});
-$('.dropdown-submenu').on('click', function(event){
-    // The event won't be propagated up to the document NODE and
-    // therefore delegated events won't be fired
-    event.stopPropagation();
-});
-
-$(".btn-group, .dropdown").hover(
-                        function () {
-                            $('>.dropdown-menu', this).stop(true, true).fadeIn("fast");
-                            $(this).addClass('open');
-                        },
-                        function () {
-                            $('>.dropdown-menu', this).stop(true, true).fadeOut("fast");
-                            $(this).removeClass('open');
-                        });
-  </script>
 </html>

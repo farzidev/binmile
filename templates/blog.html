@@ -2,85 +2,75 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="{% static 'assets/images/faviconlogo.png' %}"
-      type="image/x-icon"
-    />
 
-    <title>BINMILE | Blog</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91243033-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <title>BINMILE | Blog</title>
 
-      gtag('config', 'UA-91243033-1');
-    </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91243033-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css' />
+    gtag('config', 'UA-91243033-1');
+  </script>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css' />
 
 
-    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
 
-    <script
-      src="https://kit.fontawesome.com/16370dbf02.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+  <script src="https://kit.fontawesome.com/16370dbf02.js" crossorigin="anonymous"></script>
+</head>
 
-  <body>
-    <header class="header fixed-top" id="navbar">
-      <span class="top-logo top__logo blog-top-logo">
-        <h3 class="top__logo-heading">
-          <a href="{% url 'posts:index' %}" class="logo"
-            >BIN<span
-              style="color: #EE7A37;border-right: 3px solid lightgray; padding-right: 5px"
-              >MILE</span
-            >
-            Blog</a
-          >
-        </h3>
-      </span>
-      <div class="nav navbar navbar-expand-lg nav-1 ">
-        <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
-          data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent1" aria-expanded="false"
-          aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
-        <div class="collapse navbar-collapse blog_navigation" id="navbarSupportedContent">
-          <ul class="navbar-nav blog-nav " id="navbar-1">
-            <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
-            <li>
-              <div class="dropdown">
-                <button class="dropbtn">Platform
-                  <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                  <a href="{% url 'posts:services' %}">ServiceNow</a>
-                  <a href="{% url 'posts:microsoft-dynamics-365' %}">Microsoft Dynamics 365</a>
-                  <a href="{% url 'posts:power-platform' %}">Power Platform</a>
-                </div>
+<body>
+  <header class="header fixed-top" id="navbar">
+    <span class="top-logo top__logo blog-top-logo">
+      <h3 class="top__logo-heading">
+        <a href="{% url 'posts:index' %}" class="logo">BIN<span
+            style="color: #EE7A37;border-right: 3px solid lightgray; padding-right: 5px">MILE</span>
+          Blog</a>
+      </h3>
+    </span>
+    <div class="nav navbar navbar-expand-lg nav-1 ">
+      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent1" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span></button>
+      <div class="collapse navbar-collapse blog_navigation" id="navbarSupportedContent">
+        <ul class="navbar-nav blog-nav " id="navbar-1">
+          <li><a href="{% url 'posts:index' %}" class="nav-link">Home</a></li>
+          <li>
+            <div class="dropdown">
+              <button class="dropbtn">Platform
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="{% url 'posts:services' %}">ServiceNow</a>
+                <a href="{% url 'posts:microsoft-dynamics-365' %}">Microsoft Dynamics 365</a>
+                <a href="{% url 'posts:power-platform' %}">Power Platform</a>
               </div>
-            </li>
-            <li><a href="{% url 'posts:about-us' %}" class="nav-link">About Us</a></li>
-            <li><a href="{% url 'posts:insights' %}" class="nav-link">Insights</a></li>
-            <li><a href="{% url 'posts:contact-us' %}" class="nav-link">Contact Us</a></li>
-            <li><a href="{% url 'posts:career' %}" class="nav-link">Career</a></li>
+            </div>
+          </li>
+          <li><a href="{% url 'posts:about-us' %}" class="nav-link">About Us</a></li>
+          <li><a href="{% url 'posts:insights' %}" class="nav-link">Insights</a></li>
+          <li><a href="{% url 'posts:contact-us' %}" class="nav-link">Contact Us</a></li>
+          <li><a href="{% url 'posts:career' %}" class="nav-link">Career</a></li>
 
 
-          </ul>
-        </div>
+        </ul>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <div class="container">
-        <!-- <div >
+  <main>
+    <div class="container">
+      <!-- <div >
           <nav class="navbar navbar-expand-lg">
             <ul class="navbar-nav ">
               <div class="scrollmenu">
@@ -98,405 +88,367 @@
           </nav>
         </div> -->
 
-        <div>
-          <nav class="navbar navbar-expand-lg blog-top-nav">
-            <ul class="navbar-nav ">
-              <div class="tab">
-                <button
-                  class="tablinks"
-                  onclick="openArticles(event, 'Articles')"
-                  id="defaultOpen"
-                >
-                  All&nbsp; Articles
-                </button>
-                {% for category in categories %}
-                  <button
-                    class="tablinks"
-                    onclick="openArticles(event, 'cat_{{ category.id }}')"
-                  >
-                    {{ category.name }}
-                  </button>
-                {% endfor %}
-                <button
-                  class="tablinks"
-                  onclick="openArticles(event, 'Case_Studies')"
-                  id="Case_Studies_Tab"
-                >
-                  Case&nbsp; Studies
-                </button>
-              </div>
-              <li>
-                <form action=".">
-                  <input name="q" value="{{ request.GET.q|default_if_none:'' }}" type="text" class="top-search" placeholder="Search" />
-                </form>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-        <div id="Articles" class="tabcontent active">
-          <div class="row article-row" {% if not request.GET.q %}style="margin-top: 3em"{% endif %}>
-            <!-- SEARCH RESULTS -->
-            {% if request.GET.q %}
-              <div class="col-md-12 my-3">
-                <h4>
-                  Over {{ object_list|length }} result{{ object_list|length|pluralize }} found for <span class="text-info">"{{ request.GET.q }}"</span>
-                </h4>
-              </div>
-            {% endif %}
-            <!-- SEARCH RESULTS ENDS -->
-            {% for post in object_list %}
-              <div class="col-md-6 col-lg-4" style="margin-bottom: 3em">
-                <div class="card blog-card">
-                  <a href="{{ post.get_absolute_url }}" target="_blank">
-                    <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
-                  </a>
-
-                  <div class="card-body">
-                    <div class="card-upper-part">
-                      <div class="pre-article">
-                        <a href="#" class="category-button">{{ post.category.name }}</a>
-                        <span class="read-time">
-                          {% if post.read_minutes %}
-                            {{ post.read_minutes }} mins read
-                          {% endif %}
-                        </span>
-                      </div>
-                      <h5 class="card-title">
-                        {{ post.title }}
-                      </h5>
-                      <p style="letter-spacing: 0.24px;color: #212121;">
-                        {{ post.highlight }}
-                      </p>
-                    </div>
-
-                    <div class="card-bottom-part">
-                      <div class="post-article">
-                        <button class="read-more">
-                          <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link"
-                            >Read More</a
-                          >
-                        </button>
-                      </div>
-                      <div class="blog-info">
-                        <span class="author">
-                          {% if post.author %}
-                            {{ post.author }}
-                          {% endif %}
-                        </span>
-                        <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-          <div style="width: 100%;text-align:center;margin:2em 0">
-            <button class="load-more-btn">Load More</button>
-          </div>
-        </div>
-
-        <div id="Case_Studies" class="tabcontent">
-          <div class="row article-row" style="margin-top: 3em">
-            {% for post in object_list %}
-              {% if post.purpose == 'CS' %}
-                <div class="col-md-4" style="margin-bottom: 3em">
-                  <div class="card blog-card">
-                    <a href="{{ post.get_absolute_url }}" target="_blank">
-                      <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
-                    </a>
-
-                    <div class="card-body">
-                      <div class="card-upper-part">
-                        <div class="pre-article">
-                          <a href="#" class="category-button">{{ post.category.name }}</a>
-                          <span class="read-time">
-                            {% if post.read_minutes %}
-                              {{ post.read_minutes }} mins read
-                            {% endif %}
-                          </span>
-                        </div>
-                        <h5 class="card-title">
-                          {{ post.title }}
-                        </h5>
-                        <p style="letter-spacing: 0.24px;color: #212121;">
-                          {{ post.highlight }}
-                        </p>
-                      </div>
-
-
-                      <div class="card-bottom-part">
-                        <div class="post-article">
-                          <button class="read-more">
-                            <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link"
-                              >Read More</a
-                            >
-                          </button>
-                        </div>
-                        <div class="blog-info">
-                          <span class="author">
-                            {% if post.author %}
-                              {{ post.author }}
-                            {% endif %}
-                          </span>
-                          <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              {% endif %}
-            {% endfor %}
-          </div>
-          <div style="width: 100%;text-align:center;margin:2em 0">
-            <button class="load-more-btn">Load More</button>
-          </div>
-        </div>
-
-        {% for category in categories %}
-          <div id="cat_{{ category.id }}" class="tabcontent">
-            <div class="row article-row" style="margin-top: 3em">
-              {% for post in object_list %}
-                {% if post.category == category %}
-                  <div class="col-md-4 col-lg-4" style="margin-bottom: 3em">
-                    <div class="card blog-card">
-                      <a href="{{ post.get_absolute_url }}" target="_blank">
-                        <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
-                      </a>
-
-                      <div class="card-body">
-
-                        <div class="card-upper-part">
-                          <div class="pre-article">
-                            <a href="#" class="category-button">{{ post.category.name }}</a>
-                            <span class="read-time">
-                              {% if post.read_minutes %}
-                                {{ post.read_minutes }} mins read
-                              {% endif %}
-                            </span>
-                          </div>
-                          <h5 class="card-title">
-                            {{ post.title }}
-                          </h5>
-                          <p style="letter-spacing: 0.24px;color: #212121;">
-                            {{ post.highlight }}
-                          </p>
-                        </div>
-
-
-                        <div class="card-bottom-part">
-                          <div class="post-article">
-                            <button class="read-more">
-                              <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link"
-                                >Read More</a
-                              >
-                            </button>
-                          </div>
-                          <div class="blog-info">
-                            <span class="author">
-                              {% if post.author %}
-                                {{ post.author }}
-                              {% endif %}
-                            </span>
-                            <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
-                          </div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                {% endif %}
+      <div>
+        <nav class="navbar navbar-expand-lg blog-top-nav">
+          <ul class="navbar-nav ">
+            <div class="tab">
+              <button class="tablinks" onclick="openArticles(event, 'Articles')" id="defaultOpen">
+                All&nbsp; Articles
+              </button>
+              {% for category in categories %}
+              <button class="tablinks" onclick="openArticles(event, 'cat_{{ category.id }}')">
+                {{ category.name }}
+              </button>
               {% endfor %}
+              <button class="tablinks" onclick="openArticles(event, 'Case_Studies')" id="Case_Studies_Tab">
+                Case&nbsp; Studies
+              </button>
             </div>
-            <div style="width: 100%;text-align:center;margin:2em 0">
-              <button class="load-more-btn">Load More</button>
-            </div>
-          </div>
-        {% endfor %}
-
-        <section style="display:flex;justify-content: space-between;">
-          <div class="row article-section">
-            <a href="binmile_article.html">
-              <img
-              src="{% static 'assets/images/arrow-image.png' %}"
-              class="col-md-6 col-xs-12 col-sm-12 arrow-image"
-            />
-            </a>
-
-            <aside class="col-md-6 col-sm-12 col-xs-12 article-content">
-              <h4 style="font-weight: bold; margin: 1.5em auto">
-                Join the list of businesses whom we helped transform
-              </h4>
-              <p>
-                We make it easier for you to focus on building great products
-                while we work on simplifying your technology. Become one of us
-                by joining thousands of our happy users and simplify the online
-                experience for your customers.
-              </p>
-              <p>
-                Focus on your business while we handle the complexities of
-                technology for you.
-              </p>
-              <button class="get-in-touch"> <a href="{% url 'posts:contact-us' %}" class="contact-link">Get in touch</a></button>
-            </aside>
-          </div>
-        </section>
+            <li>
+              <form action=".">
+                <input name="q" value="{{ request.GET.q|default_if_none:'' }}" type="text" class="top-search"
+                  placeholder="Search" />
+              </form>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </main>
-    <!-- footer starts -->
-    <footer class="footer">
-      <section class="top-footer text-center">
-        <div class="container for-remove-margin">
-          <h3
-            style="font-weight: bold;letter-spacing: 0.4px;color: #062772;"
-            class="footer-heading"
-          >
-            Explore how Binmile can help your business in its digital
-            transformation journey
-          </h3>
-          <div
-            style="text-align:center;margin:2em auto;border-radius: 5em;width: 10em;height:0.5em;background-color:#062772;"
-          ></div>
-          <p style="letter-spacing: 0.24px; color: #062772;" class="top-footer-para">
-            Do you need an elite team of technologist and idea-makers? Is
-            quality important to you? Is scalability and endless customization
-            paramount? Do you need a brand that is built specifically for your
-            company and can be as innovative as you are?
-          </p>
-          <p style="letter-spacing: 0.24px; color: #062772;" class="top-footer-para">
-            Contact our Business Analyst and get the journey started.
-          </p>
-          <button class="estimate-btn" style="margin: 2em auto">
-            <a href="{% url 'posts:contact-us' %}" class="contact-link">Get an estimate</a>
-          </button>
+
+      <div id="Articles" class="tabcontent active">
+        <div class="row article-row" {% if not request.GET.q %}style="margin-top: 3em" {% endif %}>
+          <!-- SEARCH RESULTS -->
+          {% if request.GET.q %}
+          <div class="col-md-12 my-3">
+            <h4>
+              Over {{ object_list|length }} result{{ object_list|length|pluralize }} found for <span
+                class="text-info">"{{ request.GET.q }}"</span>
+            </h4>
+          </div>
+          {% endif %}
+          <!-- SEARCH RESULTS ENDS -->
+          {% for post in object_list %}
+          <div class="col-md-6 col-lg-4" style="margin-bottom: 3em">
+            <div class="card blog-card">
+              <a href="{{ post.get_absolute_url }}" target="_blank">
+                <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+              </a>
+
+              <div class="card-body">
+                <div class="card-upper-part">
+                  <div class="pre-article">
+                    <a href="#" class="category-button">{{ post.category.name }}</a>
+                    <span class="read-time">
+                      {% if post.read_minutes %}
+                      {{ post.read_minutes }} mins read
+                      {% endif %}
+                    </span>
+                  </div>
+                  <h5 class="card-title">
+                    {{ post.title }}
+                  </h5>
+                  <p style="letter-spacing: 0.24px;color: #212121;">
+                    {{ post.highlight }}
+                  </p>
+                </div>
+
+                <div class="card-bottom-part">
+                  <div class="post-article">
+                    <button class="read-more">
+                      <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link">Read More</a>
+                    </button>
+                  </div>
+                  <div class="blog-info">
+                    <span class="author">
+                      {% if post.author %}
+                      {{ post.author }}
+                      {% endif %}
+                    </span>
+                    <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div style="width: 100%;text-align:center;margin:2em 0">
+          <button class="load-more-btn">Load More</button>
+        </div>
+      </div>
+
+      <div id="Case_Studies" class="tabcontent">
+        <div class="row article-row" style="margin-top: 3em">
+          {% for post in object_list %}
+          {% if post.purpose == 'CS' %}
+          <div class="col-md-4" style="margin-bottom: 3em">
+            <div class="card blog-card">
+              <a href="{{ post.get_absolute_url }}" target="_blank">
+                <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+              </a>
+
+              <div class="card-body">
+                <div class="card-upper-part">
+                  <div class="pre-article">
+                    <a href="#" class="category-button">{{ post.category.name }}</a>
+                    <span class="read-time">
+                      {% if post.read_minutes %}
+                      {{ post.read_minutes }} mins read
+                      {% endif %}
+                    </span>
+                  </div>
+                  <h5 class="card-title">
+                    {{ post.title }}
+                  </h5>
+                  <p style="letter-spacing: 0.24px;color: #212121;">
+                    {{ post.highlight }}
+                  </p>
+                </div>
+
+
+                <div class="card-bottom-part">
+                  <div class="post-article">
+                    <button class="read-more">
+                      <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link">Read More</a>
+                    </button>
+                  </div>
+                  <div class="blog-info">
+                    <span class="author">
+                      {% if post.author %}
+                      {{ post.author }}
+                      {% endif %}
+                    </span>
+                    <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <div style="width: 100%;text-align:center;margin:2em 0">
+          <button class="load-more-btn">Load More</button>
+        </div>
+      </div>
+
+      {% for category in categories %}
+      <div id="cat_{{ category.id }}" class="tabcontent">
+        <div class="row article-row" style="margin-top: 3em">
+          {% for post in object_list %}
+          {% if post.category == category %}
+          <div class="col-md-4 col-lg-4" style="margin-bottom: 3em">
+            <div class="card blog-card">
+              <a href="{{ post.get_absolute_url }}" target="_blank">
+                <img src="{% if post.thumbnail_img %}{{ post.thumbnail_img.url }}{% endif %}" class="card-img-top" />
+              </a>
+
+              <div class="card-body">
+
+                <div class="card-upper-part">
+                  <div class="pre-article">
+                    <a href="#" class="category-button">{{ post.category.name }}</a>
+                    <span class="read-time">
+                      {% if post.read_minutes %}
+                      {{ post.read_minutes }} mins read
+                      {% endif %}
+                    </span>
+                  </div>
+                  <h5 class="card-title">
+                    {{ post.title }}
+                  </h5>
+                  <p style="letter-spacing: 0.24px;color: #212121;">
+                    {{ post.highlight }}
+                  </p>
+                </div>
+
+
+                <div class="card-bottom-part">
+                  <div class="post-article">
+                    <button class="read-more">
+                      <a href="{{ post.get_absolute_url }}" target="_blank" class="article-link">Read More</a>
+                    </button>
+                  </div>
+                  <div class="blog-info">
+                    <span class="author">
+                      {% if post.author %}
+                      {{ post.author }}
+                      {% endif %}
+                    </span>
+                    <span class="blog-date">{{ post.timestamp|date:'j M Y' }}</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <div style="width: 100%;text-align:center;margin:2em 0">
+          <button class="load-more-btn">Load More</button>
+        </div>
+      </div>
+      {% endfor %}
+
+      <section style="display:flex;justify-content: space-between;">
+        <div class="row article-section">
+          <a href="binmile_article.html">
+            <img src="{% static 'assets/images/arrow-image.png' %}" class="col-md-6 col-xs-12 col-sm-12 arrow-image" />
+          </a>
+
+          <aside class="col-md-6 col-sm-12 col-xs-12 article-content">
+            <h4 style="font-weight: bold; margin: 1.5em auto">
+              Join the list of businesses whom we helped transform
+            </h4>
+            <p>
+              We make it easier for you to focus on building great products
+              while we work on simplifying your technology. Become one of us
+              by joining thousands of our happy users and simplify the online
+              experience for your customers.
+            </p>
+            <p>
+              Focus on your business while we handle the complexities of
+              technology for you.
+            </p>
+            <button class="get-in-touch"> <a href="{% url 'posts:contact-us' %}" class="contact-link">Get in
+                touch</a></button>
+          </aside>
         </div>
       </section>
-      <section class="main-footer">
-        <div class="container for-remove-margin">
-          <div class="row footer__info">
-            <div class="col-md-4 footer__info-content">
-              <img
-                style="height: 5em"
-                src="{% static 'assets/images/fotter-logo.png' %}"
-                class="footer__img"
-              />
-              <div class="contact-info">
-                <!-- <h5 class="contact-call">Call</h5>
+    </div>
+  </main>
+  <!-- footer starts -->
+  <footer class="footer">
+    <section class="top-footer text-center">
+      <div class="container for-remove-margin">
+        <h3 style="font-weight: bold;letter-spacing: 0.4px;color: #062772;" class="footer-heading">
+          Explore how Binmile can help your business in its digital
+          transformation journey
+        </h3>
+        <div
+          style="text-align:center;margin:2em auto;border-radius: 5em;width: 10em;height:0.5em;background-color:#062772;">
+        </div>
+        <p style="letter-spacing: 0.24px; color: #062772;" class="top-footer-para">
+          Do you need an elite team of technologist and idea-makers? Is
+          quality important to you? Is scalability and endless customization
+          paramount? Do you need a brand that is built specifically for your
+          company and can be as innovative as you are?
+        </p>
+        <p style="letter-spacing: 0.24px; color: #062772;" class="top-footer-para">
+          Contact our Business Analyst and get the journey started.
+        </p>
+        <button class="estimate-btn" style="margin: 2em auto">
+          <a href="{% url 'posts:contact-us' %}" class="contact-link">Get an estimate</a>
+        </button>
+      </div>
+    </section>
+    <section class="main-footer">
+      <div class="container for-remove-margin">
+        <div class="row footer__info">
+          <div class="col-md-4 footer__info-content">
+            <img style="height: 5em" src="{% static 'assets/images/fotter-logo.png' %}" class="footer__img" />
+            <div class="contact-info">
+              <!-- <h5 class="contact-call">Call</h5>
             <p class="contact-num">+1(415)-915-7177</p>
 
               <p class="contact-num">+91.9811643424</p> -->
-                <a href="{% url 'posts:career' %}" class="join-us"
-                  >Join Us</a
-                >
-              </div>
-
-              <div class="social-icon">
-                <a
-                  href="https://www.facebook.com/binmiletechnologies/"
-                  class="social-links"
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://twitter.com/BMT55914497" class="social-links">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a
-                  href="https://www.instagram.com/binmile/?hl=en"
-                  class="social-links"
-                >
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a
-                  href="http://linkedin.com/company/binmile-technologies"
-                  class="social-links"
-                >
-                  <i class="fab fa-linkedin"></i>
-                </a>
-              </div>
+              <a href="{% url 'posts:career' %}" class="join-us">Join Us</a>
             </div>
-            <div class="footer__nav">
-              <div class="col-md footer-col footer__link">
-                <ul>
-                  <li>
-                    <h4 class="bold">Platform</h4>
-                  </li>
-                  <li>
-                    <div class="line"></div>
-                  </li>
-                  <li>
-                    <a href="{% url 'posts:services' %}" class="footer-links"> ServiceNow</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'posts:microsoft-dynamics-365' %}" class="footer-links">
-                      Dynamics 365</a
-                    >
-                  </li>
-                  <li>
-                    <a href="{% url 'posts:power-platform' %}" class="footer-links"
-                      >Power Platform</a
-                    >
-                  </li>
-                </ul>
-              </div>
-              <div class="col-md footer-col footer__link">
-                <ul>
-                  <li>
-                    <h4 class="bold">Services</h4>
-                  </li>
-                  <li>
-                    <div class="line"></div>
-                  </li>
-                  <li><a href="{% url 'posts:index' %}#advisory"class="footer-links">Advisory</a></li>
-                  <li><a href="{% url 'posts:index' %}#implementation"class="footer-links">Implementations</a></li>
-                  <li><a href="{% url 'posts:index' %}#customization"class="footer-links">Customization</a></li>
-                  <li><a href="{% url 'posts:index' %}#integration"class="footer-links">Integration</a></li>
-                  <li><a href="{% url 'posts:index' %}#automation"class="footer-links">Automation Testing</a></li>
-                </ul>
-              </div>
-              <div class="col-md footer-col footer__link">
-                <ul>
-                  <li>
-                    <h4 class="bold">Insight</h4>
-                  </li>
-                  <li>
-                    <div class="line"></div>
-                  </li>
-                  <li><a href="{% url 'posts:insights' %}" class="footer-links">Blogs</a></li>
-                  <li>
-                    <a href="{% url 'posts:insights' %}?tab=Case_Studies" class="footer-links">Case Studies</a>
-                  </li>
-                </ul>
 
-                <ul>
-                  <li>
-                    <h4 class="bold">Career</h4>
-                  </li>
-                  <li>
-                    <div class="line"></div>
-                  </li>
-                  <li><a href="{% url 'posts:career' %}"class="footer-links">Career</a></li>
-                </ul>
-              </div>
+            <div class="social-icon">
+              <a href="https://www.facebook.com/binmiletechnologies/" class="social-links">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/BMT55914497" class="social-links">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.instagram.com/binmile/?hl=en" class="social-links">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="http://linkedin.com/company/binmile-technologies" class="social-links">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+          </div>
+          <div class="footer__nav">
+            <div class="col-md footer-col footer__link">
+              <ul>
+                <li>
+                  <h4 class="bold">Platform</h4>
+                </li>
+                <li>
+                  <div class="line"></div>
+                </li>
+                <li>
+                  <a href="{% url 'posts:services' %}" class="footer-links"> ServiceNow</a>
+                </li>
+                <li>
+                  <a href="{% url 'posts:microsoft-dynamics-365' %}" class="footer-links">
+                    Dynamics 365</a>
+                </li>
+                <li>
+                  <a href="{% url 'posts:power-platform' %}" class="footer-links">Power Platform</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md footer-col footer__link">
+              <ul>
+                <li>
+                  <h4 class="bold">Services</h4>
+                </li>
+                <li>
+                  <div class="line"></div>
+                </li>
+                <li><a href="{% url 'posts:index' %}#advisory" class="footer-links">Advisory</a></li>
+                <li><a href="{% url 'posts:index' %}#implementation" class="footer-links">Implementations</a></li>
+                <li><a href="{% url 'posts:index' %}#customization" class="footer-links">Customization</a></li>
+                <li><a href="{% url 'posts:index' %}#integration" class="footer-links">Integration</a></li>
+                <li><a href="{% url 'posts:index' %}#automation" class="footer-links">Automation Testing</a></li>
+              </ul>
+            </div>
+            <div class="col-md footer-col footer__link">
+              <ul>
+                <li>
+                  <h4 class="bold">Insight</h4>
+                </li>
+                <li>
+                  <div class="line"></div>
+                </li>
+                <li><a href="{% url 'posts:insights' %}" class="footer-links">Blogs</a></li>
+                <li>
+                  <a href="{% url 'posts:insights' %}?tab=Case_Studies" class="footer-links">Case Studies</a>
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  <h4 class="bold">Career</h4>
+                </li>
+                <li>
+                  <div class="line"></div>
+                </li>
+                <li><a href="{% url 'posts:career' %}" class="footer-links">Career</a></li>
+              </ul>
             </div>
           </div>
         </div>
-      </section>
-      <section class="bottom-footer">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg">
-            <ul class="navbar-nav bottom-nav">
-              <li class="copyright">&copy; Binmile 2020 All Rights Reserved</li>
-            </ul>
-          </nav>
-        </div>
-      </section>
-    </footer>
-    <!-- footer ends -->
+      </div>
+    </section>
+    <section class="bottom-footer">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <ul class="navbar-nav bottom-nav">
+            <li class="copyright">&copy; Binmile 2020 All Rights Reserved</li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+  </footer>
+  <!-- footer ends -->
 
-    <!-- <div class="float-contact">
+  <!-- <div class="float-contact">
       <a href="{% url 'posts:contact-us' %}">
         <img
           src="{% static 'assets/images/hero_images/support.png' %}"
@@ -505,84 +457,106 @@
         />
       </a>
     </div> -->
-  </body>
+</body>
 
 <script src="//code.tidio.co/ntbvrxc2bygx9vrnptufdvakjunxcnsw.js" async></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 
-  <script>
-    function openArticles(evt, cityName) {
-      var i, tabcontent, tablinks;
-      tabcontent = document.getElementsByClassName("tabcontent");
-      for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-      }
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-      document.getElementById(cityName).style.display = "block";
-      evt.currentTarget.className += " active";
+<script>
+  function openArticles(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
     }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
 
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
 
-    {% if request.GET.tab == 'Case_Studies' %}
-      document.getElementById("Case_Studies_Tab").click();
-    {% endif %}
-  </script>
+  {% if request.GET.tab == 'Case_Studies' %}
+  document.getElementById("Case_Studies_Tab").click();
+  {% endif %}
+</script>
 
-  <script>
-    $(document).ready(function(){
-  $(window).scroll(function(){
-  	var scroll = $(window).scrollTop();
-	  if (scroll > 700) {
-	    $("#navbar").css("background" , "#062772"),
-      $("#navbar").css("height" , "8vh" ),
-      $(".dropdown").css("transform", "translateY(-2px)");
-	  }
+<script>
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      if (scroll > 700) {
+        $("#navbar").css("background", "#062772"),
+          $("#navbar").css("height", "8vh"),
+          $(".dropdown").css("transform", "translateY(-2px)");
+      }
 
-	  else{
-		  $("#navbar").css("background" , "transparent");
-	  }
-  })
-});
+      else {
+        $("#navbar").css("background", "transparent");
+      }
+    })
+  });
 
-/** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
-$(document).ready(function () {
-     $(document).click(function (event) {
-         var clickover = $(event.target);
-         var _opened = $(".navbar-collapse").hasClass("show");
-         if (_opened === true && !clickover.hasClass("navbar-toggler")) {
-             $(".navbar-toggler").click();
-         }
-     });
- });
+  /** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
+  $(document).ready(function () {
+    $(document).click(function (event) {
+      var clickover = $(event.target);
+      var _opened = $(".navbar-collapse").hasClass("show");
+      if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+        $(".navbar-toggler").click();
+      }
+    });
+  });
 
- $('.dropdown').on('click', function(event){
+  $('.dropdown').on('click', function (event) {
     // The event won't be propagated up to the document NODE and
     // therefore delegated events won't be fired
     event.stopPropagation();
-});
-$('.dropdown-submenu').on('click', function(event){
+  });
+  $('.dropdown-submenu').on('click', function (event) {
     // The event won't be propagated up to the document NODE and
     // therefore delegated events won't be fired
     event.stopPropagation();
-});
-$(window).bind('beforeunload', function(){   localStorage.removeItem('popup'); });
-$(".btn-group, .dropdown").hover(
-                        function () {
-                            $('>.dropdown-menu', this).stop(true, true).fadeIn("fast");
-                            $(this).addClass('open');
-                        },
-                        function () {
-                            $('>.dropdown-menu', this).stop(true, true).fadeOut("fast");
-                            $(this).removeClass('open');
-                        });
-  </script>
+  });
+  $(window).bind('beforeunload', function () { localStorage.removeItem('popup'); });
+  $(".btn-group, .dropdown").hover(
+    function () {
+      $('>.dropdown-menu', this).stop(true, true).fadeIn("fast");
+      $(this).addClass('open');
+    },
+    function () {
+      $('>.dropdown-menu', this).stop(true, true).fadeOut("fast");
+      $(this).removeClass('open');
+    });
+
+  //disable zoom
+  $(document).ready(function () {
+    $(document).keydown(function (event) {
+      if (event.ctrlKey == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
+        alert('disabling zooming');
+        event.preventDefault();
+        // 107 Num Key  +
+        //109 Num Key  -
+        //173 Min Key  hyphen/underscor Hey
+        // 61 Plus key  +/=
+      }
+    });
+
+    $(window).bind('mousewheel DOMMouseScroll', function (event) {
+      if (event.ctrlKey == true) {
+        alert('disabling zooming');
+        event.preventDefault();
+      }
+    });
+  });
+</script>
+
 </html>

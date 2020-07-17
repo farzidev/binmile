@@ -2,61 +2,53 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Binmile</title>
-    <link
-      rel="shortcut icon"
-      href="{% static 'assets/images/faviconlogo.png' %}"
-      type="image/x-icon"
-    />
 
-    <title>Binmile Home</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>About Binmile</title>
+  <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon" />
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91243033-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <title>Binmile Home</title>
 
-      gtag('config', 'UA-91243033-1');
-    </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91243033-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
+    gtag('config', 'UA-91243033-1');
+  </script>
 
-    <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/contact.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/about.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
 
-    <script
-      src="https://kit.fontawesome.com/16370dbf02.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+  <link rel="stylesheet" href="{% static 'assets/css/home.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/contact.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/about.css' %}" />
 
-  <body>
-    {% include "header.html" %}
+  <script src="https://kit.fontawesome.com/16370dbf02.js" crossorigin="anonymous"></script>
+</head>
 
-   <section class="about-section">
+<body>
+  {% include "header.html" %}
+
+  <section class="about-section">
 
 
-  <div class="for-testing">
-    <h2 class="header-heading">About</h2>
-    <p class="header-para">Binmile forges each relationship with the intention of delivering exceptional client service!! Our Mantra is “Keep Smiling and be focused“</p>
+    <div class="for-testing">
+      <h2 class="header-heading">About</h2>
+      <p class="header-para">Binmile forges each relationship with the intention of delivering exceptional client
+        service!! Our Mantra is “Keep Smiling and be focused“</p>
 
-  </div>
+    </div>
 
 
-   </section>
+  </section>
 
-   <section class="about-content">
+  <section class="about-content">
 
     <div class="content">
       <div class="content-inner">
@@ -65,48 +57,66 @@
           <h3 class="heading-tertiary heading-about">Why us</h3>
         </div>
         <div class="content-para">
-         <p>Since inception, Binmile has focused on helping clients stay competitive. Implying, low failure rates in application releases and quick turnaround times for fixes and recovery.</p>
+          <p>Since inception, Binmile has focused on helping clients stay competitive. Implying, low failure rates in
+            application releases and quick turnaround times for fixes and recovery.</p>
 
-         <p>Our customers realize up to 80% efficiency gains from our touchless CI (continuous integration) and CD (continuous deployment) setup.</p>
+          <p>Our customers realize up to 80% efficiency gains from our touchless CI (continuous integration) and CD
+            (continuous deployment) setup.</p>
 
-         <p>Binmile specializes in creating reusable assets for Automation, Service Delivery, and Cloud. We are humbled that 100% of our business is from repeat customers. Rather than dictating terms, we arm you with a range of comprehensive alternatives, helping you make informed decisions.</p>
+          <p>Binmile specializes in creating reusable assets for Automation, Service Delivery, and Cloud. We are humbled
+            that 100% of our business is from repeat customers. Rather than dictating terms, we arm you with a range of
+            comprehensive alternatives, helping you make informed decisions.</p>
         </div>
-       </div>
+      </div>
 
-       <div class="content-inner">
+      <div class="content-inner">
         <div class="content-heading">
-          <img src="{% static 'assets/images/about/hand-shake@3x.png' %}" alt="" class="content-img content-img-responsive">
+          <img src="{% static 'assets/images/about/hand-shake@3x.png' %}" alt=""
+            class="content-img content-img-responsive">
           <h3 class="heading-tertiary heading-about">Our Values</h3>
         </div>
         <div class="content-para">
-          <p><span>Customer:</span>&nbsp; Customer trust and project delivery is our utmost priority. To us, success is directly proportional to the value we have added by solving your problem.</p>
-          <p><span>Integrity:</span>&nbsp; As a service provider, we believe in integrity. Integrity in serving our clients with the best of services for the best of results.</p>
-          <p><span>Innovation:</span>&nbsp; There is a hard way to solve a problem and then there is smart way. Innovation in ideas is what we are governed by to serve you better.</p>
-
-         </div>
-       </div>
-    </div>
-
-
-     <div class="content">
-
-
-       <div class="content-inner">
-        <div class="content-heading">
-          <img src="{% static 'assets/images/about/goal@3x.png' %}" alt="" class="content-img">
-          <h3 class="heading-tertiary">What Makes Us Different  </h3>
-        </div>
-        <div class="content-para">
-          <p> <span>Awareness:</span>&nbsp; Our vision of helping ethical, wholesome, and transparent services makes us stand out. Backed by a team of passionate professionals from each aspect of the IT landscape, understanding your expectations has become part of our DNA.</p>
-          <p> <span>User Experience (UX) Thinking:</span>&nbsp;Creative problem solving is at the core of what we do. Be it portal design or automating workflows. Systems and processes should make life easier for you and your business.</p>
-          <p> <span>Agility:</span>&nbsp;In the constant race to stay competitive, we understand your organization’s need to be thorough as well as nimble. Binmile is continuously working towards exceeding your expectations, in addition to setting new standards in the ServiceNow consulting space.</p>
-          <p> <span>Seamless Integration:</span>&nbsp;We are your one-stop-shop. Inside-out expertise in various software platforms, including .Net, Java, and multiple API Integrations, means you get every solution under one roof.</p>
-          <p> <span>Quality:</span> &nbsp; We ensure to get the best in class services, and all our processes run through a stringent BQRS™ (Binmile Quality Rating System) quality framework. We run a tight ship so that you don’t have to compromise on quality.</p>
+          <p><span>Customer:</span>&nbsp; Customer trust and project delivery is our utmost priority. To us, success is
+            directly proportional to the value we have added by solving your problem.</p>
+          <p><span>Integrity:</span>&nbsp; As a service provider, we believe in integrity. Integrity in serving our
+            clients with the best of services for the best of results.</p>
+          <p><span>Innovation:</span>&nbsp; There is a hard way to solve a problem and then there is smart way.
+            Innovation in ideas is what we are governed by to serve you better.</p>
 
         </div>
       </div>
-     </div>
-   </section>
+    </div>
+
+
+    <div class="content">
+
+
+      <div class="content-inner">
+        <div class="content-heading">
+          <img src="{% static 'assets/images/about/goal@3x.png' %}" alt="" class="content-img">
+          <h3 class="heading-tertiary">What Makes Us Different </h3>
+        </div>
+        <div class="content-para">
+          <p> <span>Awareness:</span>&nbsp; Our vision of helping ethical, wholesome, and transparent services makes us
+            stand out. Backed by a team of passionate professionals from each aspect of the IT landscape, understanding
+            your expectations has become part of our DNA.</p>
+          <p> <span>User Experience (UX) Thinking:</span>&nbsp;Creative problem solving is at the core of what we do. Be
+            it portal design or automating workflows. Systems and processes should make life easier for you and your
+            business.</p>
+          <p> <span>Agility:</span>&nbsp;In the constant race to stay competitive, we understand your organization’s
+            need to be thorough as well as nimble. Binmile is continuously working towards exceeding your expectations,
+            in addition to setting new standards in the ServiceNow consulting space.</p>
+          <p> <span>Seamless Integration:</span>&nbsp;We are your one-stop-shop. Inside-out expertise in various
+            software platforms, including .Net, Java, and multiple API Integrations, means you get every solution under
+            one roof.</p>
+          <p> <span>Quality:</span> &nbsp; We ensure to get the best in class services, and all our processes run
+            through a stringent BQRS™ (Binmile Quality Rating System) quality framework. We run a tight ship so that you
+            don’t have to compromise on quality.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
@@ -116,18 +126,14 @@
       Find Your Valuable Team</h2>
     <div class="binmile-teams">
       {% for object in object_list %}
-        <div class="team-member">
-          <a
-          href="{{ object.linkedin_url }}"
-          target="_blank"
-          class="team-linkedin"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <img src="{% if object.image %}{{ object.image.url }}{% endif %}" alt="" class="team-img">
-          <h4 class="team-name">{{ object.name }}</h4>
-          <p class="team-designation">{{ object.title }}</p>
-        </div>
+      <div class="team-member">
+        <a href="{{ object.linkedin_url }}" target="_blank" class="team-linkedin">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <img src="{% if object.image %}{{ object.image.url }}{% endif %}" alt="" class="team-img">
+        <h4 class="team-name">{{ object.name }}</h4>
+        <p class="team-designation">{{ object.title }}</p>
+      </div>
       {% endfor %}
     </div>
   </section>
@@ -138,23 +144,23 @@
     </h3>
     <div class="technology-partner-images mb-5">
       {% for object in technology_partners %}
-     
-        <div class="partner-img">
-          <a href="{{ object.link }}" target="_blank" >
+
+      <div class="partner-img">
+        <a href="{{ object.link }}" target="_blank">
           <img src="{{ object.image.url }}" alt="{{ object.image.name }}" class="partner-logo">
         </a>
-        </div>
-    
+      </div>
+
       {% endfor %}
     </div>
   </section>
 
 
-    <!-- footer starts -->
-    {% include "footer.html" %}
-    <!-- footer ends -->
+  <!-- footer starts -->
+  {% include "footer.html" %}
+  <!-- footer ends -->
 
-    <!-- <div class="float-contact">
+  <!-- <div class="float-contact">
       <a href="contact.html">
         <img
           src="{% static 'assets/images/hero_images/support.png' %}"
@@ -165,15 +171,15 @@
     </div>
   </body> -->
 
-<script src="//code.tidio.co/ntbvrxc2bygx9vrnptufdvakjunxcnsw.js" async></script>
+  <script src="//code.tidio.co/ntbvrxc2bygx9vrnptufdvakjunxcnsw.js" async></script>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script>
-    $(document).ready(function() {
-      $(window).scroll(function() {
+    $(document).ready(function () {
+      $(window).scroll(function () {
         var scroll = $(window).scrollTop();
         if (scroll > 700) {
           $("#navbar").css("background", "#062772"),
@@ -188,8 +194,8 @@
     });
 
     /** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
-    $(document).ready(function() {
-      $(document).click(function(event) {
+    $(document).ready(function () {
+      $(document).click(function (event) {
         var clickover = $(event.target);
         var _opened = $(".navbar-collapse").hasClass("show");
         if (_opened === true && !clickover.hasClass("navbar-toggler")) {
@@ -198,25 +204,47 @@
       });
     });
 
-    $(".dropdown").on("click", function(event) {
+    $(".dropdown").on("click", function (event) {
       // The event won't be propagated up to the document NODE and
       // therefore delegated events won't be fired
       event.stopPropagation();
     });
-    $('.dropdown-submenu').on('click', function(event){
-    // The event won't be propagated up to the document NODE and
-    // therefore delegated events won't be fired
-    event.stopPropagation();
-});
-    $(window).bind('beforeunload', function(){   localStorage.removeItem('popup'); });
+    $('.dropdown-submenu').on('click', function (event) {
+      // The event won't be propagated up to the document NODE and
+      // therefore delegated events won't be fired
+      event.stopPropagation();
+    });
+    $(window).bind('beforeunload', function () { localStorage.removeItem('popup'); });
     $(".btn-group, .dropdown").hover(
-                        function () {
-                            $('>.dropdown-menu', this).stop(true, true).fadeIn("fast");
-                            $(this).addClass('open');
-                        },
-                        function () {
-                            $('>.dropdown-menu', this).stop(true, true).fadeOut("fast");
-                            $(this).removeClass('open');
-                        });
+      function () {
+        $('>.dropdown-menu', this).stop(true, true).fadeIn("fast");
+        $(this).addClass('open');
+      },
+      function () {
+        $('>.dropdown-menu', this).stop(true, true).fadeOut("fast");
+        $(this).removeClass('open');
+      });
+
+    //disable zoom
+    $(document).ready(function () {
+      $(document).keydown(function (event) {
+        if (event.ctrlKey == true && (event.which == '61' || event.which == '107' || event.which == '173' || event.which == '109' || event.which == '187' || event.which == '189')) {
+          alert('disabling zooming');
+          event.preventDefault();
+          // 107 Num Key  +
+          //109 Num Key  -
+          //173 Min Key  hyphen/underscor Hey
+          // 61 Plus key  +/=
+        }
+      });
+
+      $(window).bind('mousewheel DOMMouseScroll', function (event) {
+        if (event.ctrlKey == true) {
+          alert('disabling zooming');
+          event.preventDefault();
+        }
+      });
+    });
   </script>
+
 </html>
