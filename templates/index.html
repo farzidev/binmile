@@ -644,11 +644,12 @@
 });
    /** modal js **/
 var popup = Cookies.get('popup');
-$(window).on('load',function(){
+$(document).ready(function(){
   if(!popup){
   $('.modal').show(); 
-  Cookies.set('popup', 1 , { expires: 1, path: '/' });
-  
+  var date = new Date();
+  date.setTime(date.getTime() + (5 * 60 * 1000));
+  Cookies.set('popup', 1 , { expires: date});
   }
     
 });
