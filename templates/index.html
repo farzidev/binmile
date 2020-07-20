@@ -540,6 +540,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 
 
 <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
@@ -642,11 +643,11 @@
   })
 });
    /** modal js **/
-var popup = localStorage.getItem('popup');
+var popup = Cookies.get('popup');
 $(window).on('load',function(){
   if(!popup){
   $('.modal').show(); 
-  localStorage.setItem('popup','true');
+  Cookies.set('popup', 1 , { expires: 1, path: '/' });
   
   }
     
