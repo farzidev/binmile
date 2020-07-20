@@ -534,6 +534,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
 
 
 <script src="{% static 'assets/js/owl.carousel.js' %}"></script>
@@ -652,18 +653,36 @@
     $('.open').addClass('active');
   })
 
-  /** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
-  $(document).ready(function () {
-    $(document).click(function (event) {
-      var clickover = $(event.target);
-      var _opened = $(".navbar-collapse").hasClass("show");
-      if (_opened === true && !clickover.hasClass("navbar-toggler")) {
-        $(".navbar-toggler").click();
-      }
-    });
-  });
+   /** modal js **/
+var popup = Cookies.get('popup');
+$(document).ready(function(){
+  if(!popup){
+  $('.modal').show(); 
+  var date = new Date();
+  date.setTime(date.getTime() + (5 * 60 * 1000));
+  Cookies.set('popup', 1 , { expires: date});
+  }
+    
+});
+$(window).bind('beforeunload', function(){   localStorage.removeItem('popup'); });
 
-  $('.dropdown').on('click', function (event) {
+$(".close, .nope").on('click', function () {
+  $('.modal').addClass('hidden');
+  $('.open').addClass('active');
+})
+
+/** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
+$(document).ready(function () {
+     $(document).click(function (event) {
+         var clickover = $(event.target);
+         var _opened = $(".navbar-collapse").hasClass("show");
+         if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+             $(".navbar-toggler").click();
+         }
+     });
+ });
+
+ $('.dropdown').on('click', function(event){
     // The event won't be propagated up to the document NODE and
     // therefore delegated events won't be fired
     event.stopPropagation();

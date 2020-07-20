@@ -4,13 +4,37 @@ from django.views.generic import DetailView, FormView, ListView
 from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.db.models import Q
-
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 from .models import (
     Post, Category, Form, AboutUs, ServiceNow, PowerPlatform, MicrosoftDynamics365, CareerGallery,
     JobProfile, TechnologyPartner
 )
 from .forms import ContactForm
-
+ 
+def sendmail(self,**kwargs):
+    message = Mail(
+    from_email='contact-bot@binmile.com',
+    to_emails=['avanish@binmile.com','kesharvani99@gmail.com','r.mollah07@gmail.com'],
+    subject='New Query for Pop Up Contact Us Form',
+    html_content='<strong>You have new Response from User</strong>  \
+         <strong>Name:<strong>{} \
+         <strong>Email:<strong>{} \
+         <strong>Phone:<strong> {} \
+         <strong>Subject:<strong> {} \
+         <strong>Messages:<strong> {} \
+         contact soon. '.format(kwargs.get('name'),kwargs.get('email'),kwargs.get('phone'),kwargs.get('subject'),kwargs.get('message'))
+    )
+    try:
+        sg = SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
+        response = sg.send(message)
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)     
+    except Exception as e:
+        print("error occured")
+        
 
 class IndexView(FormView):
     template_name = "index.html"
@@ -25,7 +49,7 @@ class IndexView(FormView):
     def form_valid(self, form):
         Form.objects.get_or_create(**form.cleaned_data)
         messages.success(self.request, "Thanks for submitting the form.")
-        form.send_mail()
+        sendmail(self,**form.cleaned_data)
         return super().form_valid(form)
 
        
@@ -122,7 +146,7 @@ class PowerPFView(FormView):
     def form_valid(self, form):
         Form.objects.get_or_create(**form.cleaned_data)
         messages.success(self.request, "Thanks for submitting the form.")
-        form.send_mail()
+        sendmail(self,**form.cleaned_data)
         return super().form_valid(form)
 
 
@@ -140,8 +164,9 @@ class ContactUsView(FormView):
     def form_valid(self, form):
         form.cleaned_data.pop('captcha')
         Form.objects.get_or_create(**form.cleaned_data)
+        print(form.cleaned_data['message'])
         messages.success(self.request, "Thanks for submitting the form.")
-        form.send_mail()
+        sendmail(self,**form.cleaned_data)
         return super().form_valid(form)
 
 
@@ -164,7 +189,7 @@ class MicrosoftDynamicsView(FormView):
     def form_valid(self, form):
         Form.objects.get_or_create(**form.cleaned_data)
         messages.success(self.request, "Thanks for submitting the form.")
-        form.send_mail()
+        sendmail(self,**form.cleaned_data)
         return super().form_valid(form)
 
 

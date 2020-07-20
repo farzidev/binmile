@@ -127,3 +127,4 @@ bin.sublime-project
 bin.sublime-workspace
 
 templates/insights.html
+sendgrid.env
