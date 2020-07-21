@@ -34,6 +34,8 @@
 .hero {
   background: transparent url("../images/Rectangle.svg") 0% 0% no-repeat
     padding-box;
+  background-attachment: fixed;
+  background-size: cover;
   height: 100vh;
   z-index: -1;
   overflow-y: hidden;
@@ -47,10 +49,10 @@
   left: 5%;
 }
 
-  #service-pillar-img{
-    width: 60%;
-    padding-right: unset;
-  }
+#service-pillar-img {
+  width: 60%;
+  padding-right: unset;
+}
 
 .hero-right {
   width: 40%;
@@ -95,7 +97,7 @@
   font-size: 3em;
   color: #24054e;
   margin-bottom: 1em;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
 }
 
 .nav-tabs {
@@ -164,7 +166,7 @@
   width: 9rem;
 }
 
-.for-rotate-image{
+.for-rotate-image {
   transform: scaleX(-1);
   margin-right: 1rem;
 }
@@ -201,26 +203,26 @@
   border: none;
 }
 
-.icon-down{
+.icon-down {
   float: right;
 }
 
-.for-height{
+.for-height {
   min-height: 25rem !important;
 }
 
-.for-center{
+.for-center {
   display: flex;
 
   align-items: center;
   position: relative;
 }
 
-.for-left{
+.for-left {
   margin-right: 12rem;
 }
 
-.small-margin{
+.small-margin {
   position: absolute;
   right: 0rem;
 }
@@ -229,11 +231,11 @@
 }
 /*   ##Device = Laptops, Desktops  ##Screen = B/w 1025px to 1280px*/
 @media (min-width: 1025px) and (max-width: 1280px) {
-  .pillar-height{
+  .pillar-height {
     min-height: 25rem !important;
   }
 
-  .top-logo{
+  .top-logo {
     min-width: 18vw;
   }
 }
@@ -252,7 +254,7 @@
   .hero-text {
     font-size: 2rem !important;
   }
-  .service-right{
+  .service-right {
     right: 10% !important;
     width: 60% !important;
   }
@@ -296,11 +298,11 @@
     display: block;
     visibility: visible;
   }
-  .service-right{
+  .service-right {
     width: 40% !important;
   }
 
-  #service-pillar-img{
+  #service-pillar-img {
     min-width: 80%;
   }
 
@@ -321,7 +323,7 @@
     visibility: hidden !important;
   }
 
-  #service-pillar-img{
+  #service-pillar-img {
     width: 60%;
   }
   .hero-left {
@@ -329,7 +331,7 @@
     left: 15% !important;
   }
 
-  .service-right{
+  .service-right {
     left: 7rem !important;
   }
   .hero-text {
@@ -364,16 +366,16 @@
     margin: 4rem 0;
   }
 
-  .hero-h3{
-    font-size: .9rem;
+  .hero-h3 {
+    font-size: 0.9rem;
   }
 
-  .icon-list{
+  .icon-list {
     margin: 0;
     width: 110%;
   }
 
-  .service__img{
+  .service__img {
     width: 7rem;
     margin-bottom: 1rem;
   }
