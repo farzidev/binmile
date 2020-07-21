@@ -12,11 +12,11 @@ from .models import (
     JobProfile, TechnologyPartner
 )
 from .forms import ContactForm
- 
+from binmile import settings
 def sendmail(self,**kwargs):
     message = Mail(
     from_email='contact-bot@binmile.com',
-    to_emails=['avanish@binmile.com','kesharvani99@gmail.com','r.mollah07@gmail.com'],
+    to_emails='r.mollah07@gmail.com',
     subject='New Query for Pop Up Contact Us Form',
     html_content='<strong>You have new Response from User</strong>  \
          <strong>Name:<strong>{} \
@@ -27,13 +27,15 @@ def sendmail(self,**kwargs):
          contact soon. '.format(kwargs.get('name'),kwargs.get('email'),kwargs.get('phone'),kwargs.get('subject'),kwargs.get('message'))
     )
     try:
-        sg = SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY'))
+        sg = SendGridAPIClient('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')
+        print(settings.SENDGRID_API_KEY)
         response = sg.send(message)
         print(response.status_code)
         print(response.body)
         print(response.headers)     
     except Exception as e:
-        print("error occured")
+        print(e)
+        print(e.body)
         
 
 class IndexView(FormView):
