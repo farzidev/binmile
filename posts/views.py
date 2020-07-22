@@ -16,7 +16,7 @@ from binmile import settings
 def sendmail(self,**kwargs):
     message = Mail(
     from_email='avanish@binmile.com',
-    to_emails='avanish@binmile.com',
+    to_emails='r.mollah07@gmail.com',
     subject='New Query for Pop Up Contact Us Form',
     html_content='<h1><strong>You have new Response from User</strong><h1> <br> \
          <strong>Name:<strong>{} <br>\
@@ -28,7 +28,7 @@ def sendmail(self,**kwargs):
     )
     print(message)
     try:
-        sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
+        sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
         response = sg.send(message)
         print(response.status_code)
         print(response.body)
