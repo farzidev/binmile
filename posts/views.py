@@ -24,7 +24,7 @@ def sendmail(self,**kwargs):
          <strong>Phone:<strong> {} <br>\
          <strong>Subject:<strong> {} <br>\
          <strong>Messages:<strong> {} <br>\
-         contact soon. '.format(kwargs.get('name'),kwargs.get('email'),kwargs.get('phone'),kwargs.get('subject'),kwargs.get('message'))
+         contact soon. '.format(kwargs.get('name'),kwargs.get('email'),kwargs.get('phone_number'),kwargs.get('subject'),kwargs.get('message'))
     )
     print(message)
     try:
@@ -167,6 +167,7 @@ class ContactUsView(FormView):
         form.cleaned_data.pop('captcha')
         Form.objects.get_or_create(**form.cleaned_data)
         print(form.cleaned_data['message'])
+        print(form.cleaned_data['phone_number'])
         messages.success(self.request, "Thanks for submitting the form.")
         sendmail(self,**form.cleaned_data)
         return super().form_valid(form)
