@@ -639,11 +639,11 @@
   /** modal js **/
   var popup = localStorage.getItem('popup');
   $(window).on('load', function () {
-    if (!popup) {
-      $('.modal').show();
-      localStorage.setItem('popup', 'true');
-
-    }
+      setTimeout(function(){
+        $('.modal').show()
+        }, 5000)
+      
+      if (!popup) {localStorage.setItem('popup', 'true');}
 
   });
   $(window).bind('beforeunload', function () { localStorage.removeItem('popup'); });
