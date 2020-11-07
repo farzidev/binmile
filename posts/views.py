@@ -9,7 +9,7 @@ from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import Mail
 from .models import (
     Post, Category, Form, AboutUs, ServiceNow, PowerPlatform, MicrosoftDynamics365, CareerGallery,
-    JobProfile, TechnologyPartner
+    JobProfile, TechnologyPartner, EngineeringProduct
 )
 from .forms import ContactForm
 from binmile import settings
@@ -199,3 +199,14 @@ class MicrosoftDynamicsView(FormView):
 # custom 404 handler view
 def custom_404_handler(request, exception):
     return redirect('posts:index')
+
+
+class EngineeringProductView(ListView):
+    template_name = "engineering-product.html"
+    model = EngineeringProduct
+    queryset = EngineeringProduct.objects.all()
+
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(*args, **kwargs)
+        context["products"] = EngineeringProduct.objects.all()
+        return context

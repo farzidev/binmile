@@ -250,6 +250,17 @@
   }
 }
 
+  .space-above{
+    margin-top: 2rem;
+  }
+
+  .image{
+    display: block;
+    margin: 1rem auto;
+    width: 3.5rem; 
+    height: 3.5rem;
+  }
+
 @media only screen and (max-width: 800px) {
   .devops {
     border-left: none;

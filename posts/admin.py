@@ -2,7 +2,7 @@ from django.contrib import admin, messages
 
 from .models import (
     Post, Category, Form, Author, AboutUs, MicrosoftDynamics365, PowerPlatform, ServiceNow,
-    CareerGallery, JobProfile, TechnologyPartner
+    CareerGallery, JobProfile, TechnologyPartner, EngineeringProduct
 )
 
 
@@ -10,6 +10,7 @@ admin.site.register(Category)
 admin.site.register(Author)
 admin.site.register(ServiceNow)
 admin.site.register(TechnologyPartner)
+admin.site.register(EngineeringProduct)
 
 
 @admin.register(AboutUs)

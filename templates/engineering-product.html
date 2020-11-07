@@ -1,0 +1,267 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quality Assurance</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91243033-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-91243033-1');
+  </script>
+
+  <link rel="shortcut icon" href="{% static 'assets/images/faviconlogo.png' %}" type="image/x-icon" >
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+
+  <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/service.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/crm.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/quality.css' %}">
+
+  <script src="https://kit.fontawesome.com/16370dbf02.js" crossorigin="anonymous"></script>
+
+  <style>
+      .more-offers p{
+        margin-top: 2rem;
+        text-align: center;
+      }
+  </style>
+
+</head>
+
+<body>
+  {% include "header.html" %}
+
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-text">
+        <h1>Ensuring Quality</h1>
+        <h1>Enhancing User Experience</h1>
+        <h3 class="hero-h3">Your Partner for complete Testing Services</h3>
+      </div>
+      <button class="get-started"><a href="{% url 'posts:contact-us' %}" class="contact-link">Let's Get Started</a></button>
+    </div>
+    <div class="hero-right service-right"
+>
+      <img src="{% static 'assets/images/quality/quality.png' %}" alt="Pillar Image" class="pillar-img quality-img" id="service-pillar-img">
+    </div>
+  </div>
+
+
+
+  <section class="first-section">
+    <div class="first-section-content">
+      <p>{{products.0.discription}}</p>
+    </div>
+  </section>
+
+  <section id="quality-assurance" class="quality-assurance">
+    <h1>{{products.0.title}}</h1>
+
+    <div id="regression-testing" class="more-offers" style="flex-wrap: wrap;">
+      <div class="regression-testing">
+        <img src="{% static 'assets/images/products/smartphone.png' %}" class="image">
+        <h1 class="main-heading">{{products.1.title}}</h1>
+        <p>{{products.1.discription}}</p>
+      </div>
+      <div class="functional-testing">
+        <img src="{% static 'assets/images/products/network.png' %}" class="image">
+        <h1 class="main-heading">{{products.2.title}}</h1>
+        <p>{{products.2.discription}}
+        </p>
+      </div>
+      <div class="crowdsourced-testing">
+        <img src="{% static 'assets/images/products/line-chart.png' %}" class="image">
+        <h1 class="main-heading">{{products.3.title}}</h1>
+        <p>{{products.3.discription}}</p>
+      </div>
+      <div class="regression-testing space-above">
+        <img src="{% static 'assets/images/products/note.png' %}" class="image">
+        <h1 class="main-heading">{{products.4.title}}</h1>
+        <p>{{products.4.discription}}</p>
+      </div>
+      <div class="functional-testing space-above">
+        <img src="{% static 'assets/images/products/digital-marketing.png' %}" class="image">
+        <h1 class="main-heading">{{products.5.title}}</h1>
+        <p>{{products.5.discription}}
+        </p>
+      </div>
+      <div class="crowdsourced-testing space-above">
+        <img src="{% static 'assets/images/products/video.png' %}" class="image">
+        <h1 class="main-heading">{{products.6.title}}</h1>
+        <p>{{products.6.discription}}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+
+    <h2 style="font-weight: bold;text-align:center;" class="recent">Our Deliverables</h2>
+    <div class="big-line"></div>
+
+  <!-- Work slider starts -->
+  <div class="container work-slider">
+    <div class="owl-three owl-theme owl-carousel owl-loaded owl-theme">
+      <div class="owl-stage-outer ">
+        <div class="owl-stage">
+          <div class="owl-item">
+
+            <div class="work-card work-card-1">
+              <p>
+                Leading British Retailer
+              </p>
+
+            </div>
+            <p class="client-name">ServiceNow Agent Workspace, ServiceNow Implementation</p>
+          </div>
+          <div class="owl-item">
+            <div class="work-card work-card-2">
+              <p>
+                Technology Solutions Provider
+              </p>
+
+            </div>
+            <p class="client-name">Dynamics 365 Implementation and Customizations</p>
+            <!-- <p class="client-company">PTTEP . WEB</p> -->
+          </div>
+          <div class="owl-item">
+            <div class="work-card work-card-3">
+              <p>
+                Prominent Construction Business House
+              </p>
+
+            </div>
+            <p class="client-name">Power BI Implementation and Customizations</p>
+            <!-- <p class="client-company">PTTEP . WEB</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="owl-nav">
+        <!-- <div class="owl-prev" id="nav-prev"><img src="{% static 'assets/images/prev.svg' %}"></div>
+        <div class="owl-next" id="nav-next"><img src="{% static 'assets/images/prev.svg' %}" style="transform: rotate(180deg);">
+        </div> -->
+      </div>
+    </div>
+  </div>
+  <!-- Work slider ends -->
+    </main>
+  </div>
+  <!-- footer starts -->
+  {% include "footer.html" %}
+  <!-- footer ends -->
+
+  <!-- <div class="float-contact">
+    <a href="{% url 'posts:contact-us' %}">
+      <img src="{% static 'assets/images/hero_images/support.png' %}" alt="" class="support-image">
+    </a>
+  </div> -->
+
+</body>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="/assets/js/owl.carousel.js"></script> -->
+
+<script src="//code.tidio.co/ntbvrxc2bygx9vrnptufdvakjunxcnsw.js" async></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+<script src="{% static 'assets/js/owl.carousel.js' %}"></script>
+
+<script>
+  $('.owl-three').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    center: true,
+    autoplay: true,
+    autoPlaySpeed: 3000,
+    autoPlayTimeout: 3000,
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  });
+
+</script>
+
+<script>
+   $(document).ready(function(){
+  $(window).scroll(function(){
+  	var scroll = $(window).scrollTop();
+	  if (scroll > 700) {
+	    $("#navbar").css("background" , "#062772"),
+      $("#navbar").css("height" , "8vh" ),
+      $(".dropdown").css("transform", "translateY(-2px)"),
+      $(".navbar-toggler").css("top", "-1rem"),
+      $("#navbarSupportedContent").css("top", "-1.5rem");
+	  }
+
+	  else{
+      $("#navbar").css("background" , "transparent");
+	  }
+  })
+});
+
+/** CLOSE MAIN NAVIGATION WHEN CLICKING OUTSIDE THE MAIN NAVIGATION AREA**/
+$(document).ready(function () {
+     $(document).click(function (event) {
+         var clickover = $(event.target);
+         var _opened = $(".navbar-collapse").hasClass("show");
+         if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+             $(".navbar-toggler").click();
+         }
+     });
+ });
+
+ $('.dropdown').on('click', function(event){
+    // The event won't be propagated up to the document NODE and
+    // therefore delegated events won't be fired
+    event.stopPropagation();
+});
+$('.dropdown-submenu').on('click', function(event){
+    // The event won't be propagated up to the document NODE and
+    // therefore delegated events won't be fired
+    event.stopPropagation();
+});
+
+$(".btn-group, .dropdown").hover(
+                        function () {
+                            $('>.dropdown-menu', this).stop(true, true).fadeIn("fast");
+                            $(this).addClass('open');
+                        },
+                        function () {
+                            $('>.dropdown-menu', this).stop(true, true).fadeOut("fast");
+                            $(this).removeClass('open');
+                        });
+
+// smooth scrolling from another page
+$('html,body').animate({
+  scrollTop: $(window.location.hash).offset().top - 50
+});
+</script>
+
+</html>
