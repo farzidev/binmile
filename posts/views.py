@@ -208,5 +208,5 @@ class EngineeringProductView(ListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
-        context["products"] = EngineeringProduct.objects.all()
+        context["products"] = EngineeringProduct.objects.all().order_by('id')
         return context
